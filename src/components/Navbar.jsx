@@ -1,4 +1,4 @@
-import { Menu, X } from "lucide-react";
+import { ChevronDown, Menu, X } from "lucide-react";
 import { useState } from "react";
 
 import logo from "../assets/logo.png";
@@ -24,8 +24,14 @@ const Navbar = () => {
           <ul className="hidden lg:flex ml-14 space-x-12">
             {navLinks.map((item, index) => (
               <li key={index}>
-                <a href={item.href} className="hover:underline">
+                <a
+                  href={item.href}
+                  className="hover:text-red-600 flex items-center"
+                >
                   {item.label}
+                  {item.label === "Serviços" && (
+                    <ChevronDown className="ml-1 w-4 h-4" />
+                  )}
                 </a>
               </li>
             ))}
@@ -41,7 +47,15 @@ const Navbar = () => {
             <ul>
               {navLinks.map((item, index) => (
                 <li key={index} className="py-4">
-                  <a href={item.href}>{item.label}</a>
+                  <a
+                    href={item.href}
+                    className="hover:text-red-600 flex items-center"
+                  >
+                    {item.label}
+                    {item.label === "Serviços" && (
+                      <ChevronDown className="ml-1 w-4 h-4" />
+                    )}
+                  </a>
                 </li>
               ))}
             </ul>

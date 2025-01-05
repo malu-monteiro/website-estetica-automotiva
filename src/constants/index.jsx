@@ -21,3 +21,14 @@ export const features = [
     content: "Clientes atendidos.",
   },
 ];
+
+export const socialMedia = [
+  {
+    id: "social-media-1",
+    link: "https://www.instagram.com/",
+  },
+  {
+    id: "social-media-2",
+    link: "https://www.facebook.com/",
+  },
+];
