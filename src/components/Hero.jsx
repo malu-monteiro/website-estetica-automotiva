@@ -31,7 +31,7 @@ const Hero = () => {
             Saiba mais <ChevronsDown className="ml-2" />
           </a>
         </div>
-        <div className="flex flex-col mt-20 md:mt-72 md:flex-row md:space-x-8 space-y-6 md:space-y-0">
+        <div className="flex flex-col mt-32 md:mt-72 md:flex-row md:space-x-8 space-y-6 md:space-y-0">
           {features.map((stat) => (
             <div key={stat.id} className="flex items-center">
               <stat.icon className="mr-4 size-16 md:size-20 text-white" />
