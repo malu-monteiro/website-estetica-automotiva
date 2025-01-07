@@ -50,6 +50,18 @@ export const services = [
   },
 ];
 
+export const ABOUT_TITLE = "O cuidado que o seu veículo ";
+export const ABOUT_HIGHLIGHT = "merece!";
+export const ABOUT_DESCRIPTION = `
+  Cuidar do seu carro vai além da estética; é preservar seu valor e
+  prolongar sua vida útil. Na nossa Estética Automotiva, oferecemos
+  polimento, polimento de farol, vitrificação e higienização interna
+  para manter seu veículo impecável e protegido contra os desgastes do
+  tempo. Com qualidade e atenção aos detalhes, garantimos um carro que
+  parece novo e permanece valorizado. Invista no cuidado que seu carro
+  merece!
+`;
+
 export const socialMedia = [
   {
     id: "social-media-1",
