@@ -5,7 +5,7 @@ const OurServices = () => {
   return (
     <div className="relative mt-20 border-b border-neutral-800 min-h-[800px]">
       <div className="text-center">
-        <h2 className="text-xl sm:text-5xl lg:text-6xl font-bold mt-10 lg:mt-20 tracking ">
+        <h2 className="text-xl sm:text-5xl lg:text-6xl font-bold mt-10 lg:mt-20">
           Conheça os nossos <span className="text-red-600">serviços</span>
         </h2>
         <p className="text-base sm:text-lg lg:text-xl mt-2">
