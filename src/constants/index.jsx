@@ -5,8 +5,6 @@ import PolimentoFarol from "../assets/polimento-farol.png";
 import Vitrificação from "../assets/vitrificacao.jpg";
 import Higienização from "../assets/higienizacao-interna.avif";
 
-import Serviço from "../assets/servico.png";
-
 export const navLinks = [
   { label: "Início", href: "#" },
   { label: "Sobre Nós", href: "#" },
@@ -61,17 +59,16 @@ export const about = [
     Na nossa Estética Automotiva, oferecemos polimento, polimento de farol, vitrificação e higienização interna 
     para manter seu veículo impecável e protegido contra os desgastes do tempo. Com qualidade e atenção aos detalhes, 
     garantimos um carro que parece novo e permanece valorizado. Invista no cuidado que seu carro merece!`,
-    image: Serviço,
   },
 ];
 
 export const socialMedia = [
   {
     id: "social-media-1",
-    link: "https://www.instagram.com/",
+    link: "https://www.instagram.com/mss_studiocar",
   },
   {
     id: "social-media-2",
-    link: "https://www.facebook.com/",
+    link: "https://www.facebook.com/mss_studiocar",
   },
 ];
