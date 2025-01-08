@@ -25,11 +25,11 @@ const Navbar = () => {
             {navLinks.map((item, index) => (
               <li key={index}>
                 <a
-                  href={item.href}
+                  href={`#${item.id}`}
                   className="hover:text-red-600 flex items-center"
                 >
-                  {item.label}
-                  {item.label === "Serviços" && (
+                  {item.title}
+                  {item.title === "Serviços" && (
                     <ChevronDown className="ml-1 w-4 h-4" />
                   )}
                 </a>
@@ -48,11 +48,11 @@ const Navbar = () => {
               {navLinks.map((item, index) => (
                 <li key={index} className="py-4">
                   <a
-                    href={item.href}
+                    href={item.id}
                     className="hover:text-red-600 flex items-center"
                   >
-                    {item.label}
-                    {item.label === "Serviços" && (
+                    {item.title}
+                    {item.title === "Serviços" && (
                       <ChevronDown className="ml-1 w-4 h-4" />
                     )}
                   </a>

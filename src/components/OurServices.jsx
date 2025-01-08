@@ -3,7 +3,10 @@ import { services } from "../constants";
 
 const OurServices = () => {
   return (
-    <div className="relative mt-20 border-b border-neutral-800 min-h-[800px]">
+    <div
+      id="services"
+      className="relative mt-20 border-b border-neutral-800 min-h-[800px]"
+    >
       <div className="text-center">
         <h2 className="text-xl sm:text-5xl lg:text-6xl font-bold mt-10 lg:mt-20">
           Nossos <span className="text-red-600">serviços</span>

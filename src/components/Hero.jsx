@@ -7,6 +7,7 @@ import background from "../assets/background.png";
 const Hero = () => {
   return (
     <section
+      id="home"
       className="w-full h-screen flex flex-col items-start bg-cover bg-center relative"
       style={{ backgroundImage: `url(${background})` }}
     >

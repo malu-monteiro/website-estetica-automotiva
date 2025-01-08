@@ -6,7 +6,10 @@ const About = () => {
   const { title, highlight, description } = about[0];
 
   return (
-    <div className="relative border-b border-neutral-800 min-h-[800px]">
+    <div
+      id="about"
+      className="relative border-b border-neutral-800 min-h-[800px]"
+    >
       <div className="flex flex-col lg:flex-row items-center lg:items-start lg:justify-between text-center lg:text-left max-w-7xl mx-auto px-8 mt-20">
         <div className="lg:w-1/2 flex flex-col items-center lg:items-start lg:justify-end lg:mr-10">
           <Carousel className="w-80 mt-8 max-w-md rounded-lg shadow-lg" />

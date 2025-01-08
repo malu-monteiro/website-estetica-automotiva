@@ -6,10 +6,10 @@ import Vitrificação from "../assets/vitrificacao.jpg";
 import Higienização from "../assets/higienizacao-interna.avif";
 
 export const navLinks = [
-  { label: "Início", href: "#" },
-  { label: "Sobre Nós", href: "#" },
-  { label: "Serviços", href: "#" },
-  { label: "Contato", href: "#" },
+  { id: "home", title: "Início" },
+  { id: "about", title: "Sobre Nós" },
+  { id: "services", title: "Serviços" },
+  { id: "contact", title: "Contato" },
 ];
 
 export const features = [
@@ -69,6 +69,6 @@ export const socialMedia = [
   },
   {
     id: "social-media-2",
-    link: "https://www.facebook.com/mss_studiocar",
+    link: "https://www.facebook.com/",
   },
 ];
