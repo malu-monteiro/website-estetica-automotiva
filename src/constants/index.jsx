@@ -4,6 +4,7 @@ import Polimento from "../assets/polimento.png";
 import PolimentoFarol from "../assets/polimento-farol.png";
 import Vitrificação from "../assets/vitrificacao.jpg";
 import Higienização from "../assets/higienizacao-interna.avif";
+import { FaFacebook, FaInstagram } from "react-icons/fa6";
 
 export const navLinks = [
   { id: "home", title: "Início" },
@@ -65,10 +66,48 @@ export const about = [
 export const socialMedia = [
   {
     id: "social-media-1",
-    link: "https://www.instagram.com/mss_studiocar",
+    href: "https://www.instagram.com/mss_studiocar",
+    icon: <FaInstagram />,
   },
   {
     id: "social-media-2",
-    link: "https://www.facebook.com/share/1H69AeeNP2/?mibextid=wwXlfr",
+    href: "https://www.facebook.com/share/1H69AeeNP2/?mibextid=wwXlfr",
+    icon: <FaFacebook />,
+  },
+];
+
+export const contact = [
+  {
+    id: "contact-1",
+    title: "Email: marcio_2405@hotmail.com",
+    href: "mailto:marcio_2405@hotmail.com",
+  },
+  {
+    id: "contact-2",
+    title: "Instagram: @mss_studiocar",
+    href: "https://www.instagram.com/mss_studiocar",
+  },
+  {
+    id: "contact-3",
+    title: "Instagram: @mss_studiocar",
+    href: "https://www.instagram.com/mss_studiocar",
+  },
+  {
+    id: "contact-4",
+    title: "WhatsApp: (41) 99934-6385",
+    href: "https://wa.me/5541999346385",
+  },
+];
+
+export const socialTest2 = [
+  {
+    id: "social-media-1",
+    href: "https://www.instagram.com/mss_studiocar",
+    icon: <FaInstagram />,
+  },
+  {
+    id: "social-media-2",
+    href: "https://www.facebook.com/share/1H69AeeNP2/?mibextid=wwXlfr",
+    icon: <FaFacebook />,
   },
 ];
