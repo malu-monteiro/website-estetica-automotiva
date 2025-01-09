@@ -69,6 +69,6 @@ export const socialMedia = [
   },
   {
     id: "social-media-2",
-    link: "https://www.facebook.com/",
+    link: "https://www.facebook.com/share/1H69AeeNP2/?mibextid=wwXlfr",
   },
 ];
