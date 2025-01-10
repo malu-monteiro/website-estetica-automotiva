@@ -1,9 +1,18 @@
 import { useState } from "react";
 import Modal from "./Modal";
 import { CalendarCheck2 } from "lucide-react";
+import DateSelector from "./DateSelector";
 
 export default function Scheduling() {
   const [open, setOpen] = useState(false);
+  const [selectedDate, setSelectedDate] = useState(null);
+
+  const handleFormSubmit = (event) => {
+    event.preventDefault();
+    console.log("Data Selecionada:", selectedDate); //teste
+    alert(`Serviço agendado para: ${selectedDate?.toLocaleDateString()}`);
+    setOpen(false);
+  };
 
   return (
     <div>
@@ -21,6 +30,7 @@ export default function Scheduling() {
           id="scheduling"
           className="text-center h-96 mt-6 flex w-full flex-col gap-5"
           aria-labelledby="schedule-title"
+          onSubmit={handleFormSubmit}
         >
           <h2
             id="schedule-title"
@@ -40,14 +50,12 @@ export default function Scheduling() {
               <option value="polimento">Higienização Interna</option>
             </select>
 
-            <label htmlFor="date" className="text-sm text-gray-500">
-              Escolha uma data
-            </label>
-            <input
-              type="date"
-              id="date"
-              className="border border-zinc-700 rounded p-2"
+            <DateSelector
+              label="Escolha uma data"
+              value={selectedDate}
+              onChange={(date) => setSelectedDate(date)}
             />
+
             <button
               type="submit"
               className="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded"
