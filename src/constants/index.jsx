@@ -63,7 +63,7 @@ export const about = [
   },
 ];
 
-export const socialMedia = [
+export const aboutUs = [
   {
     id: "social-media-1",
     href: "https://www.instagram.com/mss_studiocar",
@@ -89,17 +89,12 @@ export const contact = [
   },
   {
     id: "contact-3",
-    title: "Instagram: @mss_studiocar",
-    href: "https://www.instagram.com/mss_studiocar",
-  },
-  {
-    id: "contact-4",
     title: "WhatsApp: (41) 99934-6385",
     href: "https://wa.me/5541999346385",
   },
 ];
 
-export const socialTest2 = [
+export const socialMedia = [
   {
     id: "social-media-1",
     href: "https://www.instagram.com/mss_studiocar",
