@@ -1,7 +1,7 @@
 import { ArrowUpRight } from "lucide-react";
 import { services } from "../constants";
 
-const OurServices = () => {
+export default function OurServices() {
   return (
     <div
       id="services"
@@ -40,5 +40,4 @@ const OurServices = () => {
       </div>
     </div>
   );
-};
-export default OurServices;
+}

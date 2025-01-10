@@ -2,7 +2,7 @@ import { about } from "../constants";
 
 import Carousel from "../components/Carousel";
 
-const About = () => {
+export default function About() {
   const { title, highlight, description } = about[0];
 
   return (
@@ -26,6 +26,4 @@ const About = () => {
       </div>
     </div>
   );
-};
-
-export default About;
+}

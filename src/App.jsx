@@ -4,17 +4,17 @@ import Footer from "./components/Footer";
 import About from "./pages/About";
 import Hero from "./pages/Hero";
 import Services from "./pages/Services";
+import Scheduling from "./components/Scheduling";
 
-const App = () => {
+export default function App() {
   return (
     <>
       <Navbar />
       <Hero />
       <Services />
       <About />
+      <Scheduling />
       <Footer />
     </>
   );
-};
-
-export default App;
+}
