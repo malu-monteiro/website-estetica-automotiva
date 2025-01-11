@@ -9,13 +9,10 @@ export default function Scheduling() {
   const [open, setOpen] = useState(false);
   const [selectedDate, setSelectedDate] = useState(null);
   const [selectedService, setSelectedService] = useState("");
+  const [selectedTime, setSelectedTime] = useState(null);
 
   const handleFormSubmit = (event) => {
     event.preventDefault();
-    const message = `Serviço agendado para: ${selectedDate?.toLocaleDateString()} - Serviço: ${selectedService}`;
-    console.log("Data Selecionada:", selectedDate); //teste
-    console.log("Serviço Selecionado:", selectedService);
-    alert(message);
     setOpen(false);
   };
 
@@ -37,16 +34,13 @@ export default function Scheduling() {
           aria-labelledby="schedule-title"
           onSubmit={handleFormSubmit}
         >
-          <h2
-            id="schedule-title"
-            className="text-base font-black text-gray-800"
-          >
+          <h2 id="schedule-title" className="text-lg font-normal text-gray-800">
             Agende seu horário!
           </h2>
 
           <div className="grid grid-cols-1 gap-3">
             <label htmlFor="service" className="text-sm text-gray-500">
-              Selecione um Serviço
+              Escolha um serviço
             </label>
 
             <select
@@ -62,14 +56,22 @@ export default function Scheduling() {
             </select>
 
             <DateSelector
-              label="Escolha uma data"
+              label="Data"
               value={selectedDate}
               onChange={(date) => setSelectedDate(date)}
               className="w-full p-2 text-gray-500"
             />
 
+            <DateSelector
+              label="Horário"
+              value={selectedTime}
+              onChange={(time) => setSelectedTime(time)}
+              className="w-full p-2 text-gray-500"
+              showTimeSelect
+            />
+
             <button
-              type="submit"
+              type="button"
               className="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded mt-5"
             >
               Continuar

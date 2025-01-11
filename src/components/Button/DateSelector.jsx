@@ -3,7 +3,12 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import PropTypes from "prop-types";
 
-export default function DateSelector({ label, onChange, value }) {
+export default function DateSelector({
+  label,
+  onChange,
+  value,
+  showTimeSelect,
+}) {
   const [selectedDate, setSelectedDate] = useState(value || null);
 
   const handleDateChange = (date) => {
@@ -34,6 +39,13 @@ export default function DateSelector({ label, onChange, value }) {
         placeholderText="Selecione uma data"
         dateFormat="dd/MM/yyyy"
         filterDate={isWeekDay}
+        showTimeSelect={showTimeSelect}
+        showTimeSelectOnly={showTimeSelect}
+        timeIntervals={15}
+        timeCaption="Horário"
+        timeFormat="HH:mm"
+        minTime={new Date().setHours(8, 0)}
+        maxTime={new Date().setHours(18, 0)}
       />
     </div>
   );
@@ -43,4 +55,5 @@ DateSelector.propTypes = {
   label: PropTypes.string,
   onChange: PropTypes.func,
   value: PropTypes.instanceOf(Date),
+  showTimeSelect: PropTypes.bool,
 };

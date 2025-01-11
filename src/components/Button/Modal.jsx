@@ -1,8 +1,22 @@
+import { useEffect } from "react";
+
 import { X } from "lucide-react";
 
 import PropTypes from "prop-types";
 
 export default function Modal({ open, onClose, children }) {
+  useEffect(() => {
+    if (open) {
+      document.body.style.overflow = "hidden"; // Desabilita rolagem
+    } else {
+      document.body.style.overflow = ""; // Restaura rolagem
+    }
+
+    return () => {
+      document.body.style.overflow = ""; // Estilo restaurado ao desmontar
+    };
+  }, [open]);
+
   return (
     <div
       onClick={onClose}
