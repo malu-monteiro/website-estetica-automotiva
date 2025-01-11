@@ -3,14 +3,19 @@ import Modal from "./Modal";
 import { CalendarCheck2 } from "lucide-react";
 import DateSelector from "./DateSelector";
 
+// 8-18h de segunda a sexta
+
 export default function Scheduling() {
   const [open, setOpen] = useState(false);
   const [selectedDate, setSelectedDate] = useState(null);
+  const [selectedService, setSelectedService] = useState("");
 
   const handleFormSubmit = (event) => {
     event.preventDefault();
+    const message = `Serviço agendado para: ${selectedDate?.toLocaleDateString()} - Serviço: ${selectedService}`;
     console.log("Data Selecionada:", selectedDate); //teste
-    alert(`Serviço agendado para: ${selectedDate?.toLocaleDateString()}`);
+    console.log("Serviço Selecionado:", selectedService);
+    alert(message);
     setOpen(false);
   };
 
@@ -18,7 +23,7 @@ export default function Scheduling() {
     <div>
       <button
         type="button"
-        className="bg-gray-500 hover:bg-opacity-60 py-2 md:py-3 px-4 md:px-6 rounded-full flex items-center text-sm md:text-base"
+        className="bg-gray-450 hover:bg-opacity-60 py-2 md:py-3 px-4 md:px-6 rounded-full flex items-center text-sm md:text-base"
         onClick={() => setOpen(true)}
         aria-label="Abrir modal de agendamento"
       >
@@ -43,24 +48,31 @@ export default function Scheduling() {
             <label htmlFor="service" className="text-sm text-gray-500">
               Selecione um Serviço
             </label>
-            <select id="service" className="border border-zinc-700 rounded p-2">
-              <option value="polimento">Polimento</option>
-              <option value="polimento">Polimento de Farol</option>
-              <option value="polimento">Vitrificação</option>
-              <option value="polimento">Higienização Interna</option>
+
+            <select
+              id="service"
+              className="w-full p-2 text-gray-500 bg-slate-100 border rounded-md shadow-sm outline-none appearance-none focus:border-indigo-600 custom-select-arrow"
+              value={selectedService}
+              onChange={(e) => setSelectedService(e.target.value)}
+            >
+              <option value="Polimento">Polimento</option>
+              <option value="Polimento de Farol">Polimento de Farol</option>
+              <option value="Vitrificação">Vitrificação</option>
+              <option value="Higienização Interna">Higienização Interna</option>
             </select>
 
             <DateSelector
               label="Escolha uma data"
               value={selectedDate}
               onChange={(date) => setSelectedDate(date)}
+              className="w-full p-2 text-gray-500"
             />
 
             <button
               type="submit"
-              className="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded"
+              className="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded mt-5"
             >
-              Confirmar
+              Continuar
             </button>
           </div>
         </form>

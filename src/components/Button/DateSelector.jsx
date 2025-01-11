@@ -30,7 +30,7 @@ export default function DateSelector({ label, onChange, value }) {
         id="date"
         selected={selectedDate}
         onChange={handleDateChange}
-        className="border border-zinc-700 rounded p-2 w-full"
+        className={`border border-zinc-700 text-black rounded-md p-2 w-full bg-white shadow-sm outline-none focus:border-indigo-600 `}
         placeholderText="Selecione uma data"
         dateFormat="dd/MM/yyyy"
         filterDate={isWeekDay}
