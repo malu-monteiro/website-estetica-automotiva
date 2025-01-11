@@ -3,7 +3,7 @@ import { ChevronsDown } from "lucide-react";
 import { features } from "../constants";
 
 import background from "../assets/background.png";
-import Scheduling from "../components/Button/Scheduling";
+import Scheduling from "../components/Form/Scheduling";
 
 export default function Hero() {
   return (

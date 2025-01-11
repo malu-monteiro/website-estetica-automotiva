@@ -2,6 +2,7 @@ import { useState } from "react";
 import Modal from "./Modal";
 import { CalendarCheck2 } from "lucide-react";
 import DateSelector from "./DateSelector";
+import TimeSelector from "./TimeSelector";
 
 // 8-18h de segunda a sexta
 
@@ -40,7 +41,7 @@ export default function Scheduling() {
 
           <div className="grid grid-cols-1 gap-3">
             <label htmlFor="service" className="text-sm text-gray-500">
-              Escolha um serviço
+              Serviço
             </label>
 
             <select
@@ -49,6 +50,7 @@ export default function Scheduling() {
               value={selectedService}
               onChange={(e) => setSelectedService(e.target.value)}
             >
+              <option value="">Selecione um serviço</option>
               <option value="Polimento">Polimento</option>
               <option value="Polimento de Farol">Polimento de Farol</option>
               <option value="Vitrificação">Vitrificação</option>
@@ -59,19 +61,17 @@ export default function Scheduling() {
               label="Data"
               value={selectedDate}
               onChange={(date) => setSelectedDate(date)}
-              className="w-full p-2 text-gray-500"
             />
 
-            <DateSelector
+            <TimeSelector
               label="Horário"
               value={selectedTime}
               onChange={(time) => setSelectedTime(time)}
-              className="w-full p-2 text-gray-500"
-              showTimeSelect
+              selectedDate={selectedDate}
             />
 
             <button
-              type="button"
+              type="submit"
               className="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded mt-5"
             >
               Continuar

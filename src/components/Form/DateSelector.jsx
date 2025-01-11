@@ -3,12 +3,7 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import PropTypes from "prop-types";
 
-export default function DateSelector({
-  label,
-  onChange,
-  value,
-  showTimeSelect,
-}) {
+export default function DateSelector({ label, onChange, value, className }) {
   const [selectedDate, setSelectedDate] = useState(value || null);
 
   const handleDateChange = (date) => {
@@ -18,7 +13,7 @@ export default function DateSelector({
     }
   };
 
-  // bloqueia sabado e domingo
+  // Bloqueia sábados e domingos
   const isWeekDay = (date) => {
     const day = date.getDay();
     return day !== 0 && day !== 6;
@@ -35,17 +30,11 @@ export default function DateSelector({
         id="date"
         selected={selectedDate}
         onChange={handleDateChange}
-        className={`border border-zinc-700 text-black rounded-md p-2 w-full bg-white shadow-sm outline-none focus:border-indigo-600 `}
+        className={`border border-zinc-700 text-black rounded-md p-2 w-full bg-white shadow-sm outline-none focus:border-indigo-600 ${className}`}
         placeholderText="Selecione uma data"
         dateFormat="dd/MM/yyyy"
         filterDate={isWeekDay}
-        showTimeSelect={showTimeSelect}
-        showTimeSelectOnly={showTimeSelect}
-        timeIntervals={15}
-        timeCaption="Horário"
-        timeFormat="HH:mm"
-        minTime={new Date().setHours(8, 0)}
-        maxTime={new Date().setHours(18, 0)}
+        minDate={new Date()} // Bloqueia datas anteriores ao dia atual
       />
     </div>
   );
@@ -55,5 +44,5 @@ DateSelector.propTypes = {
   label: PropTypes.string,
   onChange: PropTypes.func,
   value: PropTypes.instanceOf(Date),
-  showTimeSelect: PropTypes.bool,
+  className: PropTypes.string,
 };

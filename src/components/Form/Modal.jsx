@@ -28,7 +28,7 @@ export default function Modal({ open, onClose, children }) {
         onClick={(e) => e.stopPropagation()}
         className={`bg-white rounded-xl shadow p-6 transition-all ${
           open ? "scale-100 opacity-100" : "scale-125 opacity-0"
-        }`}
+        } w-full max-w-lg h-auto max-h-[90vh] overflow-y-auto`}
       >
         <button
           onClick={onClose}
