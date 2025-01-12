@@ -70,7 +70,9 @@ export default function TimeSelector({ label, onChange, value, selectedDate }) {
         className="border border-zinc-700 text-black rounded-md p-2 w-full bg-white shadow-sm outline-none focus:border-indigo-600"
         disabled={!selectedDate}
       >
-        <option value="">Selecione um horário</option>
+        <option value="" disabled hidden>
+          Selecione um horário
+        </option>
         {filteredHours.map((hour) => (
           <option key={hour} value={hour}>
             {hour}
