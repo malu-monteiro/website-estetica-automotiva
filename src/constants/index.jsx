@@ -8,8 +8,8 @@ import { FaFacebook, FaInstagram } from "react-icons/fa6";
 
 export const navLinks = [
   { id: "home", title: "Início" },
-  { id: "about", title: "Sobre Nós" },
   { id: "services", title: "Serviços" },
+  { id: "about", title: "Sobre Nós" },
   { id: "contact", title: "Contato" },
 ];
 
