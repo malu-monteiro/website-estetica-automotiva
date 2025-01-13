@@ -53,11 +53,10 @@ export const services = [
 
 export const about = [
   {
-    id: "about-1",
+    id: "about",
     title: "O cuidado que o seu veículo",
     highlight: "merece!",
     description: `A MSS_Studio Car é uma empresa especializada em estética automotiva.
-    
     Oferecemos polimento, polimento de farol, vitrificação e higienização interna 
     para manter seu veí culo impecável e protegido contra os desgastes do tempo. Com qualidade e atenção aos detalhes, 
     garantimos um carro que parece novo e permanece valorizado. Invista no cuidado que seu carro merece e agende hoje mesmo um horário!

@@ -12,6 +12,26 @@ export default function Navbar() {
     setMobileDrawerOpen(!mobileDrawerOpen);
   };
 
+  const handleNavClick = (e, targetId) => {
+    e.preventDefault();
+    const targetElement = document.getElementById(targetId);
+    if (targetElement) {
+      const offset = 70;
+      const elementPosition = targetElement.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - offset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth",
+      });
+
+      // Fechar o menu móvel após a navegação
+      if (mobileDrawerOpen) {
+        setMobileDrawerOpen(false);
+      }
+    }
+  };
+
   return (
     <nav className="sticky top-0 z-50 py-3 backdrop-blur-lg border-b border-neutral-700/80">
       <div className="container px-4 mx-auto relative text-sm">
@@ -26,6 +46,7 @@ export default function Navbar() {
               <li key={index}>
                 <a
                   href={`#${item.id}`}
+                  onClick={(e) => handleNavClick(e, item.id)}
                   className="hover:text-red-600 flex items-center"
                 >
                   {item.title}
@@ -49,6 +70,7 @@ export default function Navbar() {
                 <li key={index} className="py-4">
                   <a
                     href={item.id}
+                    onClick={(e) => handleNavClick(e, item.id)}
                     className="hover:text-red-600 flex items-center"
                   >
                     {item.title}
