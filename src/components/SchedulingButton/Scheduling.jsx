@@ -15,7 +15,6 @@ export default function Scheduling() {
   const [selectedTime, setSelectedTime] = useState(null);
   const [contactInfo, setContactInfo] = useState({
     name: "",
-    email: "",
     phone: "",
     message: "",
   });
