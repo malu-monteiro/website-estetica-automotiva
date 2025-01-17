@@ -54,13 +54,18 @@ export const services = [
 export const about = [
   {
     id: "about",
-    title: "O cuidado que o seu veículo",
-    highlight: "merece!",
+    title: "Excelência em cada ",
+    highlight: "detalhe!",
     description: `A MSS_Studio Car é uma empresa especializada em estética automotiva.
     Oferecemos polimento, polimento de farol, vitrificação e higienização interna 
-    para manter seu veí culo impecável e protegido contra os desgastes do tempo. Com qualidade e atenção aos detalhes, 
-    garantimos um carro que parece novo e permanece valorizado. Invista no cuidado que seu carro merece e agende hoje mesmo um horário!
-    Estamos localizados em Pinhais, Paraná. Contato: (41) 99934-6385`,
+    para manter seu veículo impecável e protegido contra os desgastes do tempo. Com qualidade e atenção aos detalhes, 
+    garantimos um carro que parece novo e permanece valorizado. `,
+  },
+  {
+    id: "more",
+    title: "Solicite um ",
+    highlight: "orçamento!",
+    description: `Invista no cuidado que seu carro merece e agende hoje mesmo um horário! Estamos localizados em Pinhais, Paraná. Contato: (41) 99934-6385.`,
   },
 ];
 
