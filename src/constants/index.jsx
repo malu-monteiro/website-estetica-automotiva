@@ -80,8 +80,8 @@ export const aboutUs = [
 export const contact = [
   {
     id: "contact-1",
-    title: "Email: marcio_2405@hotmail.com",
-    href: "mailto:marcio_2405@hotmail.com",
+    title: "Email: mssstudiocar@gmail.com",
+    href: "mailto:mssstudiocar@gmail.com",
   },
   {
     id: "contact-2",
