@@ -5,7 +5,7 @@ import About from "./pages/About";
 import Hero from "./pages/Hero";
 import Services from "./pages/Services";
 
-import Localization from "./pages/Localization";
+import Reviews from "./pages/Reviews";
 
 export default function App() {
   return (
@@ -14,7 +14,7 @@ export default function App() {
       <Hero />
       <Services />
       <About />
-      <Localization />
+      <Reviews />
       <Footer />
     </>
   );
