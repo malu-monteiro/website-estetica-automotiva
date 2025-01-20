@@ -34,7 +34,7 @@ export default function About() {
               rel="noopener noreferrer"
               className="bg-gray-450 hover:bg-opacity-60 py-2 md:py-3 px-4 md:px-6 rounded-full flex items-center text-sm md:text-base"
             >
-              <BsInstagram className="mr-2" /> Nos siga no Instagram
+              <BsInstagram className="mr-2" /> Nos acompanhe no Instagram
             </a>
           </div>
         </div>
