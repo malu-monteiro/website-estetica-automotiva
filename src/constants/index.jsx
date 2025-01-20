@@ -4,12 +4,15 @@ import Polimento from "../assets/polimento.png";
 import PolimentoFarol from "../assets/polimento-farol.png";
 import Vitrificação from "../assets/vitrificacao.jpg";
 import Higienização from "../assets/higienizacao-interna.avif";
+
 import { FaFacebook, FaInstagram } from "react-icons/fa6";
 
 export const navLinks = [
   { id: "home", title: "Início" },
   { id: "services", title: "Serviços" },
   { id: "about", title: "Sobre Nós" },
+  { id: "reviews", title: "Avaliações" },
+  { id: "localization", title: "Localização" },
   { id: "contact", title: "Contato" },
 ];
 
