@@ -10,15 +10,9 @@ export default function Footer() {
             <ul className="space-y-2">
               {aboutUs.map((link) => (
                 <li key={link.id}>
-                  <a
-                    href={link.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-neutral-300 text-2xl hover:text-white"
-                  >
-                    {link.icon}
-                    <span className="text-base">{link.title}</span>
-                  </a>
+                  <span className="text-base break-words whitespace-pre-line">
+                    {link.description}
+                  </span>
                 </li>
               ))}
             </ul>
@@ -35,7 +29,7 @@ export default function Footer() {
                     className="text-neutral-300 text-2xl hover:text-white flex items-center space-x-2"
                   >
                     {link.icon}
-                    <span className="text-base">{link.title}</span>
+                    <span className="text-base">{link.content}</span>
                   </a>
                 </li>
               ))}

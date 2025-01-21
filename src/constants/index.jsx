@@ -64,41 +64,31 @@ export const about = [
     para manter seu veículo impecável e protegido contra os desgastes do tempo. Com qualidade e atenção aos detalhes, 
     garantimos um carro que parece novo e permanece valorizado. `,
   },
-  {
-    id: "more",
-    title: "Solicite um ",
-    highlight: "orçamento!",
-    description: `Invista no cuidado que seu carro merece e agende hoje mesmo um horário! Estamos localizados em Pinhais, Paraná. Contato: (41) 99934-6385.`,
-  },
 ];
 
 export const aboutUs = [
   {
-    id: "social-media-1",
-    href: "https://www.instagram.com/mss_studiocar",
-    icon: <FaInstagram />,
-  },
-  {
-    id: "social-media-2",
-    href: "https://www.facebook.com/share/1H69AeeNP2/?mibextid=wwXlfr",
-    icon: <FaFacebook />,
+    id: "about-us",
+    description: `A MSS_Studio Car é uma empresa 
+    especializada em estética automotiva 
+    localizada em Pinhais.`,
   },
 ];
 
 export const contact = [
   {
     id: "contact-1",
-    title: "Email: mssstudiocar@gmail.com",
+    content: "Email: mssstudiocar@gmail.com",
     href: "mailto:mssstudiocar@gmail.com",
   },
   {
     id: "contact-2",
-    title: "Instagram: @mss_studiocar",
+    content: "Instagram: @mss_studiocar",
     href: "https://www.instagram.com/mss_studiocar",
   },
   {
     id: "contact-3",
-    title: "WhatsApp: (41) 99934-6385",
+    content: "WhatsApp: (41) 99934-6385",
     href: "https://wa.me/5541999346385",
   },
 ];
