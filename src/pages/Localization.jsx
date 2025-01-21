@@ -52,16 +52,18 @@ export default function Localization() {
   }, [apiKey, pinhais.lng, pinhais.lat, zoom]);
 
   return (
-    <div className="w-full h-auto flex flex-col">
-      <div className="text-center">
-        <h4 className="text-xl sm:text-5xl lg:text-6xl font-bold mb-10 mt-10 lg:mt-20">
-          Localização
-        </h4>
-        <p className="text-base sm:text-lg lg:text-xl mb-10">
-          Horário de Funcionamento: Segunda a Sexta das 8h às 18h.
-        </p>
-        <div className="w-full h-[500px]">
-          <div ref={mapContainer} className="w-full h-full" />
+    <div id="localization">
+      <div className="w-full h-auto flex flex-col">
+        <div className="text-center">
+          <h4 className="text-xl sm:text-5xl lg:text-6xl font-bold mb-10 mt-10 lg:mt-20">
+            Localização
+          </h4>
+          <p className="text-base sm:text-lg lg:text-xl mb-10">
+            Horário de Funcionamento: Segunda a Sexta das 8h às 18h.
+          </p>
+          <div className="w-full h-[500px]">
+            <div ref={mapContainer} className="w-full h-full" />
+          </div>
         </div>
       </div>
     </div>
