@@ -1,11 +1,11 @@
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
-import Map from "./components/Map";
 
 import About from "./pages/About";
 import Hero from "./pages/Hero";
 import Services from "./pages/Services";
 import Reviews from "./pages/Reviews";
+import Localization from "./pages/Localization";
 
 export default function App() {
   return (
@@ -15,7 +15,7 @@ export default function App() {
       <Services />
       <About />
       <Reviews />
-      <Map />
+      <Localization />
       <Footer />
     </>
   );
