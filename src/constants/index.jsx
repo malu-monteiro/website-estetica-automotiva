@@ -12,7 +12,7 @@ export const navLinks = [
   { id: "services", title: "Serviços" },
   { id: "about", title: "Sobre Nós" },
   { id: "reviews", title: "Avaliações" },
-  { id: "localization", title: "Localização" },
+  { id: "location", title: "Localização" },
   { id: "contact", title: "Contato" },
 ];
 

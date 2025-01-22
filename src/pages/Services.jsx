@@ -1,7 +1,22 @@
+import { useNavigate } from "react-router-dom";
+
 import { ArrowUpRight } from "lucide-react";
+
 import { services } from "../constants";
 
 export default function OurServices() {
+  const navigate = useNavigate();
+
+  const handleServiceClick = (serviceId) => {
+    const routes = {
+      "service-1": "/polimento",
+      "service-2": "/polimento-farol",
+      "service-3": "/vitrificacao",
+      "service-4": "/higienizacao-interna",
+    };
+    navigate(routes[serviceId]);
+  };
+
   return (
     <div
       id="services"
@@ -18,9 +33,11 @@ export default function OurServices() {
       </div>
       <div className="flex flex-wrap justify-center mt-20 lg:mt-40 cursor-pointer">
         {services.map((service) => (
-          <div
+          <button
             key={service.id}
             className="relative flex flex-col items-center m-4 group"
+            onClick={() => handleServiceClick(service.id)}
+            aria-label={`Saiba mais sobre ${service.title}`}
           >
             <img
               src={service.image}
@@ -35,7 +52,7 @@ export default function OurServices() {
             <a className="text-xl md:text-xl font-bold mt-4 transition-colors duration-300 group-hover:text-red-600">
               {service.title}
             </a>
-          </div>
+          </button>
         ))}
       </div>
     </div>

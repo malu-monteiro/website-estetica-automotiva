@@ -1,11 +1,15 @@
-import { ChevronDown, Menu, X } from "lucide-react";
 import { useState } from "react";
+import { useNavigate, useLocation } from "react-router-dom";
 
-import logo from "../assets/logo.png";
+import { ChevronDown, Menu, X } from "lucide-react";
 
 import { navLinks } from "../constants";
 
+import logo from "../assets/logo.png";
+
 export default function Navbar() {
+  const navigate = useNavigate();
+  const location = useLocation();
   const [mobileDrawerOpen, setMobileDrawerOpen] = useState(false);
 
   const toggleNavbar = () => {
@@ -14,21 +18,20 @@ export default function Navbar() {
 
   const handleNavClick = (e, targetId) => {
     e.preventDefault();
-    const targetElement = document.getElementById(targetId);
-    if (targetElement) {
-      const offset = 80;
-      const elementPosition = targetElement.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.scrollY - offset;
 
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: "smooth",
-      });
+    if (location.pathname !== "/") {
+      navigate("/");
+      setTimeout(() => {
+        document
+          .getElementById(targetId)
+          ?.scrollIntoView({ behavior: "smooth" });
+      }, 100);
+    } else {
+      document.getElementById(targetId)?.scrollIntoView({ behavior: "smooth" });
+    }
 
-      // Fechar o menu móvel após a navegação
-      if (mobileDrawerOpen) {
-        setMobileDrawerOpen(false);
-      }
+    if (mobileDrawerOpen) {
+      setMobileDrawerOpen(false);
     }
   };
 
@@ -69,7 +72,7 @@ export default function Navbar() {
               {navLinks.map((item, index) => (
                 <li key={index} className="py-4">
                   <a
-                    href={item.id}
+                    href={`#${item.id}`}
                     onClick={(e) => handleNavClick(e, item.id)}
                     className="hover:text-red-600 flex items-center"
                   >

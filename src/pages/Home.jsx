@@ -4,7 +4,7 @@ import background from "../assets/background.png";
 import Scheduling from "../components/SchedulingButton/Scheduling";
 import CountUp from "react-countup";
 
-export default function Hero() {
+export default function Home() {
   return (
     <section
       id="home"
