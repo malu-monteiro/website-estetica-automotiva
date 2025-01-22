@@ -36,21 +36,25 @@ export const services = [
     id: "service-1",
     title: "Polimento",
     image: Polimento,
+    path: "/polimento",
   },
   {
     id: "service-2",
     title: "Polimento de Farol",
     image: PolimentoFarol,
+    path: "/polimento-farol",
   },
   {
     id: "service-3",
     title: "Vitrificação",
     image: Vitrificação,
+    path: "/vitrificacao",
   },
   {
     id: "service-4",
     title: "Higienização Interna",
     image: Higienização,
+    path: "/higienizacao-interna",
   },
 ];
 

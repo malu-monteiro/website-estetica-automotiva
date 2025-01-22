@@ -8,13 +8,10 @@ export default function OurServices() {
   const navigate = useNavigate();
 
   const handleServiceClick = (serviceId) => {
-    const routes = {
-      "service-1": "/polimento",
-      "service-2": "/polimento-farol",
-      "service-3": "/vitrificacao",
-      "service-4": "/higienizacao-interna",
-    };
-    navigate(routes[serviceId]);
+    const service = services.find((s) => s.id === serviceId);
+    if (service) {
+      navigate(service.path);
+    }
   };
 
   return (
