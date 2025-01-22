@@ -1,0 +1,63 @@
+* {
+  box-sizing: border-box;
+}
+
+.map-popup {
+  padding: 8px;
+  color: black;
+}
+
+.map-popup__container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.map-popup__title {
+  margin: 0;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.map-popup__button-wrapper {
+  position: relative;
+  margin-left: 8px;
+}
+
+.map-popup__button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  color: #666;
+  transition: color 0.3s;
+  outline: none;
+}
+
+.map-popup__button:hover {
+  color: #dc2626;
+}
+
+.map-popup__tooltip {
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #22c55e;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  opacity: 0;
+  transition: opacity 0.3s;
+  z-index: 2;
+}
+
+.map-popup__text {
+  margin: 4px 0;
+  text-align: left;
+  font-size: 13px;
+  line-height: 1.4;
+  width: 95%;
+}
