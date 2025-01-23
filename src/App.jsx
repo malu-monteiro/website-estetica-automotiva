@@ -17,8 +17,8 @@ import HigienizacaoInterna from "./pages/ServiceDetails/HigienizacaoInterna";
 const MainPage = () => (
   <>
     <Home />
-    <Services />
     <About />
+    <Services />
     <Reviews />
     <Location />
   </>

@@ -27,7 +27,7 @@ export default function Polimento() {
         <div className="space-y-8">
           <motion.h2
             variants={itemVariants}
-            className="text-xl sm:text-5xl lg:text-6xl font-bold mb-12"
+            className="text-2xl md:text-4xl lg:text-5xl font-bold mb-8"
           >
             {polimentoData.title}
           </motion.h2>

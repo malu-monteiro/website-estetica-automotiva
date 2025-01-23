@@ -1,39 +1,28 @@
-import { useEffect } from "react";
-
 import { X } from "lucide-react";
 
 import PropTypes from "prop-types";
 
-export default function Modal({ open, onClose, children }) {
-  useEffect(() => {
-    if (open) {
-      document.body.style.overflow = "hidden"; // Desabilita rolagem
-    } else {
-      document.body.style.overflow = ""; // Restaura rolagem
-    }
+import { useModal } from "./hooks/useModal";
 
-    return () => {
-      document.body.style.overflow = ""; // Estilo restaurado ao desmontar
-    };
-  }, [open]);
+import "./styles/modal.css";
+
+export default function Modal({ open, onClose, children }) {
+  useModal(open);
 
   return (
     <div
       onClick={onClose}
-      className={`fixed inset-0 flex justify-center items-center transition-colors ${
-        open ? "visible bg-black/20" : "invisible"
+      className={`modal-overlay ${
+        open ? "modal-overlay--visible" : "modal-overlay--invisible"
       }`}
     >
       <div
         onClick={(e) => e.stopPropagation()}
-        className={`bg-slate-50 rounded-xl shadow p-6 transition-all ${
-          open ? "scale-100 opacity-100" : "scale-125 opacity-0"
-        } w-full max-w-lg h-[60vh] overflow-y-auto`}
+        className={`modal-content ${
+          open ? "modal-content--visible" : "modal-content--invisible"
+        }`}
       >
-        <button
-          onClick={onClose}
-          className="absolute top-2 right-2 p-1 rounded-lg text-gray-400 bg-white hover:bg-gray-50 hover:text-gray-600"
-        >
+        <button onClick={onClose} className="modal-close-button">
           <X />
         </button>
         {children}

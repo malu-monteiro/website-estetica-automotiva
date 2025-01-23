@@ -1,0 +1,54 @@
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.3s;
+}
+
+.modal-overlay--visible {
+  visibility: visible;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.modal-overlay--invisible {
+  visibility: hidden;
+}
+
+.modal-content {
+  background-color: rgb(248, 250, 252);
+  border-radius: 0.75rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  transition: all 0.3s;
+  width: 100%;
+  max-width: 32rem;
+  height: 60vh;
+  overflow-y: auto;
+}
+
+.modal-content--visible {
+  transform: scale(1);
+  opacity: 1;
+}
+
+.modal-content--invisible {
+  transform: scale(1.25);
+  opacity: 0;
+}
+
+.modal-close-button {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  padding: 0.25rem;
+  border-radius: 0.5rem;
+  color: rgb(156, 163, 175);
+  background-color: white;
+}
+
+.modal-close-button:hover {
+  background-color: rgb(249, 250, 251);
+  color: rgb(75, 85, 99);
+}

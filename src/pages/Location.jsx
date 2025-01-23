@@ -1,7 +1,7 @@
 import { useRef, useEffect } from "react";
 import * as maptilersdk from "@maptiler/sdk";
 import "@maptiler/sdk/dist/maptiler-sdk.css";
-import "../styles/map.css";
+import "./styles/map.css";
 
 export default function Localization() {
   const mapContainer = useRef(null);

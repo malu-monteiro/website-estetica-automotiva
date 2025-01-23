@@ -3,7 +3,7 @@ import image1 from "../assets/polimento-farol.png";
 import { BsInstagram } from "react-icons/bs";
 
 export default function About() {
-  const { title, highlight, description } = about[0];
+  const { title, subtitle, highlight, description } = about[0];
 
   // Adicionar um botão para "Fale conosco" acima do botão do Instagram,
   // aumentar as imagens e adicionar um Sliders, para mostrar as imagens
@@ -23,9 +23,10 @@ export default function About() {
           />
         </div>
         <div className="lg:w-1/2 mt-10 lg:mt-0 lg:ml-10">
-          <h3 className="text-xl md:text-2xl lg:text-6xl font-bold">
-            {title} <span className="text-red-600">{highlight}</span>
-          </h3>
+          <h3 className="text-xl sm:text-5xl lg:text-6xl font-bold">{title}</h3>
+          <p className="text-xl md:text-2xl lg:text-6xl font-bold">
+            {subtitle} <span className="text-red-600">{highlight}</span>
+          </p>
           <div className="max-w-5xl mx-auto px-4"></div>
           <p className="text-base md:text-lg mt-6 text-justify break-words">
             {description}

@@ -12,8 +12,8 @@ import { FaFacebook, FaInstagram } from "react-icons/fa6";
 
 export const navLinks = [
   { id: "home", title: "Início" },
-  { id: "services", title: "Serviços" },
   { id: "about", title: "Sobre Nós" },
+  { id: "services", title: "Serviços" },
   { id: "reviews", title: "Avaliações" },
   { id: "location", title: "Localização" },
   { id: "contact", title: "Contato" },
@@ -81,7 +81,8 @@ export const polimentoData = {
 export const about = [
   {
     id: "about",
-    title: "Excelência em cada ",
+    title: "Sobre Nós",
+    subtitle: "Excelência em cada ",
     highlight: "detalhe!",
     description: `A MSS_Studio Car é uma empresa especializada em estética automotiva. 
     Oferecemos serviços de Polimento, Revitalização de Faróis, Vitrificação e Higienização 
