@@ -5,6 +5,9 @@ import PolimentoFarol from "../assets/polimento-farol.png";
 import Vitrificação from "../assets/vitrificacao.jpg";
 import Higienização from "../assets/higienizacao-interna.avif";
 
+import PolimentoCarousel from "../assets/polimento-1.jpg";
+import Polimento2Carousel from "../assets/polimento-2.jpg";
+
 import { FaFacebook, FaInstagram } from "react-icons/fa6";
 
 export const navLinks = [
@@ -40,7 +43,7 @@ export const services = [
   },
   {
     id: "service-2",
-    title: "Polimento de Farol",
+    title: "Revitalização de Farol",
     image: PolimentoFarol,
     path: "/polimento-farol",
   },
@@ -52,21 +55,38 @@ export const services = [
   },
   {
     id: "service-4",
-    title: "Higienização Interna",
+    title: "Higienização Interna Premium",
     image: Higienização,
     path: "/higienizacao-interna",
   },
 ];
+
+export const polimentoData = {
+  title: "Polimento",
+  images: [PolimentoCarousel, Polimento2Carousel],
+  finalidade: [
+    "Remover arranhões leves.",
+    "Marcas de oxidação.",
+    "Imperfeições da pintura do carro.",
+    "Devolver brilho e uniformidade à superfície.",
+  ],
+  beneficios: [
+    "Recupera o brilho original da pintura.",
+    "Elimina micro-riscos e marcas de lavagem.",
+    "Prepara a pintura para receber uma camada de proteção, como ceras ou vitrificadores.",
+  ],
+};
 
 export const about = [
   {
     id: "about",
     title: "Excelência em cada ",
     highlight: "detalhe!",
-    description: `A MSS_Studio Car é uma empresa especializada em estética automotiva.
-    Oferecemos polimento, polimento de farol, vitrificação e higienização interna 
-    para manter seu veículo impecável e protegido contra os desgastes do tempo. Com qualidade e atenção aos detalhes, 
-    garantimos um carro que parece novo e permanece valorizado. `,
+    description: `A MSS_Studio Car é uma empresa especializada em estética automotiva. 
+    Oferecemos serviços de Polimento, Revitalização de Faróis, Vitrificação e Higienização 
+    Interna Premium, garantindo que seu veículo se mantenha impecável e protegido contra os 
+    efeitos do tempo. Com atenção aos detalhes e compromisso com a qualidade, proporcionamos 
+    um carro com aparência de novo, preservando seu valor. `,
   },
 ];
 

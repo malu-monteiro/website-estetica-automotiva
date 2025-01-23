@@ -5,6 +5,10 @@ import { BsInstagram } from "react-icons/bs";
 export default function About() {
   const { title, highlight, description } = about[0];
 
+  // Adicionar um botão para "Fale conosco" acima do botão do Instagram,
+  // aumentar as imagens e adicionar um Sliders, para mostrar as imagens
+  // não adicionadas em "Services"
+
   return (
     <div
       id="about"

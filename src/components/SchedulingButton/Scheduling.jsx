@@ -80,9 +80,13 @@ export default function Scheduling() {
                 Selecione um serviço
               </option>
               <option value="Polimento">Polimento</option>
-              <option value="Polimento de Farol">Polimento de Farol</option>
+              <option value="Revitalização de Farol">
+                Revitalização de Farol
+              </option>
               <option value="Vitrificação">Vitrificação</option>
-              <option value="Higienização Interna">Higienização Interna</option>
+              <option value="Higienização Interna Premium">
+                Higienização Interna Premium
+              </option>
             </select>
 
             <div className="grid grid-cols-1 gap-3">

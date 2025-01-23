@@ -21,7 +21,7 @@ export default function OurServices() {
     >
       <div className="text-center">
         <h2 className="text-xl sm:text-5xl lg:text-6xl font-bold mt-10 lg:mt-20">
-          Nossos <span className="text-red-600">serviços</span>
+          Nossos <span className="text-red-600">Serviços</span>
         </h2>
         <p className="text-base sm:text-lg lg:text-xl mt-2">
           Explore as opções que mais atendem às suas necessidades e acesse para
