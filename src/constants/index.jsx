@@ -70,6 +70,7 @@ export const polimentoData = {
     "Imperfeições da pintura do carro.",
     "Devolver brilho e uniformidade à superfície.",
   ],
+
   beneficios: [
     "Recupera o brilho original da pintura.",
     "Elimina micro-riscos e marcas de lavagem.",
