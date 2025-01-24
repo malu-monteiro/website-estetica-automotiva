@@ -36,7 +36,7 @@ export default function Reviews() {
           Avaliações
         </h2>
         <div
-          className="elfsight-app-5b5739a0-bcaa-4fd3-981f-acdca130cae6"
+          className={`elfsight-app-${import.meta.env.VITE_ELFSIGHT_APP_ID}`}
           data-elfsight-app-lazy
         ></div>
       </div>

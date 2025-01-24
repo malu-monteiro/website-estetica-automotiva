@@ -95,7 +95,7 @@ const SchedulingForm = ({
     <div className="grid grid-cols-1 gap-3">
       <select
         id="service"
-        className="w-full p-2 text-gray-500 bg-slate-100 border rounded-md shadow-sm outline-none appearance-none focus:border-indigo-600"
+        className="w-full p-2 text-gray-800 bg-slate-100 border border-slate-300 rounded-md shadow-sm outline-none appearance-none focus:border-slate-500"
         value={selectedService}
         onChange={(e) => setSelectedService(e.target.value)}
       >

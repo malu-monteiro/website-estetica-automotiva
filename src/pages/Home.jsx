@@ -1,7 +1,7 @@
 import { ChevronsDown } from "lucide-react";
 import { features } from "../constants";
 import background from "../assets/background.png";
-import Scheduling from "../components/SchedulingButton/Scheduling";
+import Scheduling from "../components/Scheduling/Scheduling";
 import CountUp from "react-countup";
 
 export default function Home() {

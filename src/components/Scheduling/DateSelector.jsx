@@ -22,7 +22,7 @@ export default function DateSelector({ label, onChange, value, className }) {
   return (
     <div className="flex flex-col gap-2">
       {label && (
-        <label htmlFor="date" className="text-sm text-gray-500">
+        <label htmlFor="date" className="text-sm text-gray-800">
           {label}
         </label>
       )}
@@ -30,7 +30,7 @@ export default function DateSelector({ label, onChange, value, className }) {
         id="date"
         selected={selectedDate}
         onChange={handleDateChange}
-        className={`border border-zinc-700 text-black rounded-md p-2 w-full bg-white shadow-sm outline-none focus:border-indigo-600 ${className}`}
+        className={`border border-slate-300 text-gray-800 rounded-md p-2 w-full bg-slate-100 shadow-sm outline-none focus:border-slate-500 ${className}`}
         placeholderText="Selecione uma data"
         dateFormat="dd/MM/yyyy"
         filterDate={isWeekDay}

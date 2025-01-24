@@ -67,7 +67,7 @@ export default function TimeSelector({ label, onChange, value, selectedDate }) {
         id="time"
         value={selectedTime || ""}
         onChange={handleTimeChange}
-        className="border border-zinc-700 text-black rounded-md p-2 w-full bg-white shadow-sm outline-none focus:border-indigo-600"
+        className="border border-slate-300 text-gray-800 rounded-md p-2 w-full bg-slate-100 shadow-sm outline-none focus:border-slate-500"
         disabled={!selectedDate}
       >
         <option value="" disabled hidden>
