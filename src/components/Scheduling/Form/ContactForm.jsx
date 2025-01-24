@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 import { FormInput } from "./Input";
 import { FormTextarea } from "./Textarea";
 import { FormError } from "./Error";
-import { LoadingSpinner } from "../LoadingSpinner";
+import { LoadingSpinner } from "../../LoadingSpinner";
 
 export const ContactForm = ({
   values,

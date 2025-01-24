@@ -5,11 +5,7 @@ export default function validateForm(data) {
     errors.name = "Por favor, insira seu nome.";
   }
 
-  if (!data.email || !/^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/.test(data.email)) {
-    errors.email = "E-mail inválido.";
-  }
-
-  if (!data.phone || !/^\d{10,15}$/.test(data.phone)) {
+  if (!data.phone || data.phone.replace(/\D/g, "").length < 11) {
     errors.phone = "Informe um número válido.";
   }
 

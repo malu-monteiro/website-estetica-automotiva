@@ -1,11 +1,11 @@
 import { useEffect } from "react";
 import PropTypes from "prop-types";
-import Modal from "./Modal";
-import { ContactForm } from "./Form/ContactForm";
-import { useContactForm } from "./hooks/useContactForm";
-// import { validateForm } from "./utils/validateForm.js";
+import Modal from "./index.jsx";
+import { ContactForm } from "../Form/ContactForm.jsx";
+import { useContactForm } from "../hooks/useContactForm.js";
+import validateForm from "@/utils/validateForm";
 
-export default function ContactInfoModal({
+export default function ContactModal({
   open,
   onClose,
   handleSubmit,
@@ -41,11 +41,11 @@ export default function ContactInfoModal({
       setSuccessMessage("");
 
       // Valida os valores do formulário
-      // const validationErrors = validateForm(values);
-      // if (validationErrors) {
-      //   setErrors(validationErrors);
-      //   return;
-      // }
+      const validationErrors = validateForm(values);
+      if (validationErrors) {
+        setErrors(validationErrors);
+        return;
+      }
 
       // Envia os valores do formulário
       await handleSubmit(values);
@@ -73,7 +73,7 @@ export default function ContactInfoModal({
   );
 }
 
-ContactInfoModal.propTypes = {
+ContactModal.propTypes = {
   open: PropTypes.bool.isRequired,
   onClose: PropTypes.func.isRequired,
   handleSubmit: PropTypes.func.isRequired,

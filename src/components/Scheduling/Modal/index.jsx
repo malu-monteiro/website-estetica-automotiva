@@ -2,9 +2,9 @@ import { X } from "lucide-react";
 
 import PropTypes from "prop-types";
 
-import { useModal } from "./hooks/useModal";
+import { useModal } from "../hooks/useModal";
 
-import "./styles/modal.css";
+import "../styles/modal.css";
 
 export default function Modal({ open, onClose, children }) {
   useModal(open);
