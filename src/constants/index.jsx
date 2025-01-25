@@ -78,13 +78,29 @@ export const polimentoData = {
   ],
 };
 
+export const higienizacaoData = {
+  title: "Higienização Interna Premium",
+  // images: [higienizacaoCarousel, higienizacao2Carousel],
+  finalidade: [
+    "Remove resíduos, manchas, poeira e sujeiras acumuladas em estofados, carpetes, painéis e outras superfícies internas do veículo.",
+    "Elimina germes, bactérias, fungos e ácaros, garantindo um ambiente mais saudável para os ocupantes.",
+    "Prolonga a vida útil dos materiais internos, como estofados e plásticos, prevenindo desgaste prematuro.",
+    "Remove odores indesejados, como de cigarro, mofo ou comida, deixando o interior do veículo mais agradável.",
+  ],
+
+  beneficios: [
+    "Reduz alérgenos e poeira, promovendo um ambiente mais respirável, especialmente para quem sofre de alergias ou problemas respiratórios.",
+    "A limpeza regular ajuda a identificar problemas potenciais, como manchas de líquidos que podem causar danos permanentes se não tratados.",
+    "O interior do carro ganha uma aparência como nova.",
+  ],
+};
 export const about = [
   {
     id: "about",
     title: "Sobre Nós",
     subtitle: "Excelência em cada ",
     highlight: "detalhe!",
-    description: `A MSS_Studio Car é uma empresa especializada em estética automotiva. 
+    description: `A @ é uma empresa especializada em estética automotiva. 
     Oferecemos serviços de Polimento, Revitalização de Faróis, Vitrificação e Higienização 
     Interna Premium, garantindo que seu veículo se mantenha impecável e protegido contra os 
     efeitos do tempo. Com atenção aos detalhes e compromisso com a qualidade, proporcionamos 
@@ -95,39 +111,39 @@ export const about = [
 export const aboutUs = [
   {
     id: "about-us",
-    description: `A MSS_Studio Car é uma empresa 
+    description: `A @ é uma empresa 
     especializada em estética automotiva 
-    localizada em Pinhais.`,
+    localizada em @.`,
   },
 ];
 
 export const contact = [
   {
     id: "contact-1",
-    content: "Email: mssstudiocar@gmail.com",
-    href: "mailto:mssstudiocar@gmail.com",
+    content: "Email: @.com",
+    href: "mailto:@.com",
   },
   {
     id: "contact-2",
-    content: "Instagram: @mss_studiocar",
-    href: "https://www.instagram.com/mss_studiocar",
+    content: "Instagram: @",
+    href: "https://www.instagram.com/",
   },
   {
     id: "contact-3",
-    content: "WhatsApp: (41) 99934-6385",
-    href: "https://wa.me/5541999346385",
+    content: "WhatsApp: @",
+    href: "@",
   },
 ];
 
 export const socialMedia = [
   {
     id: "social-media-1",
-    href: "https://www.instagram.com/mss_studiocar",
+    href: "@",
     icon: <FaInstagram />,
   },
   {
     id: "social-media-2",
-    href: "https://www.facebook.com/share/1H69AeeNP2/?mibextid=wwXlfr",
+    href: "@",
     icon: <FaFacebook />,
   },
 ];

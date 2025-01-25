@@ -12,9 +12,7 @@ export default function Home() {
       style={{ backgroundImage: `url(${background})` }}
     >
       <div className="ml-6 mt-8 md:ml-[200px] md:mt-[130px]">
-        <h1 className="text-xl md:text-xl text-white font-bold">
-          MSS_Studio Car
-        </h1>
+        <h1 className="text-xl md:text-xl text-white font-bold">@</h1>
         <p className="bg-gradient-to-r from-white to-gray-450 text-transparent bg-clip-text text-3xl md:text-5xl font-bold">
           Estética Automotiva
         </p>

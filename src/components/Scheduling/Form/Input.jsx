@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import InputMask from "react-input-mask";
 
-export const FormInput = ({ id, label, error, mask, ...props }) => {
+export const Input = ({ id, label, error, mask, ...props }) => {
   const inputClass = `w-full p-2 text-slate-950 bg-slate-100 ${
     error ? "border-red-500" : "bg-slate-100 text-gray-800 border-slate-300"
   } border rounded-md shadow-sm outline-none bg-slate-100 focus:border-indigo-600`;
@@ -30,7 +30,7 @@ export const FormInput = ({ id, label, error, mask, ...props }) => {
   );
 };
 
-FormInput.propTypes = {
+Input.propTypes = {
   id: PropTypes.string.isRequired,
   label: PropTypes.string.isRequired,
   error: PropTypes.string,

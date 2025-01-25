@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import { FormInput } from "./Input";
+import { Input } from "./Input";
 import { FormTextarea } from "./Textarea";
 import { FormError } from "./Error";
 import { LoadingSpinner } from "../../LoadingSpinner";
@@ -23,7 +23,7 @@ export const ContactForm = ({
     </h2>
 
     <div className="grid grid-cols-1 gap-3">
-      <FormInput
+      <Input
         id="name"
         name="name"
         type="text"
@@ -33,7 +33,7 @@ export const ContactForm = ({
         error={errors.name}
       />
 
-      <FormInput
+      <Input
         id="phone"
         name="phone"
         type="tel"

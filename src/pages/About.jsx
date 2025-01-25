@@ -34,7 +34,7 @@ export default function About() {
 
           <div className="flex justify-start my-6 md:my-10 space-x-4">
             <a
-              href="https://www.instagram.com/mss_studiocar"
+              href="@"
               target="_blank"
               rel="noopener noreferrer"
               className="bg-gray-450 hover:bg-opacity-60 py-2 md:py-3 px-4 md:px-6 rounded-full flex items-center text-sm md:text-base"
