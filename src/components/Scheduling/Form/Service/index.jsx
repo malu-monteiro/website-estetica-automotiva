@@ -9,8 +9,6 @@ import { FormError } from "../FormError";
 
 import validateService from "@/utils/validateService";
 
-// botão continuar não funcionar + erro de validação
-
 export const ServiceForm = ({
   selectedService,
   setSelectedService,
@@ -26,9 +24,9 @@ export const ServiceForm = ({
     e.preventDefault();
 
     const values = {
-      service: selectedService,
+      service: selectedService || "",
       date: selectedDate,
-      time: selectedTime,
+      time: selectedTime || "",
     };
 
     const validationErrors = validateService(values);

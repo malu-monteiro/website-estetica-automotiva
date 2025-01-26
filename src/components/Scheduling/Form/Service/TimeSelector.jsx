@@ -15,8 +15,13 @@ export const TimeSelector = ({
   const [filteredHours, setFilteredHours] = useState([]);
 
   useEffect(() => {
-    setFilteredHours(filterAvailableHours(selectedDate));
-  }, [selectedDate]);
+    const hours = filterAvailableHours(selectedDate);
+    setFilteredHours(hours);
+
+    if (hours.length > 0 && !value) {
+      onChange?.(hours[0]);
+    }
+  }, [selectedDate, onChange, value]);
 
   const selectClass = `w-full p-2 text-slate-950 ${
     error ? "border-red-500" : "border-slate-300"
