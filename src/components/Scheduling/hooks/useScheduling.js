@@ -13,12 +13,8 @@ export const useScheduling = (initialService = "") => {
   });
 
   const handleNextStep = () => {
-    if (selectedService && selectedDate && selectedTime) {
-      setOpen(false);
-      setContactModalOpen(true);
-    } else {
-      alert("Preencha todos os campos!");
-    }
+    setOpen(false);
+    setContactModalOpen(true);
   };
 
   return {
@@ -26,10 +22,10 @@ export const useScheduling = (initialService = "") => {
     setOpen,
     contactModalOpen,
     setContactModalOpen,
-    selectedDate,
-    setSelectedDate,
     selectedService,
     setSelectedService,
+    selectedDate,
+    setSelectedDate,
     selectedTime,
     setSelectedTime,
     contactInfo,

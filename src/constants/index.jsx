@@ -100,7 +100,7 @@ export const about = [
     title: "Sobre Nós",
     subtitle: "Excelência em cada ",
     highlight: "detalhe!",
-    description: `A @ é uma empresa especializada em estética automotiva. 
+    description: `A MSS_STUDIOCAR é uma empresa especializada em estética automotiva. 
     Oferecemos serviços de Polimento, Revitalização de Faróis, Vitrificação e Higienização 
     Interna Premium, garantindo que seu veículo se mantenha impecável e protegido contra os 
     efeitos do tempo. Com atenção aos detalhes e compromisso com a qualidade, proporcionamos 
@@ -111,9 +111,9 @@ export const about = [
 export const aboutUs = [
   {
     id: "about-us",
-    description: `A @ é uma empresa 
+    description: `A MSS_STUDIOCAR é uma empresa 
     especializada em estética automotiva 
-    localizada em @.`,
+    localizada em Pinhais.`,
   },
 ];
 

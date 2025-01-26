@@ -1,14 +1,17 @@
 import PropTypes from "prop-types";
 
 import { ServiceSelect } from "./ServiceSelect";
-import DateSelector from "../DateSelector";
-import TimeSelector from "../TimeSelector";
-import { LoadingSpinner } from "../../LoadingSpinner";
-import { FormError } from "./Error";
+
+import DateSelector from "./DateSelector";
+import { TimeSelector } from "./TimeSelector";
+
+import { FormError } from "../FormError";
+
+import validateService from "@/utils/validateService";
 
 // botão continuar não funcionar + erro de validação
 
-export const SchedulingForm = ({
+export const ServiceForm = ({
   selectedService,
   setSelectedService,
   selectedDate,
@@ -16,18 +19,28 @@ export const SchedulingForm = ({
   selectedTime,
   setSelectedTime,
   handleNextStep,
-  isSubmitting,
   errors,
-  successMessage,
+  setErrors,
 }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    if (!selectedService || !selectedDate || !selectedTime) {
+    const values = {
+      service: selectedService,
+      date: selectedDate,
+      time: selectedTime,
+    };
+
+    const validationErrors = validateService(values);
+    if (validationErrors) {
+      setErrors(validationErrors);
       return;
     }
+
+    setErrors({});
     handleNextStep();
   };
+
   return (
     <form
       id="scheduling"
@@ -43,43 +56,36 @@ export const SchedulingForm = ({
         <ServiceSelect
           value={selectedService}
           onChange={setSelectedService}
-          error={errors?.service}
+          error={errors.service}
         />
 
         <DateSelector
           value={selectedDate}
           onChange={setSelectedDate}
-          error={errors?.date}
+          error={errors.date}
         />
 
         <TimeSelector
           value={selectedTime}
           onChange={setSelectedTime}
           selectedDate={selectedDate}
-          error={errors?.time}
+          error={errors.time}
         />
 
-        <FormError error={errors.submit} />
-        {successMessage && (
-          <div className="text-green-500 text-sm mt-2">{successMessage}</div>
-        )}
+        <FormError error={errors.scheduling} />
 
         <button
-          type="button"
-          disabled={!selectedService || !selectedDate || !selectedTime}
-          onClick={handleNextStep}
-          className={`bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded mt-5 w-1/2 mx-auto flex items-center justify-center ${
-            isSubmitting ? "opacity-50 cursor-not-allowed" : ""
-          }`}
+          type="submit"
+          className="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded mt-5 w-1/2 mx-auto"
         >
-          {isSubmitting ? <LoadingSpinner /> : "Continuar"}
+          Continuar
         </button>
       </div>
     </form>
   );
 };
 
-SchedulingForm.propTypes = {
+ServiceForm.propTypes = {
   selectedService: PropTypes.string.isRequired,
   setSelectedService: PropTypes.func.isRequired,
   selectedDate: PropTypes.instanceOf(Date),
@@ -88,12 +94,9 @@ SchedulingForm.propTypes = {
   setSelectedTime: PropTypes.func.isRequired,
   handleNextStep: PropTypes.func.isRequired,
   errors: PropTypes.object,
-  isSubmitting: PropTypes.bool,
-  successMessage: PropTypes.string,
+  setErrors: PropTypes.func.isRequired,
 };
 
-SchedulingForm.defaultProps = {
+ServiceForm.defaultProps = {
   errors: {},
-  isSubmitting: false,
-  successMessage: "",
 };

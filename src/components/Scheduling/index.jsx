@@ -1,11 +1,14 @@
+import { useState } from "react";
+
 import PropTypes from "prop-types";
 import { CalendarCheck2 } from "lucide-react";
 import Modal from "./Modal";
-import ContactModal from "./Modal/ContactModal";
-import { SchedulingForm } from "./Form/SchedulingForm";
+import { ServiceForm } from "./Form/Service";
+import { ContactForm } from "./Form/Contact";
 import { useScheduling } from "./hooks/useScheduling";
 
 export default function Scheduling({ initialService = "" }) {
+  const [errors, setErrors] = useState({});
   const {
     open,
     setOpen,
@@ -24,12 +27,25 @@ export default function Scheduling({ initialService = "" }) {
 
   const handleFormSubmit = (event) => {
     event.preventDefault();
-    console.log({
-      service: selectedService,
-      date: selectedDate,
-      time: selectedTime,
-      contactInfo,
-    });
+
+    const { name, phone, message } = contactInfo;
+    const formattedDate = new Date(selectedDate).toLocaleDateString("pt-BR");
+
+    const wppMessage = `
+    Serviço: ${selectedService}
+    Data: ${formattedDate}
+    Horário: ${selectedTime}
+    
+    Nome: ${name}
+    Telefone: ${phone}
+    Mensagem: ${message}
+      `.trim();
+
+    window.open(
+      `https://wa.me/5541997202961?text=${encodeURIComponent(wppMessage)}`,
+      "_blank"
+    );
+
     setContactModalOpen(false);
   };
 
@@ -45,7 +61,7 @@ export default function Scheduling({ initialService = "" }) {
       </button>
 
       <Modal open={open} onClose={() => setOpen(false)}>
-        <SchedulingForm
+        <ServiceForm
           selectedService={selectedService}
           setSelectedService={setSelectedService}
           selectedDate={selectedDate}
@@ -53,16 +69,19 @@ export default function Scheduling({ initialService = "" }) {
           selectedTime={selectedTime}
           setSelectedTime={setSelectedTime}
           handleNextStep={handleNextStep}
+          errors={errors}
+          setErrors={setErrors}
         />
       </Modal>
 
-      <ContactModal
-        open={contactModalOpen}
-        onClose={() => setContactModalOpen(false)}
-        handleSubmit={handleFormSubmit}
-        contactInfo={contactInfo}
-        setContactInfo={setContactInfo}
-      />
+      <Modal open={contactModalOpen} onClose={() => setContactModalOpen(false)}>
+        <ContactForm
+          contactInfo={contactInfo}
+          setContactInfo={setContactInfo}
+          onSubmit={handleFormSubmit}
+          onClose={() => setContactModalOpen(false)}
+        />
+      </Modal>
     </div>
   );
 }

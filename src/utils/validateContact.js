@@ -1,17 +1,5 @@
-export default function validateForm(data) {
+export default function validateContact(data) {
   const errors = {};
-
-  if (!data.service || data.service.trim() === "") {
-    errors.service = "Por favor, selecione um serviço.";
-  }
-
-  if (!data.date) {
-    errors.date = "Por favor, selecione uma data.";
-  }
-
-  if (!data.time || data.time.trim() === "") {
-    errors.time = "Por favor, selecione um horário.";
-  }
 
   if (!data.name || data.name.trim() === "") {
     errors.name = "Por favor, insira seu nome.";

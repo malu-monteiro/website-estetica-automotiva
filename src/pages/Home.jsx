@@ -1,8 +1,8 @@
 import { ChevronsDown } from "lucide-react";
 import { features } from "../constants";
 import background from "../assets/background.png";
-import Scheduling from "../components/Scheduling/Scheduling";
 import CountUp from "react-countup";
+import Scheduling from "../components/Scheduling";
 
 export default function Home() {
   return (
@@ -12,7 +12,9 @@ export default function Home() {
       style={{ backgroundImage: `url(${background})` }}
     >
       <div className="ml-6 mt-8 md:ml-[200px] md:mt-[130px]">
-        <h1 className="text-xl md:text-xl text-white font-bold">@</h1>
+        <h1 className="text-xl md:text-xl text-white font-bold">
+          MSS_STUDIOCAR
+        </h1>
         <p className="bg-gradient-to-r from-white to-gray-450 text-transparent bg-clip-text text-3xl md:text-5xl font-bold">
           Estética Automotiva
         </p>
