@@ -36,7 +36,7 @@ export const TimeSelector = ({
       </label>
       <select
         id={id}
-        value={value}
+        value={value || ""}
         onChange={(e) => onChange?.(e.target.value)}
         className={selectClass}
         disabled={!selectedDate}

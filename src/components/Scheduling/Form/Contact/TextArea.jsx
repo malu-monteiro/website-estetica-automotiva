@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 export const FormTextarea = ({ id, label, error, ...props }) => {
   const textareaClass = `w-full p-2 text-slate-950 ${
     error ? "border-red-500" : "bg-slate-100 border-slate-300"
-  } border rounded-md shadow-sm outline-none focus:border-indigo-600`;
+  } border rounded-md shadow-sm outline-none bg-slate-100 focus:border-indigo-600`;
 
   return (
     <div className="grid grid-cols-1 gap-2">

@@ -9,6 +9,8 @@ import { FormError } from "../FormError";
 
 import validateService from "@/utils/validateService";
 
+import { useServiceForm } from "../../hooks/useServiceForm";
+
 export const ServiceForm = ({
   selectedService,
   setSelectedService,
@@ -17,9 +19,13 @@ export const ServiceForm = ({
   selectedTime,
   setSelectedTime,
   handleNextStep,
-  errors,
-  setErrors,
 }) => {
+  const { errors, setErrors, handleChange } = useServiceForm({
+    service: selectedService,
+    date: selectedDate,
+    time: selectedTime,
+  });
+
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -35,7 +41,6 @@ export const ServiceForm = ({
       return;
     }
 
-    setErrors({});
     handleNextStep();
   };
 
@@ -53,19 +58,28 @@ export const ServiceForm = ({
       <div className="grid grid-cols-1 gap-3">
         <ServiceSelect
           value={selectedService}
-          onChange={setSelectedService}
+          onChange={(value) => {
+            setSelectedService(value);
+            handleChange("service", value);
+          }}
           error={errors.service}
         />
 
         <DateSelector
           value={selectedDate}
-          onChange={setSelectedDate}
+          onChange={(value) => {
+            setSelectedDate(value);
+            handleChange("date", value);
+          }}
           error={errors.date}
         />
 
         <TimeSelector
           value={selectedTime}
-          onChange={setSelectedTime}
+          onChange={(value) => {
+            setSelectedTime(value);
+            handleChange("time", value);
+          }}
           selectedDate={selectedDate}
           error={errors.time}
         />
