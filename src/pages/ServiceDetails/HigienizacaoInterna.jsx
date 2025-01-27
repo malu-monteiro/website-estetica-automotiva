@@ -1,10 +1,10 @@
 import { motion } from "framer-motion";
 
-// import ServiceCarousel from "../../components/ServiceDetails/ServiceCarousel";
 import ServiceList from "../../components/ServiceDetails/ServiceList";
+import ServiceCarousel from "../../components/ServiceDetails/ServiceCarousel";
 
-import { containerVariants, itemVariants } from "../../constants/animations";
 import { higienizacaoData } from "../../constants";
+import { containerVariants, itemVariants } from "../../constants/animations";
 
 // adicionar imagens no carrossel
 
@@ -14,26 +14,23 @@ export default function HigienizacaoInterna() {
       variants={containerVariants}
       initial="hidden"
       animate="visible"
-      className="container mx-auto px-4 py-12"
+      className="container mx-auto px-4 py-8"
     >
       {/* Two-column layout: Carousel (left) and Content (right) */}
       <div className="grid lg:grid-cols-2 gap-16 max-w-7xl mx-auto">
-        {/* Auto-playing carousel with navigation controls */}
-        {/* <ServiceCarousel
-          // images={higienizacaoData.images}
+        <ServiceCarousel
+          images={higienizacaoData.images}
           variants={itemVariants}
-        /> */}
-
-        {/* Content section with animation on scroll */}
-        <div className="space-y-8">
+        />
+        <div className="space-y-6">
           <motion.h2
             variants={itemVariants}
-            className="text-2xl md:text-4xl lg:text-5xl font-bold mb-8"
+            className="text-xl md:text-2xl font-bold mb-4"
           >
             {higienizacaoData.title}
           </motion.h2>
 
-          <div className="space-y-8">
+          <div className="space-y-4">
             <ServiceList
               title="Finalidade"
               items={higienizacaoData.finalidade}
@@ -42,6 +39,7 @@ export default function HigienizacaoInterna() {
               title="Benefícios"
               items={higienizacaoData.beneficios}
             />
+            <ServiceList title="Processo" items={higienizacaoData.processo} />
           </div>
         </div>
       </div>

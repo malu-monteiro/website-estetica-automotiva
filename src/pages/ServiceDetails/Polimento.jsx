@@ -13,27 +13,25 @@ export default function Polimento() {
       variants={containerVariants}
       initial="hidden"
       animate="visible"
-      className="container mx-auto px-4 py-12"
+      className="container mx-auto px-4 py-8"
     >
-      {/* Two-column layout: Carousel (left) and Content (right) */}
       <div className="grid lg:grid-cols-2 gap-16 max-w-7xl mx-auto">
-        {/* Auto-playing carousel with navigation controls */}
         <ServiceCarousel
           images={polimentoData.images}
           variants={itemVariants}
         />
 
-        {/* Content section with animation on scroll */}
-        <div className="space-y-8">
+        <div className="space-y-6">
           <motion.h2
             variants={itemVariants}
-            className="text-2xl md:text-4xl lg:text-5xl font-bold mb-8"
+            className="text-xl md:text-2xl font-bold mb-4"
           >
             {polimentoData.title}
           </motion.h2>
 
-          <div className="space-y-8">
+          <div className="space-y-4">
             <ServiceList title="Finalidade" items={polimentoData.finalidade} />
+            <ServiceList title="Benefícios" items={polimentoData.beneficios} />
             <ServiceList title="Benefícios" items={polimentoData.beneficios} />
           </div>
         </div>

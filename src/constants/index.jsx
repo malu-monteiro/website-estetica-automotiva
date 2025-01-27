@@ -8,6 +8,9 @@ import Higienização from "../assets/higienizacao-interna.avif";
 import PolimentoCarousel from "../assets/polimento-1.jpg";
 import Polimento2Carousel from "../assets/polimento-2.jpg";
 
+import HigienizacaoCarousel from "../assets/higienizacao1.jpg";
+import Higienizacao2Carousel from "../assets/higienizacao2.jpg";
+
 import { FaFacebook, FaInstagram } from "react-icons/fa6";
 
 export const navLinks = [
@@ -76,15 +79,20 @@ export const polimentoData = {
     "Elimina micro-riscos e marcas de lavagem.",
     "Prepara a pintura para receber uma camada de proteção, como ceras ou vitrificadores.",
   ],
+
+  processo: [
+    "Recupera o brilho original da pintura.",
+    "Elimina micro-riscos e marcas de lavagem.",
+    "Prepara a pintura para receber uma camada de proteção, como ceras ou vitrificadores.",
+  ],
 };
 
 export const higienizacaoData = {
   title: "Higienização Interna Premium",
-  // images: [higienizacaoCarousel, higienizacao2Carousel],
+  images: [HigienizacaoCarousel, Higienizacao2Carousel],
   finalidade: [
     "Remove resíduos, manchas, poeira e sujeiras acumuladas em estofados, carpetes, painéis e outras superfícies internas do veículo.",
     "Elimina germes, bactérias, fungos e ácaros, garantindo um ambiente mais saudável para os ocupantes.",
-    "Prolonga a vida útil dos materiais internos, como estofados e plásticos, prevenindo desgaste prematuro.",
     "Remove odores indesejados, como de cigarro, mofo ou comida, deixando o interior do veículo mais agradável.",
   ],
 
@@ -92,6 +100,13 @@ export const higienizacaoData = {
     "Reduz alérgenos e poeira, promovendo um ambiente mais respirável, especialmente para quem sofre de alergias ou problemas respiratórios.",
     "A limpeza regular ajuda a identificar problemas potenciais, como manchas de líquidos que podem causar danos permanentes se não tratados.",
     "O interior do carro ganha uma aparência como nova.",
+  ],
+
+  processo: [
+    "Aspiração completa do interior",
+    "Aplicação de produtos específicos",
+    "Higienização do ar condicionado",
+    "Limpeza de todas as superfícies",
   ],
 };
 export const about = [
