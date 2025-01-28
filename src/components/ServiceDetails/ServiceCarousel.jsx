@@ -4,10 +4,11 @@ import PropTypes from "prop-types";
 
 import { motion } from "framer-motion";
 
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, Navigation } from "swiper/modules";
 import "swiper/css";
-import "swiper/css/navigation";
+import "swiper/css/pagination";
+
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, Pagination } from "swiper/modules";
 
 export default function ServiceCarousel({
   images,
@@ -17,7 +18,10 @@ export default function ServiceCarousel({
   const [loading, setLoading] = useState(true);
 
   const swiperProps = {
-    modules: [Autoplay, Navigation],
+    modules: [Autoplay, Pagination],
+    pagination: {
+      dynamicBullets: true,
+    },
     navigation: true,
     autoplay: {
       delay: 3000,

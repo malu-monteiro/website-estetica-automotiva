@@ -5,11 +5,12 @@
   justify-content: center;
   align-items: center;
   transition: background-color 0.3s;
+  z-index: 1000;
 }
 
 .modal-overlay--visible {
   visibility: visible;
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 .modal-overlay--invisible {
@@ -26,6 +27,7 @@
   max-width: 32rem;
   height: 60vh;
   overflow-y: auto;
+  z-index: 1001;
 }
 
 .modal-content--visible {

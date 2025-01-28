@@ -6,7 +6,9 @@ import ServiceCarousel from "../../components/ServiceDetails/ServiceCarousel";
 import { higienizacaoData } from "../../constants";
 import { containerVariants, itemVariants } from "../../constants/animations";
 
-// adicionar imagens no carrossel
+import Scheduling from "../../components/Scheduling";
+
+// adicionar imagens no carrossels
 
 export default function HigienizacaoInterna() {
   return (
@@ -16,19 +18,22 @@ export default function HigienizacaoInterna() {
       animate="visible"
       className="container mx-auto px-4 py-8"
     >
-      {/* Two-column layout: Carousel (left) and Content (right) */}
       <div className="grid lg:grid-cols-2 gap-16 max-w-7xl mx-auto">
         <ServiceCarousel
           images={higienizacaoData.images}
           variants={itemVariants}
         />
+
         <div className="space-y-6">
-          <motion.h2
-            variants={itemVariants}
-            className="text-xl md:text-2xl font-bold mb-4"
-          >
-            {higienizacaoData.title}
-          </motion.h2>
+          <div className="flex items-center justify-between ">
+            <motion.h2
+              variants={itemVariants}
+              className="text-xl md:text-2xl font-bold mb-4"
+            >
+              {higienizacaoData.title}
+            </motion.h2>
+            <Scheduling initialService={higienizacaoData.title} />
+          </div>
 
           <div className="space-y-4">
             <ServiceList

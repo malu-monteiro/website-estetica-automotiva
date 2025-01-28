@@ -7,7 +7,6 @@ import { containerVariants, itemVariants } from "../../constants/animations";
 import { polimentoData } from "../../constants";
 
 export default function Polimento() {
-  // Initialize animation container for children animations
   return (
     <motion.div
       variants={containerVariants}
