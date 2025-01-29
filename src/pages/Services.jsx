@@ -17,18 +17,19 @@ export default function OurServices() {
   return (
     <div
       id="services"
-      className="relative mt-20 border-b border-neutral-800 min-h-[800px]"
+      className="relative mt-16 border-b border-neutral-800 min-h-[800px]"
     >
       <div className="text-center">
-        <h2 className="text-xl sm:text-5xl lg:text-6xl font-bold mt-10 lg:mt-20">
+        <h2 className="text-xl sm:text-5xl lg:text-6xl font-bold mt-10 lg:mt-16">
           Nossos <span className="text-red-600">Serviços</span>
         </h2>
         <p className="text-base sm:text-lg lg:text-xl mt-2">
-          Explore as opções que mais atendem às suas necessidades e acesse para
-          saber mais!
+          Conheça nossos serviços e acesse para saber mais!
         </p>
       </div>
-      <div className="flex flex-wrap justify-center mt-20 lg:mt-40 cursor-pointer">
+
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto mt-16 lg:mt-24 px-4">
+        {" "}
         {services.map((service) => (
           <button
             key={service.id}
@@ -46,7 +47,7 @@ export default function OurServices() {
                 Saiba mais <ArrowUpRight className="ml-2" />
               </span>
             </div>
-            <a className="text-xl md:text-xl font-bold mt-4 transition-colors duration-300 group-hover:text-red-600">
+            <a className="text-xl font-bold mt-4 transition-colors duration-300 group-hover:text-red-600">
               {service.title}
             </a>
           </button>

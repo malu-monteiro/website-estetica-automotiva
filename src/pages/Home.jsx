@@ -1,8 +1,9 @@
 import { ChevronsDown } from "lucide-react";
 import { features } from "../constants";
-import background from "../assets/background.png";
+import background from "../assets/homeBackground.png";
 import CountUp from "react-countup";
 import Scheduling from "../components/Scheduling";
+import { Button } from "../components/Button";
 
 export default function Home() {
   return (
@@ -27,12 +28,9 @@ export default function Home() {
         <div className="flex justify-start my-6 md:my-10">
           <Scheduling />
 
-          <a
-            href="#about"
-            className="ml-3 bg-gray-450 hover:bg-opacity-60 py-2 md:py-3 px-4 md:px-6 rounded-full flex items-center text-sm md:text-base"
-          >
-            Saiba mais <ChevronsDown className="ml-2" />
-          </a>
+          <Button href="#about" className="ml-3" icon={ChevronsDown}>
+            Saiba mais
+          </Button>
         </div>
         <div className="grid md:grid-cols-2 gap-8 mt-52">
           {features.map((stat) => (
