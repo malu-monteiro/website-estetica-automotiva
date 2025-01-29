@@ -8,8 +8,6 @@ import { containerVariants, itemVariants } from "../../constants/animations";
 
 import Scheduling from "../../components/Scheduling";
 
-// adicionar imagens no carrossels
-
 export default function HigienizacaoInterna() {
   return (
     <motion.div
