@@ -4,8 +4,11 @@ import { Button } from "../components/Button";
 import PropTypes from "prop-types";
 
 export default function About() {
-  const { title, subtitle, highlight, description, image } = about;
-  const { href, icon, text } = socialMedia;
+  const aboutData = about[0] || {};
+  const socialMediaData = socialMedia[0] || {};
+
+  const { title, subtitle, highlight, description, image } = aboutData;
+  const { href, icon, text } = socialMediaData;
 
   return (
     <section
@@ -45,16 +48,20 @@ export default function About() {
 }
 
 About.propTypes = {
-  about: PropTypes.shape({
-    title: PropTypes.string.isRequired,
-    subtitle: PropTypes.string.isRequired,
-    highlight: PropTypes.string.isRequired,
-    description: PropTypes.string.isRequired,
-    image: PropTypes.string.isRequired,
-  }).isRequired,
-  socialMedia: PropTypes.shape({
-    href: PropTypes.string.isRequired,
-    icon: PropTypes.elementType.isRequired,
-    text: PropTypes.string.isRequired,
-  }).isRequired,
+  about: PropTypes.arrayOf(
+    PropTypes.shape({
+      title: PropTypes.string.isRequired,
+      subtitle: PropTypes.string.isRequired,
+      highlight: PropTypes.string.isRequired,
+      description: PropTypes.string.isRequired,
+      image: PropTypes.string.isRequired,
+    })
+  ).isRequired,
+  socialMedia: PropTypes.arrayOf(
+    PropTypes.shape({
+      href: PropTypes.string.isRequired,
+      icon: PropTypes.elementType.isRequired,
+      text: PropTypes.string.isRequired,
+    })
+  ).isRequired,
 };
