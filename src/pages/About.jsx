@@ -13,7 +13,7 @@ export default function About() {
   return (
     <section
       id="about"
-      className="scroll-mt-36 relative border-b border-neutral-800 min-h-[600px]"
+      className="scroll-mt-36 mt-24 mb-24 relative border-b border-neutral-800 min-h-[600px]"
     >
       <div className="flex flex-col lg:flex-row items-start justify-between max-w-7xl mx-auto px-8 mt-20 gap-12">
         <div className="lg:w-2/5 flex flex-col items-start justify-start">
