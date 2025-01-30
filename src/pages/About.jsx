@@ -5,9 +5,9 @@ export default function About() {
   const { href, icon, text } = socialMedia[0];
 
   return (
-    <div
+    <section
       id="about"
-      className="relative border-b border-neutral-800 min-h-[600px]"
+      className="scroll-mt-36 relative border-b border-neutral-800 min-h-[600px]"
     >
       <div className="flex flex-col lg:flex-row items-start justify-between max-w-7xl mx-auto px-8 mt-20 gap-12">
         <div className="lg:w-2/5 flex flex-col items-start justify-start">
@@ -41,6 +41,6 @@ export default function About() {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }

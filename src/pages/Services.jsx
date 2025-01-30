@@ -15,9 +15,9 @@ export default function OurServices() {
   };
 
   return (
-    <div
+    <section
       id="services"
-      className="relative mt-16 border-b border-neutral-800 min-h-[800px]"
+      className="scroll-mt-32 relative mt-16 border-b border-neutral-800 min-h-[800px]"
     >
       <div className="text-center">
         <h2 className="text-xl sm:text-5xl lg:text-6xl font-bold mt-10 lg:mt-16">
@@ -53,6 +53,6 @@ export default function OurServices() {
           </button>
         ))}
       </div>
-    </div>
+    </section>
   );
 }

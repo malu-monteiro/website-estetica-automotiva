@@ -9,7 +9,7 @@ export default function Home() {
   return (
     <section
       id="home"
-      className="w-full h-screen flex flex-col items-start bg-cover bg-center relative"
+      className="scroll-mt-24 w-full h-screen flex flex-col items-start bg-cover bg-center relative"
       style={{ backgroundImage: `url(${background})` }}
     >
       <div className="ml-6 mt-8 md:ml-[200px] md:mt-[130px]">

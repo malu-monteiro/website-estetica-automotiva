@@ -27,9 +27,9 @@ export default function Reviews() {
   });
 
   return (
-    <div
+    <section
       id="reviews"
-      className="relative border-b border-neutral-800 min-h-[600px]"
+      className="scroll-mt-16 relative border-b border-neutral-800 min-h-[600px]"
     >
       <div className="max-w-7xl mx-auto px-8 py-20">
         <h2 className="text-xl sm:text-5xl lg:text-6xl font-bold mb-10 text-center">
@@ -40,6 +40,6 @@ export default function Reviews() {
           data-elfsight-app-lazy
         ></div>
       </div>
-    </div>
+    </section>
   );
 }

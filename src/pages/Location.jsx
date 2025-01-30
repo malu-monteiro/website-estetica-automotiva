@@ -78,8 +78,8 @@ export default function Localization() {
   }, [apiKey, pinhais.lng, pinhais.lat, zoom]);
 
   return (
-    <div id="location">
-      <div className="w-full h-auto flex flex-col">
+    <section id="location" className="scroll-mt-16">
+      <div className=" w-full h-auto flex flex-col">
         <div className="text-center">
           <h4 className="text-xl sm:text-5xl lg:text-6xl font-bold mb-10 mt-10 lg:mt-20">
             Localização
@@ -92,6 +92,6 @@ export default function Localization() {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
