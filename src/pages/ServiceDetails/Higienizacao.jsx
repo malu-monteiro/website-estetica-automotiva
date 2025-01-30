@@ -8,7 +8,7 @@ import { containerVariants, itemVariants } from "../../constants/animations";
 
 import Scheduling from "../../components/Scheduling";
 
-export default function HigienizacaoInterna() {
+export default function Higienizacao() {
   return (
     <motion.div
       variants={containerVariants}
