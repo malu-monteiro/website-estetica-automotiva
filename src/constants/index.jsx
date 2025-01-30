@@ -1,4 +1,6 @@
-import { TrendingUp, Users } from "lucide-react";
+import { TrendingUp, Users, ChevronsDown } from "lucide-react";
+
+import background from "../assets/homeBackground.png";
 
 import AboutImage from "../assets/aboutImage.png";
 
@@ -56,6 +58,20 @@ export const navLinks = [
   { id: "contact", title: "Contato" },
 ];
 
+export const homeData = {
+  title: "MSS_STUDIO CAR",
+  subtitle: "Estética Automotiva",
+  description:
+    "Garantimos qualidade transformando a aparência do seu veículo, destacando os detalhes e trazendo brilho e proteção que fazem a diferença.",
+  backgroundImage: background,
+  button: {
+    text: "Saiba mais",
+    href: "#about",
+    icon: ChevronsDown,
+    ariaLabel: "Saiba mais sobre nós",
+  },
+};
+
 export const features = [
   {
     id: "feature-1",
@@ -95,6 +111,53 @@ export const services = [
     title: "Higienização Interna Premium",
     image: Higienização,
     path: "/higienizacao-interna-premium",
+  },
+];
+
+export const about = [
+  {
+    id: "about",
+    title: "Sobre Nós",
+    subtitle: "Excelência em cada ",
+    highlight: "detalhe!",
+    image: [AboutImage],
+    description: `A MSS_STUDIO CAR é uma empresa especializada em estética automotiva. 
+    Oferecemos serviços de Polimento, Revitalização de Faróis, Vitrificação e Higienização 
+    Interna Premium, garantindo que seu veículo se mantenha impecável e protegido contra os 
+    efeitos do tempo. Com atenção aos detalhes e compromisso com a qualidade, proporcionamos 
+    um carro com aparência de novo, preservando seu valor. `,
+  },
+];
+
+export const contact = [
+  {
+    id: "contact-3",
+    content: "WhatsApp: (41) 9 9934-6385",
+    href: "https://wa.me/41999346385",
+  },
+  {
+    id: "contact-2",
+    content: "Instagram: @mss_studiocar",
+    href: "https://www.instagram.com/mss_studiocar/",
+  },
+  {
+    id: "contact-1",
+    content: "Email: mssstudiocar@gmail.com",
+    href: "mailto:mssstudiocar@gmail.com",
+  },
+];
+
+export const socialMedia = [
+  {
+    id: "social-media-1",
+    href: "https://www.instagram.com/mss_studiocar/",
+    icon: <FaInstagram />,
+    text: "Nos acompanhe no Instagram",
+  },
+  {
+    id: "social-media-2",
+    href: "@",
+    icon: <FaFacebook />,
   },
 ];
 
@@ -220,58 +283,11 @@ export const higienizacaoData = {
   ],
 };
 
-export const about = [
-  {
-    id: "about",
-    title: "Sobre Nós",
-    subtitle: "Excelência em cada ",
-    highlight: "detalhe!",
-    image: [AboutImage],
-    description: `A MSS_STUDIO CAR é uma empresa especializada em estética automotiva. 
-    Oferecemos serviços de Polimento, Revitalização de Faróis, Vitrificação e Higienização 
-    Interna Premium, garantindo que seu veículo se mantenha impecável e protegido contra os 
-    efeitos do tempo. Com atenção aos detalhes e compromisso com a qualidade, proporcionamos 
-    um carro com aparência de novo, preservando seu valor. `,
-  },
-];
-
 export const aboutUs = [
   {
     id: "about-us",
     description: `A MSS_STUDIO CAR é uma empresa 
     especializada em estética automotiva 
     localizada em Pinhais.`,
-  },
-];
-
-export const contact = [
-  {
-    id: "contact-3",
-    content: "WhatsApp: (41) 9 9934-6385",
-    href: "https://wa.me/41999346385",
-  },
-  {
-    id: "contact-2",
-    content: "Instagram: @mss_studiocar",
-    href: "https://www.instagram.com/mss_studiocar/",
-  },
-  {
-    id: "contact-1",
-    content: "Email: mssstudiocar@gmail.com",
-    href: "mailto:mssstudiocar@gmail.com",
-  },
-];
-
-export const socialMedia = [
-  {
-    id: "social-media-1",
-    href: "https://www.instagram.com/mss_studiocar/",
-    icon: <FaInstagram />,
-    text: "Nos acompanhe no Instagram",
-  },
-  {
-    id: "social-media-2",
-    href: "@",
-    icon: <FaFacebook />,
   },
 ];

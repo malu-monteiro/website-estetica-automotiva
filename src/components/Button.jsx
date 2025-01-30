@@ -1,6 +1,14 @@
 import PropTypes from "prop-types";
 
-export function Button({ href, onClick, children, className, icon: Icon }) {
+export function Button({
+  href,
+  onClick,
+  children,
+  className = "",
+  icon: Icon,
+  iconPosition = "right",
+  ariaLabel,
+}) {
   const handleClick = (e) => {
     if (href?.startsWith("#")) {
       e.preventDefault();
@@ -20,9 +28,11 @@ export function Button({ href, onClick, children, className, icon: Icon }) {
       href={href}
       onClick={handleClick}
       className={`bg-gray-450 hover:bg-opacity-60 py-2 md:py-3 px-4 md:px-6 rounded-full flex items-center text-sm md:text-base transition-all duration-300 ${className}`}
+      aria-label={ariaLabel}
     >
+      {Icon && iconPosition === "left" && <Icon className="mr-2" />}
       {children}
-      {Icon && <Icon className="ml-2" />}
+      {Icon && iconPosition === "right" && <Icon className="ml-2" />}
     </a>
   );
 }
@@ -33,6 +43,8 @@ Button.propTypes = {
   children: PropTypes.node.isRequired,
   className: PropTypes.string,
   icon: PropTypes.elementType,
+  iconPosition: PropTypes.oneOf(["left", "right"]),
+  ariaLabel: PropTypes.string,
 };
 
 Button.defaultProps = {
@@ -40,4 +52,6 @@ Button.defaultProps = {
   onClick: () => {},
   className: "",
   icon: undefined,
+  iconPosition: "right",
+  ariaLabel: undefined,
 };
