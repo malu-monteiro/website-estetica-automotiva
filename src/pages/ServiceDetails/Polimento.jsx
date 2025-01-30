@@ -1,10 +1,12 @@
 import { motion } from "framer-motion";
 
-import ServiceCarousel from "../../components/ServiceDetails/ServiceCarousel";
 import ServiceList from "../../components/ServiceDetails/ServiceList";
+import ServiceCarousel from "../../components/ServiceDetails/ServiceCarousel";
 
-import { containerVariants, itemVariants } from "../../constants/animations";
 import { polimentoData } from "../../constants";
+import { containerVariants, itemVariants } from "../../constants/animations";
+
+import Scheduling from "../../components/Scheduling";
 
 export default function Polimento() {
   return (
@@ -21,17 +23,20 @@ export default function Polimento() {
         />
 
         <div className="space-y-6">
-          <motion.h2
-            variants={itemVariants}
-            className="text-xl md:text-2xl font-bold mb-4"
-          >
-            {polimentoData.title}
-          </motion.h2>
+          <div className="flex items-center justify-between ">
+            <motion.h2
+              variants={itemVariants}
+              className="text-xl md:text-2xl font-bold mb-4"
+            >
+              {polimentoData.title}
+            </motion.h2>
+            <Scheduling initialService={polimentoData.title} />
+          </div>
 
           <div className="space-y-4">
             <ServiceList title="Finalidade" items={polimentoData.finalidade} />
             <ServiceList title="Benefícios" items={polimentoData.beneficios} />
-            <ServiceList title="Benefícios" items={polimentoData.beneficios} />
+            <ServiceList title="Processo" items={polimentoData.processo} />
           </div>
         </div>
       </div>
