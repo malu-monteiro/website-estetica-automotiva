@@ -29,6 +29,8 @@ export function Button({
       onClick={handleClick}
       className={`bg-gray-450 hover:bg-opacity-60 py-2 md:py-3 px-4 md:px-6 rounded-full flex items-center text-sm md:text-base transition-all duration-300 ${className}`}
       aria-label={ariaLabel}
+      target="_blank"
+      rel="noopener noreferrer"
     >
       {Icon && iconPosition === "left" && <Icon className="mr-2" />}
       {children}

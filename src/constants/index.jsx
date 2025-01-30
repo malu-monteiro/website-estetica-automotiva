@@ -151,13 +151,13 @@ export const socialMedia = [
   {
     id: "social-media-1",
     href: "https://www.instagram.com/mss_studiocar/",
-    icon: <FaInstagram />,
+    icon: FaInstagram,
     text: "Nos acompanhe no Instagram",
   },
   {
     id: "social-media-2",
     href: "@",
-    icon: <FaFacebook />,
+    icon: FaFacebook,
   },
 ];
 

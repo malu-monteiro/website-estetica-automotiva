@@ -1,8 +1,11 @@
-import { about, socialMedia } from "../constants";
+import { about, socialMedia } from "../constants/index";
+import { Button } from "../components/Button";
+
+import PropTypes from "prop-types";
 
 export default function About() {
-  const { title, subtitle, highlight, description, image } = about[0];
-  const { href, icon, text } = socialMedia[0];
+  const { title, subtitle, highlight, description, image } = about;
+  const { href, icon, text } = socialMedia;
 
   return (
     <section
@@ -17,6 +20,7 @@ export default function About() {
             className="w-full h-full object-cover rounded-lg shadow-lg"
           />
         </div>
+
         <div className="lg:w-3/5 mt-10 lg:mt-0">
           <h3 className="text-xl sm:text-5xl lg:text-6xl font-bold">{title}</h3>
           <p className="text-xl md:text-2xl lg:text-6xl font-bold">
@@ -30,17 +34,27 @@ export default function About() {
           </div>
 
           <div className="flex justify-start mt-8 md:mt-10">
-            <a
-              href={href}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-gray-450 hover:bg-opacity-60 py-2.5 md:py-3 px-6 md:px-8 rounded-full flex items-center text-sm md:text-base"
-            >
-              {icon} <span className="ml-2">{text}</span>
-            </a>
+            <Button href={href} icon={icon} aria-label={`Connect on ${text}`}>
+              {text}
+            </Button>
           </div>
         </div>
       </div>
     </section>
   );
 }
+
+About.propTypes = {
+  about: PropTypes.shape({
+    title: PropTypes.string.isRequired,
+    subtitle: PropTypes.string.isRequired,
+    highlight: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
+    image: PropTypes.string.isRequired,
+  }).isRequired,
+  socialMedia: PropTypes.shape({
+    href: PropTypes.string.isRequired,
+    icon: PropTypes.elementType.isRequired,
+    text: PropTypes.string.isRequired,
+  }).isRequired,
+};
