@@ -28,7 +28,12 @@ export default function Home() {
         <div className="flex justify-start my-6 md:my-10">
           <Scheduling />
 
-          <Button href="#about" className="ml-3" icon={ChevronsDown}>
+          <Button
+            href="#about"
+            className="ml-3"
+            icon={ChevronsDown}
+            aria-label="Saiba mais sobre nós"
+          >
             Saiba mais
           </Button>
         </div>
