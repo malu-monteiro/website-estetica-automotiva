@@ -5,7 +5,7 @@ import Footer from "./components/Footer";
 
 import About from "./pages/About";
 import Home from "./pages/Home";
-import Services from "./pages/Services";
+import OurServices from "./pages/OurServices";
 import Reviews from "./pages/Reviews";
 import Location from "./pages/Location";
 
@@ -18,7 +18,7 @@ const MainPage = () => (
   <>
     <Home />
     <About />
-    <Services />
+    <OurServices />
     <Reviews />
     <Location />
   </>
