@@ -135,6 +135,10 @@ export const about = [
   },
 ];
 
+export const elfsightConfig = {
+  appId: import.meta.env.VITE_ELFSIGHT_APP_ID,
+};
+
 export const contact = [
   {
     id: "contact-3",

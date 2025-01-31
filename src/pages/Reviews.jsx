@@ -1,30 +1,34 @@
 import { useEffect } from "react";
+import { elfsightConfig } from "../constants";
+
+const loadElfsightScript = () => {
+  const script = document.createElement("script");
+  script.src = "https://static.elfsight.com/platform/platform.js";
+  script.async = true;
+  document.body.appendChild(script);
+};
+
+const hideElfsightLink = () => {
+  const link = document.querySelector(
+    'a[href*="elfsight.com/google-reviews-widget"]'
+  );
+  if (link) {
+    link.style.display = "none";
+  }
+};
 
 export default function Reviews() {
   useEffect(() => {
-    const script = document.createElement("script");
-    script.src = "https://static.elfsight.com/platform/platform.js";
-    script.async = true;
-    document.body.appendChild(script);
+    loadElfsightScript();
+
+    const observer = new MutationObserver(hideElfsightLink);
+    observer.observe(document.body, {
+      childList: true,
+      subtree: true,
+    });
+
+    return () => observer.disconnect();
   }, []);
-
-  const hideElfsightLink = () => {
-    const link = document.querySelector(
-      'a[href*="elfsight.com/google-reviews-widget"]'
-    );
-    if (link) {
-      link.style.display = "none";
-    }
-  };
-
-  const observer = new MutationObserver(() => {
-    hideElfsightLink();
-  });
-
-  observer.observe(document.body, {
-    childList: true,
-    subtree: true,
-  });
 
   return (
     <section
@@ -36,7 +40,7 @@ export default function Reviews() {
           Avaliações
         </h2>
         <div
-          className={`elfsight-app-${import.meta.env.VITE_ELFSIGHT_APP_ID}`}
+          className={`elfsight-app-${elfsightConfig.appId}`}
           data-elfsight-app-lazy
         ></div>
       </div>
