@@ -114,6 +114,12 @@ export const services = [
   },
 ];
 
+export const servicesHeader = {
+  title: "Nossos",
+  highlight: "Serviços",
+  subtitle: "Conheça nossos serviços e acesse para saber mais!",
+};
+
 export const about = [
   {
     id: "about",

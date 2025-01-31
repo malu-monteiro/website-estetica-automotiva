@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 
-import { services } from "../constants";
+import { services, servicesHeader } from "../constants";
 
 import { ServicesCard } from "../components/ServicesCard";
 
@@ -14,6 +14,8 @@ export default function OurServices() {
     }
   };
 
+  const { title, highlight, subtitle } = servicesHeader;
+
   return (
     <section
       id="services"
@@ -21,11 +23,9 @@ export default function OurServices() {
     >
       <div className="text-center">
         <h2 className="text-xl sm:text-5xl lg:text-6xl font-bold mt-10 lg:mt-16">
-          Nossos <span className="text-red-600">Serviços</span>
+          {title} <span className="text-red-600">{highlight}</span>
         </h2>
-        <p className="text-base sm:text-lg lg:text-xl mt-2">
-          Conheça nossos serviços e acesse para saber mais!
-        </p>
+        <p className="text-base sm:text-lg lg:text-xl mt-2">{subtitle}</p>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto mt-16 lg:mt-24 px-4">
