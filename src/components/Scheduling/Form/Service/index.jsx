@@ -57,6 +57,7 @@ export const ServiceForm = ({
 
       <div className="grid grid-cols-1 gap-3">
         <ServiceSelect
+          id="myService"
           value={selectedService}
           onChange={(value) => {
             setSelectedService(value);

@@ -6,11 +6,13 @@ import "./styles/map.css";
 
 import { locationData } from "../constants";
 
-const initializeMap = (mapContainer, apiKey, center, zoom) => {
+maptilersdk.config.apiKey = import.meta.env.VITE_MAPTILER_API_KEY;
+
+const initializeMap = (mapContainer, center, zoom) => {
   return new maptilersdk.Map({
     container: mapContainer,
     style: maptilersdk.MapStyle.STREETS,
-    center: center,
+    center: [center.lng, center.lat],
     zoom: zoom,
   });
 };
@@ -57,19 +59,13 @@ const createPopup = (lng, lat, title, address, cep) => {
 export default function Location() {
   const mapContainer = useRef(null);
   const map = useRef(null);
-  const apiKey = import.meta.env.VITE_MAPTILER_API_KEY;
 
   const { center, zoom, address, cep, title, workingHours } = locationData;
 
   useEffect(() => {
     if (map.current) return;
 
-    map.current = initializeMap(
-      mapContainer.current,
-      apiKey,
-      [center.lng, center.lat],
-      zoom
-    );
+    map.current = initializeMap(mapContainer.current, center, zoom);
 
     new maptilersdk.Marker({ color: "#FF0000" })
       .setLngLat([center.lng, center.lat])
@@ -77,7 +73,7 @@ export default function Location() {
 
     const popup = createPopup(center.lng, center.lat, title, address, cep);
     popup.addTo(map.current);
-  }, [apiKey, center.lng, center.lat, zoom, title, address, cep]);
+  }, [center, zoom, address, cep, title]);
 
   return (
     <section id="location" className="scroll-mt-16">
