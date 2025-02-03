@@ -135,10 +135,6 @@ export const about = [
   },
 ];
 
-export const elfsightConfig = {
-  appId: import.meta.env.VITE_ELFSIGHT_APP_ID,
-};
-
 export const contact = [
   {
     id: "contact-3",
@@ -170,6 +166,19 @@ export const socialMedia = [
     icon: FaFacebook,
   },
 ];
+
+export const elfsightConfig = {
+  appId: import.meta.env.VITE_ELFSIGHT_APP_ID,
+};
+
+export const locationData = {
+  center: { lng: -49.1529147, lat: -25.4172584 },
+  zoom: 15,
+  address: "Rua Alamanda, 85, Pinhais, PR",
+  cep: "83328-130",
+  title: "Endereço",
+  workingHours: "Segunda a sexta, das 8h às 18h",
+};
 
 export const polimentoData = {
   title: "Polimento",
