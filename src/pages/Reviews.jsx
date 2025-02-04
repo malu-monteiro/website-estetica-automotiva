@@ -1,34 +1,9 @@
-import { useEffect } from "react";
+import PropTypes from "prop-types";
 import { elfsightConfig } from "../constants";
+import { useElfsight } from "../hooks/useElfsight";
 
-const loadElfsightScript = () => {
-  const script = document.createElement("script");
-  script.src = "https://static.elfsight.com/platform/platform.js";
-  script.async = true;
-  document.body.appendChild(script);
-};
-
-const hideElfsightLink = () => {
-  const link = document.querySelector(
-    'a[href*="elfsight.com/google-reviews-widget"]'
-  );
-  if (link) {
-    link.style.display = "none";
-  }
-};
-
-export default function Reviews() {
-  useEffect(() => {
-    loadElfsightScript();
-
-    const observer = new MutationObserver(hideElfsightLink);
-    observer.observe(document.body, {
-      childList: true,
-      subtree: true,
-    });
-
-    return () => observer.disconnect();
-  }, []);
+export default function Reviews({ title = "Avaliações" }) {
+  useElfsight();
 
   return (
     <section
@@ -37,7 +12,7 @@ export default function Reviews() {
     >
       <div className="max-w-7xl mx-auto px-8 py-20">
         <h2 className="text-xl sm:text-5xl lg:text-6xl font-bold mb-10 text-center">
-          Avaliações
+          {title}
         </h2>
         <div
           className={`elfsight-app-${elfsightConfig.appId}`}
@@ -47,3 +22,7 @@ export default function Reviews() {
     </section>
   );
 }
+
+Reviews.propTypes = {
+  title: PropTypes.string,
+};
