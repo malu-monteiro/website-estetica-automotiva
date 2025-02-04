@@ -1,4 +1,4 @@
-import { X } from "lucide-react";
+import { X, ArrowLeft } from "lucide-react";
 
 import PropTypes from "prop-types";
 
@@ -6,7 +6,13 @@ import { useModal } from "../hooks/useModal";
 
 import "../styles/modal.css";
 
-export default function Modal({ open, onClose, children }) {
+export default function Modal({
+  open,
+  onClose,
+  onBack,
+  showBackButton,
+  children,
+}) {
   useModal(open);
 
   return (
@@ -22,6 +28,12 @@ export default function Modal({ open, onClose, children }) {
           open ? "modal-content--visible" : "modal-content--invisible"
         }`}
       >
+        {showBackButton && (
+          <button onClick={onBack} className="modal-back-button">
+            <ArrowLeft />
+          </button>
+        )}
+
         <button onClick={onClose} className="modal-close-button">
           <X />
         </button>
@@ -34,5 +46,12 @@ export default function Modal({ open, onClose, children }) {
 Modal.propTypes = {
   open: PropTypes.bool.isRequired,
   onClose: PropTypes.func.isRequired,
+  onBack: PropTypes.func,
+  showBackButton: PropTypes.bool,
   children: PropTypes.node.isRequired,
+};
+
+Modal.defaultProps = {
+  onBack: () => {},
+  showBackButton: false,
 };

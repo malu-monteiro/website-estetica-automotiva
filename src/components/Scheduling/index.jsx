@@ -49,6 +49,11 @@ export default function Scheduling({ initialService = "" }) {
     setContactModalOpen(false);
   };
 
+  const handleBack = () => {
+    setContactModalOpen(false);
+    setOpen(true);
+  };
+
   return (
     <div>
       <button
@@ -74,7 +79,12 @@ export default function Scheduling({ initialService = "" }) {
         />
       </Modal>
 
-      <Modal open={contactModalOpen} onClose={() => setContactModalOpen(false)}>
+      <Modal
+        open={contactModalOpen}
+        onClose={() => setContactModalOpen(false)}
+        onBack={handleBack}
+        showBackButton={true}
+      >
         <ContactForm
           contactInfo={contactInfo}
           setContactInfo={setContactInfo}
