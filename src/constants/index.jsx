@@ -164,6 +164,7 @@ export const socialMedia = [
     id: "social-media-2",
     href: "@",
     icon: FaFacebook,
+    text: "Curta nossa página no Facebook",
   },
 ];
 
