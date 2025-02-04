@@ -3,7 +3,7 @@ import CountUp from "react-countup";
 import PropTypes from "prop-types";
 
 export const FeatureList = ({ features }) => (
-  <div className="grid md:grid-cols-2 gap-8 mt-52">
+  <div className="grid md:grid-cols-2 gap-8 mt-32 md:mt-52">
     {features.map((stat) => (
       <div key={stat.id} className="flex items-start space-x-4">
         <stat.icon className="shrink-0 h-16 w-16 md:h-20 md:w-20 text-white" />
