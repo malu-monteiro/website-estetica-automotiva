@@ -24,9 +24,9 @@ export default function About() {
 
         {/* Texto e botão */}
         <div className="w-full lg:w-3/5 mt-8 lg:mt-0">
-          <h3 className="text-center sm:text-left text-xl sm:text-4xl lg:text-5xl font-bold">
+          <h2 className="text-center sm:text-left text-xl sm:text-4xl lg:text-5xl font-bold">
             {title}
-          </h3>
+          </h2>
           <p className="text-center sm:text-left text-lg sm:text-2xl lg:text-4xl font-bold mt-4">
             {subtitle} <span className="text-red-600">{highlight}</span>
           </p>
@@ -62,7 +62,7 @@ About.propTypes = {
       description: PropTypes.string.isRequired,
       image: PropTypes.string.isRequired,
     })
-  ).isRequired,
+  ),
   socialMedia: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.string.isRequired,
@@ -70,5 +70,5 @@ About.propTypes = {
       icon: PropTypes.elementType.isRequired,
       text: PropTypes.string.isRequired,
     })
-  ).isRequired,
+  ),
 };

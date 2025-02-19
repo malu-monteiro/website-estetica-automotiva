@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { useEffect } from "react";
 
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
@@ -14,15 +15,21 @@ import Revitalizacao from "./pages/ServiceDetails/Revitalizacao";
 import Vitrificacao from "./pages/ServiceDetails/Vitrificacao";
 import Higienizacao from "./pages/ServiceDetails/Higienizacao";
 
-const MainPage = () => (
-  <>
-    <Home />
-    <About />
-    <OurServices />
-    <Reviews />
-    <Location />
-  </>
-);
+const MainPage = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+  return (
+    <>
+      <Home />
+      <About />
+      <OurServices />
+      <Reviews />
+      <Location />
+    </>
+  );
+};
 
 export default function App() {
   return (

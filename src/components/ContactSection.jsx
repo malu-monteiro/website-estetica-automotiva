@@ -26,7 +26,6 @@ ContactSection.propTypes = {
     PropTypes.shape({
       id: PropTypes.string.isRequired,
       href: PropTypes.string.isRequired,
-      icon: PropTypes.element.isRequired,
       content: PropTypes.string.isRequired,
     })
   ).isRequired,

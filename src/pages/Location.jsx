@@ -79,9 +79,9 @@ export default function Location() {
     <section id="location" className="scroll-mt-16">
       <div className=" w-full h-auto flex flex-col">
         <div className="text-center">
-          <h4 className="text-xl sm:text-5xl lg:text-6xl font-bold mb-10 mt-10 lg:mt-20">
+          <h2 className="text-xl sm:text-5xl lg:text-6xl font-bold mb-10 mt-10 lg:mt-20">
             Localização
-          </h4>
+          </h2>
           <p className="text-base sm:text-lg lg:text-xl mb-10">
             {workingHours}
           </p>

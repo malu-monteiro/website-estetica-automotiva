@@ -9,7 +9,7 @@ import logo from "../assets/logo.png";
 
 export default function Navbar() {
   const navigate = useNavigate();
-  const location = useLocation();
+  const currentLocation = useLocation();
   const [mobileDrawerOpen, setMobileDrawerOpen] = useState(false);
 
   const toggleNavbar = () => {
@@ -18,7 +18,7 @@ export default function Navbar() {
 
   const handleNavClick = (e, targetId) => {
     e.preventDefault();
-    if (location.pathname !== "/") {
+    if (currentLocation.pathname !== "/") {
       navigate("/");
       setTimeout(() => {
         document

@@ -162,7 +162,7 @@ export const socialMedia = [
   },
   {
     id: "social-media-2",
-    href: "@",
+    href: "https://www.facebook.com/people/MSS-StudioCar/61563094166325/",
     icon: FaFacebook,
     text: "Curta nossa página no Facebook",
   },
