@@ -1,15 +1,17 @@
+import { useState, useEffect } from "react";
+import axios from "axios";
+
 import PropTypes from "prop-types";
 
-import { ServiceSelect } from "./ServiceSelect";
-
 import DateSelector from "./DateSelector";
+import { ServiceSelect } from "./ServiceSelect";
 import { TimeSelector } from "./TimeSelector";
 
 import { FormError } from "../FormError";
 
-import validateService from "@/utils/validateService";
-
 import { useServiceForm } from "../../hooks/useServiceForm";
+
+import validateService from "@/utils/validateService";
 
 export const ServiceForm = ({
   selectedService,
@@ -25,6 +27,31 @@ export const ServiceForm = ({
     date: selectedDate,
     time: selectedTime,
   });
+
+  const [blockedDates, setBlockedDates] = useState([]);
+
+  useEffect(() => {
+    const fetchBlockedDates = async () => {
+      try {
+        const response = await axios.get(
+          "http://localhost:5000/api/disponibilidade"
+        );
+        if (Array.isArray(response.data)) {
+          const blocked = response.data
+            .filter((d) => !d.disponivel)
+            .map((d) => new Date(d.data));
+          setBlockedDates(blocked);
+        } else {
+          console.error("API did not return an array:", response.data);
+          setBlockedDates([]);
+        }
+      } catch (error) {
+        console.error("Error fetching available dates", error);
+        setBlockedDates([]);
+      }
+    };
+    fetchBlockedDates();
+  }, []);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -73,6 +100,7 @@ export const ServiceForm = ({
             handleChange("date", value);
           }}
           error={errors.date}
+          blockedDates={blockedDates}
         />
 
         <TimeSelector

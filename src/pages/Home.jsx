@@ -14,7 +14,7 @@ export default function Home() {
       className="scroll-mt-24 w-full h-screen flex flex-col items-start bg-cover bg-center relative"
       style={{ backgroundImage: `url(${backgroundImage})` }}
     >
-      <div className="ml-6 mt-8 md:ml-[200px] md:mt-[130px]">
+      <header className="ml-6 mt-8 md:ml-[200px] md:mt-[130px]">
         <h1 className="text-xl md:text-xl text-white font-bold">{title}</h1>
         <p className="bg-gradient-to-r from-white to-gray-450 text-transparent bg-clip-text text-3xl md:text-5xl font-bold">
           {subtitle}
@@ -37,7 +37,7 @@ export default function Home() {
         </div>
 
         <FeatureList features={features} />
-      </div>
+      </header>
     </section>
   );
 }

@@ -14,6 +14,7 @@ import Polimento from "./pages/ServiceDetails/Polimento";
 import Revitalizacao from "./pages/ServiceDetails/Revitalizacao";
 import Vitrificacao from "./pages/ServiceDetails/Vitrificacao";
 import Higienizacao from "./pages/ServiceDetails/Higienizacao";
+import AdminPanel from "./pages/AdminPanel";
 
 const MainPage = () => {
   useEffect(() => {
@@ -37,6 +38,7 @@ export default function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<MainPage />} />
+        <Route path="/admin" element={<AdminPanel />} />
         <Route path="/polimento" element={<Polimento />} />
         <Route path="/revitalizacao-de-farol" element={<Revitalizacao />} />
         <Route path="/vitrificacao-de-pintura" element={<Vitrificacao />} />

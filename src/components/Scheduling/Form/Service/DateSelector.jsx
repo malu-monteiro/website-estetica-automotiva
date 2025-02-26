@@ -1,10 +1,19 @@
 import { useState } from "react";
 import DatePicker from "react-datepicker";
-import PropTypes from "prop-types";
-import { weekendDays, lastSchedulingHour } from "@/constants/dates";
 import "react-datepicker/dist/react-datepicker.css";
 
-export const DateSelector = ({ id, label, error, value, onChange }) => {
+import PropTypes from "prop-types";
+
+import { weekendDays, lastSchedulingHour } from "@/constants/dates";
+
+export const DateSelector = ({
+  id,
+  label,
+  error,
+  value,
+  onChange,
+  blockedDates,
+}) => {
   const [selectedDate, setSelectedDate] = useState(value || null);
 
   const handleDateChange = (date) => {
@@ -21,7 +30,12 @@ export const DateSelector = ({ id, label, error, value, onChange }) => {
       date.toDateString() === now.toDateString() &&
       now.getHours() >= lastSchedulingHour
     );
-    return isWeekday && isValidToday;
+
+    const isDateBlocked = blockedDates.some(
+      (d) => d.toDateString() === date.toDateString()
+    );
+
+    return isWeekday && isValidToday && !isDateBlocked;
   };
 
   const datePickerClass = `w-full p-2 text-slate-950 ${
@@ -60,6 +74,7 @@ DateSelector.propTypes = {
   error: PropTypes.string,
   value: PropTypes.instanceOf(Date),
   onChange: PropTypes.func.isRequired,
+  blockedDates: PropTypes.arrayOf(PropTypes.instanceOf(Date)).isRequired,
 };
 
 DateSelector.defaultProps = {
