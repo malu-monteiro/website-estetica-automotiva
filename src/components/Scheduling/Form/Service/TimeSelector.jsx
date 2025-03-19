@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-
 import PropTypes from "prop-types";
 
 import { filterAvailableHours } from "@/constants/hours";
@@ -11,17 +10,21 @@ export const TimeSelector = ({
   value,
   onChange,
   selectedDate,
+  blockedSlots,
 }) => {
   const [filteredHours, setFilteredHours] = useState([]);
 
   useEffect(() => {
-    const hours = filterAvailableHours(selectedDate);
-    setFilteredHours(hours);
+    const isDayBlocked = blockedSlots.some((slot) => slot.isBlocked);
+    const availableHours = isDayBlocked
+      ? []
+      : filterAvailableHours(selectedDate, blockedSlots);
+    setFilteredHours(availableHours);
 
-    if (hours.length > 0 && !value) {
-      onChange?.(hours[0]);
+    if (availableHours.length > 0 && !value) {
+      onChange?.(availableHours[0]);
     }
-  }, [selectedDate, onChange, value]);
+  }, [selectedDate, onChange, value, blockedSlots]);
 
   const selectClass = `w-full p-2 text-slate-950 ${
     error ? "border-red-500" : "border-slate-300"
@@ -68,6 +71,7 @@ TimeSelector.propTypes = {
   value: PropTypes.string,
   onChange: PropTypes.func,
   selectedDate: PropTypes.instanceOf(Date),
+  blockedSlots: PropTypes.arrayOf(PropTypes.instanceOf(Date)),
 };
 
 TimeSelector.defaultProps = {
@@ -76,4 +80,5 @@ TimeSelector.defaultProps = {
   selectedDate: null,
   error: null,
   onChange: () => {},
+  blockedSlots: [],
 };

@@ -1,8 +1,10 @@
 import { useState } from "react";
+import PropTypes from "prop-types";
+
+import dayjs from "dayjs";
+
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-
-import PropTypes from "prop-types";
 
 import { weekendDays, lastSchedulingHour } from "@/constants/dates";
 
@@ -31,8 +33,8 @@ export const DateSelector = ({
       now.getHours() >= lastSchedulingHour
     );
 
-    const isDateBlocked = blockedDates.some(
-      (d) => d.toDateString() === date.toDateString()
+    const isDateBlocked = blockedDates.some((blockedDate) =>
+      dayjs(blockedDate).isSame(dayjs(date), "day")
     );
 
     return isWeekday && isValidToday && !isDateBlocked;
@@ -70,7 +72,7 @@ export const DateSelector = ({
 
 DateSelector.propTypes = {
   id: PropTypes.string.isRequired,
-  label: PropTypes.string.isRequired,
+  label: PropTypes.string,
   error: PropTypes.string,
   value: PropTypes.instanceOf(Date),
   onChange: PropTypes.func.isRequired,
@@ -79,8 +81,6 @@ DateSelector.propTypes = {
 
 DateSelector.defaultProps = {
   label: "Data",
-  value: null,
   error: null,
+  value: null,
 };
-
-export default DateSelector;

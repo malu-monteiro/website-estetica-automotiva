@@ -1,9 +1,10 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
+import dayjs from "dayjs";
 
 import PropTypes from "prop-types";
 
-import DateSelector from "./DateSelector";
+import { DateSelector } from "./DateSelector";
 import { ServiceSelect } from "./ServiceSelect";
 import { TimeSelector } from "./TimeSelector";
 
@@ -32,14 +33,25 @@ export const ServiceForm = ({
 
   useEffect(() => {
     const fetchBlockedDates = async () => {
+      if (!selectedDate) return;
+
       try {
+        const formattedDate = dayjs(selectedDate).format("YYYY-MM-DD");
+
         const response = await axios.get(
-          "http://localhost:5000/api/disponibilidade"
+          "http://localhost:3000/api/availabilities",
+          {
+            params: {
+              date: formattedDate,
+            },
+          }
         );
+
         if (Array.isArray(response.data)) {
           const blocked = response.data
-            .filter((d) => !d.disponivel)
-            .map((d) => new Date(d.data));
+            .filter((availability) => availability.isBlocked)
+            .map((availability) => new Date(availability.date));
+
           setBlockedDates(blocked);
         } else {
           console.error("API did not return an array:", response.data);
@@ -50,8 +62,9 @@ export const ServiceForm = ({
         setBlockedDates([]);
       }
     };
+
     fetchBlockedDates();
-  }, []);
+  }, [selectedDate]);
 
   const handleSubmit = (e) => {
     e.preventDefault();

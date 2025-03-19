@@ -178,7 +178,7 @@ export const locationData = {
   address: "Rua Alamanda, 85, Pinhais, PR",
   cep: "83328-130",
   title: "Endereço",
-  workingHours: "Segunda a sexta, das 8h às 18h",
+  workingHours: "Atendimento de segunda a sexta, das 8h às 18h",
 };
 
 export const polimentoData = {

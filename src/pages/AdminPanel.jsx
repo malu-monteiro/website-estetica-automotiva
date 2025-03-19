@@ -1,171 +1,227 @@
-import { useEffect, useState } from "react";
+import { useState, useEffect } from "react";
 
 import axios from "axios";
+import dayjs from "dayjs";
+import utc from "dayjs-plugin-utc";
 
-import { format } from "date-fns";
+import { DateSelector } from "../components/Scheduling/Form/Service/DateSelector";
+import { TimeSelector } from "../components/Scheduling/Form/Service/TimeSelector";
+
+dayjs.extend(utc);
 
 const AdminPanel = () => {
-  const [disponibilidades, setDisponibilidades] = useState([]);
-  const [horarios, setHorarios] = useState([]);
-  const [view, setView] = useState("data");
+  const [date, setDate] = useState(null);
+  const [startTime, setStartTime] = useState("");
+  const [endTime, setEndTime] = useState("");
+  const [blockedDates, setBlockedDates] = useState([]);
+  const [blockedSlots, setBlockedSlots] = useState([]);
+
+  const API_URL = "http://localhost:3000";
 
   useEffect(() => {
-    axios
-      .get("http://localhost:5000/api/disponibilidade")
-      .then((response) => {
-        if (Array.isArray(response.data)) {
-          setDisponibilidades(response.data);
-        } else {
-          setDisponibilidades([]);
-        }
-      })
-      .catch((error) => {
-        console.error("Erro ao buscar datas:", error);
-        setDisponibilidades([]);
-      });
+    const fetchBlockedDates = async () => {
+      try {
+        const response = await axios.get(`${API_URL}/api/availabilities`, {
+          params: {
+            date: dayjs().utc().format("YYYY-MM-DD"),
+          },
+        });
 
-    axios
-      .get("http://localhost:5000/api/horarios")
-      .then((response) => {
         if (Array.isArray(response.data)) {
-          setHorarios(response.data);
+          const blocked = response.data
+            .filter((availability) => availability.isBlocked)
+            .map((availability) => dayjs.utc(availability.date).toDate());
+
+          setBlockedDates(blocked);
         } else {
-          setHorarios([]);
+          console.error("API did not return an array:", response.data);
+          setBlockedDates([]);
         }
-      })
-      .catch((error) => {
-        console.error("Erro ao buscar horários:", error);
-        setHorarios([]);
-      });
+      } catch (error) {
+        console.error("Erro fetching available dates", error);
+        setBlockedDates([]);
+      }
+    };
+
+    fetchBlockedDates();
   }, []);
 
-  const toggleDisponibilidade = async (id, disponivel) => {
-    try {
-      await axios.put(`http://localhost:5000/api/disponibilidade/${id}`, {
-        disponivel: !disponivel,
-      });
-      const updatedResponse = await axios.get(
-        "http://localhost:5000/api/disponibilidade"
-      );
-      if (Array.isArray(updatedResponse.data)) {
-        setDisponibilidades(updatedResponse.data);
+  useEffect(() => {
+    const fetchBlockedSlots = async () => {
+      try {
+        const response = await axios.get(`${API_URL}/api/blocked-slots`);
+        if (Array.isArray(response.data)) {
+          setBlockedSlots(response.data);
+        } else {
+          console.error("API did not return an array:", response.data);
+          setBlockedSlots([]);
+        }
+      } catch (error) {
+        console.error("Erro ao buscar bloqueios", error);
+        setBlockedSlots([]);
       }
+    };
+    fetchBlockedSlots();
+  }, []);
+
+  const handleBlockSlot = async () => {
+    if (!date || !startTime || !endTime) {
+      alert("Preencha todos os campos.");
+      return;
+    }
+
+    try {
+      const response = await axios.post(`${API_URL}/api/availabilities`, {
+        date: dayjs(date).format("YYYY-MM-DD"),
+        startTime,
+        endTime,
+      });
+      alert("Horário bloqueado com sucesso!");
+      const blockedResponse = await axios.get(`${API_URL}/api/blocked-slots`);
+      setBlockedSlots(blockedResponse.data);
     } catch (error) {
-      console.log("Erro ao atualizar disponibilidade:", error);
+      console.error("Erro ao bloquear horário", error);
+      alert(
+        "Erro ao bloquear horário. Verifique o console para mais detalhes."
+      );
     }
   };
 
-  const toggleHorario = async (id, disponivel) => {
+  const handleBlockDay = async () => {
+    if (!date) {
+      alert("Selecione uma data.");
+      return;
+    }
+
     try {
-      await axios.put(`http://localhost:5000/api/horarios/${id}`, {
-        disponivel: !disponivel,
-      });
-      const updatedResponse = await axios.get(
-        "http://localhost:5000/api/horarios"
+      const formattedDate = dayjs(date).format("YYYY-MM-DD");
+
+      const response = await axios.post(
+        `${API_URL}/api/availabilities/block-day`,
+        {
+          date: formattedDate,
+        }
       );
-      if (Array.isArray(updatedResponse.date)) {
-        setHorarios(updatedResponse.data);
+
+      if (response.data.message === "Esta data já está bloqueada.") {
+        alert(response.data.message);
+      } else {
+        alert("Dia bloqueado com sucesso!");
+      }
+
+      const blockedResponse = await axios.get(`${API_URL}/api/blocked-slots`);
+      setBlockedSlots(blockedResponse.data);
+
+      const blockedDatesResponse = await axios.get(
+        `${API_URL}/api/availabilities`,
+        {
+          params: {
+            date: formattedDate,
+          },
+        }
+      );
+
+      if (Array.isArray(blockedDatesResponse.data)) {
+        const blocked = blockedDatesResponse.data
+          .filter((availability) => availability.isBlocked)
+          .map((availability) => new Date(availability.date));
+
+        setBlockedDates(blocked);
+      } else {
+        console.error(
+          "API did not return an array:",
+          blockedDatesResponse.data
+        );
+        setBlockedDates([]);
       }
     } catch (error) {
-      console.log("Erro ao atualizar horário:", error);
+      console.error("Erro ao bloquear dia:", error);
+      alert("Erro ao bloquear dia. Verifique o console para mais detalhes.");
+    }
+  };
+
+  const handleUnblock = async (id, isBlocked) => {
+    try {
+      await axios.delete(`${API_URL}/api/blocked-slots/${id}`);
+      alert(isBlocked ? "Dia desbloqueado!" : "Horário desbloqueado!");
+      const response = await axios.get(`${API_URL}/api/blocked-slots`);
+      setBlockedSlots(response.data);
+    } catch (error) {
+      console.error("Erro ao desbloquear", error);
+      alert("Erro ao desbloquear. Verifique o console para mais detalhes.");
     }
   };
 
   return (
-    <div className="p-4 mt-4">
-      <h1 className="text-2xl font-bold mb-4 text-center">
-        Painel Administrativo
-      </h1>
-      <div className="flex justify-center mb-4">
+    <div className="p-4">
+      <h1 className="text-2xl font-bold mb-4">Painel Administrativo</h1>
+      <div className="space-y-4">
+        <DateSelector
+          id="date"
+          label="Data"
+          value={date}
+          onChange={setDate}
+          blockedDates={blockedDates}
+        />
+        <TimeSelector
+          id="startTime"
+          label="Horário Inicial"
+          value={startTime}
+          onChange={setStartTime}
+          selectedDate={date}
+        />
+        <TimeSelector
+          id="endTime"
+          label="Horário Final"
+          value={endTime}
+          onChange={setEndTime}
+          selectedDate={date}
+        />
         <button
-          onClick={() => setView("data")}
-          className={`px-4 py-2 mx-2 ${
-            view === "data" ? "bg-blue-500" : "bg-gray-500"
-          } text-white rounded`}
+          onClick={handleBlockSlot}
+          className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
         >
-          Data
+          Bloquear Horário
         </button>
         <button
-          onClick={() => setView("horario")}
-          className={`px-4 py-2 mx-2 ${
-            view === "horario" ? "bg-blue-500" : "bg-gray-500"
-          } text-white rounded`}
+          onClick={handleBlockDay}
+          className="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600"
         >
-          Horário
+          Bloquear Dia
         </button>
+
+        <h2 className="text-xl font-bold mt-8">Horário e Dias Bloqueados</h2>
+        <table className="min-w-full bg-black">
+          <thead>
+            <tr>
+              <th className="py-2">Data</th>
+              <th className="py-2">Tipo</th>
+              <th className="py-2">Ações</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            {blockedSlots.map((blocked) => (
+              <tr key={blocked.id}>
+                <td className="border px-4 py-2">
+                  {dayjs.utc(blocked.date).format("DD/MM/YYYY")}
+                </td>
+                <td className="border px-4 py-2">
+                  {blocked.isBlocked ? "Dia Inteiro" : "Horário"}
+                </td>
+                <td className="border px-4 py-2">
+                  <button
+                    onClick={() => handleUnblock(blocked.id, blocked.isBlocked)}
+                    className="bg-red-500 text-white px-4 py-1 rounded hover:bg-red-600"
+                  >
+                    Desbloquear
+                  </button>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
       </div>
-      {view === "data" ? (
-        <table className="w-full">
-          <thead>
-            <tr>
-              <th className="border px-4 py-2">Data</th>
-              <th className="border px-4 py-2">Disponibilidade</th>
-              <th className="border px-4 py-2">Ações</th>
-            </tr>
-          </thead>
-          <tbody>
-            {disponibilidades.map((disponibilidade) => (
-              <tr key={disponibilidade.id}>
-                <td className="border px-4 py-2">
-                  {format(new Date(disponibilidade.data), "dd/MM/yyyy")}
-                </td>
-                <td className="border px-4 py-2">
-                  {disponibilidade.disponivel ? "Sim" : "Não"}
-                </td>
-                <td className="border px-4 py-2">
-                  <button
-                    onClick={() =>
-                      toggleDisponibilidade(
-                        disponibilidade.id,
-                        disponibilidade.disponivel
-                      )
-                    }
-                    className={`px-4 py-2 ${
-                      disponibilidade.disponivel ? "bg-red-500" : "bg-green-500"
-                    } text-white rounded`}
-                  >
-                    {disponibilidade.disponivel ? "Bloquear" : "Liberar"}
-                  </button>
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      ) : (
-        <table className="w-full">
-          <thead>
-            <tr>
-              <th className="border px-4 py-2">Horário</th>
-              <th className="border px-4 py-2">Disponibilidade</th>
-              <th className="border px-4 py-2">Ações</th>
-            </tr>
-          </thead>
-          <tbody>
-            {horarios.map((horario) => (
-              <tr key={horario.id}>
-                <td className="border px-4 py-2">
-                  {format(new Date(horario.horario), "HH:mm")}
-                </td>
-                <td className="border px-4 py-2">
-                  {horario.disponivel ? "Sim" : "Não"}
-                </td>
-                <td className="border px-4 py-2">
-                  <button
-                    onClick={() =>
-                      toggleHorario(horario.id, horario.disponivel)
-                    }
-                    className={`px-4 py-2 ${
-                      horario.disponivel ? "bg-red-500" : "bg-green-500"
-                    } text-white rounded`}
-                  >
-                    {horario.disponivel ? "Bloquear" : "Liberar"}
-                  </button>
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      )}
     </div>
   );
 };
