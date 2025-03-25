@@ -6,8 +6,6 @@ import ServiceCarousel from "../../components/ServiceDetails/ServiceCarousel";
 import { polimentoData } from "../../constants";
 import { containerVariants, itemVariants } from "../../constants/animations";
 
-import Scheduling from "../../components/Scheduling";
-
 export default function Polimento() {
   return (
     <motion.div
@@ -30,7 +28,6 @@ export default function Polimento() {
             >
               {polimentoData.title}
             </motion.h2>
-            <Scheduling initialService={polimentoData.title} />
           </div>
 
           <div className="space-y-4">

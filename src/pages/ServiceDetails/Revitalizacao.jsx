@@ -6,8 +6,6 @@ import ServiceCarousel from "../../components/ServiceDetails/ServiceCarousel";
 import { revitalizacaoData } from "../../constants";
 import { containerVariants, itemVariants } from "../../constants/animations";
 
-import Scheduling from "../../components/Scheduling";
-
 export default function Revitalizacao() {
   return (
     <motion.div
@@ -30,7 +28,6 @@ export default function Revitalizacao() {
             >
               {revitalizacaoData.title}
             </motion.h2>
-            <Scheduling initialService={revitalizacaoData.title} />
           </div>
 
           <div className="space-y-4">

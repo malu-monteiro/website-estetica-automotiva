@@ -2,7 +2,6 @@ import { homeData } from "../constants/index.jsx";
 import { features } from "../constants";
 
 import { FeatureList } from "../components/FeatureList";
-import Scheduling from "../components/Scheduling";
 import { Button } from "../components/Button";
 
 export default function Home() {
@@ -24,8 +23,6 @@ export default function Home() {
         </p>
 
         <div className="flex justify-start my-6 md:my-10">
-          <Scheduling />
-
           <Button
             href={button.href}
             className="ml-3"

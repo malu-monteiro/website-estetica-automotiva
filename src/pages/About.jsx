@@ -10,10 +10,9 @@ export default function About() {
   return (
     <section
       id="about"
-      className="scroll-mt-36 mt-12 md:mt-24 mb-12 md:mb-24 relative border-b border-neutral-800 min-h-[800px] md:min-h-[600px] lg:min-h-[700px] flex items-center pb-16"
+      className="scroll-mt-36 mt-12 md:mt-24 mb-12 md:mb-24 relative min-h-[800px] md:min-h-[600px] lg:min-h-[700px] flex items-center pb-16"
     >
       <div className="flex flex-col lg:flex-row items-start justify-between max-w-7xl mx-auto px-4 sm:px-8 mt-6 md:mt-0 gap-8 md:gap-12">
-        {/* Imagem */}
         <div className="w-full lg:w-2/5 flex flex-col items-start justify-start">
           <img
             src={image}
@@ -22,7 +21,6 @@ export default function About() {
           />
         </div>
 
-        {/* Texto e botão */}
         <div className="w-full lg:w-3/5 mt-8 lg:mt-0">
           <h2 className="text-center sm:text-left text-xl sm:text-4xl lg:text-5xl font-bold">
             {title}
