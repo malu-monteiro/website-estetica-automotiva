@@ -5,7 +5,14 @@ import { FeatureList } from "../components/FeatureList";
 import { Button } from "../components/Button";
 
 export default function Home() {
-  const { title, subtitle, description, backgroundImage, button } = homeData;
+  const {
+    title,
+    subtitle,
+    description,
+    backgroundImage,
+    button,
+    whatsappButton,
+  } = homeData;
 
   return (
     <section
@@ -22,7 +29,17 @@ export default function Home() {
           {description}
         </p>
 
-        <div className="flex justify-start my-6 md:my-10">
+        <div className="flex justify-start my-6 md:my-10 gap-4">
+          <Button
+            href={whatsappButton.href}
+            icon={whatsappButton.icon}
+            aria-label={whatsappButton.ariaLabel}
+            className={whatsappButton.className}
+            iconPosition="left"
+          >
+            {whatsappButton.text}
+          </Button>
+
           <Button
             href={button.href}
             className="ml-3"

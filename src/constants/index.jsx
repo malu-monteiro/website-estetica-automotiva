@@ -47,7 +47,7 @@ import Higienizacao10 from "../assets/carousel/higienizacao10.png";
 import Higienizacao11 from "../assets/carousel/higienizacao11.png";
 import Higienizacao12 from "../assets/carousel/higienizacao12.png";
 
-import { FaFacebook, FaInstagram } from "react-icons/fa6";
+import { FaFacebook, FaInstagram, FaWhatsapp } from "react-icons/fa6";
 
 export const navLinks = [
   { id: "home", title: "Início" },
@@ -69,6 +69,13 @@ export const homeData = {
     href: "#about",
     icon: ChevronsDown,
     ariaLabel: "Saiba mais sobre nós",
+  },
+  whatsappButton: {
+    href: "https://wa.me/41999346385",
+    text: "WhatsApp",
+    icon: FaWhatsapp,
+    ariaLabel: "Conversar no WhatsApp",
+    className: "bg-green-600 hover:bg-green-700 text-white",
   },
 };
 
