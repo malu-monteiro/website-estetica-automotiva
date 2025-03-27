@@ -1,6 +1,7 @@
 import PropTypes from "prop-types";
 import { elfsightConfig } from "../constants";
 import { useElfsight } from "../hooks/useElfsight";
+import { FadeInUp } from "../components/AnimatedElements";
 
 export default function Reviews({ title = "Avaliações" }) {
   useElfsight();
@@ -11,9 +12,13 @@ export default function Reviews({ title = "Avaliações" }) {
       className="scroll-mt-16 relative border-b border-neutral-800 min-h-[600px]"
     >
       <div className="max-w-7xl mx-auto px-8 py-20">
-        <h2 className="text-xl sm:text-5xl lg:text-6xl font-bold mb-10 text-center">
-          {title}
-        </h2>
+        <div className="text-center">
+          <FadeInUp>
+            <h2 className="text-xl sm:text-5xl lg:text-6xl font-bold mb-10 inline-block">
+              {title}
+            </h2>
+          </FadeInUp>
+        </div>
         <div
           className={`elfsight-app-${elfsightConfig.appId}`}
           data-elfsight-app-lazy

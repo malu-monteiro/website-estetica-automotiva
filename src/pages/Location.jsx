@@ -59,7 +59,6 @@ const createPopup = (lng, lat, title, address, cep) => {
 export default function Location() {
   const mapContainer = useRef(null);
   const map = useRef(null);
-
   const { center, zoom, address, cep, title, workingHours } = locationData;
 
   useEffect(() => {
