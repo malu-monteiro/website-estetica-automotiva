@@ -6,23 +6,7 @@ import "./styles/map.css";
 
 import { locationData } from "../constants";
 
-import { motion } from "framer-motion";
-
 maptilersdk.config.apiKey = import.meta.env.VITE_MAPTILER_API_KEY;
-
-const titleAnimation = {
-  initial: { opacity: 0, y: 20 },
-  animate: { opacity: 1, y: 0 },
-  viewport: { once: true },
-  transition: { duration: 0.6 },
-};
-
-const workingHoursAnimation = {
-  initial: { opacity: 0, y: 20 },
-  animate: { opacity: 1, y: 0 },
-  viewport: { once: true },
-  transition: { duration: 0.6, delay: 0.2 },
-};
 
 const initializeMap = (mapContainer, center, zoom) => {
   return new maptilersdk.Map({
@@ -75,6 +59,7 @@ const createPopup = (lng, lat, title, address, cep) => {
 export default function Location() {
   const mapContainer = useRef(null);
   const map = useRef(null);
+
   const { center, zoom, address, cep, title, workingHours } = locationData;
 
   useEffect(() => {
@@ -94,19 +79,12 @@ export default function Location() {
     <section id="location" className="scroll-mt-16">
       <div className=" w-full h-auto flex flex-col">
         <div className="text-center">
-          <motion.h2
-            {...titleAnimation}
-            className="text-xl sm:text-5xl lg:text-6xl font-bold mb-10 mt-10 lg:mt-20"
-          >
+          <h2 className="text-xl sm:text-5xl lg:text-6xl font-bold mb-10 mt-10 lg:mt-20">
             Localização
-          </motion.h2>
-
-          <motion.p
-            {...workingHoursAnimation}
-            className="text-base sm:text-lg lg:text-xl mb-10"
-          >
+          </h2>
+          <p className="text-base sm:text-lg lg:text-xl mb-10">
             {workingHours}
-          </motion.p>
+          </p>
           <div className="w-full h-[500px]">
             <div ref={mapContainer} className="w-full h-full" />
           </div>

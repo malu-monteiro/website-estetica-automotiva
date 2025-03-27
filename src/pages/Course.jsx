@@ -2,7 +2,7 @@ import { about, socialMedia } from "../constants/index";
 import { Button } from "../components/Button";
 import PropTypes from "prop-types";
 
-export default function About() {
+export default function Course() {
   const aboutData = about[0] || {};
   const { title, subtitle, highlight, description, image } = aboutData;
   const { href, icon, text } = socialMedia[0] || {};
@@ -52,7 +52,7 @@ export default function About() {
   );
 }
 
-About.propTypes = {
+Course.propTypes = {
   about: PropTypes.arrayOf(
     PropTypes.shape({
       title: PropTypes.string.isRequired,

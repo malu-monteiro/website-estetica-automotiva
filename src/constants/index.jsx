@@ -173,6 +173,11 @@ export const socialMedia = [
     icon: FaFacebook,
     text: "Curta nossa página no Facebook",
   },
+  {
+    id: "social-media-3",
+    href: "https://wa.me/41999346385",
+    icon: FaWhatsapp,
+  },
 ];
 
 export const elfsightConfig = {

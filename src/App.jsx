@@ -14,6 +14,7 @@ import Polimento from "./pages/ServiceDetails/Polimento";
 import Revitalizacao from "./pages/ServiceDetails/Revitalizacao";
 import Vitrificacao from "./pages/ServiceDetails/Vitrificacao";
 import Higienizacao from "./pages/ServiceDetails/Higienizacao";
+import Course from "./pages/Course";
 
 const MainPage = () => {
   useEffect(() => {
@@ -25,6 +26,7 @@ const MainPage = () => {
       <Home />
       <About />
       <OurServices />
+      <Course />
       <Reviews />
       <Location />
     </>
