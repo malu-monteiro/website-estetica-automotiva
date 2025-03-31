@@ -61,3 +61,28 @@
   line-height: 1.4;
   width: 95%;
 }
+
+.map-popup__link {
+  display: inline-flex;
+  justify-content: flex-start;
+  text-align: left;
+  width: 100%;
+  margin-top: 8px;
+  color: #000;
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.map-popup__link:hover {
+  color: #dc2626;
+  text-decoration: underline;
+}
+
+.map-popup__link svg {
+  transition: transform 0.2s;
+}
+
+.map-popup__link:hover svg {
+  transform: translate(2px, -2px);
+}

@@ -19,6 +19,8 @@ const initializeMap = (mapContainer, center, zoom) => {
 
 const createPopup = (lng, lat, title, address, cep) => {
   const fullAddress = `${address}, ${cep}`;
+  const googleMapsUrl =
+    "https://www.google.com/maps/place/MSS_Studio+Car+Est%C3%A9tica+Automotiva/@-25.4177091,-49.1528858,18.29z/data=!4m10!1m2!2m1!1sMP+Studio+Car+Est%C3%A9tica+Automotiva+-+RUA.+Alemanha,+85+-+Jardim+Karla,+Pinhais+-+PR,+83328-130!3m6!1s0x94dcef962d685757:0x297e47eeb64b5ba8!8m2!3d-25.417228!4d-49.1529216!15sCl5NUCBTdHVkaW8gQ2FyIEVzdMOpdGljYSBBdXRvbW90aXZhIC0gUlVBLiBBbGVtYW5oYSwgODUgLSBKYXJkaW0gS2FybGEsIFBpbmhhaXMgLSBQUiwgODMzMjgtMTMwkgEIY2FyX3dhc2jgAQA!16s%2Fg%2F11p47f3y2t?hl=pt-BR&entry=ttu&g_ep=EgoyMDI1MDMyNS4xIKXMDSoASAFQAw%3D%3D";
 
   return new maptilersdk.Popup({
     offset: 25,
@@ -52,6 +54,19 @@ const createPopup = (lng, lat, title, address, cep) => {
         </div>
         <p class="map-popup__text">${address}</p>
         <p class="map-popup__text">CEP: ${cep}</p>
+        <a 
+          href="${googleMapsUrl}" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          class="map-popup__link"
+        >
+          Acesse
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" style="stroke: currentColor; margin-left: 4px;">
+          <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" fill="none" stroke-width="2"/>
+            <path d="M15 3h6v6" fill="none" stroke-width="2"/>
+            <path d="M10 14L21 3" fill="none" stroke-width="2"/>
+          </svg>
+        </a>
       </div>`
     );
 };
@@ -77,16 +92,17 @@ export default function Location() {
 
   return (
     <section id="location" className="scroll-mt-16">
-      <div className=" w-full h-auto flex flex-col">
-        <div className="text-center">
-          <h2 className="text-xl sm:text-5xl lg:text-6xl font-bold mb-10 mt-10 lg:mt-20">
+      <div className="w-full h-auto flex flex-col">
+        <div className="text-center px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl text-neutral-300 font-bold mb-4 mt-6 lg:mt-12">
             Localização
           </h2>
-          <p className="text-base sm:text-lg lg:text-xl mb-10">
+          <p className="text-base sm:text-lg lg:text-xl mb-6 text-neutral-300">
             {workingHours}
           </p>
-          <div className="w-full h-[500px]">
-            <div ref={mapContainer} className="w-full h-full" />
+
+          <div className="w-full h-[300px] sm:h-[400px] lg:h-[500px] px-4 sm:px-0">
+            <div ref={mapContainer} className="w-full h-full rounded-lg" />
           </div>
         </div>
       </div>

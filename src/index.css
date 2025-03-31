@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto:wght@400;500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Poppins:wght@100..900&family=Roboto:wght@400;500;700&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -8,32 +8,53 @@
   font-family: "Poppins", sans-serif;
   color-scheme: dark;
   background-color: #121212;
+  scroll-behavior: smooth;
 }
 
 body {
   @apply antialiased;
 }
 
-.swiper {
-  width: 100%;
-  height: 100%;
+.swiper-button-next,
+.swiper-button-prev {
+  background: rgba(0, 0, 0, 0.5) !important;
+  width: 44px !important;
+  height: 44px !important;
+  border-radius: 50% !important;
+  transition: background 0.3s ease, transform 0.2s ease-in-out !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
 }
 
-.swiper-slide {
-  text-align: center;
-  background: transparent;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+  background: rgba(220, 38, 38, 0.8) !important;
+  transform: scale(1.1) !important;
 }
 
-.swiper-slide img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  color: white !important;
+  font-size: 18px !important;
 }
 
-.swiper-pagination-bullet {
-  background: #000 !important;
+.swiper-pagination {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  height: 0 !important;
+  width: 0 !important;
+}
+
+.swiper-thumb {
+  opacity: 0.6;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.swiper-thumb-active {
+  opacity: 1;
+  filter: brightness(1.2);
+  transform: scale(1.02);
+  transition: opacity 0.3s ease, transform 0.3s ease;
 }

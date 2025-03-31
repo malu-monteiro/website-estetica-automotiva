@@ -53,6 +53,7 @@ export const navLinks = [
   { id: "home", title: "Início" },
   { id: "about", title: "Sobre Nós" },
   { id: "services", title: "Serviços" },
+  { id: "course", title: "Curso" },
   { id: "reviews", title: "Avaliações" },
   { id: "location", title: "Localização" },
   { id: "contact", title: "Contato" },
@@ -135,10 +136,10 @@ export const about = [
     highlight: "detalhe!",
     image: [AboutImage],
     description: `A MSS_STUDIO CAR é uma empresa especializada em estética automotiva. 
-    Oferecemos serviços de Polimento, Revitalização de Faróis, Vitrificação e Higienização 
-    Interna Premium, garantindo que seu veículo se mantenha impecável e protegido contra os 
+    Oferecemos serviços de polimento, revitalização de faróis, vitrificação e higienização
+    interna premium, garantindo que seu veículo se mantenha impecável e protegido contra os 
     efeitos do tempo. Com atenção aos detalhes e compromisso com a qualidade, proporcionamos 
-    um carro com aparência de novo, preservando seu valor. `,
+    um carro com aparência de novo, preservando seu valor.`,
   },
 ];
 
@@ -179,6 +180,32 @@ export const socialMedia = [
     icon: FaWhatsapp,
   },
 ];
+
+export const courseData = {
+  title: "Curso Polimento de Farol",
+  subtitle: "Técnicas - 100% Prático",
+  description:
+    "Aprenda as melhores técnicas profissionais para polimento de faróis com nosso curso intensivo.",
+  image: "/images/polimento-farol.jpg",
+
+  features: [
+    "Lixamento manual.",
+    "Lixamento com máquina.",
+    "Controle de lixamento.",
+    "Remoção de craquelados.",
+  ],
+
+  staticTexts: {
+    techniquesTitle: "Técnicas Dominadas",
+    certificateText: "Certificado de conclusão reconhecido nacionalmente",
+    premiumTitle: "Diferencial Exclusivo",
+    premiumDescription: "Técnicas aplicadas em concessionárias premium",
+    ctaTitle: "Próxima turma vagas",
+    ctaHighlight: "limitadas!",
+    ctaDescription:
+      "Garanta sua vaga agora ou tire suas dúvidas pelo WhatsApp.",
+  },
+};
 
 export const elfsightConfig = {
   appId: import.meta.env.VITE_ELFSIGHT_APP_ID,

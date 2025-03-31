@@ -11,7 +11,7 @@ export default function Reviews({ title = "Avaliações" }) {
       className="scroll-mt-16 relative border-b border-neutral-800 min-h-[600px]"
     >
       <div className="max-w-7xl mx-auto px-8 py-20">
-        <h2 className="text-xl sm:text-5xl lg:text-6xl font-bold mb-10 text-center">
+        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-10 text-neutral-300 text-center">
           {title}
         </h2>
         <div
