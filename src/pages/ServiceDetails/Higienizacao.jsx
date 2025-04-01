@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { Button } from "../../components/Button";
 import ServiceList from "../../components/ServiceDetails/ServiceList";
 import ServiceCarousel from "../../components/ServiceDetails/ServiceCarousel";
-import { higienizacaoData } from "../../constants";
+import { higienizacaoData, whatsappBase } from "../../constants";
 import { containerVariants, itemVariants } from "../../constants/animations";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCog, faStar, faTools } from "@fortawesome/free-solid-svg-icons";
@@ -28,7 +28,7 @@ export default function Higienizacao() {
           </h1>
           <div className="w-24 h-1 bg-red-600 mx-auto mt-4"></div>
           <p className="mt-6 text-lg text-neutral-300 max-w-2xl mx-auto">
-            Revitalização profissional para o interior do seu veículo
+            {higienizacaoData.subtitle}
           </p>
         </motion.div>
 
@@ -62,8 +62,11 @@ export default function Higienizacao() {
 
             <div className="pt-4">
               <Button
-                href="https://wa.me/41999346385"
-                className="bg-green-600 hover:bg-green-700 w-fit text-white font-medium py-1 px-3 sm:mx-0 mx-auto"
+                href={whatsappBase.href}
+                icon={whatsappBase.icon}
+                aria-label={whatsappBase.ariaLabel}
+                className={`${whatsappBase.className} w-fit hover:scale-105 transition-transform`}
+                iconPosition="left"
               >
                 Agendar via WhatsApp
               </Button>

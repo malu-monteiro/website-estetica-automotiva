@@ -71,13 +71,13 @@ export const homeData = {
     icon: ChevronsDown,
     ariaLabel: "Saiba mais sobre nós",
   },
-  whatsappButton: {
-    href: "https://wa.me/41999346385",
-    text: "WhatsApp",
-    icon: FaWhatsapp,
-    ariaLabel: "Conversar no WhatsApp",
-    className: "bg-green-600 hover:bg-green-700 text-white",
-  },
+};
+
+export const whatsappBase = {
+  href: "https://wa.me/41999346385",
+  icon: FaWhatsapp,
+  ariaLabel: "Conversar no WhatsApp",
+  className: "bg-green-600 hover:bg-green-700 text-white",
 };
 
 export const features = [
@@ -222,6 +222,7 @@ export const locationData = {
 
 export const polimentoData = {
   title: "Polimento",
+  subtitle: "Revitalização profissional para o interior do seu veículo",
   images: [Polimento1, Polimento2],
   finalidade: [
     "Remover arranhões leves.",
@@ -308,6 +309,7 @@ export const vitrificacaoData = {
 
 export const higienizacaoData = {
   title: "Higienização Interna Premium",
+  subtitle: "Revitalização profissional para o interior do seu veículo",
   images: [
     Higienizacao1,
     Higienizacao2,

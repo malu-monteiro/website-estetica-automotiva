@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { homeData } from "../constants/index.jsx";
+import { homeData, whatsappBase } from "../constants/index.jsx";
 import { features } from "../constants";
 import { FeatureList } from "../components/FeatureList";
 import { Button } from "../components/Button";
@@ -28,14 +28,7 @@ const itemVariants = {
 };
 
 export default function Home() {
-  const {
-    title,
-    subtitle,
-    description,
-    backgroundImage,
-    button,
-    whatsappButton,
-  } = homeData;
+  const { title, subtitle, description, backgroundImage, button } = homeData;
 
   return (
     <section
@@ -75,13 +68,13 @@ export default function Home() {
           variants={itemVariants}
         >
           <Button
-            href={whatsappButton.href}
-            icon={whatsappButton.icon}
-            aria-label={whatsappButton.ariaLabel}
-            className={`${whatsappButton.className} hover:scale-105 transition-transform`}
+            href={whatsappBase.href}
+            icon={whatsappBase.icon}
+            aria-label={whatsappBase.ariaLabel}
+            className={`${whatsappBase.className} hover:scale-105 transition-transform`}
             iconPosition="left"
           >
-            {whatsappButton.text}
+            WhatsApp
           </Button>
 
           <Button

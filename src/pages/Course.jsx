@@ -1,4 +1,3 @@
-import { FaWhatsapp } from "react-icons/fa6";
 import {
   FaCheckCircle,
   FaMedal,
@@ -7,24 +6,11 @@ import {
   FaTools,
 } from "react-icons/fa";
 import { Button } from "../components/Button";
-import { courseData } from "../constants";
+import { courseData, whatsappBase } from "../constants";
 import PropTypes from "prop-types";
 
 export default function Course() {
-  const {
-    title,
-    subtitle,
-    features,
-    staticTexts,
-    whatsappButton = {
-      href: "https://wa.me/41999346385",
-      text: "WhatsApp",
-      icon: FaWhatsapp,
-      ariaLabel: "Conversar no WhatsApp",
-      className:
-        "bg-green-600 hover:bg-green-700 text-white shadow-lg hover:shadow-xl transition-transform transform hover:scale-105",
-    },
-  } = courseData;
+  const { title, subtitle, features, staticTexts } = courseData;
 
   return (
     <section
@@ -119,13 +105,13 @@ export default function Course() {
                   </p>
                 </div>
                 <Button
-                  href={whatsappButton.href}
-                  icon={whatsappButton.icon}
-                  aria-label={whatsappButton.ariaLabel}
-                  className={`${whatsappButton.className} px-8 py-3 text-lg font-bold hover:bg-green-700 transition-colors shadow-lg hover:shadow-green-900/30`}
+                  href={whatsappBase.href}
+                  icon={whatsappBase.icon}
+                  aria-label={whatsappBase.ariaLabel}
+                  className={`${whatsappBase.className} px-8 py-3 text-lg font-bold hover:bg-green-700 transition-colors shadow-lg hover:shadow-green-900/30`}
                   iconPosition="left"
                 >
-                  {whatsappButton.text}
+                  WhatsApp
                 </Button>
               </div>
             </div>

@@ -8,17 +8,20 @@ export function Button({
   icon: Icon,
   iconPosition = "right",
   ariaLabel,
+  variant = "default",
+  target = "_blank",
+  rel = "noopener noreferrer",
 }) {
+  const baseStyles = {
+    default: "bg-gray-450 hover:bg-opacity-60",
+    whatsapp: "bg-green-600 hover:bg-green-700 text-white",
+  };
+
   const handleClick = (e) => {
     if (href?.startsWith("#")) {
       e.preventDefault();
       const element = document.querySelector(href);
-      if (element) {
-        element.scrollIntoView({
-          behavior: "smooth",
-          block: "start",
-        });
-      }
+      element?.scrollIntoView({ behavior: "smooth", block: "start" });
     }
     onClick?.();
   };
@@ -27,10 +30,10 @@ export function Button({
     <a
       href={href}
       onClick={handleClick}
-      className={`bg-gray-450 hover:bg-opacity-60 py-2 md:py-3 px-4 md:px-6 rounded-full flex items-center text-sm md:text-base transition-all duration-300 ${className}`}
+      className={`py-2 md:py-3 px-4 md:px-6 rounded-full flex items-center text-sm md:text-base transition-all duration-300 ${baseStyles[variant]} ${className}`}
       aria-label={ariaLabel}
-      target="_blank"
-      rel="noopener noreferrer"
+      target={target}
+      rel={rel}
     >
       {Icon && iconPosition === "left" && <Icon className="mr-2" />}
       {children}
@@ -38,6 +41,12 @@ export function Button({
     </a>
   );
 }
+
+Button.propTypes = {
+  variant: PropTypes.oneOf(["default", "whatsapp"]),
+  target: PropTypes.string,
+  rel: PropTypes.string,
+};
 
 Button.propTypes = {
   href: PropTypes.string,
