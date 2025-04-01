@@ -15,46 +15,20 @@ body {
   @apply antialiased;
 }
 
-.swiper-button-next,
-.swiper-button-prev {
-  background: rgba(0, 0, 0, 0.5) !important;
-  width: 44px !important;
-  height: 44px !important;
-  border-radius: 50% !important;
-  transition: background 0.3s ease, transform 0.2s ease-in-out !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
+.swiper-container {
+  --swiper-navigation-color: #ef4444;
+  --swiper-pagination-color: #ef4444;
+  height: 300px;
 }
 
-.swiper-button-next:hover,
-.swiper-button-prev:hover {
-  background: rgba(220, 38, 38, 0.8) !important;
-  transform: scale(1.1) !important;
+@media (max-width: 768px) {
+  .swiper-container {
+    height: 300px;
+  }
 }
 
-.swiper-button-next::after,
-.swiper-button-prev::after {
-  color: white !important;
-  font-size: 18px !important;
-}
-
-.swiper-pagination {
-  display: none !important;
-  visibility: hidden !important;
-  opacity: 0 !important;
-  height: 0 !important;
-  width: 0 !important;
-}
-
-.swiper-thumb {
-  opacity: 0.6;
-  transition: opacity 0.3s ease, transform 0.3s ease;
-}
-
-.swiper-thumb-active {
-  opacity: 1;
-  filter: brightness(1.2);
-  transform: scale(1.02);
-  transition: opacity 0.3s ease, transform 0.3s ease;
+@media (min-width: 769px) {
+  .swiper-container {
+    height: 500px;
+  }
 }

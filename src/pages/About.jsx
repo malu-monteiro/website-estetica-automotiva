@@ -91,7 +91,7 @@ export default function About() {
   const { href, icon, text } = socialMedia[0] || {};
 
   return (
-    <section id="about" className="scroll-mt-36 relative bg-[#121212]">
+    <section id="about" className="scroll-mt-18 relative bg-[#121212]">
       <div className="border-b border-neutral-800 min-h-[800px] flex items-center">
         <div className="container mx-auto px-6 py-12 md:px-8 md:py-24">
           <div className="flex flex-col lg:flex-row items-center justify-center lg:justify-between gap-12">

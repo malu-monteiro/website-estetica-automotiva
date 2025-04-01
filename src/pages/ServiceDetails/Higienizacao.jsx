@@ -1,3 +1,5 @@
+import { useEffect } from "react";
+
 import { motion } from "framer-motion";
 import { Button } from "../../components/Button";
 import ServiceList from "../../components/ServiceDetails/ServiceList";
@@ -8,12 +10,16 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCog, faStar, faTools } from "@fortawesome/free-solid-svg-icons";
 
 export default function Higienizacao() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <motion.div
       variants={containerVariants}
       initial="hidden"
       animate="visible"
-      className="min-h-screen bg-[#121212] py-12 px-4 sm:px-6 lg:px-8"
+      className="bg-[#121212] py-12 px-4 sm:px-6 lg:px-8"
     >
       <div className="max-w-7xl mx-auto">
         <motion.div variants={itemVariants} className="mb-12 text-center">
@@ -26,15 +32,18 @@ export default function Higienizacao() {
           </p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-start">
-          <div className="lg:sticky lg:top-8">
+        <div className="flex flex-col lg:grid lg:grid-cols-2 gap-6">
+          <div className="w-full max-w-md mx-auto lg:max-w-none">
             <ServiceCarousel
               images={higienizacaoData.images}
               variants={itemVariants}
             />
           </div>
 
-          <motion.div variants={itemVariants} className="space-y-6 ">
+          <motion.div
+            variants={itemVariants}
+            className="space-y-4 w-full max-w-md mx-auto lg:max-w-none"
+          >
             <ServiceList
               title="Finalidade"
               items={higienizacaoData.finalidade}
@@ -54,7 +63,7 @@ export default function Higienizacao() {
             <div className="pt-4">
               <Button
                 href="https://wa.me/41999346385"
-                className="bg-green-600 hover:bg-green-700 w-fit text-white font-medium py-1 px-3"
+                className="bg-green-600 hover:bg-green-700 w-fit text-white font-medium py-1 px-3 sm:mx-0 mx-auto"
               >
                 Agendar via WhatsApp
               </Button>
