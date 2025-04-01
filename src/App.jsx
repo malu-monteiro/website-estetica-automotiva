@@ -1,3 +1,5 @@
+import { Navigate } from "react-router-dom";
+
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { useEffect } from "react";
 
@@ -22,20 +24,20 @@ const MainPage = () => {
   }, []);
 
   return (
-    <>
+    <main>
       <Home />
       <About />
       <OurServices />
       <Course />
       <Reviews />
       <Location />
-    </>
+    </main>
   );
 };
 
 export default function App() {
   return (
-    <Router>
+    <Router basename="/website-estetica-automotiva">
       <Navbar />
       <Routes>
         <Route path="/" element={<MainPage />} />
@@ -46,6 +48,7 @@ export default function App() {
           path="/higienizacao-interna-premium"
           element={<Higienizacao />}
         />
+        <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
       <Footer />
     </Router>

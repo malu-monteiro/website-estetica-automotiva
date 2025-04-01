@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Redirecionando...</title>
+    <script>
+      const basePath = "/website-estetica-automotiva";
+      if (!window.location.pathname.startsWith(basePath + "/")) {
+        window.location.replace(basePath + window.location.pathname);
+      }
+    </script>
+  </head>
+  <body>
+    <noscript>
+      <h1>Redirecionando...</h1>
+      <a href="/website-estetica-automotiva/"
+        >Clique aqui se não for redirecionado</a
+      >
+    </noscript>
+  </body>
+</html>
