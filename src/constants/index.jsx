@@ -42,7 +42,6 @@ import Revitalizacao21 from "../assets/carousel/revitalizacao/revitalizacao21.jp
 import Revitalizacao22 from "../assets/carousel/revitalizacao/revitalizacao22.jpg";
 import Revitalizacao23 from "../assets/carousel/revitalizacao/revitalizacao23.jpg";
 import Revitalizacao24 from "../assets/carousel/revitalizacao/revitalizacao24.jpg";
-import Revitalizacao25 from "../assets/carousel/revitalizacao/revitalizacao25.jpg";
 
 import Vitrificacao1 from "../assets/carousel/vitrificacao/vitrificacao1.jpg";
 import Vitrificacao2 from "../assets/carousel/vitrificacao/vitrificacao2.png";
@@ -297,7 +296,6 @@ export const revitalizacaoData = {
     Revitalizacao22,
     Revitalizacao23,
     Revitalizacao24,
-    Revitalizacao25,
   ],
   finalidade: [
     "Remover amarelado.",
