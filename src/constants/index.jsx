@@ -9,43 +9,60 @@ import Revitalizacao from "../assets/revitalizacao.jpg";
 import Vitrificação from "../assets/vitrificacao.jpg";
 import Higienização from "../assets/higienizacao-interna.avif";
 
-import Polimento1 from "../assets/carousel/polimento1.jpg";
-import Polimento2 from "../assets/carousel/polimento2.jpg";
-import Polimento3 from "../assets/carousel/polimento3.jpg";
+import Polimento1 from "../assets/carousel/polimento/polimento1.jpg";
+import Polimento2 from "../assets/carousel/polimento/polimento2.jpg";
+import Polimento3 from "../assets/carousel/polimento/polimento3.jpg";
+import Polimento4 from "../assets/carousel/polimento/polimento4.jpg";
+import Polimento5 from "../assets/carousel/polimento/polimento5.jpg";
+import Polimento6 from "../assets/carousel/polimento/polimento6.jpg";
+import Polimento7 from "../assets/carousel/polimento/polimento7.jpg";
+import Polimento8 from "../assets/carousel/polimento/polimento8.jpg";
 
-import Revitalizacao1 from "../assets/carousel/revitalizacao1.jpg";
-import Revitalizacao2 from "../assets/carousel/revitalizacao2.jpg";
-import Revitalizacao3 from "../assets/carousel/revitalizacao3.jpg";
-import Revitalizacao4 from "../assets/carousel/revitalizacao4.jpg";
-import Revitalizacao5 from "../assets/carousel/revitalizacao5.jpg";
-import Revitalizacao6 from "../assets/carousel/revitalizacao6.jpg";
-import Revitalizacao7 from "../assets/carousel/revitalizacao7.jpg";
-import Revitalizacao8 from "../assets/carousel/revitalizacao8.jpg";
-import Revitalizacao9 from "../assets/carousel/revitalizacao9.jpg";
-import Revitalizacao10 from "../assets/carousel/revitalizacao10.png";
-import Revitalizacao11 from "../assets/carousel/revitalizacao11.png";
-import Revitalizacao12 from "../assets/carousel/revitalizacao12.png";
-import Revitalizacao13 from "../assets/carousel/revitalizacao13.jpg";
-import Revitalizacao14 from "../assets/carousel/revitalizacao14.jpg";
-import Revitalizacao15 from "../assets/carousel/revitalizacao15.jpg";
-import Revitalizacao16 from "../assets/carousel/revitalizacao16.jpg";
+import Revitalizacao1 from "../assets/carousel/revitalizacao/revitalizacao1.jpg";
+import Revitalizacao2 from "../assets/carousel/revitalizacao/revitalizacao2.jpg";
+import Revitalizacao3 from "../assets/carousel/revitalizacao/revitalizacao3.jpg";
+import Revitalizacao4 from "../assets/carousel/revitalizacao/revitalizacao4.jpg";
+import Revitalizacao5 from "../assets/carousel/revitalizacao/revitalizacao5.jpg";
+import Revitalizacao6 from "../assets/carousel/revitalizacao/revitalizacao6.jpg";
+import Revitalizacao7 from "../assets/carousel/revitalizacao/revitalizacao7.jpg";
+import Revitalizacao8 from "../assets/carousel/revitalizacao/revitalizacao8.jpg";
+import Revitalizacao9 from "../assets/carousel/revitalizacao/revitalizacao9.jpg";
+import Revitalizacao10 from "../assets/carousel/revitalizacao/revitalizacao10.png";
+import Revitalizacao11 from "../assets/carousel/revitalizacao/revitalizacao11.png";
+import Revitalizacao12 from "../assets/carousel/revitalizacao/revitalizacao12.png";
+import Revitalizacao13 from "../assets/carousel/revitalizacao/revitalizacao13.jpg";
+import Revitalizacao14 from "../assets/carousel/revitalizacao/revitalizacao14.jpg";
+import Revitalizacao15 from "../assets/carousel/revitalizacao/revitalizacao15.jpg";
+import Revitalizacao16 from "../assets/carousel/revitalizacao/revitalizacao16.jpg";
+import Revitalizacao17 from "../assets/carousel/revitalizacao/revitalizacao17.jpg";
+import Revitalizacao18 from "../assets/carousel/revitalizacao/revitalizacao18.jpg";
+import Revitalizacao19 from "../assets/carousel/revitalizacao/revitalizacao19.jpg";
+import Revitalizacao20 from "../assets/carousel/revitalizacao/revitalizacao20.jpg";
+import Revitalizacao21 from "../assets/carousel/revitalizacao/revitalizacao21.jpg";
+import Revitalizacao22 from "../assets/carousel/revitalizacao/revitalizacao22.jpg";
+import Revitalizacao23 from "../assets/carousel/revitalizacao/revitalizacao23.jpg";
+import Revitalizacao24 from "../assets/carousel/revitalizacao/revitalizacao24.jpg";
+import Revitalizacao25 from "../assets/carousel/revitalizacao/revitalizacao25.jpg";
 
-import Vitrificacao1 from "../assets/carousel/vitrificacao1.jpg";
-import Vitrificacao2 from "../assets/carousel/vitrificacao2.jpg";
-import Vitrificacao3 from "../assets/carousel/vitrificacao3.jpg";
+import Vitrificacao1 from "../assets/carousel/vitrificacao/vitrificacao1.jpg";
+import Vitrificacao2 from "../assets/carousel/vitrificacao/vitrificacao2.png";
+import Vitrificacao3 from "../assets/carousel/vitrificacao/vitrificacao3.jpg";
+import Vitrificacao4 from "../assets/carousel/vitrificacao/vitrificacao4.jpg";
+import Vitrificacao5 from "../assets/carousel/vitrificacao/vitrificacao5.jpg";
+import Vitrificacao6 from "../assets/carousel/vitrificacao/vitrificacao6.jpg";
 
-import Higienizacao1 from "../assets/carousel/higienizacao1.png";
-import Higienizacao2 from "../assets/carousel/higienizacao2.jpg";
-import Higienizacao3 from "../assets/carousel/higienizacao3.png";
-import Higienizacao4 from "../assets/carousel/higienizacao4.png";
-import Higienizacao5 from "../assets/carousel/higienizacao5.png";
-import Higienizacao6 from "../assets/carousel/higienizacao6.png";
-import Higienizacao7 from "../assets/carousel/higienizacao7.png";
-import Higienizacao8 from "../assets/carousel/higienizacao8.png";
-import Higienizacao9 from "../assets/carousel/higienizacao9.png";
-import Higienizacao10 from "../assets/carousel/higienizacao10.png";
-import Higienizacao11 from "../assets/carousel/higienizacao11.png";
-import Higienizacao12 from "../assets/carousel/higienizacao12.png";
+import Higienizacao1 from "../assets/carousel/higienizacao/higienizacao1.png";
+import Higienizacao2 from "../assets/carousel/higienizacao/higienizacao2.jpg";
+import Higienizacao3 from "../assets/carousel/higienizacao/higienizacao3.png";
+import Higienizacao4 from "../assets/carousel/higienizacao/higienizacao4.png";
+import Higienizacao5 from "../assets/carousel/higienizacao/higienizacao5.png";
+import Higienizacao6 from "../assets/carousel/higienizacao/higienizacao6.png";
+import Higienizacao7 from "../assets/carousel/higienizacao/higienizacao7.png";
+import Higienizacao8 from "../assets/carousel/higienizacao/higienizacao8.png";
+import Higienizacao9 from "../assets/carousel/higienizacao/higienizacao9.png";
+import Higienizacao10 from "../assets/carousel/higienizacao/higienizacao10.png";
+import Higienizacao11 from "../assets/carousel/higienizacao/higienizacao11.png";
+import Higienizacao12 from "../assets/carousel/higienizacao/higienizacao12.png";
 
 import { FaFacebook, FaInstagram, FaWhatsapp } from "react-icons/fa6";
 
@@ -203,7 +220,7 @@ export const courseData = {
     ctaTitle: "Curso individual",
     ctaHighlight: "profissionalizante!",
     ctaDescription:
-      "Agende seu horário pelo WhatsApp conforme sua disponibilidade.",
+      "Agende seu horário via WhatsApp conforme sua disponibilidade.",
   },
 };
 
@@ -223,7 +240,16 @@ export const locationData = {
 export const polimentoData = {
   title: "Polimento",
   subtitle: "Revitalização profissional para o interior do seu veículo",
-  images: [Polimento1, Polimento2, Polimento3],
+  images: [
+    Polimento1,
+    Polimento2,
+    Polimento3,
+    Polimento4,
+    Polimento5,
+    Polimento6,
+    Polimento7,
+    Polimento8,
+  ],
   finalidade: [
     "Remover arranhões leves.",
     "Marcas de oxidação.",
@@ -263,6 +289,15 @@ export const revitalizacaoData = {
     Revitalizacao14,
     Revitalizacao15,
     Revitalizacao16,
+    Revitalizacao17,
+    Revitalizacao18,
+    Revitalizacao19,
+    Revitalizacao20,
+    Revitalizacao21,
+    Revitalizacao22,
+    Revitalizacao23,
+    Revitalizacao24,
+    Revitalizacao25,
   ],
   finalidade: [
     "Remover amarelado.",
@@ -285,7 +320,14 @@ export const revitalizacaoData = {
 
 export const vitrificacaoData = {
   title: "Vitrificação",
-  images: [Vitrificacao1, Vitrificacao2, Vitrificacao3],
+  images: [
+    Vitrificacao1,
+    Vitrificacao2,
+    Vitrificacao3,
+    Vitrificacao4,
+    Vitrificacao5,
+    Vitrificacao6,
+  ],
   finalidade: [
     "Agir como uma camada de sacrifício protegendo o verniz.",
     "Proteger de ação química e intempéries do dia-a-dia.",
