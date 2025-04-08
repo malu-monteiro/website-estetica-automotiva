@@ -11,6 +11,7 @@ import Higienização from "../assets/higienizacao-interna.avif";
 
 import Polimento1 from "../assets/carousel/polimento1.jpg";
 import Polimento2 from "../assets/carousel/polimento2.jpg";
+import Polimento3 from "../assets/carousel/polimento3.jpg";
 
 import Revitalizacao1 from "../assets/carousel/revitalizacao1.jpg";
 import Revitalizacao2 from "../assets/carousel/revitalizacao2.jpg";
@@ -32,7 +33,6 @@ import Revitalizacao16 from "../assets/carousel/revitalizacao16.jpg";
 import Vitrificacao1 from "../assets/carousel/vitrificacao1.jpg";
 import Vitrificacao2 from "../assets/carousel/vitrificacao2.jpg";
 import Vitrificacao3 from "../assets/carousel/vitrificacao3.jpg";
-import Vitrificacao4 from "../assets/carousel/vitrificacao4.jpg";
 
 import Higienizacao1 from "../assets/carousel/higienizacao1.png";
 import Higienizacao2 from "../assets/carousel/higienizacao2.jpg";
@@ -197,13 +197,13 @@ export const courseData = {
 
   staticTexts: {
     techniquesTitle: "Técnicas Dominadas",
-    certificateText: "Certificado de conclusão reconhecido nacionalmente",
+    certificateText: "Certificado de conclusão.",
     premiumTitle: "Diferencial Exclusivo",
     premiumDescription: "Técnicas aplicadas em concessionárias premium",
-    ctaTitle: "Próxima turma vagas",
-    ctaHighlight: "limitadas!",
+    ctaTitle: "Curso individual",
+    ctaHighlight: "profissionalizante!",
     ctaDescription:
-      "Garanta sua vaga agora ou tire suas dúvidas pelo WhatsApp.",
+      "Agende seu horário pelo WhatsApp conforme sua disponibilidade.",
   },
 };
 
@@ -223,7 +223,7 @@ export const locationData = {
 export const polimentoData = {
   title: "Polimento",
   subtitle: "Revitalização profissional para o interior do seu veículo",
-  images: [Polimento1, Polimento2],
+  images: [Polimento1, Polimento2, Polimento3],
   finalidade: [
     "Remover arranhões leves.",
     "Marcas de oxidação.",
@@ -238,9 +238,9 @@ export const polimentoData = {
   ],
 
   processo: [
-    "Recupera o brilho original da pintura.",
-    "Elimina micro-riscos e marcas de lavagem.",
-    "Prepara a pintura para receber uma camada de proteção, como ceras ou vitrificadores.",
+    "Lavagem e descontaminação química da pintura.",
+    "Descontaminação mecânica.",
+    "Polimento com abrasivos de alta nanotecnologia do mercado.",
   ],
 };
 
@@ -265,45 +265,44 @@ export const revitalizacaoData = {
     Revitalizacao16,
   ],
   finalidade: [
-    "Remover arranhões leves.",
-    "Marcas de oxidação.",
-    "Imperfeições da pintura do carro.",
-    "Devolver brilho e uniformidade à superfície.",
+    "Remover amarelado.",
+    "Remover micro trincas.",
+    "Remover craquelados.",
   ],
 
   beneficios: [
-    "Recupera o brilho original da pintura.",
-    "Elimina micro-riscos e marcas de lavagem.",
-    "Prepara a pintura para receber uma camada de proteção, como ceras ou vitrificadores.",
+    "Mais segurança ao dirigir à noite.",
+    "Clareamento da lente.",
+    "Iluminação mais eficiente.",
+    "Valorização do seu veículo, deixando com aspecto de novo.",
   ],
 
   processo: [
-    "Recupera o brilho original da pintura.",
-    "Elimina micro-riscos e marcas de lavagem.",
-    "Prepara a pintura para receber uma camada de proteção, como ceras ou vitrificadores.",
+    "Lixamento.",
+    "Aplicação de polimero para cristalizar e proteger a lente.",
   ],
 };
 
 export const vitrificacaoData = {
   title: "Vitrificação",
-  images: [Vitrificacao1, Vitrificacao2, Vitrificacao3, Vitrificacao4],
+  images: [Vitrificacao1, Vitrificacao2, Vitrificacao3],
   finalidade: [
-    "Remover arranhões leves.",
-    "Marcas de oxidação.",
-    "Imperfeições da pintura do carro.",
-    "Devolver brilho e uniformidade à superfície.",
+    "Agir como uma camada de sacrifício protegendo o verniz.",
+    "Proteger de ação química e intempéries do dia-a-dia.",
   ],
 
   beneficios: [
-    "Recupera o brilho original da pintura.",
-    "Elimina micro-riscos e marcas de lavagem.",
-    "Prepara a pintura para receber uma camada de proteção, como ceras ou vitrificadores.",
+    "Proteção de longa duração.",
+    "Brilho intenso.",
+    "Facilidade na limpeza.",
+    "Resistência aos raios UV.",
+    "Proteção química.",
+    "Valorização do seu veículo.",
   ],
 
   processo: [
-    "Recupera o brilho original da pintura.",
-    "Elimina micro-riscos e marcas de lavagem.",
-    "Prepara a pintura para receber uma camada de proteção, como ceras ou vitrificadores.",
+    "Após o polimento é feito limpeza com produto específico.",
+    "Aplicação do vitrificador de longa proteção.",
   ],
 };
 
@@ -325,22 +324,23 @@ export const higienizacaoData = {
     Higienizacao12,
   ],
   finalidade: [
-    "Remove resíduos, manchas, poeira e sujeiras acumuladas em estofados, carpetes, painéis e outras superfícies internas do veículo.",
-    "Elimina germes, bactérias, fungos e ácaros, garantindo um ambiente mais saudável para os ocupantes.",
-    "Remove odores indesejados, como de cigarro, mofo ou comida, deixando o interior do veículo mais agradável.",
+    "Cuidado com sua saúde e bem estar.",
+    "Conforto ao dirigir.",
+    "Valorização do seu veículo.",
+    "Prevenção de danos.",
   ],
 
   beneficios: [
-    "Reduz alérgenos e poeira, promovendo um ambiente mais respirável, especialmente para quem sofre de alergias ou problemas respiratórios.",
-    "A limpeza regular ajuda a identificar problemas potenciais, como manchas de líquidos que podem causar danos permanentes se não tratados.",
-    "O interior do carro ganha uma aparência como nova.",
+    "Melhora qualidade do ar.",
+    "Redução de alergias e doenças.",
+    "Prevenção de pragas.",
+    "Eliminação de odores.",
   ],
 
   processo: [
-    "Aspiração completa do interior",
-    "Aplicação de produtos específicos",
-    "Higienização do ar condicionado",
-    "Limpeza de todas as superfícies",
+    "Limpeza com produtos bactericidas.",
+    "Utilização de vapor.",
+    "Oxi sanitização com geradora de ozônio.",
   ],
 };
 
