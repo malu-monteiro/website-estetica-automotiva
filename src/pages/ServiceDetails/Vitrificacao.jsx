@@ -9,7 +9,7 @@ import { containerVariants, itemVariants } from "../../constants/animations";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCog, faStar, faTools } from "@fortawesome/free-solid-svg-icons";
 
-export default function Higienizacao() {
+export default function Vitrificacao() {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
