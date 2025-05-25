@@ -1,8 +1,10 @@
 import { motion } from "framer-motion";
-import { homeData, whatsappBase } from "../constants/index.jsx";
-import { features } from "../constants";
-import { FeatureList } from "../components/FeatureList";
-import { Button } from "../components/Button";
+
+import { features } from "../../constants/index.jsx";
+import { homeData, whatsappBase } from "../../constants/index.jsx";
+
+import { Button } from "../../components/Button.jsx";
+import { FeatureList } from "../../components/FeatureList.jsx";
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -27,7 +29,7 @@ const itemVariants = {
   },
 };
 
-export default function Home() {
+export default function Hero() {
   const { title, subtitle, description, backgroundImage, button } = homeData;
 
   return (
@@ -37,13 +39,13 @@ export default function Home() {
       style={{ backgroundImage: `url(${backgroundImage})` }}
     >
       <motion.header
-        className="ml-6 mt-8 md:ml-[200px] md:mt-[130px]"
+        className="ml-8 mt-8 md:ml-72 md:mt-32"
         variants={containerVariants}
         initial="hidden"
         animate="visible"
       >
         <motion.h1
-          className="text-xl md:text-xl text-white font-bold"
+          className="text-xl md:text-xl text-white font-bold mb-2"
           variants={itemVariants}
         >
           {title}

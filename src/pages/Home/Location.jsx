@@ -2,9 +2,10 @@ import { useRef, useEffect } from "react";
 
 import * as maptilersdk from "@maptiler/sdk";
 import "@maptiler/sdk/dist/maptiler-sdk.css";
-import "./styles/map.css";
 
-import { locationData } from "../constants";
+import "./Location.css";
+
+import { locationData } from "../../constants/index";
 
 maptilersdk.config.apiKey = import.meta.env.VITE_MAPTILER_API_KEY;
 
@@ -101,7 +102,7 @@ export default function Location() {
             {workingHours}
           </p>
 
-          <div className="w-full h-[300px] sm:h-[400px] lg:h-[500px] px-4 sm:px-0">
+          <div className="w-full max-w-7xl h-[300px] sm:h-[400px] lg:h-[500px] px-4 sm:px-0 mx-auto">
             <div ref={mapContainer} className="w-full h-full rounded-lg" />
           </div>
         </div>

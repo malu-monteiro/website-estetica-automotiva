@@ -76,7 +76,7 @@ export const navLinks = [
 ];
 
 export const homeData = {
-  title: "MSS_STUDIO CAR",
+  title: "MSS_Studio Car",
   subtitle: "Estética Automotiva",
   description:
     "Garantimos qualidade transformando a aparência do seu veículo, destacando os detalhes e trazendo brilho e proteção que fazem a diferença.",
@@ -116,25 +116,25 @@ export const services = [
     id: "service-1",
     title: "Polimento",
     image: Polimento,
-    path: "/polimento",
+    path: "/website-estetica-automotiva/polimento",
   },
   {
     id: "service-2",
     title: "Revitalização de Farol",
     image: Revitalizacao,
-    path: "/revitalizacao-de-farol",
+    path: "/website-estetica-automotiva/revitalizacao-de-farol",
   },
   {
     id: "service-3",
     title: "Vitrificação de Pintura",
     image: Vitrificação,
-    path: "/vitrificacao-de-pintura",
+    path: "/website-estetica-automotiva/vitrificacao-de-pintura",
   },
   {
     id: "service-4",
     title: "Higienização Interna Premium",
     image: Higienização,
-    path: "/higienizacao-interna-premium",
+    path: "/website-estetica-automotiva/higienizacao-interna-premium",
   },
 ];
 
@@ -151,7 +151,7 @@ export const about = [
     subtitle: "Excelência em cada ",
     highlight: "detalhe!",
     image: [AboutImage],
-    description: `A MSS_STUDIO CAR é uma empresa especializada em estética automotiva. 
+    description: `A MSS_Studio Car é uma empresa especializada em estética automotiva. 
     Oferecemos serviços de polimento, revitalização de faróis, vitrificação e higienização
     interna premium, garantindo que seu veículo se mantenha impecável e protegido contra os 
     efeitos do tempo. Com atenção aos detalhes e compromisso com a qualidade, proporcionamos 
@@ -317,7 +317,7 @@ export const revitalizacaoData = {
 };
 
 export const vitrificacaoData = {
-  title: "Vitrificação",
+  title: "Vitrificação de Pintura",
   images: [
     Vitrificacao1,
     Vitrificacao2,
@@ -387,7 +387,7 @@ export const higienizacaoData = {
 export const aboutUs = [
   {
     id: "about-us",
-    description: `A MSS_STUDIO CAR é uma empresa 
+    description: `A MSS_Studio Car é uma empresa 
     especializada em estética automotiva 
     localizada em Pinhais.`,
   },

@@ -1,15 +1,14 @@
-import { useNavigate } from "react-router-dom";
-import { services, servicesHeader } from "../constants";
-import ServicesCard from "../components/ServicesCard";
+import { services, servicesHeader } from "../../constants";
+
+import ServicesCard from "../../components/ServicesCard";
+
 import PropTypes from "prop-types";
 
 export default function OurServices() {
-  const navigate = useNavigate();
-
   const handleServiceClick = (serviceId) => {
     const service = services.find((s) => s.id === serviceId);
     if (service) {
-      navigate(service.path);
+      window.open(service.path, "_blank");
     }
   };
 
@@ -28,7 +27,7 @@ export default function OurServices() {
       ></div>
 
       <div className="relative z-10 min-h-[800px] w-full border-b border-neutral-800">
-        <div className="container mx-auto px-4 sm:px-6 md:px-8 py-8 sm:py-12 md:py-20">
+        <div className="container mx-auto px-6 py-12 md:px-8 md:py-24">
           <div className="text-center mb-8 sm:mb-12 md:mb-16">
             <div className="inline-block relative">
               <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-neutral-300">
@@ -48,7 +47,7 @@ export default function OurServices() {
               >
                 <ServicesCard
                   service={service}
-                  onClick={handleServiceClick}
+                  onClick={() => handleServiceClick(service.id)}
                   className="group-hover:border-red-500 group-hover:shadow-xl group-hover:shadow-red-900/20"
                 />
               </div>

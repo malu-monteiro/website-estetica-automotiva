@@ -1,12 +1,15 @@
-import { about, socialMedia } from "../constants/index";
-import { Button } from "../components/Button";
 import PropTypes from "prop-types";
+
 import { motion } from "framer-motion";
+
+import { Button } from "../../components/Button";
+
+import { about, socialMedia } from "../../constants/index";
 
 function AboutImage({ image }) {
   return (
     <motion.div
-      className="w-full px-4 sm:px-0 lg:w-2/5 flex justify-center"
+      className="w-full px-2 sm:px-0 lg:w-2/5 flex justify-center"
       initial={{ opacity: 0, x: -20 }}
       whileInView={{ opacity: 1, x: 0 }}
       transition={{ duration: 0.8 }}
@@ -76,7 +79,7 @@ function AboutText({
           href={href}
           icon={icon}
           aria-label={`Connect on ${text}`}
-          className="px-8 py-3 text-lg bg-gradient-to-r from-red-600 to-red-800 hover:from-red-700 hover:to-red-900 relative z-20"
+          className="px-8 py-3 text-lg bg-gradient-to-r from-red-600 to-red-800 hover:from-red-700 hover:to-red-900 relative z-20 -mt-2"
         >
           {text}
         </Button>
@@ -94,7 +97,7 @@ export default function About() {
     <section id="about" className="scroll-mt-18 relative bg-[#121212]">
       <div className="border-b border-neutral-800 min-h-[800px] flex items-center">
         <div className="container mx-auto px-6 py-12 md:px-8 md:py-24">
-          <div className="flex flex-col lg:flex-row items-center justify-center lg:justify-between gap-12">
+          <div className="flex flex-col lg:flex-row items-center justify-center lg:justify-between gap-6">
             <AboutImage image={image} />
             <AboutText
               title={title}

@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
-import { elfsightConfig } from "../constants";
-import { useElfsight } from "../hooks/useElfsight";
+import { elfsightConfig } from "../../constants/index";
+import { useElfsight } from "../../hooks/useElfsight";
 
 export default function Reviews({ title = "Avaliações" }) {
   useElfsight();

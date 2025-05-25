@@ -5,8 +5,8 @@ import {
   FaGraduationCap,
   FaTools,
 } from "react-icons/fa";
-import { Button } from "../components/Button";
-import { courseData, whatsappBase } from "../constants";
+import { Button } from "../../components/Button";
+import { courseData, whatsappBase } from "../../constants";
 import PropTypes from "prop-types";
 
 export default function Course() {
@@ -20,7 +20,7 @@ export default function Course() {
       <div className="relative border-b border-neutral-800 min-h-screen flex items-center py-16">
         <div className="container mx-auto px-4 sm:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-red-500">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-neutral-300">
               {title}
             </h2>
             <p className="text-xl sm:text-2xl mt-4 text-neutral-300">
