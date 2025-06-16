@@ -1,14 +1,11 @@
 "use client";
 
 import Link from "next/link";
-
 import { FaWhatsapp } from "react-icons/fa";
-import { TrendingUp, Users, ChevronsDown } from "lucide-react";
-
-import { motion } from "framer-motion";
-
 import { ShinyButton } from "../magicui/shiny-button";
+import { ChevronsDown, TrendingUp, Users } from "lucide-react";
 import { AnimatedCounter } from "../ui/animated-counter";
+import { motion } from "framer-motion";
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -65,7 +62,7 @@ export default function Hero() {
         </motion.p>
 
         <motion.div className="mt-8" variants={itemVariants}>
-          <div className="flex flex-wrap items-center justify-center gap-4 sm:justify-start">
+          <div className="flex flex-wrap items-center justify-start gap-4">
             <a
               href="https://wa.me/5541999346385?text=Olá!%20Gostaria%20de%20mais%20informações."
               target="_blank"
@@ -73,7 +70,7 @@ export default function Hero() {
             >
               <ShinyButton className="border-transparent bg-green-600 text-white hover:shadow-green-800">
                 <div className="flex items-center justify-center gap-2">
-                  <FaWhatsapp className="text-white size-5" />
+                  <FaWhatsapp className="size-4 sm:size-5 text-white" />
                   <span className="text-white">WhatsApp</span>
                 </div>
               </ShinyButton>
@@ -81,7 +78,7 @@ export default function Hero() {
 
             <Link
               href="#sobre-nos"
-              className="flex items-center justify-center gap-2 rounded-lg border border-white/90 px-8 py-3 font-medium text-sm uppercase tracking-wide text-white transition-all duration-300 hover:border-white/50 hover:bg-white/20"
+              className="flex items-center justify-center gap-2 rounded-lg border border-white/90 px-6 py-2 font-medium text-sm uppercase tracking-wide text-white transition-all duration-300 hover:border-white/50 hover:bg-white/20 sm:px-8 sm:py-3"
             >
               <span>Saiba Mais</span>
               <ChevronsDown className="size-4" />
