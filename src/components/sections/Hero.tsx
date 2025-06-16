@@ -1,10 +1,13 @@
 "use client";
 
 import Link from "next/link";
+
 import { FaWhatsapp } from "react-icons/fa";
-import { ShinyButton } from "../magicui/shiny-button";
 import { ChevronsDown, TrendingUp, Users } from "lucide-react";
+
+import { ShinyButton } from "../magicui/shiny-button";
 import { AnimatedCounter } from "../ui/animated-counter";
+
 import { motion } from "framer-motion";
 
 const containerVariants = {
@@ -37,21 +40,21 @@ export default function Hero() {
         animate="show"
       >
         <motion.h1
-          className="text-xl font-medium text-gray-200 md:text-2xl"
+          className="text-2xl font-medium text-gray-200 md:text-3xl lg:text-4xl"
           variants={itemVariants}
         >
           MSS_STUDIO CAR
         </motion.h1>
 
         <motion.h2
-          className="mt-2 text-4xl font-bold bg-gradient-to-r from-white to-gray-500 text-transparent bg-clip-text md:text-6xl"
+          className="mt-2 text-4xl font-bold tracking-tight bg-gradient-to-r from-white to-gray-450 text-transparent bg-clip-text md:text-6xl xl:text-7xl"
           variants={itemVariants}
         >
           Estética Automotiva
         </motion.h2>
 
         <motion.p
-          className="mt-4 max-w-2xl text-lg text-white md:text-xl"
+          className="mt-4 max-w-xl lg:max-w-2xl xl:max-w-3xl text-base leading-relaxed text-white md:text-lg lg:text-xl"
           variants={itemVariants}
         >
           Garantimos qualidade transformando a aparência do seu veículo,
