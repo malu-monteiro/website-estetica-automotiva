@@ -79,7 +79,7 @@ export default function About() {
             />
 
             <motion.p
-              className="mt-6 text-2xl font-medium tracking-tight bg-gradient-to-r from-white to-gray-450 text-transparent bg-clip-text md:text-3xl lg:text-4xl"
+              className="mt-6 text-2xl font-medium tracking-tight bg-gradient-to-r from-white to-gray-400 text-transparent bg-clip-text md:text-3xl lg:text-4xl"
               variants={itemVariants}
             >
               Excelência em cada detalhe!
@@ -118,7 +118,7 @@ export default function About() {
             />
 
             <motion.p
-              className="mt-6 text-2xl font-medium tracking-tight bg-gradient-to-r from-white to-gray-450 text-transparent bg-clip-text md:text-3xl lg:text-4xl"
+              className="mt-6 text-2xl font-medium tracking-tight bg-gradient-to-r from-white to-gray-400 text-transparent bg-clip-text md:text-3xl lg:text-4xl"
               variants={itemVariants}
             >
               Paixão que se vê no resultado

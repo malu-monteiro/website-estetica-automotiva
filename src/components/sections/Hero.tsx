@@ -2,13 +2,15 @@
 
 import Link from "next/link";
 
+import { useRef } from "react";
+
 import { FaWhatsapp } from "react-icons/fa";
 import { ChevronsDown, TrendingUp, Users } from "lucide-react";
 
+import { motion, useInView } from "framer-motion";
+
 import { ShinyButton } from "../magicui/shiny-button";
 import { AnimatedCounter } from "../ui/animated-counter";
-
-import { motion } from "framer-motion";
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -26,6 +28,12 @@ const itemVariants = {
 };
 
 export default function Hero() {
+  const countersRef = useRef(null);
+  const countersInView = useInView(countersRef, {
+    once: true,
+    margin: "-100px",
+  });
+
   return (
     <section
       id="inicio"
@@ -40,14 +48,14 @@ export default function Hero() {
         animate="show"
       >
         <motion.h1
-          className="text-2xl font-medium text-gray-200 md:text-3xl lg:text-4xl"
+          className="text-xl font-medium text-gray-200 md:text-3xl lg:text-4xl"
           variants={itemVariants}
         >
           MSS_STUDIO CAR
         </motion.h1>
 
         <motion.h2
-          className="mt-2 text-4xl font-bold tracking-tight bg-gradient-to-r from-white to-gray-450 text-transparent bg-clip-text md:text-6xl xl:text-7xl"
+          className="mt-2 text-4xl font-bold tracking-tight bg-gradient-to-r from-white to-gray-400 text-transparent bg-clip-text md:text-6xl xl:text-7xl"
           variants={itemVariants}
         >
           Estética Automotiva
@@ -90,6 +98,7 @@ export default function Hero() {
         </motion.div>
 
         <motion.div
+          ref={countersRef}
           className="mt-24 flex flex-col items-start gap-8 sm:flex-row sm:gap-12 lg:mt-32"
           variants={itemVariants}
         >
@@ -101,6 +110,7 @@ export default function Hero() {
                   from={0}
                   to={5}
                   className="text-3xl font-bold text-white md:text-4xl"
+                  startAnimation={countersInView}
                 />
                 <span className="text-3xl font-bold text-white md:text-4xl">
                   +
@@ -120,6 +130,7 @@ export default function Hero() {
                   from={0}
                   to={1000}
                   className="text-3xl font-bold text-white md:text-4xl"
+                  startAnimation={countersInView}
                 />
                 <span className="text-3xl font-bold text-white md:text-4xl">
                   +
