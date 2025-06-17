@@ -79,7 +79,7 @@ export default function Services() {
           Conheça nossos serviços e acesse para saber mais!
         </motion.p>
 
-        <motion.div className="mt-8 max-w-full px-0">
+        <motion.div className="mt-8 max-w-full px-0 text-xl">
           <HoverEffect items={projects} />
         </motion.div>
       </motion.div>
