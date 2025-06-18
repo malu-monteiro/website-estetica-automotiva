@@ -93,7 +93,9 @@ export default function About() {
               estética automotiva. Nos dedicamos a oferecer serviços de
               polimento, revitalização de faróis, vitrificação e higienização
               interna premium. Nosso compromisso é com a qualidade e a atenção
-              meticulosa aos detalhes.
+              meticulosa aos detalhes. Também oferecemos curso de Polimento de
+              Faróis, compartilhando nossa experiência com quem deseja ingressar
+              na área.
             </motion.p>
           </div>
         </motion.div>
