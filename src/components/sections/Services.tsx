@@ -1,7 +1,9 @@
 "use client";
 
 import { useRef } from "react";
+
 import { motion, useInView } from "framer-motion";
+
 import { HoverEffect } from "@/components/ui/hover-effect";
 
 const containerVariants = {
@@ -29,6 +31,7 @@ const projects = [
     title: "Revitalização de Farol",
     link: "/servicos/revitalizacao-farol",
     image: "/farol.jpg",
+    objectPosition: "50% 30%",
   },
   {
     title: "Vitrificação de Pintura",
@@ -55,7 +58,7 @@ export default function Services() {
 
       <motion.div
         ref={ref}
-        className="relative z-10 mx-auto flex max-w-[1440px] flex-col px-4 md:px-8 lg:px-16 xl:px-24"
+        className="relative z-10 mx-auto flex max-w-[1440px] flex-col px-4 md:px-8 lg:px-16 xl:px-24 items-center text-center"
         variants={containerVariants}
         initial="hidden"
         animate={isInView ? "show" : "hidden"}
@@ -68,7 +71,7 @@ export default function Services() {
         </motion.h2>
 
         <motion.div
-          className="mt-3 h-1 w-24 rounded-full bg-red-500"
+          className="mt-3 h-1 w-24 rounded-full bg-red-500 mx-auto"
           variants={itemVariants}
         />
 
@@ -79,7 +82,7 @@ export default function Services() {
           Conheça nossos serviços e acesse para saber mais!
         </motion.p>
 
-        <motion.div className="mt-8 max-w-full px-0 text-xl">
+        <motion.div className="mt-8 w-full mx-auto">
           <HoverEffect items={projects} />
         </motion.div>
       </motion.div>

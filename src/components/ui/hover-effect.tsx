@@ -6,6 +6,7 @@ import { useState } from "react";
 import { cn } from "@/lib/utils";
 
 import { ArrowRight } from "lucide-react";
+
 import { AnimatePresence, motion } from "framer-motion";
 
 export const HoverEffect = ({
@@ -16,6 +17,7 @@ export const HoverEffect = ({
     title: string;
     link: string;
     image: string;
+    objectPosition?: string;
   }[];
   className?: string;
 }) => {
@@ -24,7 +26,7 @@ export const HoverEffect = ({
   return (
     <div
       className={cn(
-        "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 py-10",
+        "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 py-10 w-full justify-items-center gap-6",
         className
       )}
     >
@@ -61,13 +63,14 @@ export const HoverEffect = ({
                   alt={item.title}
                   fill
                   className="object-cover"
+                  style={{ objectPosition: item.objectPosition || "center" }}
                 />
               </div>
             )}
-            <div className="p-4">
+            <div className="p-4 text-center">
               <CardTitle>{item.title}</CardTitle>
 
-              <div className="flex items-center gap-2 mt-4 text-gray-400 opacity-0 group-hover:opacity-100 transform translate-x-0 group-hover:translate-x-1 transition-all duration-300">
+              <div className="flex items-center gap-2 mt-4 text-gray-400 opacity-0 group-hover:opacity-100 transform translate-x-0 group-hover:translate-x-1 transition-all duration-300 justify-center">
                 <span className="text-sm">Saiba Mais</span>
                 <ArrowRight className="size-4" />
               </div>
@@ -106,7 +109,12 @@ export const CardTitle = ({
   children: React.ReactNode;
 }) => {
   return (
-    <h4 className={cn("text-zinc-100 font-bold tracking-wide mt-4", className)}>
+    <h4
+      className={cn(
+        "text-zinc-100 font-bold tracking-wide mt-4 text-xl",
+        className
+      )}
+    >
       {children}
     </h4>
   );
