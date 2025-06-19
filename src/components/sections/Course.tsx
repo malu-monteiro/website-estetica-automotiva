@@ -112,16 +112,7 @@ export default function Course() {
       className="relative py-20 md:py-28 lg:py-36 bg-gray-950 text-neutral-100 overflow-hidden"
     >
       {/* Dynamic background with gradient and a subtle pattern */}
-      <div className="absolute inset-0 bg-gradient-to-br from-black via-gray-900 to-gray-950 opacity-90 -z-10" />
-      <div
-        className="absolute inset-0 z-0 opacity-10"
-        style={{
-          backgroundImage: "url('/pattern-carbon-fiber.png')",
-          backgroundSize: "cover",
-          backgroundRepeat: "no-repeat",
-          backgroundPosition: "center",
-        }}
-      />
+      <div className="absolute inset-0 bg-black" />
 
       <motion.div
         ref={ref}
@@ -150,11 +141,15 @@ export default function Course() {
           variants={itemVariants}
         >
           Polimento de Faróis Premium
-          <p className="mt-4 text-lg text-neutral-200 font-normal max-w-2xl mx-auto">
-            Domine as técnicas profissionais de polimento, revitalização e
-            restauração de faróis automotivos
-          </p>
         </motion.h3>
+
+        <motion.p
+          className="mt-4 text-xl text-neutral-200 font-normal  mx-auto"
+          variants={itemVariants}
+        >
+          Domine as técnicas profissionais de polimento, revitalização e
+          restauração de faróis automotivos
+        </motion.p>
 
         {/* Duration and Mode Information - Cards */}
         <motion.div
@@ -192,7 +187,7 @@ export default function Course() {
 
         {/* Mastered Techniques" section - List with VIDEO */}
         <motion.div
-          className="mt-20 flex flex-col lg:flex-row lg:items-start gap-12 w-full max-w-5xl"
+          className="mt-32 flex flex-col lg:flex-row lg:items-start gap-12 w-full max-w-5xl"
           variants={itemVariants}
         >
           <div className="text-left w-full lg:w-1/2">
@@ -228,7 +223,7 @@ export default function Course() {
         </motion.div>
 
         {/* "Por Que Somos a Melhor Escolha?" section - CardsVIDEO next to the list */}
-        <motion.div className="mt-20 w-full" variants={itemVariants}>
+        <motion.div className="mt-32 w-full" variants={itemVariants}>
           <h3 className="text-3xl font-bold text-center text-neutral-100 pb-4 mb-12 relative group inline-block">
             Por Que Somos a Melhor Escolha?
             <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-4/5 h-0.5 bg-gradient-to-r from-transparent via-neutral-400 to-transparent opacity-70 group-hover:opacity-100 transition-opacity duration-300" />
