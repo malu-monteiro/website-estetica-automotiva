@@ -9,7 +9,7 @@ import { ChevronsDown, TrendingUp, Users } from "lucide-react";
 
 import { motion, useInView } from "framer-motion";
 
-import { ShinyButton } from "../magicui/shiny-button";
+import { ShinyButton } from "../ui/shiny-button";
 import { AnimatedCounter } from "../ui/animated-counter";
 
 const containerVariants = {

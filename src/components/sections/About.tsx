@@ -90,9 +90,9 @@ export default function About() {
               variants={itemVariants}
             >
               Localizada em Pinhais, Paraná, a MSS_STUDIO CAR é especializada em
-              estética automotiva. Nos dedicamos a oferecer serviços de
+              estética automotiva premium. Nos dedicamos a oferecer serviços de
               polimento, revitalização de faróis, vitrificação e higienização
-              interna premium. Nosso compromisso é com a qualidade e a atenção
+              interna. Nosso compromisso é com a qualidade e a atenção
               meticulosa aos detalhes. Também oferecemos curso de Polimento de
               Faróis, compartilhando nossa experiência com quem deseja ingressar
               na área.
