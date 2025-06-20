@@ -51,19 +51,19 @@ export default function Course() {
       icon: Clock,
       title: "9 Horas",
       subtitle: "Intensivo e Dinâmico",
-      color: "text-red-500",
+      color: "text-red-800",
     },
     {
       icon: Users,
       title: "Presencial",
       subtitle: "Hands-on",
-      color: "text-red-500",
+      color: "text-red-800",
     },
     {
       icon: Award,
       title: "Certificado",
       subtitle: "Conclusão",
-      color: "text-red-500",
+      color: "text-red-800",
     },
   ];
 
@@ -81,28 +81,28 @@ export default function Course() {
       description:
         "Aprenda fazendo! Nosso foco é a prática intensiva em faróis reais, garantindo que você saia com total confiança.",
       icon: Target,
-      gradient: "from-red-600 to-red-500",
+      gradient: "from-red-800 to-red-950",
     },
     {
       title: "Instrutor Especializado",
       description:
         "Conte com a experiência de um profissional atuante no mercado, pronto para compartilhar todos os seus conhecimentos técnicos.",
       icon: Users,
-      gradient: "from-red-600 to-red-500",
+      gradient: "from-red-800 to-red-950",
     },
     {
       title: "Certificado de Conclusão",
       description:
         "Garanta seu certificado de conclusão e abra portas para novas oportunidades no setor de estética automotiva.",
       icon: Award,
-      gradient: "from-red-600 to-red-500",
+      gradient: "from-red-800 to-red-950",
     },
     {
       title: "Suporte Pós-Curso",
       description:
         "Não te deixamos na mão! Tenha acesso a um canal exclusivo para dúvidas e suporte após o término do curso.",
       icon: Shield,
-      gradient: "from-red-600 to-red-500",
+      gradient: "from-red-800 to-red-950",
     },
   ];
 
@@ -193,7 +193,7 @@ export default function Course() {
           <div className="text-left w-full lg:w-1/2">
             <h3 className="text-3xl font-semibold text-neutral-100 pb-4 inline-block relative group">
               Técnicas Dominadas
-              <span className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-neutral-400 to-transparent opacity-70 group-hover:opacity-100 transition-opacity duration-300" />
+              <span className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-neutral-400 to-transparent opacity-70 group-hover:opacity-100 transition-opacity duration-300" />
             </h3>
             <ul className="mt-6 space-y-8 text-xl text-neutral-200 list-none pl-0">
               {courseSkills.map((skill, index) => (
@@ -201,7 +201,7 @@ export default function Course() {
                   key={index}
                   className="flex items-center group transform transition-transform duration-300 hover:scale-[1.02] cursor-pointer"
                 >
-                  <CheckCircle className="w-7 h-7 text-red-500 mr-3 flex-shrink-0" />
+                  <CheckCircle className="w-7 h-7 text-red-800 mr-3 flex-shrink-0" />
                   {skill}
                 </li>
               ))}
@@ -226,7 +226,7 @@ export default function Course() {
         <motion.div className="mt-32 w-full" variants={itemVariants}>
           <h3 className="text-3xl font-bold text-center text-neutral-100 pb-4 mb-12 relative group inline-block">
             Por Que Somos a Melhor Escolha?
-            <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-4/5 h-0.5 bg-gradient-to-r from-transparent via-neutral-400 to-transparent opacity-70 group-hover:opacity-100 transition-opacity duration-300" />
+            <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-4/5 h-px bg-gradient-to-r from-transparent via-neutral-400 to-transparent opacity-70 group-hover:opacity-100 transition-opacity duration-300" />
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {whyChooseUs.map((reason, index) => {
@@ -267,7 +267,7 @@ export default function Course() {
         {/* Call for Final Action */}
         <motion.div className="mt-20 text-center" variants={itemVariants}>
           <a
-            href="https://wa.me/5541999346385?text=Olá!%20Gostaria%20de%20mais%20informações."
+            href="https://wa.me/5541999346385?text=Olá!%20Gostaria%20de%20mais%20informações%%20sobre%20o%20curso%."
             target="_blank"
             rel="noopener noreferrer"
           >
