@@ -195,7 +195,7 @@ const ReviewCard = ({ name, body }: { name: string; body: string }) => {
     <figure
       className={cn(
         "relative h-full w-64 cursor-pointer overflow-hidden rounded-xl border p-4",
-        "border-gray-950/[.1] bg-gray-900/[.30] hover:bg-gray-950/[.05]"
+        "border-gray-950/[.1] bg-gray-800/[.30] hover:bg-gray-950/[.05]"
       )}
     >
       <div className="flex flex-row items-center gap-2">
@@ -251,26 +251,28 @@ export default function Reviews() {
             Depoimentos de Sucesso
           </motion.h3>
         </motion.div>
+      </div>
 
-        {/* Carousel Comments */}
-        <div className="relative flex w-full flex-col items-center justify-center overflow-hidden mt-20 mb-20">
-          <Marquee pauseOnHover className="[--duration:60s]">
-            {firstRow.map((review, idx) => (
-              <ReviewCard key={idx} {...review} />
-            ))}
-          </Marquee>
+      {/* Carousel Comments */}
+      <div className="relative flex w-full flex-col items-center justify-center overflow-hidden mt-20 mb-20">
+        <Marquee pauseOnHover className="[--duration:60s]">
+          {firstRow.map((review, idx) => (
+            <ReviewCard key={idx} {...review} />
+          ))}
+        </Marquee>
 
-          <Marquee reverse pauseOnHover className="[--duration:60s]">
-            {secondRow.map((review, idx) => (
-              <ReviewCard key={idx} {...review} />
-            ))}
-          </Marquee>
+        <Marquee reverse pauseOnHover className="[--duration:60s]">
+          {secondRow.map((review, idx) => (
+            <ReviewCard key={idx} {...review} />
+          ))}
+        </Marquee>
 
-          <div className="pointer-events-none absolute inset-y-0 left-0 w-1/4 bg-gradient-to-r from-black via-black/80 to-transparent" />
-          <div className="pointer-events-none absolute inset-y-0 right-0 w-1/4 bg-gradient-to-l from-black via-black/80 to-transparent" />
-        </div>
+        <div className="pointer-events-none absolute inset-y-0 left-0 w-1/4 bg-gradient-to-r from-black via-black/80 to-transparent" />
+        <div className="pointer-events-none absolute inset-y-0 right-0 w-1/4 bg-gradient-to-l from-black via-black/80 to-transparent" />
+      </div>
 
-        {/* Google Reviews button */}
+      {/* Google Reviews button */}
+      <div className="container mx-auto px-4 md:px-8 lg:px-16 xl:px-24 max-w-[1440px]">
         <div className="text-center mb-24">
           <a
             href="https://g.page/r/CahbS7buR34pEAI/review"

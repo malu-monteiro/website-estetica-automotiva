@@ -54,7 +54,7 @@ export default function Services() {
       id="servicos"
       className="relative py-20 bg-cover bg-center bg-no-repeat bg-[url('/gradientbg4.png')] overflow-hidden"
     >
-      <div className="absolute inset-0 bg-black/60"></div>
+      <div className="absolute inset-0 bg-black/60" />
 
       <motion.div
         ref={ref}
