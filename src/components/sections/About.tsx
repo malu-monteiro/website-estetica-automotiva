@@ -26,7 +26,7 @@ export default function About() {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="sobre-nos" className="py-20">
+    <section id="sobre" className="py-20">
       <div
         ref={ref}
         className="mx-auto flex max-w-[1440px] flex-col gap-24 px-4 md:gap-32 md:px-8 lg:px-16 xl:px-24"

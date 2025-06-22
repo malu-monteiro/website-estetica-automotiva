@@ -1,13 +1,16 @@
 "use client";
 
 import Link from "next/link";
-import { ShieldCheck, Menu, X } from "lucide-react";
+
 import { useState, useEffect, useRef } from "react";
+
+import { ShieldCheck, Menu, X } from "lucide-react";
+
 import { motion, AnimatePresence } from "framer-motion";
 
 const navLinks = [
   { href: "#inicio", label: "Início" },
-  { href: "#sobre-nos", label: "Sobre Nós" },
+  { href: "#sobre", label: "Sobre Nós" },
   { href: "#servicos", label: "Serviços" },
   { href: "#curso", label: "Curso" },
   { href: "#avaliacoes", label: "Avaliações" },
