@@ -67,7 +67,7 @@ export default function Services() {
           className="text-3xl font-bold text-neutral-100 md:text-4xl lg:text-5xl"
           variants={itemVariants}
         >
-          Nossos Serviços
+          Serviços
         </motion.h2>
 
         <motion.div
@@ -79,7 +79,7 @@ export default function Services() {
           className="mt-6 text-2xl font-medium tracking-tight bg-gradient-to-r from-white to-gray-400 text-transparent bg-clip-text md:text-3xl lg:text-4xl"
           variants={itemVariants}
         >
-          Conheça nossos serviços e acesse para saber mais!
+          Conheça nossos serviços e acesse para saber mais
         </motion.p>
 
         <motion.div className="mt-8 w-full mx-auto">

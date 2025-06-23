@@ -47,18 +47,40 @@ export default function Hero() {
         initial="hidden"
         animate="show"
       >
-        <motion.h1
-          className="text-xl font-medium text-gray-200 md:text-3xl lg:text-4xl"
-          variants={itemVariants}
-        >
-          MSS_STUDIO CAR
-        </motion.h1>
+        <div className="flex items-center gap-4 mb-4">
+          <span className=" font-semibold uppercase text-sm bg-gradient-to-r from-white to-gray-400 text-transparent bg-clip-text">
+            Top Rated
+          </span>
+
+          <div className="flex items-center gap-1 text-yellow-400">
+            {/* Stars */}
+            {[...Array(5)].map((_, i) => (
+              <svg
+                key={i}
+                className="w-5 h-5 fill-current"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+              </svg>
+            ))}
+          </div>
+        </div>
+        <div className="flex items-center gap-2">
+          <div className="h-8 w-1 rounded-full bg-red-800" />
+          <motion.h1
+            className="font-syne text-xl font-medium text-gray-200 md:text-3xl lg:text-4xl"
+            variants={itemVariants}
+          >
+            MSS_STUDIO CAR
+          </motion.h1>
+        </div>
 
         <motion.h2
-          className="mt-2 text-4xl font-bold tracking-tight bg-gradient-to-r from-white to-gray-400 text-transparent bg-clip-text md:text-6xl xl:text-7xl"
+          className="font-syne mt-2 text-4xl font-bold tracking-tight bg-gradient-to-r from-white to-gray-400 text-transparent bg-clip-text md:text-6xl xl:text-7xl"
           variants={itemVariants}
         >
-          Estética Automotiva
+          ESTÉTICA AUTOMOTIVA
         </motion.h2>
 
         <motion.p
@@ -82,14 +104,15 @@ export default function Hero() {
               <ShinyButton className="border-transparent bg-green-600 text-white hover:shadow-green-800">
                 <div className="flex items-center justify-center gap-2">
                   <FaWhatsapp className="size-4 sm:size-5 text-white" />
-                  <span className="text-white">WhatsApp</span>
+                  <span className="text-white">Solicite um orçamento</span>
                 </div>
               </ShinyButton>
             </a>
 
             <Link
-              href="#sobre-nos"
-              className="flex items-center justify-center gap-2 rounded-lg border border-white/90 shadow-md px-6 py-2 font-medium text-sm uppercase tracking-wide text-white transition-all duration-300 hover:border-white/50 hover:bg-white/20 sm:px-8 sm:py-3"
+              href="#sobre"
+              className="flex items-center justify-center gap-2 rounded-lg border border-gray-700 text-white hover:shadow-gray-700 shadow-md px-6 py-2 font-medium text-sm uppercase tracking-wide transition-all duration-300 sm:px-8 sm:py-3
+             bg-gradient-to-r from-gray-600 to-gray-800"
             >
               <span>Saiba Mais</span>
               <ChevronsDown className="size-4" />
@@ -116,8 +139,8 @@ export default function Hero() {
                   +
                 </span>
               </div>
-              <p className="text-base text-gray-300 md:text-lg">
-                Anos de experiência.
+              <p className="uppercase max-w-xl lg:max-w-2xl xl:max-w-3xl text-base leading-relaxed md:text-lg lg:text-xl tracking-tight bg-gradient-to-r from-white to-gray-400 text-transparent bg-clip-text">
+                Anos de experiência
               </p>
             </div>
           </div>
@@ -136,8 +159,8 @@ export default function Hero() {
                   +
                 </span>
               </div>
-              <p className="text-base text-gray-300 md:text-lg">
-                Clientes atendidos.
+              <p className="uppercase max-w-xl lg:max-w-2xl xl:max-w-3xl text-base leading-relaxed md:text-lg lg:text-xl tracking-tight bg-gradient-to-r from-white to-gray-400 text-transparent bg-clip-text">
+                Clientes atendidos
               </p>
             </div>
           </div>

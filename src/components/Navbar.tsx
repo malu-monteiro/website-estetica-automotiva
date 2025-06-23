@@ -9,7 +9,6 @@ import { ShieldCheck, Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const navLinks = [
-  { href: "#inicio", label: "Início" },
   { href: "#sobre", label: "Sobre Nós" },
   { href: "#servicos", label: "Serviços" },
   { href: "#curso", label: "Curso" },

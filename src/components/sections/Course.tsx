@@ -126,7 +126,7 @@ export default function Course() {
           className="text-3xl font-bold text-neutral-100 md:text-4xl lg:text-5xl"
           variants={itemVariants}
         >
-          Nosso Curso
+          Curso
         </motion.h2>
 
         {/* Highlight line */}
