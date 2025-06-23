@@ -4,7 +4,6 @@ import { ABOUT_CONTENT } from "@/lib/constants";
 import { ANIMATION_VARIANTS } from "@/lib/animations";
 
 import { StatsSection } from "./stats-section";
-import { RatingSection } from "./rating-section";
 import { TestimonialSection } from "./testimonial-section";
 
 import { AnimatedButton } from "@/components/ui/animated-button";
@@ -55,7 +54,6 @@ export const ContentSection = ({ isInView }: ContentSectionProps) => (
     </motion.div>
 
     {/* Sections */}
-    <RatingSection />
 
     <StatsSection />
 
