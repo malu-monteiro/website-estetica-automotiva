@@ -35,3 +35,23 @@ export const ANIMATION_VARIANTS: Record<string, Variants> = {
     },
   },
 };
+
+export const SERVICES_VARIANTS: Record<string, Variants> = {
+  container: {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.15,
+      },
+    },
+  },
+  item: {
+    hidden: { opacity: 0, y: 20 },
+    show: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.5 },
+    },
+  },
+};

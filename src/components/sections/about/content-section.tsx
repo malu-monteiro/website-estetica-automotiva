@@ -26,7 +26,7 @@ export const ContentSection = ({ isInView }: ContentSectionProps) => (
 
     {/* Title */}
     <motion.h2
-      className="uppercase font-syne text-3xl font-semibold text-white mb-4 md:text-4xl lg:text-5xl xl:text-6xl leading-tight"
+      className="uppercase font-syne text-3xl font-semibold text-white mb-4 md:text-4xl lg:text-5xl leading-tight"
       variants={ANIMATION_VARIANTS.item}
     >
       {ABOUT_CONTENT.title}

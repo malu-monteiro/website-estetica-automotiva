@@ -3,16 +3,12 @@ import { ABOUT_CONTENT } from "@/lib/constants";
 import { StarRating } from "@/components/ui/star-rating";
 
 export const RatingSection = () => (
-  <div className="flex items-center gap-4 mt-6">
-    <span className="font-semibold uppercase text-sm bg-gradient-to-r from-white to-gray-400 text-transparent bg-clip-text">
-      {ABOUT_CONTENT.rating.label}
-    </span>
-
+  <div className="flex items-center gap-2 mt-3">
     <StarRating rating={ABOUT_CONTENT.rating.stars} />
 
-    <span className="text-white text-base">{ABOUT_CONTENT.rating.score}</span>
+    <span className="text-white text-sm">{ABOUT_CONTENT.rating.score}</span>
 
-    <div className="px-3 py-1 border border-gray-700 rounded-xl text-white text-sm font-medium whitespace-nowrap">
+    <div className="px-2 py-0.5 border border-gray-700 rounded-lg text-white text-xs font-medium whitespace-nowrap">
       {ABOUT_CONTENT.rating.reviews}
     </div>
   </div>
