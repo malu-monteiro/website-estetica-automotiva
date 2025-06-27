@@ -7,7 +7,7 @@ import { ANIMATION_VARIANTS } from "@/lib/animations";
 
 export const InstructorCard = () => (
   <motion.div
-    className="order-1 md:order-2 flex items-center justify-center"
+    className="order-1 md:order-2 flex items-center justify-center md:justify-end"
     variants={ANIMATION_VARIANTS.card}
   >
     <div className="group relative w-full max-w-md">
@@ -21,7 +21,7 @@ export const InstructorCard = () => (
         <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000 ease-in-out" />
 
         {/* Image */}
-        <div className="relative aspect-[3/4] overflow-hidden">
+        <div className="relative aspect-[4/5] overflow-hidden">
           <Image
             src={ABOUT_CONTENT.instructor.image}
             alt={`${ABOUT_CONTENT.instructor.name}, ${ABOUT_CONTENT.instructor.role}`}

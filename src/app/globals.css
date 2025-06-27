@@ -184,6 +184,18 @@ html {
   }
   --animate-marquee: marquee var(--duration) infinite linear;
   --animate-marquee-vertical: marquee-vertical var(--duration) linear infinite;
+
+  --animate-marquee-reverse: marquee-reverse var(--duration) infinite linear;
+
+  @keyframes marquee-reverse {
+    from {
+      transform: translateX(calc(-100% - var(--gap)));
+    }
+    to {
+      transform: translateX(0);
+    }
+  }
+
   @keyframes marquee {
     from {
       transform: translateX(0);

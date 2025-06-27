@@ -1,11 +1,8 @@
 "use client";
 
 import React from "react";
-
 import Image from "next/image";
-
 import useEmblaCarousel from "embla-carousel-react";
-
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 interface ServiceCarouselItem {
@@ -24,7 +21,9 @@ export const ServiceCarousel: React.FC<ServiceCarouselProps> = ({ items }) => {
   const [emblaRef, emblaApi] = useEmblaCarousel({
     loop: false,
     align: "start",
-    dragFree: true,
+    dragFree: false,
+    containScroll: "trimSnaps",
+    slidesToScroll: 1,
   });
 
   const scrollPrev = () => emblaApi?.scrollPrev();
@@ -33,12 +32,15 @@ export const ServiceCarousel: React.FC<ServiceCarouselProps> = ({ items }) => {
   return (
     <div className="relative w-full">
       <div className="overflow-hidden" ref={emblaRef}>
-        <div className="flex gap-4">
+        <div className="flex -mx-1 md:-mx-2">
           {items.map((item, index) => (
-            <div key={index} className="flex-none w-80 md:w-96">
+            <div
+              key={index}
+              className="flex-shrink-0 w-full sm:w-1/2 lg:w-1/3 px-1 md:px-2"
+            >
               <a
                 href={item.link}
-                className="group block h-[450px] w-full overflow-hidden rounded-lg border border-gray-800 bg-gray-900 shadow-xl transition-transform duration-300 hover:scale-[1.02]"
+                className="group block h-[450px] w-full overflow-hidden rounded-lg shadow-xl transition-transform duration-300"
               >
                 <div className="relative h-full z-10">
                   <Image
@@ -47,7 +49,7 @@ export const ServiceCarousel: React.FC<ServiceCarouselProps> = ({ items }) => {
                     fill
                     className={`object-cover ${
                       item.objectPosition || "object-center"
-                    } transition-transform duration-300 group-hover:scale-105 group-hover:brightness-75 grayscale-100`}
+                    } transition-transform duration-300 group-hover:scale-105 group-hover:brightness-75`}
                   />
 
                   <div

@@ -4,11 +4,9 @@ import Link from "next/link";
 
 import { useRef } from "react";
 
-import { FaWhatsapp } from "react-icons/fa";
-import { ChevronsDown, TrendingUp, Users } from "lucide-react";
-
+import { FaAngleDoubleDown, FaWhatsapp } from "react-icons/fa";
+import { TrendingUp, Users } from "lucide-react";
 import { motion, useInView } from "framer-motion";
-
 import { ShinyButton } from "../ui/shiny-button";
 import { AnimatedCounter } from "../ui/animated-counter";
 
@@ -35,12 +33,39 @@ export default function Hero() {
   });
 
   return (
-    <section
-      id="inicio"
-      className="relative min-h-screen bg-cover bg-center bg-no-repeat bg-[url('/herobg.png')]"
-    >
-      <div className="absolute inset-0 bg-black/20" />
+    <section id="inicio" className="relative min-h-screen overflow-hidden">
+      {/* Video Background Otimizado */}
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        poster="/videobg-poster.webp"
+        preload="metadata"
+        className="absolute inset-0 w-full h-full object-cover -z-10"
+      >
+        <source src="/videobg.webm" type="video/webm" />
+        <source src="/videobg.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
 
+      {/* Video Darkening Layer & BLUR: Applies a subtle, uniform black filter and a blur effect over the video (or poster image). */}
+      <div
+        className="absolute inset-0 bg-black backdrop-blur-sm"
+        style={{ opacity: 0.3 }}
+      />
+
+      {/* Gradient Overlay: Adds a gradient fading from transparent at the top to dark at the bottom, enhancing foreground content contrast. */}
+      <div
+        className="absolute inset-0"
+        style={{
+          background:
+            "linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #000000 100%)",
+          opacity: 1,
+        }}
+      />
+
+      {/* Main Content Area: Holds all foreground content (text, stars, title, buttons, counters). */}
       <motion.div
         className="relative z-10 mx-auto flex h-full min-h-screen max-w-[1440px] flex-col justify-center px-4 md:px-8 lg:px-16 xl:px-24"
         variants={containerVariants}
@@ -77,7 +102,7 @@ export default function Hero() {
         </div>
 
         <motion.h2
-          className="font-syne mt-2 text-4xl font-bold tracking-tight bg-gradient-to-r from-white to-gray-400 text-transparent bg-clip-text md:text-6xl xl:text-7xl"
+          className="font-syne mt-2 text-4xl md:text-5xl font-bold tracking-tight bg-gradient-to-r from-white to-gray-400 text-transparent bg-clip-text"
           variants={itemVariants}
         >
           ESTÉTICA AUTOMOTIVA
@@ -91,20 +116,20 @@ export default function Hero() {
           <br className="hidden sm:block" />
           destacando os detalhes e trazendo brilho e proteção que fazem a
           <br className="hidden sm:block" />
-          diferença.
+          diferença
         </motion.p>
 
         <motion.div className="mt-8" variants={itemVariants}>
           <div className="flex flex-wrap items-center justify-start gap-4">
             <a
-              href="https://wa.me/5541999346385?text=Olá!%20Gostaria%20de%20mais%20informações."
+              href="https://wa.me/5541999346385?text=Olá!%20Gostaria%20de%20solicitar%20um%20orçamento."
               target="_blank"
               rel="noopener noreferrer"
             >
               <ShinyButton className="border-transparent bg-green-600 text-white hover:shadow-green-800">
                 <div className="flex items-center justify-center gap-2">
                   <FaWhatsapp className="size-4 sm:size-5 text-white" />
-                  <span className="text-white">Solicite um orçamento</span>
+                  <span className="text-white">Solicitar um orçamento</span>
                 </div>
               </ShinyButton>
             </a>
@@ -112,10 +137,10 @@ export default function Hero() {
             <Link
               href="#sobre"
               className="flex items-center justify-center gap-2 rounded-lg border border-gray-700 text-white hover:shadow-gray-700 shadow-md px-6 py-2 font-medium text-sm uppercase tracking-wide transition-all duration-300 sm:px-8 sm:py-3
-             bg-gradient-to-r from-gray-600 to-gray-800"
+              bg-gradient-to-r from-gray-600 to-gray-800"
             >
               <span>Saiba Mais</span>
-              <ChevronsDown className="size-4" />
+              <FaAngleDoubleDown className="size-4" />
             </Link>
           </div>
         </motion.div>
@@ -166,6 +191,11 @@ export default function Hero() {
           </div>
         </motion.div>
       </motion.div>
+
+      {/* Separator */}
+      <div className="absolute bottom-4 left-0 right-0 flex justify-center w-full">
+        <div className="h-[1px] w-3/4 bg-gradient-to-r from-transparent via-white/10 to-transparent" />
+      </div>
     </section>
   );
 }

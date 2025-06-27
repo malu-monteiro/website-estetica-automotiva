@@ -1,18 +1,19 @@
 "use client";
 
 import React, { useEffect, useRef } from "react";
-
 import { motion, useInView } from "framer-motion";
-
 import * as maptilersdk from "@maptiler/sdk";
 import "@maptiler/sdk/dist/maptiler-sdk.css";
-
 import {
-  FaLocationDot,
-  FaEnvelope,
-  FaWhatsapp,
-  FaClock,
-} from "react-icons/fa6";
+  ArrowUpRight,
+  Clock,
+  Mail,
+  MapPin,
+  MessagesSquare,
+} from "lucide-react";
+import { ANIMATION_VARIANTS } from "@/lib/animations";
+import { ShinyButton } from "../ui/shiny-button";
+import { FaWhatsapp } from "react-icons/fa";
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -49,13 +50,10 @@ const initializeMap = (
   center: { lng: number; lat: number },
   zoom: number
 ) => {
-  if (!mapContainer) {
-    console.error("Map container not found.");
+  if (!mapContainer || mapContainer.hasChildNodes()) {
     return null;
   }
-  if (mapContainer.hasChildNodes()) {
-    return null;
-  }
+
   return new maptilersdk.Map({
     container: mapContainer,
     style: maptilersdk.MapStyle.STREETS,
@@ -75,20 +73,23 @@ const createMarkerAndPopup = (
 };
 
 export default function Contact() {
-  const ref = React.useRef<HTMLDivElement>(null);
+  const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, { once: true, amount: 0.5 });
-
-  const mapContainer = useRef<HTMLDivElement>(null);
+  const mapContainerInner = useRef<HTMLDivElement>(null);
   const map = useRef<maptilersdk.Map | null>(null);
 
   const { center, zoom } = locationData;
 
   useEffect(() => {
-    if (!mapContainer.current || map.current) {
+    if (!mapContainerInner.current || map.current) {
       return;
     }
 
-    const initializedMap = initializeMap(mapContainer.current, center, zoom);
+    const initializedMap = initializeMap(
+      mapContainerInner.current,
+      center,
+      zoom
+    );
 
     if (initializedMap) {
       map.current = initializedMap;
@@ -104,161 +105,139 @@ export default function Contact() {
   }, [center, zoom]);
 
   return (
-    <section
-      id="contato"
-      className="relative py-20 bg-cover overflow-hidden bg-neutral-900"
-    >
+    <section id="contato" className="relative py-20 bg-black overflow-hidden">
       <motion.div
         ref={ref}
-        className="mx-auto flex max-w-[1440px] flex-col px-4 md:px-8 lg:px-16 xl:px-24 items-center text-center"
+        className="relative z-10 mx-auto flex max-w-[1440px] flex-col px-4 md:px-8 lg:px-16 xl:px-24 pb-20"
         variants={containerVariants}
         initial="hidden"
         animate={isInView ? "show" : "hidden"}
       >
-        {/* Main Title */}
-        <motion.h2
-          className="text-3xl font-bold text-neutral-100 md:text-4xl lg:text-5xl text-center mx-auto"
-          variants={itemVariants}
-        >
-          Contato
-        </motion.h2>
-
-        {/* Highlight line */}
         <motion.div
-          className="mt-3 h-1 w-24 rounded-full bg-red-500 mx-auto"
-          variants={itemVariants}
-        />
-
-        {/* Subtitle */}
-        <motion.h3
-          className="mt-6 text-2xl font-medium tracking-tight text-neutral-300 md:text-3xl lg:text-4xl mb-20"
-          variants={itemVariants}
+          variants={ANIMATION_VARIANTS.item}
+          className="mb-24 text-center flex flex-col items-center"
         >
-          Nos contate para dúvidas e agendamentos
-        </motion.h3>
-
-        {/* Information Cards */}
-        <motion.div
-          className="w-full max-w-4xl grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16"
-          variants={containerVariants}
-        >
-          <motion.div
-            className="flex flex-col items-center text-center group cursor-pointer"
-            variants={itemVariants}
-          >
-            <div className="flex items-center justify-center w-16 h-16 rounded-full border border-neutral-700 bg-neutral-800 mb-4 transition-all duration-300 group-hover:border-red-500 group-hover:bg-red-500/10 group-hover:scale-110">
-              <FaClock className="text-2xl text-neutral-300 transition-all duration-300 group-hover:text-red-400 group-hover:rotate-12" />
-            </div>
-            <h3 className="text-xl font-semibold text-neutral-100 mb-1">
-              Atendimento
-            </h3>
-            <p className="text-neutral-400 mb-2">
-              Atendemos apenas com horário agendado
-            </p>
-            <p className="text-neutral-100 font-bold">
-              Segunda a Sexta, das 8h às 18h
-            </p>
-          </motion.div>
-
-          <motion.div
-            className="flex flex-col items-center text-center group cursor-pointer"
-            variants={itemVariants}
-          >
-            <div className="flex items-center justify-center w-16 h-16 rounded-full border border-neutral-700 bg-neutral-800 mb-4 transition-all duration-300 group-hover:border-blue-500 group-hover:bg-blue-500/10 group-hover:scale-110">
-              <FaLocationDot className="text-2xl text-neutral-300 transition-all duration-300 group-hover:text-blue-400 group-hover:-translate-y-1" />
-            </div>
-            <h3 className="text-xl font-semibold text-neutral-100 mb-1">
-              Endereço
-            </h3>
-            <p className="text-neutral-400 mb-2">
-              A MSS STUDIO CAR está localizada em
-            </p>
-            <p className="text-neutral-100 font-bold">
-              Rua Alamanda, 85, Pinhais, PR, 83328-130
-            </p>
-          </motion.div>
-
-          <motion.div
-            className="flex flex-col items-center text-center group cursor-pointer"
-            variants={itemVariants}
-          >
-            <div className="flex items-center justify-center w-16 h-16 rounded-full border border-neutral-700 bg-neutral-800 mb-4 transition-all duration-300 group-hover:border-green-500 group-hover:bg-green-500/10 group-hover:scale-110">
-              <FaWhatsapp className="text-2xl text-neutral-300 transition-all duration-300 group-hover:text-green-400 group-hover:bounce" />
-            </div>
-            <h3 className="text-xl font-semibold text-neutral-100 mb-1">
-              WhatsApp
-            </h3>
-            <p className="text-neutral-400 mb-2">Agendamentos e orçamentos</p>
-            <a
-              href={`https://wa.me/${
-                contactInfo.whatsappNumber
-              }?text=${encodeURIComponent(
-                "Olá, gostaria de saber mais sobre os serviços de estética automotiva da MSS Studio Car!"
-              )}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-blue-400 hover:underline font-bold"
-            >
-              (41) 99934-6385
-            </a>
-          </motion.div>
-
-          <motion.div
-            className="flex flex-col items-center text-center group cursor-pointer"
-            variants={itemVariants}
-          >
-            <div className="flex items-center justify-center w-16 h-16 rounded-full border border-neutral-700 bg-neutral-800 mb-4 transition-all duration-300 group-hover:border-yellow-500 group-hover:bg-yellow-500/10 group-hover:scale-110">
-              <FaEnvelope className="text-2xl text-neutral-300 transition-all duration-300 group-hover:text-yellow-400 group-hover:rotate-6" />
-            </div>
-            <h3 className="text-xl font-semibold text-neutral-100 mb-1">
-              E-mail
-            </h3>
-            <p className="text-neutral-400 mb-2">
-              Retornamos todos os e-mails em até 24 horas úteis
-            </p>
-            <a
-              href={`mailto:${contactInfo.emailAddress}`}
-              className="text-blue-400 hover:underline font-bold"
-            >
-              mssstudiocar@gmail.com
-            </a>
-          </motion.div>
-        </motion.div>
-
-        {/* Map */}
-        <motion.div
-          className="w-full relative rounded-lg shadow-xl overflow-hidden"
-          style={{ height: "500px" }}
-          variants={itemVariants}
-        >
-          <div
-            ref={mapContainer}
-            className="w-full h-full"
-            style={{ position: "absolute", top: 0, left: 0 }}
-          />
-          <div className="absolute bottom-4 left-4 p-6 bg-white rounded-lg shadow-lg text-neutral-900 max-w-xs md:max-w-sm lg:max-w-md z-10 text-left">
-            <h4 className="text-xl font-bold mb-2">
-              Localização MSS Studio Car
-            </h4>
-            <p className="text-neutral-700 mb-4">
-              Estamos localizados em Pinhais, PR. Venha nos visitar!
-            </p>
-            <p className="text-neutral-700 mb-4 font-semibold">
-              Rua Alamanda, 85, Pinhais, PR, 83328-130
-            </p>
-            <a
-              href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
-                `${contactInfo.address}, ${contactInfo.cityState}, ${contactInfo.cep}`
-              )}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-blue-600 hover:underline font-bold"
-            >
-              Ver no Google Maps
-            </a>
+          <div className="inline-flex items-center gap-2 py-2 mb-6">
+            <div className="w-2 h-2 bg-white rounded-full" />
+            <span className="text-white text-sm font-medium uppercase">
+              Entre em contato
+            </span>
           </div>
+
+          <h3 className="uppercase font-syne text-3xl font-semibold text-white md:text-4xl lg:text-5xl leading-tight mb-8">
+            Dúvidas e<span className="block text-white">agendamentos</span>
+          </h3>
+
+          <ShinyButton className="border-transparent bg-green-600 text-white hover:shadow-green-800">
+            <div className="flex items-center justify-center gap-2">
+              <FaWhatsapp className="size-4 sm:size-5 text-white" />
+              <span className="text-white">Entrar em contato</span>
+            </div>
+          </ShinyButton>
         </motion.div>
+
+        <div className="flex flex-col lg:flex-row gap-12 w-full">
+          <div className="lg:w-1/2 grid grid-cols-1 md:grid-cols-2 gap-8">
+            <motion.div className="flex flex-col" variants={itemVariants}>
+              <Clock className="size-6 text-neutral-300 mb-3" />
+              <h4 className="text-xl font-medium text-neutral-100 mb-2">
+                Atendimento
+              </h4>
+              <p className="text-neutral-400 mb-3">
+                Atendemos apenas com horário agendado
+              </p>
+              <p className="text-neutral-100 font-medium">
+                Segunda a Sexta, das 8h às 18h
+              </p>
+            </motion.div>
+
+            <motion.div className="flex flex-col" variants={itemVariants}>
+              <MapPin className="size-6 text-neutral-300 mb-3" />
+              <h4 className="text-xl font-medium text-neutral-100 mb-2">
+                Endereço
+              </h4>
+              <p className="text-neutral-400 mb-3">
+                A MSS STUDIO CAR está localizada em
+              </p>
+              <p className="text-neutral-100 font-medium">
+                Rua Alamanda, 85, Pinhais, PR
+              </p>
+            </motion.div>
+
+            <motion.div className="flex flex-col" variants={itemVariants}>
+              <MessagesSquare className="size-6 text-neutral-300 mb-3" />
+              <h4 className="text-xl font-medium text-neutral-100 mb-2">
+                WhatsApp
+              </h4>
+              <p className="text-neutral-400 mb-3">Agendamentos e orçamentos</p>
+              <a
+                href={`https://wa.me/${
+                  contactInfo.whatsappNumber
+                }?text=${encodeURIComponent(
+                  "Olá, gostaria de saber mais sobre os serviços de estética automotiva da MSS Studio Car!"
+                )}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blue-400 hover:text-blue-300 hover:underline font-medium transition-colors"
+              >
+                (41) 99934-6385
+              </a>
+            </motion.div>
+
+            <motion.div className="flex flex-col" variants={itemVariants}>
+              <Mail className="size-6 text-neutral-300 mb-3" />
+              <h4 className="text-xl font-medium text-neutral-100 mb-2">
+                E-mail
+              </h4>
+              <p className="text-neutral-400 mb-3">
+                Retornamos em até 24 horas úteis
+              </p>
+              <a
+                href={`mailto:${contactInfo.emailAddress}`}
+                className="text-blue-400 hover:text-blue-300 hover:underline font-medium transition-colors"
+              >
+                mssstudiocar@gmail.com
+              </a>
+            </motion.div>
+          </div>
+
+          <motion.div
+            className="lg:w-1/2 relative rounded-lg shadow-xl overflow-hidden"
+            style={{ height: "500px" }}
+            variants={itemVariants}
+          >
+            <div
+              ref={mapContainerInner}
+              className="w-full h-full absolute inset-0"
+            />
+            <div className="absolute bottom-4 left-4 right-4 p-4 rounded-lg bg-white/90 backdrop-blur-sm shadow-lg z-10 max-w-sm">
+              <h4 className="text-lg font-bold text-gray-900 mb-2">
+                MSS_Studio Car
+              </h4>
+              <p className="text-gray-700 text-sm mb-3 leading-relaxed">
+                {contactInfo.address}, {contactInfo.cityState},{" "}
+                {contactInfo.cep}
+              </p>
+              <a
+                href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
+                  `${contactInfo.address}, ${contactInfo.cityState}, ${contactInfo.cep}`
+                )}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1 text-blue-600 hover:text-blue-700 font-medium text-sm transition-colors"
+              >
+                Ver no Google Maps
+                <ArrowUpRight className="size-4" />
+              </a>
+            </div>
+          </motion.div>
+        </div>
       </motion.div>
+
+      {/* Separator */}
+      <div className="absolute bottom-4 left-0 right-0 flex justify-center w-full">
+        <div className="h-[1px] w-3/4 bg-gradient-to-r from-transparent via-white/10 to-transparent" />
+      </div>
     </section>
   );
 }
