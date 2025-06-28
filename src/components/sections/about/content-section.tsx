@@ -54,7 +54,6 @@ export const ContentSection = ({ isInView }: ContentSectionProps) => (
     </motion.div>
 
     {/* Sections */}
-
     <StatsSection />
 
     <TestimonialSection />

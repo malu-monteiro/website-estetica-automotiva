@@ -1,8 +1,11 @@
 "use client";
 
 import React from "react";
+
 import Image from "next/image";
+
 import useEmblaCarousel from "embla-carousel-react";
+
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 interface ServiceCarouselItem {
@@ -21,9 +24,7 @@ export const ServiceCarousel: React.FC<ServiceCarouselProps> = ({ items }) => {
   const [emblaRef, emblaApi] = useEmblaCarousel({
     loop: false,
     align: "start",
-    dragFree: false,
-    containScroll: "trimSnaps",
-    slidesToScroll: 1,
+    dragFree: true,
   });
 
   const scrollPrev = () => emblaApi?.scrollPrev();
@@ -32,15 +33,12 @@ export const ServiceCarousel: React.FC<ServiceCarouselProps> = ({ items }) => {
   return (
     <div className="relative w-full">
       <div className="overflow-hidden" ref={emblaRef}>
-        <div className="flex -mx-1 md:-mx-2">
+        <div className="flex gap-4">
           {items.map((item, index) => (
-            <div
-              key={index}
-              className="flex-shrink-0 w-full sm:w-1/2 lg:w-1/3 px-1 md:px-2"
-            >
+            <div key={index} className="flex-none w-80 md:w-96">
               <a
                 href={item.link}
-                className="group block h-[450px] w-full overflow-hidden rounded-lg shadow-xl transition-transform duration-300"
+                className="group block h-[450px] w-full overflow-hidden rounded-md shadow-xl transition-transform duration-300 "
               >
                 <div className="relative h-full z-10">
                   <Image

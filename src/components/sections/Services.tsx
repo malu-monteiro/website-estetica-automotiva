@@ -34,19 +34,16 @@ export default function Services() {
       >
         <RatingSection />
 
-        <motion.h2
-          className="font-syne mt-6 uppercase text-3xl font-semibold text-white mb-4 md:text-4xl lg:text-5xl leading-tight"
-          variants={SERVICES_VARIANTS.item}
-        >
-          {SERVICES_CONTENT.title}
-        </motion.h2>
+        {/* Title, Subtitle and Content */}
+        <motion.div variants={SERVICES_VARIANTS.item}>
+          <h2 className="font-syne mt-6 uppercase text-3xl font-semibold text-white mb-4 md:text-4xl lg:text-5xl leading-tight">
+            {SERVICES_CONTENT.title}
+          </h2>
 
-        <motion.p
-          className="mt-6 text-lg font-light text-gray-300 mb-6 md:text-xl leading-relaxed max-w-lg"
-          variants={SERVICES_VARIANTS.item}
-        >
-          {SERVICES_CONTENT.subtitle}
-        </motion.p>
+          <p className="mt-6 text-lg font-light text-gray-300 mb-6 md:text-xl leading-relaxed max-w-lg">
+            {SERVICES_CONTENT.subtitle}
+          </p>
+        </motion.div>
 
         <motion.div className="mt-8 w-full">
           <ServiceCarousel items={SERVICES_CONTENT.services} />

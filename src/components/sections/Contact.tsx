@@ -1,9 +1,12 @@
 "use client";
 
 import React, { useEffect, useRef } from "react";
+
 import { motion, useInView } from "framer-motion";
+
 import * as maptilersdk from "@maptiler/sdk";
 import "@maptiler/sdk/dist/maptiler-sdk.css";
+
 import {
   ArrowUpRight,
   Clock,
@@ -11,9 +14,11 @@ import {
   MapPin,
   MessagesSquare,
 } from "lucide-react";
-import { ANIMATION_VARIANTS } from "@/lib/animations";
-import { ShinyButton } from "../ui/shiny-button";
 import { FaWhatsapp } from "react-icons/fa";
+
+import { ShinyButton } from "../ui/shiny-button";
+
+import { ANIMATION_VARIANTS } from "@/lib/animations";
 
 const containerVariants = {
   hidden: { opacity: 0 },

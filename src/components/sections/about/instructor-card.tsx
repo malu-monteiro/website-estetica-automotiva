@@ -15,11 +15,8 @@ export const InstructorCard = () => (
       <motion.div
         whileHover={{ y: -8 }}
         transition={{ duration: 0.3, ease: "easeOut" }}
-        className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-gray-900 via-gray-800 to-black shadow-2xl border border-gray-700/50 w-full"
+        className="relative overflow-hidden rounded-md"
       >
-        {/* Hover glow effect */}
-        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000 ease-in-out" />
-
         {/* Image */}
         <div className="relative aspect-[4/5] overflow-hidden">
           <Image
@@ -30,7 +27,13 @@ export const InstructorCard = () => (
           />
 
           {/* Gradient overlay */}
-          <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent" />
+          <div
+            className="absolute inset-0"
+            style={{
+              background:
+                "linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgb(33, 33, 33) 100%)",
+            }}
+          />
         </div>
 
         {/* Card content */}
@@ -44,9 +47,6 @@ export const InstructorCard = () => (
           </p>
         </div>
       </motion.div>
-
-      {/* Shadow effect */}
-      <div className="absolute inset-0 bg-red-500/20 rounded-2xl blur-2xl scale-110 opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10" />
     </div>
   </motion.div>
 );

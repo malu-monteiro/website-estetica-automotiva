@@ -4,9 +4,11 @@ import Link from "next/link";
 
 import { useRef } from "react";
 
-import { FaAngleDoubleDown, FaWhatsapp } from "react-icons/fa";
-import { TrendingUp, Users } from "lucide-react";
+import { FaWhatsapp } from "react-icons/fa";
+import { ChevronsDown, TrendingUp, Users } from "lucide-react";
+
 import { motion, useInView } from "framer-motion";
+
 import { ShinyButton } from "../ui/shiny-button";
 import { AnimatedCounter } from "../ui/animated-counter";
 
@@ -34,14 +36,12 @@ export default function Hero() {
 
   return (
     <section id="inicio" className="relative min-h-screen overflow-hidden">
-      {/* Video Background Otimizado */}
       <video
         autoPlay
         loop
         muted
         playsInline
         poster="/videobg-poster.webp"
-        preload="metadata"
         className="absolute inset-0 w-full h-full object-cover -z-10"
       >
         <source src="/videobg.webm" type="video/webm" />
@@ -49,13 +49,11 @@ export default function Hero() {
         Your browser does not support the video tag.
       </video>
 
-      {/* Video Darkening Layer & BLUR: Applies a subtle, uniform black filter and a blur effect over the video (or poster image). */}
       <div
         className="absolute inset-0 bg-black backdrop-blur-sm"
         style={{ opacity: 0.3 }}
       />
 
-      {/* Gradient Overlay: Adds a gradient fading from transparent at the top to dark at the bottom, enhancing foreground content contrast. */}
       <div
         className="absolute inset-0"
         style={{
@@ -65,7 +63,6 @@ export default function Hero() {
         }}
       />
 
-      {/* Main Content Area: Holds all foreground content (text, stars, title, buttons, counters). */}
       <motion.div
         className="relative z-10 mx-auto flex h-full min-h-screen max-w-[1440px] flex-col justify-center px-4 md:px-8 lg:px-16 xl:px-24"
         variants={containerVariants}
@@ -102,7 +99,7 @@ export default function Hero() {
         </div>
 
         <motion.h2
-          className="font-syne mt-2 text-4xl md:text-5xl font-bold tracking-tight bg-gradient-to-r from-white to-gray-400 text-transparent bg-clip-text"
+          className="font-syne mt-2 text-5xl font-bold tracking-tight bg-gradient-to-r from-white to-gray-400 text-transparent bg-clip-text"
           variants={itemVariants}
         >
           ESTÉTICA AUTOMOTIVA
@@ -122,7 +119,7 @@ export default function Hero() {
         <motion.div className="mt-8" variants={itemVariants}>
           <div className="flex flex-wrap items-center justify-start gap-4">
             <a
-              href="https://wa.me/5541999346385?text=Olá!%20Gostaria%20de%20solicitar%20um%20orçamento."
+              href="https://wa.me/5541999346385?text=Olá!%20Gostaria%20de%20mais%20informações."
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -140,7 +137,7 @@ export default function Hero() {
               bg-gradient-to-r from-gray-600 to-gray-800"
             >
               <span>Saiba Mais</span>
-              <FaAngleDoubleDown className="size-4" />
+              <ChevronsDown className="size-4" />
             </Link>
           </div>
         </motion.div>
@@ -192,7 +189,7 @@ export default function Hero() {
         </motion.div>
       </motion.div>
 
-      {/* Separator */}
+      {/*  Separator */}
       <div className="absolute bottom-4 left-0 right-0 flex justify-center w-full">
         <div className="h-[1px] w-3/4 bg-gradient-to-r from-transparent via-white/10 to-transparent" />
       </div>
