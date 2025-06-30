@@ -126,7 +126,7 @@ export default function Hero() {
               <ShinyButton className="border-transparent bg-green-600 text-white hover:shadow-green-800">
                 <div className="flex items-center justify-center gap-2">
                   <FaWhatsapp className="size-4 sm:size-5 text-white" />
-                  <span className="text-white">Solicitar um orçamento</span>
+                  <span className="text-white">Solicite um orçamento</span>
                 </div>
               </ShinyButton>
             </a>

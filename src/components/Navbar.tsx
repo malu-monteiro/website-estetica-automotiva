@@ -9,6 +9,7 @@ import { ShieldCheck, Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const navLinks = [
+  { href: "/", label: "Início" },
   { href: "#sobre", label: "Sobre Nós" },
   { href: "#servicos", label: "Serviços" },
   { href: "#curso", label: "Curso" },
@@ -50,16 +51,14 @@ export function Navbar() {
 
   return (
     <header
-      className={`sticky top-0 z-50 w-full backdrop-blur-lg border-b border-white/10 bg-gradient-to-b from-transparent to-black/75 transition-transform duration-300 ${
+      className={`sticky top-0 z-50 w-full backdrop-blur-lg border-b border-white/10 transition-transform duration-300 ${
         isVisible ? "translate-y-0" : "-translate-y-full"
       }`}
     >
-      {" "}
-      {/* NÃO ESQUECER: Falta melhorar o blur!!!!!  */}
       <div className="mx-auto max-w-[1440px] px-4 md:px-8 lg:px-16 xl:px-24">
         <nav className="flex items-center justify-between py-4">
           {/* Logo */}
-          <Link href="#inicio" className="flex items-center gap-2">
+          <Link href="/" className="flex items-center gap-2">
             <ShieldCheck className="h-8 w-8 text-white" />
             <span className="text-xl font-bold text-white">MSS_STUDIO CAR</span>
           </Link>

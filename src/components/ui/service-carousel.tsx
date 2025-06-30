@@ -2,6 +2,7 @@
 
 import React from "react";
 
+import Link from "next/link";
 import Image from "next/image";
 
 import useEmblaCarousel from "embla-carousel-react";
@@ -9,6 +10,7 @@ import useEmblaCarousel from "embla-carousel-react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 interface ServiceCarouselItem {
+  slug: string;
   title: string;
   description: string;
   link: string;
@@ -36,8 +38,8 @@ export const ServiceCarousel: React.FC<ServiceCarouselProps> = ({ items }) => {
         <div className="flex gap-4">
           {items.map((item, index) => (
             <div key={index} className="flex-none w-80 md:w-96">
-              <a
-                href={item.link}
+              <Link
+                href={`/servicos/${item.slug}`}
                 className="group block h-[450px] w-full overflow-hidden rounded-md shadow-xl transition-transform duration-300 "
               >
                 <div className="relative h-full z-10">
@@ -76,7 +78,7 @@ export const ServiceCarousel: React.FC<ServiceCarouselProps> = ({ items }) => {
                     </div>
                   </div>
                 </div>
-              </a>
+              </Link>
             </div>
           ))}
         </div>
