@@ -32,7 +32,7 @@ export default function GalleryCarousel({
     <motion.div
       variants={variants}
       exit={{ opacity: 0, scale: 0.95 }}
-      className="relative w-full rounded-xl overflow-hidden h-[500px] md:h-[600px] lg:h-[700px]"
+      className="relative w-11/12 mx-auto rounded-xl overflow-hidden h-[500px] md:h-[600px] lg:h-[700px]"
     >
       <Swiper
         onSwiper={(swiper) => {
