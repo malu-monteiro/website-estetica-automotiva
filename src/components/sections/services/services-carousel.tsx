@@ -9,7 +9,7 @@ import useEmblaCarousel from "embla-carousel-react";
 
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
-interface ServiceCarouselItem {
+interface ServicesCarouselItem {
   slug: string;
   title: string;
   description: string;
@@ -18,11 +18,13 @@ interface ServiceCarouselItem {
   objectPosition?: string;
 }
 
-interface ServiceCarouselProps {
-  items: ServiceCarouselItem[];
+interface ServicesCarouselProps {
+  items: ServicesCarouselItem[];
 }
 
-export const ServiceCarousel: React.FC<ServiceCarouselProps> = ({ items }) => {
+export const ServicesCarousel: React.FC<ServicesCarouselProps> = ({
+  items,
+}) => {
   const [emblaRef, emblaApi] = useEmblaCarousel({
     loop: false,
     align: "start",

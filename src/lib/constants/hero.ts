@@ -4,10 +4,12 @@ export const HERO_CONTENT = {
   subtitle: "ESTÉTICA AUTOMOTIVA",
   description:
     "Garantimos qualidade transformando a aparência do seu veículo,\ndestacando os detalhes, e trazendo brilho e proteção que fazem a\ndiferença",
-  ctaText: "Solicite um orçamento",
-  whatsappMessage: "Olá! Gostaria de solicitar um orçamento.",
-  whatsappNumber: "5541999346385",
-};
+  cta: {
+    text: "Solicite um orçamento",
+    whatsappMessage: "Olá! Gostaria de solicitar um orçamento.",
+    whatsappNumber: "5541999346385",
+  },
+} as const;
 
 export type IconName = "TrendingUp" | "Users";
 

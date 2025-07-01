@@ -1,12 +1,12 @@
 import { motion } from "framer-motion";
 
 import { ABOUT_CONTENT } from "@/lib/constants/about";
-import { ANIMATION_VARIANTS } from "@/lib/animations";
+import { ANIMATION_MAIN_VARIANTS } from "@/lib/animations";
 
 export const StatsSection = () => (
   <motion.div
     className="flex flex-wrap gap-6 mt-6"
-    variants={ANIMATION_VARIANTS.item}
+    variants={ANIMATION_MAIN_VARIANTS.item}
   >
     {ABOUT_CONTENT.stats.map((stat, index) => (
       <div key={index} className="flex items-center gap-6">

@@ -1,13 +1,25 @@
 import { Variants } from "framer-motion";
-import { UseInViewOptions } from "framer-motion";
 
-interface AnimationConfig {
-  containerVariants: Variants;
-  itemVariants: Variants;
-  countersInViewConfig: UseInViewOptions;
-}
+export const DEFAULT_CONTAINER_VARIANTS: Variants = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.15,
+    },
+  },
+};
 
-export const ANIMATION_VARIANTS: Record<string, Variants> = {
+export const DEFAULT_ITEM_VARIANTS: Variants = {
+  hidden: { opacity: 0, y: 20 },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.5 },
+  },
+};
+
+export const ANIMATION_MAIN_VARIANTS: Record<string, Variants> = {
   container: {
     hidden: { opacity: 0 },
     show: {
@@ -43,27 +55,7 @@ export const ANIMATION_VARIANTS: Record<string, Variants> = {
   },
 };
 
-export const SERVICES_VARIANTS: Record<string, Variants> = {
-  container: {
-    hidden: { opacity: 0 },
-    show: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.15,
-      },
-    },
-  },
-  item: {
-    hidden: { opacity: 0, y: 20 },
-    show: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.5 },
-    },
-  },
-};
-
-export const ANIMATION_CONFIG: AnimationConfig = {
+export const ANIMATION_CONFIG = {
   containerVariants: {
     hidden: { opacity: 0 },
     show: {
@@ -73,12 +65,9 @@ export const ANIMATION_CONFIG: AnimationConfig = {
       },
     },
   },
-  itemVariants: {
-    hidden: { opacity: 0, y: 20 },
-    show: { opacity: 1, y: 0, transition: { duration: 0.5 } },
-  },
+  itemVariants: DEFAULT_ITEM_VARIANTS,
   countersInViewConfig: {
     once: true,
     margin: "-100px",
   },
-};
+} as const;

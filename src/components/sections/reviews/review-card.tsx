@@ -10,11 +10,11 @@ export const ReviewCard = ({ name, body, source }: ReviewCardProps) => (
   <figure
     className={cn(
       "relative h-60 w-64 cursor-pointer overflow-hidden rounded-md border p-4",
-      "border-gray-950/10 bg-gray-900 hover:bg-gray-800 transition-colors"
+      "border-zinc-700 bg-zinc-800 hover:bg-zinc-900 transition-colors"
     )}
   >
     <div className="flex flex-row items-center gap-2">
-      <div className="flex h-8 w-8 items-center justify-center rounded-full bg-gray-300 text-black text-sm font-semibold">
+      <div className="flex h-8 w-8 items-center justify-center rounded-full bg-neutral-200 text-black text-sm font-semibold">
         {getInitials(name)}
       </div>
 

@@ -3,11 +3,14 @@ export const ABOUT_CONTENT = {
   title: "Dedicação e",
   titleHighlight: "expertise",
   subtitle: "Excelência em cada detalhe, paixão em cada projeto",
-  buttonText: "Continuar lendo",
   rating: {
     stars: 5,
     score: "5/5 de",
     reviews: "44+ Avaliações",
+  },
+  cta: {
+    text: "Continuar lendo",
+    link: "/sobre",
   },
   stats: [
     "Profissional Capacitado",
@@ -26,4 +29,4 @@ export const ABOUT_CONTENT = {
     role: "Especialista em Estética Automotiva e Instrutor do curso de Polimento de Faróis",
     image: "/aboutimg.png",
   },
-};
+} as const;

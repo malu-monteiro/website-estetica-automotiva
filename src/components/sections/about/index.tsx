@@ -4,13 +4,13 @@ import { useRef } from "react";
 
 import { motion, useInView } from "framer-motion";
 
-import { ANIMATION_VARIANTS } from "@/lib/animations";
+import { ANIMATION_MAIN_VARIANTS } from "@/lib/animations";
 
 import { InstructorCard } from "./instructor-card";
 import { ContentSection } from "./content-section";
 
 export default function About() {
-  const ref = useRef(null);
+  const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, { once: true, margin: "-50px" });
 
   return (
@@ -28,12 +28,14 @@ export default function About() {
       >
         <motion.div
           className="grid items-center gap-8 md:grid-cols-2 md:gap-12 lg:gap-16"
-          variants={ANIMATION_VARIANTS.container}
+          variants={ANIMATION_MAIN_VARIANTS.container}
           initial="hidden"
           animate={isInView ? "show" : "hidden"}
         >
+          {/* Title, subtitle, content, sections, testimonial and button */}
           <ContentSection isInView={isInView} />
 
+          {/* Instrutor image and info */}
           <InstructorCard />
         </motion.div>
       </div>

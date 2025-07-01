@@ -2,9 +2,10 @@
 
 import { motion } from "framer-motion";
 
-import { ANIMATION_CONFIG } from "@/lib/animations";
+import { DEFAULT_CONTAINER_VARIANTS } from "@/lib/animations";
+
+import { HeroContent } from "./content-section";
 import { BackgroundVideo } from "./background-video";
-import { HeroContentAndCounters } from "./content-section";
 
 export default function Hero() {
   return (
@@ -14,12 +15,12 @@ export default function Hero() {
 
       <motion.div
         className="relative z-10 mx-auto flex h-full min-h-screen max-w-[1440px] flex-col justify-center px-4 md:px-8 lg:px-16 xl:px-24"
-        variants={ANIMATION_CONFIG.containerVariants}
+        variants={DEFAULT_CONTAINER_VARIANTS}
         initial="hidden"
         animate="show"
       >
         {/* All the content (text, button, counters, arrow) */}
-        <HeroContentAndCounters />
+        <HeroContent />
       </motion.div>
 
       {/* Separator */}

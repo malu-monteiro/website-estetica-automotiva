@@ -33,7 +33,7 @@ export const CounterItem = ({
         </span>
       </div>
 
-      <p className="uppercase max-w-xl lg:max-w-2xl xl:max-w-3xl text-base leading-relaxed md:text-lg lg:text-xl tracking-tight bg-gradient-to-r from-white to-gray-400 text-transparent bg-clip-text">
+      <p className="uppercase max-w-xl lg:max-w-2xl xl:max-w-3xl text-base leading-relaxed md:text-lg lg:text-xl tracking-tight bg-gradient-to-r from-neutral-100 to-neutral-400 text-transparent bg-clip-text">
         {label}
       </p>
     </div>

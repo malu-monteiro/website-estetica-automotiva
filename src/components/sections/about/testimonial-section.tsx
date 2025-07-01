@@ -3,12 +3,12 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 
 import { ABOUT_CONTENT } from "@/lib/constants/about";
-import { ANIMATION_VARIANTS } from "@/lib/animations";
+import { ANIMATION_MAIN_VARIANTS } from "@/lib/animations";
 
 export const TestimonialSection = () => (
   <motion.div
     className="mt-10 flex items-start gap-4"
-    variants={ANIMATION_VARIANTS.item}
+    variants={ANIMATION_MAIN_VARIANTS.item}
   >
     {/* Avatar with badge */}
     <div className="relative w-12 h-12 rounded-full overflow-hidden flex-shrink-0">

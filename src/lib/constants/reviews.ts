@@ -2,8 +2,11 @@ export const SECTION_TEXTS = {
   badge: "Nossas avaliações",
   title: "Cuidado que",
   titleHighlight: "vira admiração",
-  buttonText: "Nos avalie no Google!",
-};
+  cta: {
+    text: "Nos avalie no Google!",
+    link: "https://g.page/r/CahbS7buR34pEAI/review",
+  },
+} as const;
 
 export const REVIEWS_CONTENT = [
   {

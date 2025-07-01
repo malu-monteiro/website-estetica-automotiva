@@ -3,12 +3,12 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 
 import { ABOUT_CONTENT } from "@/lib/constants/about";
-import { ANIMATION_VARIANTS } from "@/lib/animations";
+import { ANIMATION_MAIN_VARIANTS } from "@/lib/animations";
 
 export const InstructorCard = () => (
   <motion.div
     className="order-1 md:order-2 flex items-center justify-center md:justify-end"
-    variants={ANIMATION_VARIANTS.card}
+    variants={ANIMATION_MAIN_VARIANTS.card}
   >
     <div className="group relative w-full max-w-md">
       {/* Main card */}

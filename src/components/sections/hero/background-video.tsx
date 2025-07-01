@@ -15,6 +15,7 @@ export function BackgroundVideo() {
         <source src={MEDIA_PATHS.videoMp4} type="video/mp4" />
         Seu navegador não suporta a tag de vídeo.
       </video>
+
       <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/50 to-black" />
     </>
   );

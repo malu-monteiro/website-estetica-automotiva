@@ -4,13 +4,14 @@ import { useRef } from "react";
 
 import { motion, useInView, UseInViewOptions } from "framer-motion";
 
-import { RatingSection } from "./about/rating-section";
-
-import { ServiceCarousel } from "../ui/service-carousel";
-
-import { SERVICES_VARIANTS } from "../../lib/animations";
-
+import {
+  DEFAULT_CONTAINER_VARIANTS,
+  DEFAULT_ITEM_VARIANTS,
+} from "@/lib/animations";
 import { SERVICES_CONTENT } from "@/lib/constants/services";
+
+import { ServicesCarousel } from "./services-carousel";
+import { RatingSection } from "../about/rating-section";
 
 const VIEW_CONFIG: UseInViewOptions = {
   once: true,
@@ -18,7 +19,7 @@ const VIEW_CONFIG: UseInViewOptions = {
 };
 
 export default function Services() {
-  const ref = useRef(null);
+  const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, VIEW_CONFIG);
   const animationState = isInView ? "show" : "hidden";
 
@@ -29,14 +30,14 @@ export default function Services() {
       <motion.div
         ref={ref}
         className="relative z-10 mx-auto flex max-w-[1440px] flex-col px-4 md:px-8 lg:px-16 xl:px-24 items-center text-center pb-20"
-        variants={SERVICES_VARIANTS.container}
+        variants={DEFAULT_CONTAINER_VARIANTS}
         initial="hidden"
         animate={animationState}
       >
         <RatingSection />
 
         {/* Title, Subtitle and Content */}
-        <motion.div variants={SERVICES_VARIANTS.item}>
+        <motion.div variants={DEFAULT_ITEM_VARIANTS}>
           <h2 className="font-syne mt-6 uppercase text-3xl font-semibold text-white mb-4 md:text-4xl lg:text-5xl leading-tight">
             {SERVICES_CONTENT.title}
           </h2>
@@ -47,7 +48,7 @@ export default function Services() {
         </motion.div>
 
         <motion.div className="mt-8 w-full">
-          <ServiceCarousel items={SERVICES_CONTENT.services} />
+          <ServicesCarousel items={SERVICES_CONTENT.services} />
         </motion.div>
       </motion.div>
 
