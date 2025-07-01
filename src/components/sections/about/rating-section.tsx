@@ -1,4 +1,4 @@
-import { ABOUT_CONTENT } from "@/lib/constants";
+import { ABOUT_CONTENT } from "@/lib/constants/about";
 
 import { StarRating } from "@/components/ui/star-rating";
 

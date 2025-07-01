@@ -5,7 +5,7 @@ import { useInView } from "framer-motion";
 
 import { Marquee } from "@/components/ui/marquee";
 
-import { REVIEWS_CONTENT } from "@/lib/constants";
+import { REVIEWS_CONTENT } from "@/lib/constants/reviews";
 
 import { ReviewCard } from "./review-card";
 import { HeaderSection } from "./header-section";

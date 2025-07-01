@@ -2,7 +2,7 @@ import Image from "next/image";
 
 import { motion } from "framer-motion";
 
-import { ABOUT_CONTENT } from "@/lib/constants";
+import { ABOUT_CONTENT } from "@/lib/constants/about";
 import { ANIMATION_VARIANTS } from "@/lib/animations";
 
 export const InstructorCard = () => (

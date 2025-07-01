@@ -8,8 +8,9 @@ import { RatingSection } from "./about/rating-section";
 
 import { ServiceCarousel } from "../ui/service-carousel";
 
-import { SERVICES_CONTENT } from "../../lib/constants";
 import { SERVICES_VARIANTS } from "../../lib/animations";
+
+import { SERVICES_CONTENT } from "@/lib/constants/services";
 
 const VIEW_CONFIG: UseInViewOptions = {
   once: true,

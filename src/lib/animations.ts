@@ -1,4 +1,11 @@
 import { Variants } from "framer-motion";
+import { UseInViewOptions } from "framer-motion";
+
+interface AnimationConfig {
+  containerVariants: Variants;
+  itemVariants: Variants;
+  countersInViewConfig: UseInViewOptions;
+}
 
 export const ANIMATION_VARIANTS: Record<string, Variants> = {
   container: {
@@ -53,5 +60,25 @@ export const SERVICES_VARIANTS: Record<string, Variants> = {
       y: 0,
       transition: { duration: 0.5 },
     },
+  },
+};
+
+export const ANIMATION_CONFIG: AnimationConfig = {
+  containerVariants: {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+      },
+    },
+  },
+  itemVariants: {
+    hidden: { opacity: 0, y: 20 },
+    show: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+  },
+  countersInViewConfig: {
+    once: true,
+    margin: "-100px",
   },
 };

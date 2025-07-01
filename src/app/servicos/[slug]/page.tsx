@@ -4,7 +4,6 @@ import { notFound } from "next/navigation";
 
 import { FaWhatsapp } from "react-icons/fa";
 
-import { SERVICES_CONTENT } from "@/lib/constants";
 import {
   Accordion,
   AccordionContent,
@@ -12,8 +11,9 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { ShinyButton } from "@/components/ui/shiny-button";
-
 import GalleryCarousel from "@/components/ui/gallery-carousel";
+
+import { SERVICES_CONTENT } from "@/lib/constants/services";
 
 export async function generateStaticParams() {
   return SERVICES_CONTENT.services.map((service) => ({

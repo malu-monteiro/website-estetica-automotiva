@@ -1,5 +1,5 @@
 import { ANIMATION_VARIANTS } from "@/lib/animations";
-import { SECTION_TEXTS } from "@/lib/constants";
+import { SECTION_TEXTS } from "@/lib/constants/reviews";
 import { motion } from "framer-motion";
 import { RatingSection } from "../about/rating-section";
 import { ShinyButton } from "@/components/ui/shiny-button";
