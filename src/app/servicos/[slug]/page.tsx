@@ -48,12 +48,8 @@ export default function ServicePage({ params }: { params: { slug: string } }) {
         />
 
         <div
-          className="absolute inset-0"
-          style={{
-            background:
-              "linear-gradient(180deg, rgba(255, 255, 255, 0) 40%, #000000 100%)",
-            opacity: 1,
-          }}
+          className="absolute inset-0 bg-gradient-to-b from-transparent from-40% to-black"
+          aria-hidden="true"
         />
 
         <div className="relative z-10 w-full mx-auto max-w-[1440px] px-4 md:px-8 lg:px-16 xl:px-24">

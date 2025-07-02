@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 
-import { ABOUT_CONTENT } from "@/lib/constants/about";
+import { HOME_ABOUT_CONTENT } from "@/lib/constants/about";
 import { ANIMATION_MAIN_VARIANTS } from "@/lib/animations";
 
 import { StatsSection } from "./stats-section";
@@ -19,7 +19,7 @@ export const ContentSection = ({ isInView }: ContentSectionProps) => (
       <div className="inline-flex items-center gap-2 py-2 mb-6">
         <div className="w-2 h-2 bg-white rounded-full" />
         <span className="text-white text-sm font-medium uppercase">
-          {ABOUT_CONTENT.badge}
+          {HOME_ABOUT_CONTENT.badge}
         </span>
       </div>
     </motion.div>
@@ -29,9 +29,9 @@ export const ContentSection = ({ isInView }: ContentSectionProps) => (
       className="uppercase font-syne text-3xl font-semibold text-white mb-4 md:text-4xl lg:text-5xl leading-tight"
       variants={ANIMATION_MAIN_VARIANTS.item}
     >
-      {ABOUT_CONTENT.title}
+      {HOME_ABOUT_CONTENT.title}
       <span className="block bg-gradient-to-r from-red-400 to-red-800 bg-clip-text text-transparent">
-        {ABOUT_CONTENT.titleHighlight}
+        {HOME_ABOUT_CONTENT.titleHighlight}
       </span>
     </motion.h2>
 
@@ -42,7 +42,7 @@ export const ContentSection = ({ isInView }: ContentSectionProps) => (
       initial="hidden"
       animate={isInView ? "show" : "hidden"}
     >
-      {ABOUT_CONTENT.subtitle}
+      {HOME_ABOUT_CONTENT.subtitle}
     </motion.p>
 
     {/* Button */}
@@ -51,11 +51,11 @@ export const ContentSection = ({ isInView }: ContentSectionProps) => (
       className="flex flex-col sm:flex-row gap-4 mb-6"
     >
       <a
-        href={ABOUT_CONTENT.cta.link}
+        href={HOME_ABOUT_CONTENT.ctas.readMore.link}
         target="_blank"
         rel="noopener noreferrer"
       >
-        <AnimatedButton>{ABOUT_CONTENT.cta.text}</AnimatedButton>
+        <AnimatedButton>{HOME_ABOUT_CONTENT.ctas.readMore.text}</AnimatedButton>
       </a>
     </motion.div>
 

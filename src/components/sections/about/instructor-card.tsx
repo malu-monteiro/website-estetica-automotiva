@@ -2,7 +2,7 @@ import Image from "next/image";
 
 import { motion } from "framer-motion";
 
-import { ABOUT_CONTENT } from "@/lib/constants/about";
+import { HOME_ABOUT_CONTENT } from "@/lib/constants/about";
 import { ANIMATION_MAIN_VARIANTS } from "@/lib/animations";
 
 export const InstructorCard = () => (
@@ -20,8 +20,8 @@ export const InstructorCard = () => (
         {/* Image */}
         <div className="relative aspect-[4/5] overflow-hidden">
           <Image
-            src={ABOUT_CONTENT.instructor.image}
-            alt={`${ABOUT_CONTENT.instructor.name}, ${ABOUT_CONTENT.instructor.role}`}
+            src={HOME_ABOUT_CONTENT.instructor.image}
+            alt={`${HOME_ABOUT_CONTENT.instructor.name}, ${HOME_ABOUT_CONTENT.instructor.role}`}
             fill
             className="object-cover transition-transform duration-700 group-hover:scale-110"
           />
@@ -39,11 +39,11 @@ export const InstructorCard = () => (
         {/* Card content */}
         <div className="absolute bottom-0 left-0 right-0 p-6">
           <h3 className="font-bold text-xl text-white mb-2">
-            {ABOUT_CONTENT.instructor.name}
+            {HOME_ABOUT_CONTENT.instructor.name}
           </h3>
 
           <p className="text-gray-200 text-sm leading-relaxed">
-            {ABOUT_CONTENT.instructor.role}
+            {HOME_ABOUT_CONTENT.instructor.role}
           </p>
         </div>
       </motion.div>

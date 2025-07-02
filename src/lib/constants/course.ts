@@ -18,4 +18,6 @@ export const COURSE_DATA = {
     text: "Clique para saber mais",
     link: "/curso",
   },
+  headerImage: "/aboutimg.png",
+  headerPageTitle: "Curso Completo",
 } as const;
