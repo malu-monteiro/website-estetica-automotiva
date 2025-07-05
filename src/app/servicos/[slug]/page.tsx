@@ -2,17 +2,16 @@ import Link from "next/link";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 
-import { FaWhatsapp } from "react-icons/fa";
-
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { ShinyButton } from "@/components/ui/shiny-button";
 import GalleryCarousel from "@/components/ui/gallery-carousel";
+import { WhatsappButton } from "@/components/ui/whatsapp-button";
 
+import { CONTACT_INFO } from "@/lib/constants/contact";
 import { SERVICES_CONTENT } from "@/lib/constants/services";
 
 export async function generateStaticParams() {
@@ -37,14 +36,15 @@ export default function ServicePage({ params }: { params: { slug: string } }) {
   };
 
   return (
-    <main className="bg-black text-white">
-      {/* Image Header and Title */}
-      <section className="relative h-[50vh] flex items-center justify-center text-center">
+    <>
+      {/* Header Section */}
+      <section className="header-banner">
         <Image
           src={service.headerImage}
           alt={`Banner do serviço ${service.title}`}
           fill
-          className="object-cover brightness-50"
+          className="object-cover object-center brightness-50"
+          priority
         />
 
         <div
@@ -52,108 +52,114 @@ export default function ServicePage({ params }: { params: { slug: string } }) {
           aria-hidden="true"
         />
 
-        <div className="relative z-10 w-full mx-auto max-w-[1440px] px-4 md:px-8 lg:px-16 xl:px-24">
-          <h1 className="font-syne relative z-10 text-5xl md:text-7xl font-bold uppercase tracking-wider">
-            {service.title}
-          </h1>
+        <div className="relative z-10 container-layout">
+          <h1 className="header-title">{service.title}</h1>
         </div>
       </section>
 
-      <div className="mx-auto max-w-[1440px] px-4 md:px-8 lg:px-16 xl:px-24 py-16 grid grid-cols-1 lg:grid-cols-4 gap-12">
-        {/* Left column: Navigation and contact */}
-        <aside className="lg:col-span-1">
-          <div className="sticky top-24">
-            <h3 className="font-semibold mb-4 text-gray-400">
-              Nossos Serviços
-            </h3>
+      {/* Main Content */}
+      <div className="container-layout py-8 md:py-16">
+        <div className="grid grid-cols-1 xl:grid-cols-4 gap-8 lg:gap-12">
+          {/* Sidebar */}
+          <aside className="xl:col-span-1 order-2 xl:order-1">
+            <div className="xl:sticky xl:top-24">
+              {/* Navigation */}
+              <div className="mb-8">
+                <h2 className="font-semibold uppercase mb-4 text-gray-400 text-lg">
+                  Nossos Serviços
+                </h2>
 
-            <nav className="flex flex-col space-y-2 border-l border-gray-700">
-              {allServices.map((navService) => (
-                <Link
-                  key={navService.slug}
-                  href={`/servicos/${navService.slug}`}
-                  className={`pl-4 py-2 border-l-2 text-md transition-colors ${
-                    slug === navService.slug
-                      ? "border-red-500 text-white font-semibold" // Active item style
-                      : "border-transparent text-gray-400 hover:text-white"
-                  }`}
-                >
-                  {navService.title}
-                </Link>
-              ))}
-            </nav>
+                <nav className="flex flex-col space-y-2 border-l border-gray-700">
+                  {allServices.map((navService) => (
+                    <Link
+                      key={navService.slug}
+                      href={`/servicos/${navService.slug}`}
+                      className={`pl-4 py-2 border-l-2 text-sm md:text-base transition-colors ${
+                        slug === navService.slug
+                          ? "border-red-500 font-semibold"
+                          : "border-transparent text-gray-400 hover:text-white"
+                      }`}
+                    >
+                      {navService.title}
+                    </Link>
+                  ))}
+                </nav>
+              </div>
 
-            {/* WhatsApp Button */}
-            <div className="mt-8 p-4 border border-gray-700 rounded-md bg-gray-900/50">
-              <h4 className="text-xl font-bold">Precisa de Ajuda?</h4>
-              <p className="text-sm text-gray-400 mt-2 mb-4">
-                Fale com um de nossos especialistas e tire suas dúvidas.
-              </p>
+              {/* WhatsApp Contact Card */}
+              <div className="p-4 md:p-6 border border-gray-700 rounded-lg bg-gray-900/50">
+                <h4 className="text-lg md:text-xl font-bold mb-2">
+                  Precisa de Ajuda?
+                </h4>
+                <p className="text-sm text-gray-400 mb-6">
+                  Fale com um de nossos especialistas e tire suas dúvidas.
+                </p>
 
-              <div className="mt-8 flex flex-wrap items-center justify-start gap-4">
-                <a
-                  href="https://wa.me/5541999346385?text=Olá!%20Gostaria%20de%20mais%20informações."
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <ShinyButton className="border-transparent bg-green-600 text-white hover:shadow-green-800 py-2 px-4">
-                    <div className="flex items-center justify-center gap-2">
-                      <FaWhatsapp className="size-4 sm:size-5 text-white" />
-                      <span className="text-white text-sm">
-                        Entre em contato
-                      </span>
-                    </div>
-                  </ShinyButton>
-                </a>
+                {CONTACT_INFO.cta && (
+                  <WhatsappButton
+                    text={CONTACT_INFO.cta.text}
+                    whatsappMessage={CONTACT_INFO.cta.whatsappMessage}
+                    className="w-full border-transparent bg-green-600 hover:shadow-green-800 py-3 px-4 xl:py-2 xl:px-3"
+                  />
+                )}
               </div>
             </div>
+          </aside>
+
+          {/* Main Content */}
+          <div className="xl:col-span-3 order-1 xl:order-2">
+            <article>
+              {/* Service Description */}
+              <header className="mb-8 md:mb-12">
+                <h2 className="section-title mb-4 md:mb-6">
+                  {service.mainTitle}
+                </h2>
+                <p className="text-gray-300 leading-relaxed text-base md:text-lg">
+                  {service.longDescription}
+                </p>
+              </header>
+
+              {/* Process Steps */}
+              <section className="mb-12 md:mb-16">
+                <h3 className="section-title mb-6 md:mb-8">Nosso Processo</h3>
+                <Accordion type="single" collapsible className="w-full">
+                  {service.processSteps.map((step, index) => (
+                    <AccordionItem
+                      key={`process-${index}`}
+                      value={`item-${index}`}
+                    >
+                      <AccordionTrigger className="text-left text-base md:text-lg hover:no-underline">
+                        {step.title}
+                      </AccordionTrigger>
+                      <AccordionContent className="text-sm md:text-base text-gray-400">
+                        {step.description}
+                      </AccordionContent>
+                    </AccordionItem>
+                  ))}
+                </Accordion>
+              </section>
+
+              {/* Separator */}
+              <div className="h-[1px] w-full max-w-3xl mx-auto bg-gradient-to-r from-transparent via-white/10 to-transparent mb-12 md:mb-16" />
+
+              {/* Gallery Section */}
+              <section>
+                <h2 className="section-title mb-6 md:mb-8 text-center">
+                  Galeria de Resultados
+                </h2>
+                {service.galleryImages && service.galleryImages.length > 0 && (
+                  <div className="max-w-4xl mx-auto">
+                    <GalleryCarousel
+                      images={service.galleryImages}
+                      variants={carouselVariants}
+                    />
+                  </div>
+                )}
+              </section>
+            </article>
           </div>
-        </aside>
-
-        {/* Right column: Content */}
-        <div className="lg:col-span-3">
-          <article>
-            <h2 className="font-syne text-4xl font-bold mb-4">
-              {service.mainTitle}
-            </h2>
-            <p className="text-gray-300 leading-relaxed">
-              {service.longDescription}
-            </p>
-
-            <h3 className="font-syne text-3xl font-bold mt-12 mb-6">
-              Nosso Processo
-            </h3>
-            <Accordion type="single" collapsible className="w-full">
-              {service.processSteps.map((step, index) => (
-                <AccordionItem key={index} value={`item-${index}`}>
-                  <AccordionTrigger className="text-left text-lg hover:no-underline">
-                    {step.title}
-                  </AccordionTrigger>
-                  <AccordionContent className="text-base text-gray-400">
-                    {step.description}
-                  </AccordionContent>
-                </AccordionItem>
-              ))}
-            </Accordion>
-          </article>
-
-          {/* Separator */}
-          <div className="h-[1px] w-3/4 mx-auto bg-gradient-to-r from-transparent via-white/10 to-transparent my-16" />
-
-          {/* Gallery */}
-          <section>
-            <h2 className="font-syne text-4xl font-bold mb-8 text-center">
-              Galeria de Resultados
-            </h2>
-            {service.galleryImages && service.galleryImages.length > 0 && (
-              <GalleryCarousel
-                images={service.galleryImages}
-                variants={carouselVariants}
-              />
-            )}
-          </section>
         </div>
       </div>
-    </main>
+    </>
   );
 }

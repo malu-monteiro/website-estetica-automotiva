@@ -12,6 +12,11 @@ import { FreeMode, Navigation, Thumbs } from "swiper/modules";
 
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
+import "swiper/css";
+import "swiper/css/free-mode";
+import "swiper/css/navigation";
+import "swiper/css/thumbs";
+
 interface GalleryCarouselProps {
   images: string[];
   variants?: Variants;
@@ -22,7 +27,7 @@ export default function GalleryCarousel({
   variants,
 }: GalleryCarouselProps) {
   const [thumbsSwiper, setThumbsSwiper] = useState<SwiperClass | null>(null);
-  const swiperRef = useRef<SwiperClass | null>(null);
+  const mainSwiperRef = useRef<SwiperClass | null>(null);
 
   if (!Array.isArray(images) || images.length === 0) {
     return null;
@@ -32,80 +37,108 @@ export default function GalleryCarousel({
     <motion.div
       variants={variants}
       exit={{ opacity: 0, scale: 0.95 }}
-      className="relative w-11/12 mx-auto rounded-xl overflow-hidden h-[500px] md:h-[600px] lg:h-[700px]"
+      className="relative w-full max-w-2xl lg:max-w-3xl mx-auto rounded-xl overflow-hidden"
     >
-      <Swiper
-        onSwiper={(swiper) => {
-          swiperRef.current = swiper;
-        }}
-        style={
-          {
-            "--swiper-navigation-color": "#ef4444",
-            "--swiper-pagination-color": "#ef4444",
-          } as React.CSSProperties
-        }
-        spaceBetween={10}
-        navigation={false}
-        thumbs={{ swiper: thumbsSwiper }}
-        modules={[FreeMode, Navigation, Thumbs]}
-        className="mySwiper2"
-      >
-        {images.map((image: string, index: number) => (
-          <SwiperSlide key={`main-${index}`}>
-            <div className="relative w-full h-full">
-              <Image
-                src={image}
-                alt={`Imagem do serviço ${index + 1}`}
-                className="w-full h-full object-cover"
-                loading="lazy"
-                layout="fill"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
-            </div>
-          </SwiperSlide>
-        ))}
-      </Swiper>
+      {/* Main Carousel */}
+      <div className="relative h-[280px] sm:h-[320px] md:h-[360px] lg:h-[380px] xl:h-[400px] mb-4">
+        <Swiper
+          onSwiper={(swiper) => {
+            mainSwiperRef.current = swiper;
+          }}
+          spaceBetween={10}
+          navigation={false}
+          thumbs={{
+            swiper:
+              thumbsSwiper && !thumbsSwiper.destroyed ? thumbsSwiper : null,
+            slideThumbActiveClass: "swiper-slide-thumb-active",
+            thumbsContainerClass: "swiper-thumbs",
+          }}
+          modules={[FreeMode, Navigation, Thumbs]}
+          className="h-full rounded-lg"
+        >
+          {images.map((image: string, index: number) => (
+            <SwiperSlide key={`main-${index}`}>
+              <div className="relative w-full h-full">
+                <Image
+                  src={image}
+                  alt={`Imagem do serviço ${index + 1}`}
+                  className="w-full h-full object-cover rounded-lg"
+                  loading="lazy"
+                  layout="fill"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent rounded-lg" />
+              </div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
 
+        {/* Navigation buttons */}
+        {images.length > 1 && (
+          <>
+            <button
+              className="absolute top-1/2 left-3 -translate-y-1/2 p-1.5 bg-red-800/80 rounded-full hover:bg-red-700 transition-colors backdrop-blur-sm z-10"
+              onClick={() => mainSwiperRef.current?.slidePrev()}
+              aria-label="Slide anterior"
+            >
+              <ChevronLeft size={18} />
+            </button>
+
+            <button
+              className="absolute top-1/2 right-3 -translate-y-1/2 p-1.5 bg-red-800/80 rounded-full hover:bg-red-700 transition-colors backdrop-blur-sm z-10"
+              onClick={() => mainSwiperRef.current?.slideNext()}
+              aria-label="Próximo slide"
+            >
+              <ChevronRight size={18} />
+            </button>
+          </>
+        )}
+      </div>
+
+      {/* Miniatures */}
       {images.length > 1 && (
-        <>
-          <button
-            className="absolute top-1/2 left-4 -translate-y-1/2 p-2 bg-red-800/80 rounded-full text-white hover:bg-red-700 transition-colors backdrop-blur-sm z-10"
-            onClick={() => swiperRef.current?.slidePrev()}
-            aria-label="Slide anterior"
+        <div className="h-[60px] sm:h-[70px] md:h-[75px] lg:h-[80px]">
+          <Swiper
+            onSwiper={(swiper) => {
+              if (swiper && !swiper.destroyed) {
+                setThumbsSwiper(swiper);
+              }
+            }}
+            spaceBetween={8}
+            slidesPerView={3}
+            breakpoints={{
+              640: {
+                slidesPerView: 4,
+                spaceBetween: 10,
+              },
+              768: {
+                slidesPerView: 5,
+                spaceBetween: 12,
+              },
+              1024: {
+                slidesPerView: 6,
+                spaceBetween: 15,
+              },
+            }}
+            freeMode={true}
+            watchSlidesProgress={true}
+            modules={[FreeMode, Navigation, Thumbs]}
+            className="h-full"
           >
-            <ChevronLeft size={24} />
-          </button>
-
-          <button
-            className="absolute top-1/2 right-4 -translate-y-1/2 p-2 bg-red-800/80 rounded-full text-white hover:bg-red-700 transition-colors backdrop-blur-sm z-10"
-            onClick={() => swiperRef.current?.slideNext()}
-            aria-label="Próximo slide"
-          >
-            <ChevronRight size={24} />
-          </button>
-        </>
+            {images.map((image: string, index: number) => (
+              <SwiperSlide key={`thumb-${index}`}>
+                <div className="relative w-full h-full rounded-md overflow-hidden">
+                  <Image
+                    src={image}
+                    alt={`Miniatura ${index + 1}`}
+                    className="w-full h-full object-cover cursor-pointer hover:opacity-80 transition-opacity"
+                    layout="fill"
+                  />
+                </div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </div>
       )}
-
-      <Swiper
-        onSwiper={setThumbsSwiper}
-        spaceBetween={10}
-        slidesPerView={4}
-        freeMode={true}
-        watchSlidesProgress={true}
-        modules={[FreeMode, Navigation, Thumbs]}
-        className="mySwiper mt-2"
-      >
-        {images.map((image: string, index: number) => (
-          <SwiperSlide key={`thumb-${index}`}>
-            <Image
-              src={image}
-              alt={`Miniatura ${index + 1}`}
-              className="w-full h-full object-cover cursor-pointer"
-              layout="fill"
-            />
-          </SwiperSlide>
-        ))}
-      </Swiper>
     </motion.div>
   );
 }

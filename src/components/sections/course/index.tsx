@@ -15,11 +15,11 @@ export default function Course() {
   return (
     <section
       id="curso"
-      className="relative py-20 md:py-28 lg:py-36 bg-black text-neutral-100 overflow-hidden"
+      className="relative py-20 md:py-28 lg:py-36 overflow-hidden"
     >
       <motion.div
         ref={ref}
-        className="relative z-10 mx-auto flex max-w-[1440px] flex-col px-4 md:px-8 lg:px-16 xl:px-24"
+        className="container-layout"
         variants={DEFAULT_CONTAINER_VARIANTS}
         initial="hidden"
         animate={isInView ? "show" : "hidden"}

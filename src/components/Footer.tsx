@@ -92,85 +92,83 @@ export function Footer({
   legalLinks = DEFAULT_CONFIG.legalLinks,
 }: FooterProps) {
   return (
-    <footer className="bg-black py-32 text-white">
-      <div className="mx-auto max-w-[1440px] px-4 md:px-8 lg:px-16 xl:px-24">
-        <div className="flex w-full flex-col gap-10 lg:flex-row lg:justify-between lg:items-start">
-          {/* Logo and description */}
-          <div className="flex flex-col gap-6">
-            <div className="flex items-center gap-2">
-              <Link href={logo.url} className="flex items-center gap-2">
-                <Image
-                  src={logo.src}
-                  alt={logo.alt}
-                  title={logo.title}
-                  width={80}
-                  height={80}
-                  priority
-                />
-                <h2 className="text-xl font-semibold">{logo.title}</h2>
-              </Link>
-            </div>
-
-            <p className="max-w-[70%] text-sm text-muted-foreground">
-              {description}
-            </p>
-
-            <p className="text-sm text-muted-foreground">{subDescription}</p>
-
-            {/* Social Links */}
-            <ul className="flex items-center space-x-6 text-muted-foreground">
-              {socialLinks.map((social, idx) => (
-                <li
-                  key={`social-${idx}`}
-                  className="font-medium hover:text-red-800 transition-colors"
-                >
-                  <Link href={social.href} aria-label={social.label}>
-                    {social.icon}
-                  </Link>
-                </li>
-              ))}
-            </ul>
+    <footer className="container-layout py-32 ">
+      <div className="flex w-full flex-col gap-10 lg:flex-row lg:justify-between lg:items-start">
+        {/* Logo and description */}
+        <div className="flex flex-col gap-6">
+          <div className="flex items-center gap-2">
+            <Link href={logo.url} className="flex items-center gap-2">
+              <Image
+                src={logo.src}
+                alt={logo.alt}
+                title={logo.title}
+                width={80}
+                height={80}
+                priority
+              />
+              <h2 className="text-xl font-semibold">{logo.title}</h2>
+            </Link>
           </div>
 
-          {/* Links sections */}
-          <nav className="grid gap-6 md:grid-cols-2 lg:gap-20">
-            {sections.map((section, sectionIdx) => (
-              <div key={`section-${sectionIdx}`}>
-                <h3 className="mb-4 font-bold">{section.title}</h3>
-                <ul className="space-y-3 text-sm text-muted-foreground">
-                  {section.links.map((link, linkIdx) => (
-                    <li
-                      key={`${sectionIdx}-${linkIdx}`}
-                      className="font-medium hover:text-red-800 transition-colors"
-                    >
-                      <Link href={link.href}>{link.name}</Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </nav>
-        </div>
-
-        {/* Footer bottom */}
-        <div className="mt-8 flex flex-col-reverse gap-4 border-t pt-8 text-xs font-medium text-muted-foreground md:flex-row md:justify-between md:items-center">
-          <p className="order-2 lg:order-1">{copyright}</p>
-
-          <p className="order-3 text-muted-foreground/80 md:order-2">
-            {developerCredit}
+          <p className="max-w-[70%] text-sm text-muted-foreground">
+            {description}
           </p>
 
-          <ul className="order-1 flex flex-col gap-2 md:order-3 md:flex-row">
-            {legalLinks.map((link, idx) => (
+          <p className="text-sm text-muted-foreground">{subDescription}</p>
+
+          {/* Social Links */}
+          <ul className="flex items-center space-x-6 text-muted-foreground">
+            {socialLinks.map((social, idx) => (
               <li
-                key={`legal-${idx}`}
-                className="hover:text-red-800 transition-colors"
+                key={`social-${idx}`}
+                className="font-medium hover:text-red-800 transition-colors"
               >
-                <Link href={link.href}>{link.name}</Link>
+                <Link href={social.href} aria-label={social.label}>
+                  {social.icon}
+                </Link>
               </li>
             ))}
           </ul>
         </div>
+
+        {/* Links sections */}
+        <nav className="grid gap-6 md:grid-cols-2 lg:gap-20">
+          {sections.map((section, sectionIdx) => (
+            <div key={`section-${sectionIdx}`}>
+              <h3 className="mb-4 font-bold">{section.title}</h3>
+              <ul className="space-y-3 text-sm text-muted-foreground">
+                {section.links.map((link, linkIdx) => (
+                  <li
+                    key={`${sectionIdx}-${linkIdx}`}
+                    className="font-medium hover:text-red-800 transition-colors"
+                  >
+                    <Link href={link.href}>{link.name}</Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </nav>
+      </div>
+
+      {/* Footer bottom */}
+      <div className="mt-8 flex flex-col-reverse gap-4 border-t pt-8 text-xs font-medium text-muted-foreground md:flex-row md:justify-between md:items-center">
+        <p className="order-2 lg:order-1">{copyright}</p>
+
+        <p className="order-3 text-muted-foreground/80 md:order-2">
+          {developerCredit}
+        </p>
+
+        <ul className="order-1 flex flex-col gap-2 md:order-3 md:flex-row">
+          {legalLinks.map((link, idx) => (
+            <li
+              key={`legal-${idx}`}
+              className="hover:text-red-800 transition-colors"
+            >
+              <Link href={link.href}>{link.name}</Link>
+            </li>
+          ))}
+        </ul>
       </div>
     </footer>
   );

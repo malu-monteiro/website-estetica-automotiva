@@ -12,11 +12,8 @@ export default function Reviews() {
   const isInView = useInView(ref, { once: true, amount: 0.5 });
 
   return (
-    <section id="avaliacoes" className="py-20 bg-black relative">
-      <div
-        ref={ref}
-        className="container mx-auto px-4 md:px-8 lg:px-16 xl:px-24 max-w-[1440px]"
-      >
+    <section id="avaliacoes" className="py-20 relative">
+      <div ref={ref} className="container-layout">
         {/* Titles and button */}
         <HeaderSection isInView={isInView} />
       </div>

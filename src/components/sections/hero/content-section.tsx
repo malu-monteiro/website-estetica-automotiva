@@ -2,28 +2,23 @@
 
 import React, { useRef } from "react";
 
-import { FaWhatsapp } from "react-icons/fa";
 import { ChevronsDown, TrendingUp, Users } from "lucide-react";
 
 import { motion, useInView } from "framer-motion";
 
 import { StarRating } from "@/components/ui/star-rating";
-import { ShinyButton } from "@/components/ui/shiny-button";
 
 import { DEFAULT_ITEM_VARIANTS } from "@/lib/animations";
 import { COUNTER_DATA, HERO_CONTENT } from "@/lib/constants/hero";
 
 import { CounterItem } from "./counter-item";
+import { WhatsappButton } from "@/components/ui/whatsapp-button";
 
 export function HeroContent() {
   const countersRef = useRef<HTMLDivElement>(null);
   const countersInView = useInView(countersRef, DEFAULT_ITEM_VARIANTS);
 
   const iconMap = { TrendingUp, Users };
-
-  const heroWhatsappLink = `https://wa.me/${
-    HERO_CONTENT.cta.whatsappNumber
-  }?text=${encodeURIComponent(HERO_CONTENT.cta.whatsappMessage)}`;
 
   return (
     <>
@@ -56,7 +51,7 @@ export function HeroContent() {
 
       {/* Description */}
       <motion.p
-        className="mt-4 max-w-xl text-base leading-relaxed text-white md:text-lg lg:max-w-2xl lg:text-xl xl:max-w-3xl whitespace-pre-wrap"
+        className="mt-4 max-w-xl text-base leading-relaxed md:text-lg lg:max-w-2xl lg:text-xl xl:max-w-3xl whitespace-pre-wrap"
         variants={DEFAULT_ITEM_VARIANTS}
       >
         {HERO_CONTENT.description}
@@ -64,14 +59,10 @@ export function HeroContent() {
 
       {/* Button: WhatsApp */}
       <motion.div className="mt-8" variants={DEFAULT_ITEM_VARIANTS}>
-        <a href={heroWhatsappLink} target="_blank" rel="noopener noreferrer">
-          <ShinyButton className="border-transparent bg-green-600 text-white hover:shadow-green-800">
-            <div className="flex items-center justify-center gap-2">
-              <FaWhatsapp className="size-4 text-white sm:size-5" />
-              <span className="text-white">{HERO_CONTENT.cta.text}</span>
-            </div>
-          </ShinyButton>
-        </a>
+        <WhatsappButton
+          text={HERO_CONTENT.cta.text}
+          whatsappMessage={HERO_CONTENT.cta.whatsappMessage}
+        />
       </motion.div>
 
       {/* Counters */}
@@ -93,10 +84,10 @@ export function HeroContent() {
 
       {/* ChevronDown Animation */}
       <motion.div
-        className="mt-12 flex w-full justify-center"
+        className="mt-14 flex w-full justify-center"
         variants={DEFAULT_ITEM_VARIANTS}
       >
-        <ChevronsDown className="size-8 animate-bounce text-white" />
+        <ChevronsDown className="size-8 animate-bounce" />
       </motion.div>
     </>
   );

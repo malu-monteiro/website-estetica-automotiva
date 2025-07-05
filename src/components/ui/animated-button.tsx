@@ -22,7 +22,7 @@ export const AnimatedButton = ({
       className={`relative flex items-center justify-center gap-2
                  rounded-lg border bg-zinc-800 border-zinc-700 shadow-md
                  px-6 py-2 font-medium text-sm uppercase tracking-wide
-                 transition-all duration-300 sm:px-8 sm:py-3 text-white
+                 transition-all duration-300 sm:px-8 sm:py-3
                  overflow-hidden transform origin-center ${className || ""}`}
       {...props}
     >

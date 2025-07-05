@@ -18,17 +18,14 @@ export const ContentSection = ({ isInView }: ContentSectionProps) => (
     <motion.div variants={ANIMATION_MAIN_VARIANTS.item}>
       <div className="inline-flex items-center gap-2 py-2 mb-6">
         <div className="w-2 h-2 bg-white rounded-full" />
-        <span className="text-white text-sm font-medium uppercase">
+        <span className="text-sm font-medium uppercase">
           {HOME_ABOUT_CONTENT.badge}
         </span>
       </div>
     </motion.div>
 
     {/* Title */}
-    <motion.h2
-      className="uppercase font-syne text-3xl font-semibold text-white mb-4 md:text-4xl lg:text-5xl leading-tight"
-      variants={ANIMATION_MAIN_VARIANTS.item}
-    >
+    <motion.h2 className="main-title" variants={ANIMATION_MAIN_VARIANTS.item}>
       {HOME_ABOUT_CONTENT.title}
       <span className="block bg-gradient-to-r from-red-400 to-red-800 bg-clip-text text-transparent">
         {HOME_ABOUT_CONTENT.titleHighlight}
@@ -37,7 +34,7 @@ export const ContentSection = ({ isInView }: ContentSectionProps) => (
 
     {/* Subtitle */}
     <motion.p
-      className="text-lg font-light text-gray-300 mb-6 md:text-xl leading-relaxed max-w-lg"
+      className="main-subtitle"
       variants={ANIMATION_MAIN_VARIANTS.item}
       initial="hidden"
       animate={isInView ? "show" : "hidden"}

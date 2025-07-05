@@ -3,7 +3,7 @@ export const HERO_CONTENT = {
   title: "MSS_STUDIO CAR",
   subtitle: "ESTÉTICA AUTOMOTIVA",
   description:
-    "Garantimos qualidade transformando a aparência do seu veículo,\ndestacando os detalhes, e trazendo brilho e proteção que fazem a\ndiferença",
+    "Garantimos qualidade transformando a aparência do seu veículo, destacando os detalhes, e trazendo brilho e proteção que fazem a diferença",
   cta: {
     text: "Solicite um orçamento",
     whatsappMessage: "Olá! Gostaria de solicitar um orçamento.",

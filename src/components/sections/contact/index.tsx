@@ -15,10 +15,10 @@ export default function Contact() {
   const isInView = useInView(ref, { once: true, amount: 0.5 });
 
   return (
-    <section id="contato" className="relative py-20 bg-black overflow-hidden">
+    <section id="contato" className="relative py-20 overflow-hidden">
       <motion.div
         ref={ref}
-        className="relative z-10 mx-auto flex max-w-[1440px] flex-col px-4 md:px-8 lg:px-16 xl:px-24 pb-20"
+        className="container-layout"
         variants={DEFAULT_ITEM_VARIANTS}
         initial="hidden"
         animate={isInView ? "show" : "hidden"}

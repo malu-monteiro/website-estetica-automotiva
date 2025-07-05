@@ -14,7 +14,7 @@ export default function Hero() {
       <BackgroundVideo />
 
       <motion.div
-        className="relative z-10 mx-auto flex h-full min-h-screen max-w-[1440px] flex-col justify-center px-4 md:px-8 lg:px-16 xl:px-24"
+        className="container-layout relative z-10 flex h-full min-h-screen flex-col justify-center"
         variants={DEFAULT_CONTAINER_VARIANTS}
         initial="hidden"
         animate="show"

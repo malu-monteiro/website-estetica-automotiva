@@ -19,9 +19,7 @@ export const ReviewCard = ({ name, body, source }: ReviewCardProps) => (
       </div>
 
       <div className="flex flex-col">
-        <figcaption className="text-sm font-medium text-white">
-          {name}
-        </figcaption>
+        <figcaption className="text-sm font-medium">{name}</figcaption>
 
         <p className="text-xs font-medium text-white/60">{source}</p>
       </div>

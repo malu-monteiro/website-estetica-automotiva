@@ -3,11 +3,8 @@ import Image from "next/image";
 
 export default function NotFound() {
   return (
-    <div
-      className="fixed inset-0 flex flex-col items-center justify-start bg-black text-white p-4 overflow-hidden"
-      style={{ top: 0, left: 0, right: 0, bottom: 0 }}
-    >
-      <div className="pt-20 text-center">
+    <div className="flex flex-col items-center justify-center p-4 pt-20 pb-20 min-h-screen">
+      <div className="text-center">
         <Image
           src="/404-error.svg"
           alt="Erro 404 - Página não encontrada"

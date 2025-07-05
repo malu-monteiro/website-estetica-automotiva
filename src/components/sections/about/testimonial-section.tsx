@@ -22,7 +22,7 @@ export const TestimonialSection = () => (
 
     {/* Content of testimonial */}
     <div className="flex flex-col flex-grow">
-      <p className="text-white text-base font-medium mb-1 italic leading-relaxed whitespace-pre-wrap">
+      <p className="text-base font-medium mb-1 italic leading-relaxed whitespace-pre-wrap">
         &quot;{HOME_ABOUT_CONTENT.testimonial.text}&quot;
       </p>
 

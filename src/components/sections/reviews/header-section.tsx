@@ -20,19 +20,16 @@ export const HeaderSection = ({ isInView }: { isInView: boolean }) => (
       {/* Badge */}
       <div className="inline-flex items-center gap-2 py-2 mb-6">
         <div className="w-2 h-2 bg-white rounded-full" />
-        <span className="font-syne text-white text-sm font-medium uppercase">
+        <span className="font-syne text-sm font-medium uppercase">
           {SECTION_TEXTS.badge}
         </span>
       </div>
     </motion.div>
 
     {/* Title and rating */}
-    <motion.h2
-      className="uppercase font-syne text-3xl font-semibold text-white mb-4 md:text-4xl lg:text-5xl leading-tight"
-      variants={ANIMATION_MAIN_VARIANTS.item}
-    >
+    <motion.h2 className="main-title" variants={ANIMATION_MAIN_VARIANTS.item}>
       {SECTION_TEXTS.title}
-      <span className="block text-white">{SECTION_TEXTS.titleHighlight}</span>
+      <span className="block">{SECTION_TEXTS.titleHighlight}</span>
     </motion.h2>
 
     <motion.div
@@ -50,7 +47,7 @@ export const HeaderSection = ({ isInView }: { isInView: boolean }) => (
           aria-label="Avaliar no Google"
         >
           <ShinyButton className="border-transparent bg-red-800 hover:shadow-red-800 focus:ring-red-500">
-            <div className="flex items-center justify-center gap-2 text-white">
+            <div className="flex items-center justify-center gap-2">
               <FaGoogle className="size-4 sm:size-5" />
               <span className="uppercase tracking-wide">
                 {SECTION_TEXTS.cta.text}

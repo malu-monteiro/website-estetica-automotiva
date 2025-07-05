@@ -4,7 +4,7 @@ export const CONTACT_INFO = {
   address: "Rua Alamanda, 85",
   cityState: "Pinhais, PR",
   cep: "83328-130",
-  headerSubtitle: "Entre em contato",
+  badge: "Entre em contato",
   headerTitlePart1: "Dúvidas e",
   headerTitlePart2: "agendamentos",
   cta: {

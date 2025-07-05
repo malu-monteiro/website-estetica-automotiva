@@ -27,22 +27,16 @@ export const InstructorCard = () => (
           />
 
           {/* Gradient overlay */}
-          <div
-            className="absolute inset-0"
-            style={{
-              background:
-                "linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgb(33, 33, 33) 100%)",
-            }}
-          />
+          <div className="absolute inset-0 bg-gradient-to-t from-zinc-900 via-transparent to-transparent" />
         </div>
 
         {/* Card content */}
         <div className="absolute bottom-0 left-0 right-0 p-6">
-          <h3 className="font-bold text-xl text-white mb-2">
+          <h3 className="font-bold text-xl mb-2">
             {HOME_ABOUT_CONTENT.instructor.name}
           </h3>
 
-          <p className="text-gray-200 text-sm leading-relaxed">
+          <p className="text-gray-300 text-sm leading-relaxed">
             {HOME_ABOUT_CONTENT.instructor.role}
           </p>
         </div>

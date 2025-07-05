@@ -37,9 +37,7 @@ export default function RootLayout({
         className={`${sairaSans.variable}  ${syne.variable} antialiased bg-black text-white`}
       >
         <Navbar />
-
         <main>{children}</main>
-
         <Footer />
       </body>
     </html>

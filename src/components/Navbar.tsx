@@ -20,7 +20,7 @@ const navLinks = [
 const SCROLL_THRESHOLD = 50;
 const linkBaseClass = "font-medium transition-colors hover:text-red-500";
 const desktopLinkClass = `text-sm text-gray-300 ${linkBaseClass}`;
-const mobileLinkClass = `text-lg text-white ${linkBaseClass}`;
+const mobileLinkClass = `text-lg ${linkBaseClass}`;
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -55,12 +55,12 @@ export function Navbar() {
         isVisible ? "translate-y-0" : "-translate-y-full"
       }`}
     >
-      <div className="mx-auto max-w-[1440px] px-4 md:px-8 lg:px-16 xl:px-24">
+      <div className="container-layout">
         <nav className="flex items-center justify-between py-4">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2">
-            <ShieldCheck className="h-8 w-8 text-white" />
-            <span className="text-xl font-bold text-white">MSS_STUDIO CAR</span>
+            <ShieldCheck className="h-8 w-8" />
+            <span className="text-xl font-bold">MSS_STUDIO CAR</span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -83,9 +83,9 @@ export function Navbar() {
             className="md:hidden relative z-50"
           >
             {isOpen ? (
-              <X className="h-6 w-6 text-white hover:text-red-500" />
+              <X className="h-6 w-6 hover:text-red-500" />
             ) : (
-              <Menu className="h-6 w-6 text-white hover:text-red-500" />
+              <Menu className="h-6 w-6 hover:text-red-500" />
             )}
           </button>
         </nav>

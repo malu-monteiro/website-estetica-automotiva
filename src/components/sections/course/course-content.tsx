@@ -16,12 +16,12 @@ export const CourseContent = () => {
     >
       <div className="inline-flex items-center gap-2 py-2 mb-6">
         <div className="w-2 h-2 bg-white rounded-full" />
-        <span className="text-white text-sm font-medium uppercase">
+        <span className="text-sm font-medium uppercase">
           {COURSE_DATA.badge}
         </span>
       </div>
 
-      <h3 className="uppercase font-syne text-3xl font-semibold text-white mb-4 md:text-4xl lg:text-5xl leading-tight">
+      <h3 className="main-title">
         {COURSE_DATA.title}
         <span className="block bg-gradient-to-r from-red-400 to-red-800 bg-clip-text text-transparent">
           {COURSE_DATA.titleHighlight}
@@ -32,8 +32,8 @@ export const CourseContent = () => {
         {COURSE_DATA.description[0]}
       </p>
 
-      <p className="text-lg font-light text-gray-300 mb-6 md:text-xl leading-relaxed max-w-lg text-left">
-        <span className="text-white">{COURSE_DATA.description[1]}</span>
+      <p className="main-subtitle text-left text-white">
+        <span>{COURSE_DATA.description[1]}</span>
       </p>
 
       {/* CTA Button */}

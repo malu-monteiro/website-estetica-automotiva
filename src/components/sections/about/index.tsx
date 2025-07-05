@@ -22,10 +22,7 @@ export default function About() {
       </div>
 
       {/* Main container */}
-      <div
-        ref={ref}
-        className="mx-auto flex max-w-[1440px] flex-col gap-20 px-6 md:gap-24 md:px-8 lg:px-16 xl:px-24 relative z-10"
-      >
+      <div ref={ref} className="container-layout">
         <motion.div
           className="grid items-center gap-8 md:grid-cols-2 md:gap-12 lg:gap-16"
           variants={ANIMATION_MAIN_VARIANTS.container}

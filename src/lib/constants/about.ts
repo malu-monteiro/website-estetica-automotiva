@@ -90,7 +90,11 @@ export const ABOUT_CONTENT = {
     ],
     cta: {
       text: "Ver Nossos Serviços",
-      link: "/servicos",
+      link: "/#servicos",
     },
+  },
+  contact: {
+    text: "Solicite um orçamento",
+    whatsappMessage: "Olá, gostaria de solicitar um orçamento",
   },
 } as const;

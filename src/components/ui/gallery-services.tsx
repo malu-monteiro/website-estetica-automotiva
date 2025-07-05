@@ -1,13 +1,15 @@
 "use client";
 
 import { Ref, forwardRef, useState, useEffect } from "react";
+
 import Image, { ImageProps } from "next/image";
+
 import { motion, useMotionValue } from "framer-motion";
 
 import { cn } from "@/lib/utils";
-import { ShinyButton } from "./shiny-button";
-import { FaWhatsapp } from "react-icons/fa";
-import { HERO_CONTENT } from "@/lib/constants/hero";
+import { ABOUT_CONTENT } from "@/lib/constants/about";
+
+import { WhatsappButton } from "./whatsapp-button";
 
 export const PhotoGallery = ({
   animationDelay = 0.5,
@@ -16,10 +18,6 @@ export const PhotoGallery = ({
 }) => {
   const [isVisible, setIsVisible] = useState(false);
   const [isLoaded, setIsLoaded] = useState(false);
-
-  const heroWhatsappLink = `https://wa.me/${
-    HERO_CONTENT.cta.whatsappNumber
-  }?text=${encodeURIComponent(HERO_CONTENT.cta.whatsappMessage)}`;
 
   useEffect(() => {
     const visibilityTimer = setTimeout(() => {
@@ -168,13 +166,13 @@ export const PhotoGallery = ({
   ];
 
   return (
-    <div className="relative mx-auto max-w-[1440px] px-4 md:px-8 lg:px-16 xl:px-24">
+    <div className="container-layout">
       {/* Background grid pattern - hidden on mobile */}
-      <div className="absolute inset-0 hidden md:block top-[100px] -z-10 h-[300px] w-full bg-transparent bg-[linear-gradient(to_right,#57534e_1px,transparent_1px),linear-gradient(to_bottom,#57534e_1px,transparent_1px)] bg-[size:3rem_3rem] opacity-20 [mask-image:radial-gradient(ellipse_80%_50%_at_50%_0%,#000_70%,transparent_110%)] dark:bg-[linear-gradient(to_right,#a8a29e_1px,transparent_1px),linear-gradient(to_bottom,#a8a29e_1px,transparent_1px)]"></div>
+      <div className="absolute inset-0 hidden md:block top-[100px] -z-10 h-[300px] w-full bg-transparent bg-[linear-gradient(to_right,#57534e_1px,transparent_1px),linear-gradient(to_bottom,#57534e_1px,transparent_1px)] bg-[size:3rem_3rem] opacity-20 [mask-image:radial-gradient(ellipse_80%_50%_at_50%_0%,#000_70%,transparent_110%)] dark:bg-[linear-gradient(to_right,#a8a29e_1px,transparent_1px),linear-gradient(to_bottom,#a8a29e_1px,transparent_1px)]" />
 
       {/* Title and Subtitle */}
       <div className="text-center mb-12 md:mb-20">
-        <h2 className="font-syne uppercase text-3xl md:text-4xl font-bold text-white mb-4 md:mb-6">
+        <h2 className="font-syne uppercase text-3xl md:text-4xl font-bold mb-4 md:mb-6">
           Entre em Contato
         </h2>
         <p className="text-lg md:text-xl xl:text-2xl font-light text-gray-300 leading-relaxed max-w-2xl mx-auto px-4">
@@ -252,14 +250,11 @@ export const PhotoGallery = ({
 
       {/* WhatsApp Button */}
       <div className="flex justify-center">
-        <a href={heroWhatsappLink} target="_blank" rel="noopener noreferrer">
-          <ShinyButton className="border-transparent bg-green-600 text-white hover:shadow-green-800">
-            <div className="flex items-center justify-center gap-2">
-              <FaWhatsapp className="size-4 text-white sm:size-5" />
-              <span className="text-white">{HERO_CONTENT.cta.text}</span>
-            </div>
-          </ShinyButton>
-        </a>
+        <WhatsappButton
+          text={ABOUT_CONTENT.contact.text}
+          whatsappMessage={ABOUT_CONTENT.contact.whatsappMessage}
+          className="border-transparent bg-green-600 hover:shadow-green-800"
+        />
       </div>
     </div>
   );
