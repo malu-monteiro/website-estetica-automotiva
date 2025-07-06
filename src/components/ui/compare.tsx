@@ -160,96 +160,108 @@ export const Compare = ({
   );
 
   return (
-    <div
-      ref={sliderRef}
-      className={cn("w-[400px] h-[400px] overflow-hidden", className)}
+    <motion.div
+      whileHover={{ y: -8 }}
+      transition={{ duration: 0.3, ease: "easeOut" }}
+      className={cn("relative p-1 rounded-2xl bg-zinc-800", className)}
       style={{
-        position: "relative",
-        cursor: slideMode === "drag" ? "grab" : "col-resize",
+        width: imageWidth + 2 * 4 + "px",
+        height: imageHeight + 2 * 4 + "px",
       }}
-      onMouseMove={handleMouseMove}
-      onMouseLeave={mouseLeaveHandler}
-      onMouseEnter={mouseEnterHandler}
-      onMouseDown={handleMouseDown}
-      onMouseUp={handleMouseUp}
-      onTouchStart={handleTouchStart}
-      onTouchEnd={handleTouchEnd}
-      onTouchMove={handleTouchMove}
     >
-      <AnimatePresence initial={false}>
-        <motion.div
-          className="h-full w-px absolute top-0 m-auto z-30 bg-gradient-to-b from-transparent from-[5%] to-[95%] via-red-500 to-transparent"
-          style={{
-            left: `${sliderXPercent}%`,
-            top: "0",
-            zIndex: 40,
-          }}
-          transition={{ duration: 0 }}
-        >
-          <div className="w-36 h-full [mask-image:radial-gradient(100px_at_left,white,transparent)] absolute top-1/2 -translate-y-1/2 left-0 bg-gradient-to-r from-red-400 via-transparent to-transparent z-20 opacity-50" />
-          <div className="w-10 h-1/2 [mask-image:radial-gradient(50px_at_left,white,transparent)] absolute top-1/2 -translate-y-1/2 left-0 bg-gradient-to-r from-red-400 via-transparent to-transparent z-10 opacity-100" />
-          <div className="w-10 h-3/4 top-1/2 -translate-y-1/2 absolute -right-10 [mask-image:radial-gradient(100px_at_left,white,transparent)]">
-            <MemoizedSparklesCore
-              background="transparent"
-              minSize={0.4}
-              maxSize={1}
-              particleDensity={1200}
-              className="w-full h-full"
-              particleColor="#FFFFFF"
-            />
-          </div>
-          {showHandlebar && (
-            <div className="h-5 w-5 rounded-md top-1/2 -translate-y-1/2 bg-white z-30 -right-2.5 absolute   flex items-center justify-center shadow-[0px_-1px_0px_0px_#FFFFFF40]">
-              <Sparkles className="h-4 w-4 text-black" />
-            </div>
-          )}
-        </motion.div>
-      </AnimatePresence>
-      <div className="overflow-hidden w-full h-full relative z-20 pointer-events-none">
+      <div
+        ref={sliderRef}
+        className={cn(
+          "w-full h-full overflow-hidden relative rounded-xl bg-black",
+          firstImageClassName
+        )}
+        style={{
+          cursor: slideMode === "drag" ? "grab" : "col-resize",
+        }}
+        onMouseMove={handleMouseMove}
+        onMouseLeave={mouseLeaveHandler}
+        onMouseEnter={mouseEnterHandler}
+        onMouseDown={handleMouseDown}
+        onMouseUp={handleMouseUp}
+        onTouchStart={handleTouchStart}
+        onTouchEnd={handleTouchEnd}
+        onTouchMove={handleTouchMove}
+      >
         <AnimatePresence initial={false}>
-          {firstImage ? (
-            <motion.div
-              className={cn(
-                "absolute inset-0 z-20 rounded-md shrink-0 w-full h-full select-none overflow-hidden",
-                firstImageClassName
-              )}
-              style={{
-                clipPath: `inset(0 ${100 - sliderXPercent}% 0 0)`,
-              }}
-              transition={{ duration: 0 }}
-            >
-              <Image
-                alt="first image"
-                src={firstImage}
-                width={imageWidth}
-                height={imageHeight}
+          <motion.div
+            className="h-full w-px absolute top-0 m-auto z-30 bg-gradient-to-b from-transparent from-[5%] to-[95%] via-red-500 to-transparent"
+            style={{
+              left: `${sliderXPercent}%`,
+              top: "0",
+              zIndex: 40,
+            }}
+            transition={{ duration: 0 }}
+          >
+            <div className="w-36 h-full [mask-image:radial-gradient(100px_at_left,white,transparent)] absolute top-1/2 -translate-y-1/2 left-0 bg-gradient-to-r from-red-400 via-transparent to-transparent z-20 opacity-50" />
+            <div className="w-10 h-1/2 [mask-image:radial-gradient(50px_at_left,white,transparent)] absolute top-1/2 -translate-y-1/2 left-0 bg-gradient-to-r from-red-400 via-transparent to-transparent z-10 opacity-100" />
+            <div className="w-10 h-3/4 top-1/2 -translate-y-1/2 absolute -right-10 [mask-image:radial-gradient(100px_at_left,white,transparent)]">
+              <MemoizedSparklesCore
+                background="transparent"
+                minSize={0.4}
+                maxSize={1}
+                particleDensity={1200}
+                className="w-full h-full"
+                particleColor="#FFFFFF"
+              />
+            </div>
+            {showHandlebar && (
+              <div className="h-5 w-5 rounded-md top-1/2 -translate-y-1/2 bg-white z-30 -right-2.5 absolute   flex items-center justify-center shadow-[0px_-1px_0px_0px_#FFFFFF40]">
+                <Sparkles className="h-4 w-4 text-black" />
+              </div>
+            )}
+          </motion.div>
+        </AnimatePresence>
+        <div className="overflow-hidden w-full h-full relative z-20 pointer-events-none">
+          <AnimatePresence initial={false}>
+            {firstImage ? (
+              <motion.div
                 className={cn(
-                  "absolute inset-0 z-20 rounded-md shrink-0 w-full h-full select-none",
+                  "absolute inset-0 z-20 rounded-md shrink-0 w-full h-full select-none overflow-hidden",
                   firstImageClassName
                 )}
-                draggable={false}
-              />
-            </motion.div>
+                style={{
+                  clipPath: `inset(0 ${100 - sliderXPercent}% 0 0)`,
+                }}
+                transition={{ duration: 0 }}
+              >
+                <Image
+                  alt="first image"
+                  src={firstImage}
+                  width={imageWidth}
+                  height={imageHeight}
+                  className={cn(
+                    "absolute inset-0 z-20 rounded-md shrink-0 w-full h-full select-none",
+                    firstImageClassName
+                  )}
+                  draggable={false}
+                />
+              </motion.div>
+            ) : null}
+          </AnimatePresence>
+        </div>
+
+        <AnimatePresence initial={false}>
+          {secondImage ? (
+            <Image
+              className={cn(
+                "absolute top-0 left-0 z-[19] rounded-md w-full h-full select-none",
+                secondImageClassname
+              )}
+              alt="second image"
+              src={secondImage}
+              width={imageWidth}
+              height={imageHeight}
+              draggable={false}
+            />
           ) : null}
         </AnimatePresence>
       </div>
-
-      <AnimatePresence initial={false}>
-        {secondImage ? (
-          <Image
-            className={cn(
-              "absolute top-0 left-0 z-[19] rounded-md w-full h-full select-none",
-              secondImageClassname
-            )}
-            alt="second image"
-            src={secondImage}
-            width={imageWidth}
-            height={imageHeight}
-            draggable={false}
-          />
-        ) : null}
-      </AnimatePresence>
-    </div>
+    </motion.div>
   );
 };
 

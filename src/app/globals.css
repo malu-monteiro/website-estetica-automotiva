@@ -29,6 +29,22 @@ html {
   }
 }
 
+@layer utilities {
+  .bg-radial-gradient-wine-light {
+    background-image: radial-gradient(
+      ellipse at center,
+      rgba(150, 0, 0, 0.4) 0%,
+      rgba(0, 0, 0, 0) 70%
+    );
+  }
+
+  .red-accent-line {
+    background: linear-gradient(90deg, #dc2626, #ef4444, #dc2626);
+    height: 4px;
+    box-shadow: 0 0 8px rgba(239, 68, 68, 0.5);
+  }
+}
+
 @layer components {
   /* Global Layout */
   .container-layout {
