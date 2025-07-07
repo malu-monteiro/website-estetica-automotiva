@@ -15,7 +15,10 @@ export default function Contact() {
   const isInView = useInView(ref, { once: true, amount: 0.5 });
 
   return (
-    <section id="contato" className="relative py-20 overflow-hidden">
+    <section
+      id="contato"
+      className="relative py-20 overflow-hidden bg-gradient-to-r from-red-900/[0.10] to-zinc-900/[0.05] backdrop-blur-md"
+    >
       <motion.div
         ref={ref}
         className="container-layout"
@@ -32,11 +35,6 @@ export default function Contact() {
           <MapSection />
         </div>
       </motion.div>
-
-      {/* Separator */}
-      <div className="absolute bottom-4 left-0 right-0 flex justify-center w-full">
-        <div className="h-[1px] w-3/4 bg-gradient-to-r from-transparent via-white/10 to-transparent" />
-      </div>
     </section>
   );
 }

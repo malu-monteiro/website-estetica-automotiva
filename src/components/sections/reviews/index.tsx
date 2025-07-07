@@ -20,11 +20,6 @@ export default function Reviews() {
 
       {/* Marquee Reviews */}
       <ReviewMarqueeRows />
-
-      {/* Separator */}
-      <div className="absolute bottom-4 left-0 right-0 flex justify-center w-full">
-        <div className="h-[1px] w-3/4 bg-gradient-to-r from-transparent via-white/10 to-transparent" />
-      </div>
     </section>
   );
 }

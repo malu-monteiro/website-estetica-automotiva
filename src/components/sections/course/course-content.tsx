@@ -23,7 +23,7 @@ export const CourseContent = () => {
 
       <h3 className="main-title">
         {COURSE_DATA.title}
-        <span className="block bg-gradient-to-r from-red-400 to-red-800 bg-clip-text text-transparent">
+        <span className="block bg-gradient-to-b from-red-400 to-red-800 bg-clip-text text-transparent">
           {COURSE_DATA.titleHighlight}
         </span>
       </h3>

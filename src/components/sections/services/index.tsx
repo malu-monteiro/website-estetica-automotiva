@@ -1,5 +1,7 @@
 "use client";
 
+import Image from "next/image";
+
 import { useRef } from "react";
 
 import { motion, useInView, UseInViewOptions } from "framer-motion";
@@ -25,7 +27,13 @@ export default function Services() {
 
   return (
     <section id="servicos" className="relative py-20 overflow-hidden">
-      <div className="absolute inset-0 bg-black/60" />
+      {/* Background Image */}
+      <Image
+        src="/services-background.png"
+        alt="Services Background"
+        fill
+        className="object-contain object-center -z-10"
+      />
 
       <motion.div
         ref={ref}

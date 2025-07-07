@@ -1,21 +1,29 @@
+import Image from "next/image";
+
 import { motion } from "framer-motion";
 
 import { FaGoogle } from "react-icons/fa";
 
 import { RatingSection } from "../about/rating-section";
-
 import { ShinyButton } from "@/components/ui/shiny-button";
 
-import { ANIMATION_MAIN_VARIANTS } from "@/lib/animations";
 import { SECTION_TEXTS } from "@/lib/constants/reviews";
+import { ANIMATION_MAIN_VARIANTS } from "@/lib/animations";
 
 export const HeaderSection = ({ isInView }: { isInView: boolean }) => (
   <motion.div
-    className="text-center mb-16"
+    className="text-center mb-16 relative p-8 rounded-lg shadow-lg overflow-hidden"
     variants={ANIMATION_MAIN_VARIANTS.container}
     initial="hidden"
     animate={isInView ? "show" : "hidden"}
   >
+    <Image
+      src="/CTA.png"
+      alt="CTA Background"
+      fill
+      className="object-cover -z-10"
+    />
+
     <motion.div variants={ANIMATION_MAIN_VARIANTS.item}>
       {/* Badge */}
       <div className="inline-flex items-center gap-2 py-2 mb-6">

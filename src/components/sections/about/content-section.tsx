@@ -27,7 +27,7 @@ export const ContentSection = ({ isInView }: ContentSectionProps) => (
     {/* Title */}
     <motion.h2 className="main-title" variants={ANIMATION_MAIN_VARIANTS.item}>
       {HOME_ABOUT_CONTENT.title}
-      <span className="block bg-gradient-to-r from-red-400 to-red-800 bg-clip-text text-transparent">
+      <span className="block bg-gradient-to-b from-red-400 to-red-800 bg-clip-text text-transparent">
         {HOME_ABOUT_CONTENT.titleHighlight}
       </span>
     </motion.h2>

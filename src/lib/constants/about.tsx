@@ -1,3 +1,44 @@
+interface OurHistoryContent {
+  title: string;
+  subtitle: string;
+  description: string | React.ReactNode;
+  image: string;
+  imageAlt: string;
+  cta: {
+    text: string;
+    link: string;
+  };
+}
+
+interface Feature {
+  icon: string;
+  title: string;
+  description: string;
+}
+
+interface WhyChooseUsContent {
+  title: string;
+  description: string;
+  features: Feature[];
+  cta: {
+    text: string;
+    link: string;
+  };
+}
+
+interface ContactContent {
+  text: string;
+  whatsappMessage: string;
+}
+
+interface AboutContent {
+  headerImage: string;
+  headerPageTitle: string;
+  ourHistory: OurHistoryContent;
+  whyChooseUs: WhyChooseUsContent;
+  contact: ContactContent;
+}
+
 // Page "/" section #sobre
 export const HOME_ABOUT_CONTENT = {
   badge: "Sobre Nós",
@@ -43,14 +84,26 @@ export const HOME_ABOUT_CONTENT = {
 } as const;
 
 // Page /sobre
-export const ABOUT_CONTENT = {
+export const ABOUT_CONTENT: AboutContent = {
   headerImage: "/aboutus.jpg",
   headerPageTitle: "Sobre Nós",
   ourHistory: {
     title: "Nossa História",
     subtitle: "Cada veículo é uma obra de arte em potencial",
-    description:
-      "Fundada em 2021, em Pinhais (PR), a MSS_STUDIO CAR surgiu para oferecer serviços de estética automotiva premium, com foco em polimento, vitrificação e higienização. Nossa filosofia combina tecnologia de ponta com habilidade artesanal, buscando não apenas restaurar, mas elevar a condição do seu veículo. Comprometidos com a qualidade e os detalhes, também oferecemos capacitação por meio do nosso curso de Polimento de Faróis.",
+    description: (
+      <>
+        Fundada em 2021, em Pinhais (PR), a MSS_STUDIO CAR surgiu para oferecer
+        serviços de estética automotiva premium, com foco em{" "}
+        <span className="text-white">
+          polimento, vitrificação e higienização
+        </span>
+        . Nossa filosofia combina tecnologia de ponta com habilidade artesanal,
+        buscando não apenas restaurar, mas elevar a condição do seu veículo.
+        Comprometidos com a qualidade e os detalhes, também oferecemos
+        capacitação por meio do nosso{" "}
+        <span className="text-white">Curso de Polimento de Faróis</span>.
+      </>
+    ),
     image: "/autodetail.jpg",
     imageAlt: "Nossa História MSS Studio Car",
     cta: {
