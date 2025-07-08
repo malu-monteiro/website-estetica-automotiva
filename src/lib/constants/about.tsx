@@ -48,7 +48,7 @@ export const HOME_ABOUT_CONTENT = {
   rating: {
     stars: 5,
     score: "5/5 de",
-    reviews: "44+ Avaliações",
+    reviews: "45+ Avaliações",
   },
   stats: [
     "Profissional Capacitado",

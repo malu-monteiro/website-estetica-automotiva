@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { FaGoogle } from "react-icons/fa";
 
 import { RatingSection } from "../about/rating-section";
+
 import { ShinyButton } from "@/components/ui/shiny-button";
 
 import { SECTION_TEXTS } from "@/lib/constants/reviews";

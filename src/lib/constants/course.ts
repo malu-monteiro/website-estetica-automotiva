@@ -11,23 +11,21 @@ export const COURSE_DATA = {
     "Conquiste a confiança para oferecer um serviço de alto padrão.",
   ],
   images: {
-    before: "/compareimg1.jpg",
-    after: "/compareimg2.jpg",
+    before: "/course/compare-before.webp",
+    after: "/course/compare-after.webp",
   },
   cta: {
     text: "Clique para saber mais",
     link: "/curso",
   },
-  headerImage: "/aboutimg.png",
-  headerPageTitle: "Curso Completo",
 } as const;
 
 export const COURSE_CONTENT = {
-  headerImage: "/farois.jpg",
+  headerImage: "/course/page/header.webp",
   headerPageTitle: "Curso de Restauração de Faróis",
   whatsappNumber: "5541999346385",
   intro: {
-    title: "Domine a Restauração de Faróis",
+    title: "Domine a Restauração e Revitalização de faróis",
     subtitle:
       "Aprenda as técnicas que realmente dão resultado e transforme sua carreira!",
     description:
@@ -55,7 +53,7 @@ export const COURSE_CONTENT = {
   whyChooseUs: {
     title: "Por Que Somos a Melhor Escolha?",
     description:
-      "Oferecemos o que há de melhor no mercado para você se tornar um especialista em restauração de faróis.",
+      "Domine a Restauração e Revitalização de faróis com o que há de melhor no mercado",
     features: [
       {
         title: "Metodologia 100% Prática",
@@ -85,9 +83,10 @@ export const COURSE_CONTENT = {
     },
   },
   galleryImages: [
-    "/course/gustavo-aluno.jpg",
-    "/course/jadson-aluno.jpg",
-    "/course/geraldo-aluno.jpg",
-    "/course/luiz-aluno.jpg",
+    "/course/page/gustavo-aluno.webp",
+    "/course/page/jadson-aluno.webp",
+    "/course/page/geraldo-aluno.webp",
+    "/course/page/luiz-aluno.webp",
+    "/course/page/victor-aluno.webp",
   ],
 } as const;

@@ -12,6 +12,7 @@ import { ANIMATION_MAIN_VARIANTS } from "@/lib/animations";
 import { PhotoGallery } from "@/components/ui/gallery-services";
 import { AnimatedButton } from "@/components/ui/animated-button";
 import { RatingSection } from "@/components/sections/about/rating-section";
+import Banner from "@/components/ui/banner";
 
 const iconMap: { [key: string]: LucideIcon } = {
   Sparkles,
@@ -21,6 +22,12 @@ const iconMap: { [key: string]: LucideIcon } = {
 };
 
 export default function AboutPage() {
+  const motionProps = {
+    variants: ANIMATION_MAIN_VARIANTS.item,
+    initial: "hidden" as const,
+    animate: "show" as const,
+  };
+
   return (
     <>
       {/* Header Section */}
@@ -36,12 +43,7 @@ export default function AboutPage() {
         <div className="absolute inset-0 bg-gradient-to-b from-transparent from-40% to-black" />
 
         <div className="relative z-10 container-layout text-center">
-          <motion.h1
-            className="header-title"
-            variants={ANIMATION_MAIN_VARIANTS.item}
-            initial="hidden"
-            animate="show"
-          >
+          <motion.h1 className="header-title" {...motionProps}>
             {ABOUT_CONTENT.headerPageTitle}
           </motion.h1>
         </div>
@@ -54,9 +56,7 @@ export default function AboutPage() {
           <div className="flex flex-col md:flex-row items-center gap-12 md:gap-16 lg:gap-20">
             <motion.div
               className="w-full md:w-1/2 text-center md:text-left z-10"
-              variants={ANIMATION_MAIN_VARIANTS.item}
-              initial="hidden"
-              animate="show"
+              {...motionProps}
             >
               <h2 className="section-title">
                 {ABOUT_CONTENT.ourHistory.title}
@@ -75,6 +75,7 @@ export default function AboutPage() {
                   href={ABOUT_CONTENT.ourHistory.cta.link}
                   target="_blank"
                   rel="noopener noreferrer"
+                  aria-label={ABOUT_CONTENT.ourHistory.cta.text}
                 >
                   <AnimatedButton>
                     {ABOUT_CONTENT.ourHistory.cta.text}
@@ -83,12 +84,7 @@ export default function AboutPage() {
               </div>
             </motion.div>
 
-            <motion.div
-              className="w-full md:w-1/2 relative"
-              variants={ANIMATION_MAIN_VARIANTS.item}
-              initial="hidden"
-              animate="show"
-            >
+            <motion.div className="w-full md:w-1/2 relative" {...motionProps}>
               <div className="group relative w-full">
                 {/* Background blur effect */}
                 <div
@@ -127,19 +123,12 @@ export default function AboutPage() {
             <RatingSection />
           </div>
           <div className="text-center mb-12 md:mb-16">
-            <motion.h2
-              variants={ANIMATION_MAIN_VARIANTS.item}
-              initial="hidden"
-              animate="show"
-              className="section-title"
-            >
+            <motion.h2 {...motionProps} className="section-title">
               {ABOUT_CONTENT.whyChooseUs.title}
             </motion.h2>
             <motion.p
-              variants={ANIMATION_MAIN_VARIANTS.item}
-              initial="hidden"
-              animate="show"
-              className="section-subtitle max-w-xl mx-auto "
+              {...motionProps}
+              className="section-subtitle max-w-xl mx-auto"
             >
               {ABOUT_CONTENT.whyChooseUs.description}
             </motion.p>
@@ -151,10 +140,8 @@ export default function AboutPage() {
               const IconComponent = iconMap[feature.icon];
               return (
                 <motion.div
-                  key={`feature-${feature.icon}-${index}`}
-                  variants={ANIMATION_MAIN_VARIANTS.item}
-                  initial="hidden"
-                  animate="show"
+                  key={index}
+                  {...motionProps}
                   custom={index}
                   className="space-y-4 md:space-y-6"
                 >
@@ -180,6 +167,7 @@ export default function AboutPage() {
               href={ABOUT_CONTENT.whyChooseUs.cta.link}
               target="_blank"
               rel="noopener noreferrer"
+              aria-label={ABOUT_CONTENT.whyChooseUs.cta.text}
             >
               <AnimatedButton>
                 {ABOUT_CONTENT.whyChooseUs.cta.text}
@@ -196,8 +184,8 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Separator */}
-      <div className="h-[1px] w-full max-w-3xl mx-auto bg-gradient-to-r from-transparent via-white/10 to-transparent mb-12 md:mb-16" />
+      {/* Banner Section */}
+      <Banner />
     </>
   );
 }

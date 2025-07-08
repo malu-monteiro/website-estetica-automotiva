@@ -62,7 +62,7 @@ export const CourseContent = () => {
             >
               {/* Content Card */}
               <div className={`w-5/12 ${index % 2 === 0 ? "pr-8" : "pl-8"}`}>
-                <div className="bg-gradient-to-r from-zinc-900/60 to-zinc-800/30 backdrop-blur-sm border border-zinc-700/50 rounded-lg p-4 group-hover:border-zinc-600/50 transition-all duration-300 hover:transform hover:scale-105">
+                <div className="bg-gradient-to-r from-zinc-900/60 to-zinc-800/30 backdrop-blur-sm border border-zinc-700/50 rounded-lg p-4 group-hover:border-zinc-600/50 transition-all duration-300 hover:transform hover:scale-105 group-hover:shadow-red-900/50 group-hover:shadow-lg">
                   <div className="flex items-center space-x-2 mb-2">
                     <span className="text-xs font-medium text-zinc-500 bg-zinc-800/50 px-2 py-1 rounded-full">
                       Etapa {index + 1}
@@ -81,7 +81,7 @@ export const CourseContent = () => {
 
               {/* Timeline dot */}
               <div className="absolute left-1/2 transform -translate-x-1/2 flex-shrink-0">
-                <div className="w-12 h-12 bg-gradient-to-br from-zinc-700 to-zinc-800 rounded-full flex items-center justify-center border-2 border-zinc-900 group-hover:from-zinc-600 group-hover:to-zinc-700 transition-all duration-300 shadow-lg z-10">
+                <div className="w-12 h-12 bg-gradient-to-br from-zinc-700 to-zinc-800 rounded-full flex items-center justify-center border-2 border-zinc-900 group-hover:from-red-800 group-hover:to-red-900 transition-all duration-300 shadow-lg z-10">
                   <topic.icon className="w-5 h-5 text-zinc-300 group-hover:text-white transition-colors duration-300" />
                 </div>
               </div>

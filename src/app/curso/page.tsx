@@ -19,7 +19,7 @@ import {
 import { COURSE_CONTENT } from "@/lib/constants/course";
 import { ANIMATION_MAIN_VARIANTS } from "@/lib/animations";
 
-import { Separator } from "@/components/ui/separator";
+import Banner from "@/components/ui/banner";
 import { ShinyButton } from "@/components/ui/shiny-button";
 import { CourseContent } from "@/components/ui/course-content";
 import { WhatsappButton } from "@/components/ui/whatsapp-button";
@@ -35,8 +35,14 @@ const iconMap: { [key: string]: LucideIcon } = {
 };
 
 export default function CoursePage() {
-  const ref = useRef(null);
+  const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, { once: true, amount: 0.3 });
+
+  const motionProps = {
+    variants: ANIMATION_MAIN_VARIANTS.item,
+    initial: "hidden" as const,
+    animate: isInView ? ("show" as const) : ("hidden" as const),
+  };
 
   return (
     <>
@@ -64,27 +70,46 @@ export default function CoursePage() {
 
       {/* Intro Section */}
       <div className="container-layout" ref={ref}>
-        <section className="py-12 md:py-16 text-center">
-          <motion.div
-            className="max-w-2xl mx-auto"
-            variants={ANIMATION_MAIN_VARIANTS.item}
-            initial="hidden"
-            animate={isInView ? "show" : "hidden"}
-          >
-            <h2 className="section-title">{COURSE_CONTENT.intro.title}</h2>
-            <p className="section-subtitle mb-6 md:mb-8">
-              {COURSE_CONTENT.intro.subtitle}
-            </p>
-            <p className="content-description">
-              {COURSE_CONTENT.intro.description}
-            </p>
-            {COURSE_CONTENT.intro.cta && (
-              <WhatsappButton
-                text={COURSE_CONTENT.intro.cta.text}
-                whatsappMessage={COURSE_CONTENT.intro.cta.whatsappMessage}
-              />
-            )}
-          </motion.div>
+        <section className="py-12 md:py-16">
+          <div className="flex flex-col md:flex-row items-start md:gap-12">
+            <motion.div
+              className="w-full md:w-1/2 mb-8 md:mb-0 text-left"
+              {...motionProps}
+            >
+              <h2 className="section-title">{COURSE_CONTENT.intro.title}</h2>
+              <p className="section-subtitle mb-6 md:mb-8">
+                {COURSE_CONTENT.intro.subtitle}
+              </p>
+              <p className="content-description">
+                {COURSE_CONTENT.intro.description}
+              </p>
+              {COURSE_CONTENT.intro.cta && (
+                <WhatsappButton
+                  text={COURSE_CONTENT.intro.cta.text}
+                  whatsappMessage={COURSE_CONTENT.intro.cta.whatsappMessage}
+                  className="mt-6"
+                />
+              )}
+            </motion.div>
+
+            {/* Video */}
+            <motion.div
+              className="w-full md:w-1/2 flex justify-center items-center rounded-lg overflow-hidden shadow-xl"
+              {...motionProps}
+            >
+              <div className="relative w-full" style={{ paddingBottom: "70%" }}>
+                <video
+                  controls
+                  preload="metadata"
+                  className="absolute top-0 left-0 w-full h-full rounded-lg"
+                  aria-label="Vídeo do curso"
+                >
+                  <source src="/video.mp4" type="video/mp4" />
+                  Seu navegador não suporta a tag de vídeo.
+                </video>
+              </div>
+            </motion.div>
+          </div>
         </section>
       </div>
 
@@ -107,7 +132,7 @@ export default function CoursePage() {
           {/* Stats Section */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 mt-12 md:mt-16 pt-8 md:pt-12 border-t border-gray-800/50 uppercase">
             {COURSE_CONTENT.stats.map((stat, index) => (
-              <div key={`stat-${index}`} className="text-center group">
+              <div key={index} className="text-center group">
                 <div className="text-3xl md:text-4xl font-extralight mb-2 group-hover:scale-110 transition-transform duration-300">
                   {stat.value}
                 </div>
@@ -129,21 +154,35 @@ export default function CoursePage() {
 
           <div className="text-center mb-16 md:mb-20">
             <motion.h2
-              variants={ANIMATION_MAIN_VARIANTS.item}
-              initial="hidden"
-              animate={isInView ? "show" : "hidden"}
+              {...motionProps}
               className="font-syne uppercase text-3xl md:text-4xl font-bold mb-6 md:mb-8"
             >
               {COURSE_CONTENT.whyChooseUs.title}
             </motion.h2>
+
             <motion.p
-              variants={ANIMATION_MAIN_VARIANTS.item}
-              initial="hidden"
-              animate={isInView ? "show" : "hidden"}
+              {...motionProps}
               className="max-w-xl mx-auto section-subtitle"
             >
               {COURSE_CONTENT.whyChooseUs.description}
             </motion.p>
+
+            {COURSE_CONTENT.whyChooseUs.cta && (
+              <div className="flex justify-center">
+                <a
+                  href={COURSE_CONTENT.whyChooseUs.cta.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Avaliar no Google"
+                >
+                  <ShinyButton className="border-transparent bg-red-800 hover:shadow-red-800 focus:ring-red-500">
+                    <span className="uppercase tracking-wide text-sm md:text-base">
+                      {COURSE_CONTENT.whyChooseUs.cta.text}
+                    </span>
+                  </ShinyButton>
+                </a>
+              </div>
+            )}
           </div>
 
           {/* Features Grid */}
@@ -153,10 +192,8 @@ export default function CoursePage() {
 
               return (
                 <motion.div
-                  key={`feature-${reason.icon}-${index}`}
-                  variants={ANIMATION_MAIN_VARIANTS.item}
-                  initial="hidden"
-                  animate={isInView ? "show" : "hidden"}
+                  key={index}
+                  {...motionProps}
                   custom={index}
                   className="space-y-4 md:space-y-6"
                 >
@@ -173,58 +210,41 @@ export default function CoursePage() {
               );
             })}
           </div>
-
-          {/* CTA Button */}
-          {COURSE_CONTENT.whyChooseUs.cta && (
-            <div className="flex justify-center">
-              <a
-                href={COURSE_CONTENT.whyChooseUs.cta.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Avaliar no Google"
-              >
-                <ShinyButton className="border-transparent bg-red-800 hover:shadow-red-800 focus:ring-red-500">
-                  <span className="uppercase tracking-wide text-sm md:text-base">
-                    {COURSE_CONTENT.whyChooseUs.cta.text}
-                  </span>
-                </ShinyButton>
-              </a>
-            </div>
-          )}
         </section>
+      </div>
 
-        <Separator />
-
-        {/* Gallery Section */}
-        {COURSE_CONTENT.galleryImages?.length > 0 && (
-          <section className="py-16 md:py-24">
+      {/* Gallery Section */}
+      {COURSE_CONTENT.galleryImages?.length && (
+        <section className="py-16 md:py-24 bg-gradient-to-br from-neutral-900 via-black to-neutral-900">
+          <div className="container-layout">
             <h3 className="font-syne uppercase text-3xl md:text-4xl font-bold mb-16 md:mb-20 text-center text-neutral-100">
-              Nossa Galeria
+              Nossos Alunos
             </h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
               {COURSE_CONTENT.galleryImages.map((src, index) => (
                 <motion.div
-                  key={`gallery-${index}`}
-                  variants={ANIMATION_MAIN_VARIANTS.item}
-                  initial="hidden"
-                  animate={isInView ? "show" : "hidden"}
+                  key={index}
+                  {...motionProps}
                   custom={index}
-                  className="rounded-lg overflow-hidden shadow-md"
+                  className="relative rounded-lg overflow-hidden shadow-md w-full pb-[100%] sm:pb-0 sm:h-56 md:h-64 lg:h-72"
                 >
                   <Image
                     src={src}
-                    alt={`Galeria do Curso ${index + 1}`}
+                    alt={`Galeria com imagem de alunos ${index + 1}`}
                     width={400}
                     height={300}
-                    className="object-cover object-center w-full h-48 sm:h-56 md:h-64 lg:h-72"
+                    className="absolute inset-0 object-cover object-center w-full h-full"
+                    loading="lazy"
                   />
                 </motion.div>
               ))}
             </div>
-          </section>
-        )}
-        <Separator />
-      </div>
+          </div>
+        </section>
+      )}
+
+      {/* Banner Section */}
+      <Banner />
     </>
   );
 }

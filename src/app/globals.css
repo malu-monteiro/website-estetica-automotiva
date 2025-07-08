@@ -336,3 +336,29 @@ html {
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.556 0 0);
 }
+
+.strike-x {
+  position: relative;
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.strike-x::before,
+.strike-x::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 50%;
+  height: 4px;
+  background-color: #991b1b;
+  transform-origin: center;
+}
+
+.strike-x::before {
+  transform: translate(calc(-50% + 15px), -50%) rotate(45deg);
+}
+
+.strike-x::after {
+  transform: translate(calc(-50% + 15px), -50%) rotate(-45deg);
+}
