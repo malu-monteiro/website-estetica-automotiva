@@ -10,7 +10,6 @@ import { cn } from "@/lib/utils";
 import { ABOUT_CONTENT } from "@/lib/constants/about";
 
 import { WhatsappButton } from "./whatsapp-button";
-import { StarRating } from "./star-rating";
 
 export const PhotoGallery = ({
   animationDelay = 0.5,
@@ -77,7 +76,7 @@ export const PhotoGallery = ({
       y: "15px",
       zIndex: 50,
       direction: "left" as Direction,
-      src: "/photo-gallery/image1.jpg",
+      src: "/about/page/gallery-1.webp",
     },
     {
       id: 2,
@@ -86,7 +85,7 @@ export const PhotoGallery = ({
       y: "32px",
       zIndex: 40,
       direction: "left" as Direction,
-      src: "/photo-gallery/image2.jpg",
+      src: "/about/page/gallery-2.webp",
     },
     {
       id: 3,
@@ -95,7 +94,7 @@ export const PhotoGallery = ({
       y: "8px",
       zIndex: 30,
       direction: "right" as Direction,
-      src: "/photo-gallery/image3.jpg",
+      src: "/about/page/gallery-3.webp",
     },
     {
       id: 4,
@@ -104,7 +103,7 @@ export const PhotoGallery = ({
       y: "22px",
       zIndex: 20,
       direction: "right" as Direction,
-      src: "/photo-gallery/image4.jpg",
+      src: "/about/page/gallery-4.webp",
     },
     {
       id: 5,
@@ -113,7 +112,7 @@ export const PhotoGallery = ({
       y: "44px",
       zIndex: 10,
       direction: "left" as Direction,
-      src: "/photo-gallery/image5.jpg",
+      src: "/about/page/gallery-5.webp",
     },
   ];
 
@@ -126,7 +125,7 @@ export const PhotoGallery = ({
       y: "10px",
       zIndex: 50,
       direction: "left" as Direction,
-      src: "/photo-gallery/image1.jpg",
+      src: "/about/page/gallery-1.webp",
     },
     {
       id: 2,
@@ -135,7 +134,7 @@ export const PhotoGallery = ({
       y: "20px",
       zIndex: 40,
       direction: "left" as Direction,
-      src: "/photo-gallery/image2.jpg",
+      src: "/about/page/gallery-2.webp",
     },
     {
       id: 3,
@@ -144,7 +143,7 @@ export const PhotoGallery = ({
       y: "5px",
       zIndex: 30,
       direction: "right" as Direction,
-      src: "/photo-gallery/image3.jpg",
+      src: "/about/page/gallery-3.webp",
     },
     {
       id: 4,
@@ -153,7 +152,7 @@ export const PhotoGallery = ({
       y: "15px",
       zIndex: 20,
       direction: "right" as Direction,
-      src: "/photo-gallery/image4.jpg",
+      src: "/about/page/gallery-4.webp",
     },
     {
       id: 5,
@@ -162,7 +161,7 @@ export const PhotoGallery = ({
       y: "25px",
       zIndex: 10,
       direction: "left" as Direction,
-      src: "/photo-gallery/image5.jpg",
+      src: "/about/page/gallery-5.webp",
     },
   ];
 
@@ -191,6 +190,14 @@ export const PhotoGallery = ({
 
       {/* Photos Gallery */}
       <div className="relative mb-8 md:mb-12 h-[250px] md:h-[350px] w-full flex items-center justify-center">
+        {/* Background Image */}
+        <Image
+          src="/services-background.png"
+          alt="Services Background"
+          fill
+          className="object-center -z-10"
+        />
+
         <motion.div
           className="relative mx-auto flex w-full max-w-7xl justify-center"
           initial={{ opacity: 0 }}

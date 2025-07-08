@@ -65,7 +65,7 @@ export const HOME_ABOUT_CONTENT = {
   instructor: {
     name: "Márcio",
     role: "Especialista em Estética Automotiva e Instrutor do curso de Polimento de Faróis",
-    image: "/aboutimg.png",
+    image: "/about/marcio.webp",
   },
   ctas: {
     readMore: {
@@ -85,7 +85,7 @@ export const HOME_ABOUT_CONTENT = {
 
 // Page /sobre
 export const ABOUT_CONTENT: AboutContent = {
-  headerImage: "/aboutus.jpg",
+  headerImage: "/about/page/header.webp",
   headerPageTitle: "Sobre Nós",
   ourHistory: {
     title: "Nossa História",
@@ -104,7 +104,7 @@ export const ABOUT_CONTENT: AboutContent = {
         <span className="text-white">Curso de Polimento de Faróis</span>.
       </>
     ),
-    image: "/autodetail.jpg",
+    image: "/about/page/our-history.webp",
     imageAlt: "Nossa História MSS Studio Car",
     cta: {
       text: "Ver Nosso Curso",
