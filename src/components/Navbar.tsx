@@ -10,11 +10,11 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const navLinks = [
   { href: "/", label: "Início" },
-  { href: "#sobre", label: "Sobre Nós" },
-  { href: "#servicos", label: "Serviços" },
-  { href: "#curso", label: "Curso" },
-  { href: "#avaliacoes", label: "Avaliações" },
-  { href: "#contato", label: "Contato" },
+  { href: "/sobre", label: "Sobre Nós" },
+  { href: "/servicos", label: "Serviços" },
+  { href: "/curso", label: "Curso" },
+  { href: "/#avaliacoes", label: "Avaliações" },
+  { href: "/#contato", label: "Contato" },
 ];
 
 const SCROLL_THRESHOLD = 50;

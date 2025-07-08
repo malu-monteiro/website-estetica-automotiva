@@ -32,6 +32,7 @@ interface FooterProps {
   }>;
   copyright?: string;
   developerCredit?: string;
+  developerCreditLink?: string;
   legalLinks?: Array<{
     name: string;
     href: string;
@@ -49,17 +50,22 @@ const DEFAULT_CONFIG = {
     {
       title: "Empresa",
       links: [
-        { name: "Sobre nós", href: "#sobre" },
-        { name: "Serviços", href: "#servicos" },
-        { name: "Curso", href: "#curso" },
-        { name: "Depoimentos", href: "#depoimentos" },
+        { name: "Início", href: "/" },
+        { name: "Sobre nós", href: "/sobre" },
+        { name: "Serviços", href: "/servicos" },
+        { name: "Entre em Contato", href: "/curso" },
       ],
     },
     {
-      title: "Ajuda",
+      title: "Serviços",
       links: [
-        { name: "Política de Privacidade", href: "/politica" },
-        { name: "Termos de Uso", href: "/termos" },
+        { name: "Polimento", href: "/servicos/polimento" },
+        { name: "Revitalização de Farol", href: "/revitalizacao-de-farol" },
+        { name: "Vitrificação de Pintura", href: "/vitrificacao-de-pintura" },
+        {
+          name: "Higienização Interna Premium",
+          href: "/higienizacao-interna-premium",
+        },
       ],
     },
   ],
@@ -79,6 +85,7 @@ const DEFAULT_CONFIG = {
   subDescription: "Atendimento com horário agendado — Seg a Sáb, 08h às 18h",
   copyright: "© 2025 MSS STUDIO CAR. Todos os direitos reservados.",
   developerCredit: "Desenvolvido por Maria Luiza",
+  developerCreditLink: "https://github.com/malu-monteiro",
 };
 
 export function Footer({
@@ -89,6 +96,7 @@ export function Footer({
   socialLinks = DEFAULT_CONFIG.socialLinks,
   copyright = DEFAULT_CONFIG.copyright,
   developerCredit = DEFAULT_CONFIG.developerCredit,
+  developerCreditLink = DEFAULT_CONFIG.developerCreditLink,
   legalLinks = DEFAULT_CONFIG.legalLinks,
 }: FooterProps) {
   return (
@@ -155,10 +163,23 @@ export function Footer({
       <div className="mt-8 flex flex-col-reverse gap-4 border-t pt-8 text-xs font-medium text-muted-foreground md:flex-row md:justify-between md:items-center">
         <p className="order-2 lg:order-1">{copyright}</p>
 
+        {/* Developer Credit */}
         <p className="order-3 text-muted-foreground/80 md:order-2">
-          {developerCredit}
+          {developerCreditLink ? (
+            <Link
+              href={developerCreditLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-red-800 transition-colors"
+            >
+              {developerCredit}
+            </Link>
+          ) : (
+            developerCredit
+          )}
         </p>
 
+        {/* Legal Links */}
         <ul className="order-1 flex flex-col gap-2 md:order-3 md:flex-row">
           {legalLinks.map((link, idx) => (
             <li

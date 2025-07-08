@@ -9,7 +9,6 @@ import { DEFAULT_ITEM_VARIANTS } from "@/lib/animations";
 import { MapSection } from "./map-section";
 import { ContactInfo } from "./contact-info";
 import { ContactHeader } from "./contact-header";
-import { Separator } from "@/components/ui/separator";
 
 export default function Contact() {
   const ref = useRef<HTMLDivElement>(null);
@@ -38,8 +37,6 @@ export default function Contact() {
           </div>
         </motion.div>
       </section>
-
-      <Separator />
     </>
   );
 }

@@ -33,7 +33,7 @@ export const COUNTER_DATA: CounterDataItem[] = [
 ];
 
 export const MEDIA_PATHS = {
-  videoPoster: "/videobg-poster.webp",
-  videoWebm: "/videobg.webm",
-  videoMp4: "/videobg.mp4",
+  videoPoster: "/hero/poster.webp",
+  videoWebm: "/hero/video-bg.webm",
+  videoMp4: "/hero/video-bg.mp4",
 };

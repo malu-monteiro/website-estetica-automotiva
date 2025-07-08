@@ -104,7 +104,7 @@ export default function CoursePage() {
                   className="absolute top-0 left-0 w-full h-full rounded-lg"
                   aria-label="Vídeo do curso"
                 >
-                  <source src="/video.mp4" type="video/mp4" />
+                  <source src="/course/course-video.mp4" type="video/mp4" />
                   Seu navegador não suporta a tag de vídeo.
                 </video>
               </div>
