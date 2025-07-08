@@ -10,6 +10,7 @@ import { cn } from "@/lib/utils";
 import { ABOUT_CONTENT } from "@/lib/constants/about";
 
 import { WhatsappButton } from "./whatsapp-button";
+import { StarRating } from "./star-rating";
 
 export const PhotoGallery = ({
   animationDelay = 0.5,
@@ -169,7 +170,6 @@ export const PhotoGallery = ({
     <div className="container-layout">
       {/* Background grid pattern - hidden on mobile */}
       <div className="absolute inset-0 hidden md:block top-[100px] -z-10 h-[300px] w-full bg-transparent bg-[linear-gradient(to_right,#57534e_1px,transparent_1px),linear-gradient(to_bottom,#57534e_1px,transparent_1px)] bg-[size:3rem_3rem] opacity-20 [mask-image:radial-gradient(ellipse_80%_50%_at_50%_0%,#000_70%,transparent_110%)] dark:bg-[linear-gradient(to_right,#a8a29e_1px,transparent_1px),linear-gradient(to_bottom,#a8a29e_1px,transparent_1px)]" />
-
       {/* Title and Subtitle */}
       <div className="text-center mb-12 md:mb-20">
         <h2 className="font-syne uppercase text-3xl md:text-4xl font-bold mb-4 md:mb-6">
@@ -178,6 +178,15 @@ export const PhotoGallery = ({
         <p className="text-lg md:text-xl xl:text-2xl font-light text-gray-300 leading-relaxed max-w-2xl mx-auto px-4">
           Solicite um orçamento personalizado em poucos cliques
         </p>
+
+        {/* WhatsApp Button */}
+        <div className="flex justify-center mt-12">
+          <WhatsappButton
+            text={ABOUT_CONTENT.contact.text}
+            whatsappMessage={ABOUT_CONTENT.contact.whatsappMessage}
+            className="border-transparent bg-green-600 hover:shadow-green-800"
+          />
+        </div>
       </div>
 
       {/* Photos Gallery */}
@@ -246,15 +255,6 @@ export const PhotoGallery = ({
             </div>
           </motion.div>
         </motion.div>
-      </div>
-
-      {/* WhatsApp Button */}
-      <div className="flex justify-center">
-        <WhatsappButton
-          text={ABOUT_CONTENT.contact.text}
-          whatsappMessage={ABOUT_CONTENT.contact.whatsappMessage}
-          className="border-transparent bg-green-600 hover:shadow-green-800"
-        />
       </div>
     </div>
   );

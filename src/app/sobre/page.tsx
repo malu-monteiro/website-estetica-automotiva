@@ -1,7 +1,5 @@
 "use client";
 
-import React from "react";
-
 import Image from "next/image";
 
 import { motion } from "framer-motion";
@@ -55,7 +53,7 @@ export default function AboutPage() {
         <section className="py-12 md:py-16">
           <div className="flex flex-col md:flex-row items-center gap-12 md:gap-16 lg:gap-20">
             <motion.div
-              className="w-full md:w-1/2 text-center md:text-left"
+              className="w-full md:w-1/2 text-center md:text-left z-10"
               variants={ANIMATION_MAIN_VARIANTS.item}
               initial="hidden"
               animate="show"
@@ -86,35 +84,48 @@ export default function AboutPage() {
             </motion.div>
 
             <motion.div
-              className="w-full md:w-1/2"
+              className="w-full md:w-1/2 relative"
               variants={ANIMATION_MAIN_VARIANTS.item}
               initial="hidden"
               animate="show"
             >
-              <div className="rounded-lg overflow-hidden shadow-lg">
-                <Image
-                  src={ABOUT_CONTENT.ourHistory.image}
-                  alt={ABOUT_CONTENT.ourHistory.imageAlt}
-                  width={400}
-                  height={400}
-                  className="object-cover object-center w-full h-64 sm:h-72 md:h-80 lg:h-96"
+              <div className="group relative w-full">
+                {/* Background blur effect */}
+                <div
+                  className="absolute -bottom-12 left-1/2 z-0 h-48 w-96 -translate-x-1/2 rounded-full blur-3xl bg-radial-gradient-wine-light"
+                  aria-hidden="true"
                 />
+                <motion.div
+                  whileHover={{ y: -8 }}
+                  transition={{ duration: 0.3, ease: "easeOut" }}
+                  className="relative p-1 rounded-2xl bg-zinc-800"
+                >
+                  <div className="relative overflow-hidden rounded-xl bg-black">
+                    <div className="rounded-lg overflow-hidden shadow-lg relative">
+                      <Image
+                        src={ABOUT_CONTENT.ourHistory.image}
+                        alt={ABOUT_CONTENT.ourHistory.imageAlt}
+                        width={400}
+                        height={400}
+                        className="object-cover object-center w-full h-64 sm:h-72 md:h-80 lg:h-96"
+                        priority
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-zinc-900 via-transparent to-transparent" />
+                    </div>
+                  </div>
+                </motion.div>
               </div>
             </motion.div>
           </div>
         </section>
+      </div>
 
-        {/* Separator */}
-        <div className="flex justify-center py-8 md:py-12">
-          <div className="h-px w-3/4 bg-gradient-to-r from-transparent via-white/10 to-transparent" />
-        </div>
-
-        {/* Why Choose Us Section */}
-        <section className="py-12 md:py-16">
+      {/* Why Choose Us Section */}
+      <section className="py-12 md:py-16 mt-20 bg-gradient-to-br from-neutral-900 via-black to-neutral-900">
+        <div className="container-layout">
           <div className="flex justify-center mb-12 md:mb-16">
             <RatingSection />
           </div>
-
           <div className="text-center mb-12 md:mb-16">
             <motion.h2
               variants={ANIMATION_MAIN_VARIANTS.item}
@@ -175,23 +186,18 @@ export default function AboutPage() {
               </AnimatedButton>
             </a>
           </div>
-        </section>
-
-        {/* Separator */}
-        <div className="flex justify-center py-8 md:py-12">
-          <div className="h-px w-3/4 bg-gradient-to-r from-transparent via-white/10 to-transparent" />
         </div>
+      </section>
 
-        {/* Photo Gallery Section and Whatsapp Button */}
-        <section className="py-12 md:py-16">
+      {/* Photo Gallery Section and Whatsapp Button */}
+      <section className="py-12 md:py-16 mt-20">
+        <div className="container-layout">
           <PhotoGallery />
-        </section>
-
-        {/* Final Separator */}
-        <div className="flex justify-center py-8 md:py-12">
-          <div className="h-px w-3/4 bg-gradient-to-r from-transparent via-white/10 to-transparent" />
         </div>
-      </div>
+      </section>
+
+      {/* Separator */}
+      <div className="h-[1px] w-full max-w-3xl mx-auto bg-gradient-to-r from-transparent via-white/10 to-transparent mb-12 md:mb-16" />
     </>
   );
 }
