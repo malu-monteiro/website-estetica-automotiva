@@ -1,16 +1,7 @@
-import React from "react";
-
 import Link from "next/link";
-
 import Image from "next/image";
 
-import {
-  FaFacebook,
-  FaGoogle,
-  FaInstagram,
-  FaTiktok,
-  FaYoutube,
-} from "react-icons/fa";
+import { FaFacebook, FaInstagram, FaTiktok, FaYoutube } from "react-icons/fa";
 
 interface FooterProps {
   logo?: {
@@ -42,9 +33,9 @@ interface FooterProps {
 const DEFAULT_CONFIG = {
   logo: {
     url: "/",
-    src: "/logo.png",
+    src: "/logo.webp",
     alt: "Logo MSS STUDIO CAR",
-    title: "MSS STUDIO CAR",
+    title: "MSS_STUDIO CAR ESTÉTICA AUTOMOTIVA",
   },
   sections: [
     {
@@ -70,11 +61,18 @@ const DEFAULT_CONFIG = {
     },
   ],
   socialLinks: [
-    { icon: <FaInstagram className="size-5" />, href: "#", label: "Instagram" },
-    { icon: <FaFacebook className="size-5" />, href: "#", label: "Facebook" },
+    {
+      icon: <FaInstagram className="size-5" />,
+      href: "https://www.instagram.com/mss_studiocar/",
+      label: "Instagram",
+    },
+    {
+      icon: <FaFacebook className="size-5" />,
+      href: "https://www.facebook.com/profile.php?id=61563094166325",
+      label: "Facebook",
+    },
     { icon: <FaYoutube className="size-5" />, href: "#", label: "YouTube" },
     { icon: <FaTiktok className="size-5" />, href: "#", label: "TikTok" },
-    { icon: <FaGoogle className="size-5" />, href: "#", label: "Google" },
   ],
   legalLinks: [
     { name: "Termos e Condições", href: "/termos" },
@@ -83,7 +81,7 @@ const DEFAULT_CONFIG = {
   description:
     "Especialistas em estética automotiva. Cuidamos de cada detalhe para entregar qualidade, brilho e proteção ao seu veículo.",
   subDescription: "Atendimento com horário agendado — Seg a Sáb, 08h às 18h",
-  copyright: "© 2025 MSS STUDIO CAR. Todos os direitos reservados.",
+  copyright: "© 2025 MSS_STUDIO CAR. Todos os direitos reservados.",
   developerCredit: "Desenvolvido por Maria Luiza",
   developerCreditLink: "https://github.com/malu-monteiro",
 };
@@ -126,16 +124,30 @@ export function Footer({
 
           {/* Social Links */}
           <ul className="flex items-center space-x-6 text-muted-foreground">
-            {socialLinks.map((social, idx) => (
-              <li
-                key={`social-${idx}`}
-                className="font-medium hover:text-red-800 transition-colors"
-              >
-                <Link href={social.href} aria-label={social.label}>
-                  {social.icon}
-                </Link>
-              </li>
-            ))}
+            {socialLinks.map((social, idx) => {
+              const isExternal = social.href.startsWith("http");
+              return (
+                <li
+                  key={`social-${idx}`}
+                  className="font-medium hover:text-red-800 transition-colors"
+                >
+                  {isExternal ? (
+                    <a
+                      href={social.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={social.label}
+                    >
+                      {social.icon}
+                    </a>
+                  ) : (
+                    <Link href={social.href} aria-label={social.label}>
+                      {social.icon}
+                    </Link>
+                  )}
+                </li>
+              );
+            })}
           </ul>
         </div>
 
@@ -145,50 +157,69 @@ export function Footer({
             <div key={`section-${sectionIdx}`}>
               <h3 className="mb-4 font-bold">{section.title}</h3>
               <ul className="space-y-3 text-sm text-muted-foreground">
-                {section.links.map((link, linkIdx) => (
-                  <li
-                    key={`${sectionIdx}-${linkIdx}`}
-                    className="font-medium hover:text-red-800 transition-colors"
-                  >
-                    <Link href={link.href}>{link.name}</Link>
-                  </li>
-                ))}
+                {section.links.map((link, linkIdx) => {
+                  const isExternal = link.href.startsWith("http");
+                  return (
+                    <li
+                      key={`${sectionIdx}-${linkIdx}`}
+                      className="font-medium hover:text-red-800 transition-colors"
+                    >
+                      {isExternal ? (
+                        <a
+                          href={link.href}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          {link.name}
+                        </a>
+                      ) : (
+                        <Link href={link.href}>{link.name}</Link>
+                      )}
+                    </li>
+                  );
+                })}
               </ul>
             </div>
           ))}
         </nav>
       </div>
 
-      {/* Footer bottom */}
       <div className="mt-8 flex flex-col-reverse gap-4 border-t pt-8 text-xs font-medium text-muted-foreground md:flex-row md:justify-between md:items-center">
         <p className="order-2 lg:order-1">{copyright}</p>
 
-        {/* Developer Credit */}
         <p className="order-3 text-muted-foreground/80 md:order-2">
           {developerCreditLink ? (
-            <Link
+            <a
               href={developerCreditLink}
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-red-800 transition-colors"
             >
               {developerCredit}
-            </Link>
+            </a>
           ) : (
             developerCredit
           )}
         </p>
 
-        {/* Legal Links */}
         <ul className="order-1 flex flex-col gap-2 md:order-3 md:flex-row">
-          {legalLinks.map((link, idx) => (
-            <li
-              key={`legal-${idx}`}
-              className="hover:text-red-800 transition-colors"
-            >
-              <Link href={link.href}>{link.name}</Link>
-            </li>
-          ))}
+          {legalLinks.map((link, idx) => {
+            const isExternal = link.href.startsWith("http");
+            return (
+              <li
+                key={`legal-${idx}`}
+                className="hover:text-red-800 transition-colors"
+              >
+                {isExternal ? (
+                  <a href={link.href} target="_blank" rel="noopener noreferrer">
+                    {link.name}
+                  </a>
+                ) : (
+                  <Link href={link.href}>{link.name}</Link>
+                )}
+              </li>
+            );
+          })}
         </ul>
       </div>
     </footer>

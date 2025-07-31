@@ -58,15 +58,16 @@ export default function GalleryCarousel({
         >
           {images.map((image: string, index: number) => (
             <SwiperSlide key={`main-${index}`}>
-              <div className="relative w-full h-full">
+              <div className="relative w-full h-full overflow-hidden rounded-lg">
                 <Image
                   src={image}
                   alt={`Imagem do serviço ${index + 1}`}
-                  className="w-full h-full object-cover rounded-lg"
+                  fill
+                  className="object-cover"
                   loading="lazy"
-                  layout="fill"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 60vw"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent rounded-lg" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
               </div>
             </SwiperSlide>
           ))}
@@ -130,8 +131,9 @@ export default function GalleryCarousel({
                   <Image
                     src={image}
                     alt={`Miniatura ${index + 1}`}
-                    className="w-full h-full object-cover cursor-pointer hover:opacity-80 transition-opacity"
-                    layout="fill"
+                    fill
+                    className="object-cover cursor-pointer hover:opacity-80 transition-opacity"
+                    sizes="(max-width: 640px) 33vw, (max-width: 768px) 25vw, (max-width: 1024px) 20vw, 16vw"
                   />
                 </div>
               </SwiperSlide>

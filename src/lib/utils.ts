@@ -46,7 +46,7 @@ export const addMarker = (
 
 export const generateWhatsAppLink = () => {
   const message =
-    "Olá, gostaria de saber mais sobre os serviços de estética automotiva da MSS Studio Car!";
+    "Olá, gostaria de saber mais sobre os serviços de estética automotiva da MSS_Studio Car!";
   return `https://wa.me/${
     CONTACT_INFO.whatsappNumber
   }?text=${encodeURIComponent(message)}`;

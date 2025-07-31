@@ -6,10 +6,10 @@ export default function TermosDeUso() {
   return (
     <div className="min-h-screen bg-zinc-300 flex flex-col items-center py-10 px-4 sm:px-6 lg:px-8">
       <Head>
-        <title>Termos de Uso - MSS Studio Car</title>
+        <title>Termos de Uso - MSS_Studio Car</title>
         <meta
           name="description"
-          content="Termos e Condições de Uso do site da MSS Studio Car."
+          content="Termos e Condições de Uso do site da MSS_Studio Car."
         />
       </Head>
 
@@ -33,7 +33,7 @@ export default function TermosDeUso() {
           1. Finalidade
         </h2>
         <p className="text-gray-700 leading-relaxed mb-4">
-          O site da MSS Studio Car tem caráter informativo e promocional, com o
+          O site da MSS_Studio Car tem caráter informativo e promocional, com o
           objetivo de apresentar os serviços de estética automotiva, incluindo:
         </p>
         <ul className="list-disc list-inside text-gray-700 leading-relaxed mb-4 pl-4">
@@ -64,7 +64,7 @@ export default function TermosDeUso() {
         <p className="text-gray-700 leading-relaxed mb-4">
           Todos os textos, imagens e marcas apresentadas neste site são de
           propriedade da{" "}
-          <strong className="font-semibold">MSS Studio Car</strong>, sendo
+          <strong className="font-semibold">MSS_Studio Car</strong>, sendo
           proibida sua cópia ou reprodução sem autorização prévia.
         </p>
 

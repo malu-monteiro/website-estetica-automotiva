@@ -1,7 +1,5 @@
 "use client";
 
-import React from "react";
-
 import { Compare } from "@/components/ui/compare";
 import { COURSE_DATA } from "@/lib/constants/course";
 

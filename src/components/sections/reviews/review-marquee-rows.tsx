@@ -1,7 +1,5 @@
 "use client";
 
-import React from "react";
-
 import { Marquee } from "@/components/ui/marquee";
 
 import { REVIEWS_CONTENT } from "@/lib/constants/reviews";

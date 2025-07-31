@@ -1,10 +1,11 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 
 import { useState, useEffect, useRef } from "react";
 
-import { ShieldCheck, Menu, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -58,9 +59,19 @@ export function Navbar() {
       <div className="container-layout">
         <nav className="flex items-center justify-between py-4">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2">
-            <ShieldCheck className="h-8 w-8" />
-            <span className="text-xl font-bold">MSS_STUDIO CAR</span>
+          <Link
+            href="/"
+            className="flex items-center"
+            aria-label="Página inicial"
+          >
+            <Image
+              src="/logo.webp"
+              alt="Logo MSS Studio Car"
+              width={140}
+              height={40}
+              className="h-16 w-auto object-contain"
+              priority
+            />
           </Link>
 
           {/* Desktop Navigation */}

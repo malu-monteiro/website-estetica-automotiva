@@ -3,7 +3,6 @@
 import { cn } from "@/lib/utils";
 import { motion, MotionProps } from "motion/react";
 import React from "react";
-
 const animationProps = {
   initial: { "--x": "100%", scale: 0.8 },
   animate: { "--x": "-100%", scale: 1 },

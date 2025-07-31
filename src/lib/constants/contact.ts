@@ -19,7 +19,7 @@ export const CONTACT_INFO = {
     },
     addressInfo: {
       title: "Endereço",
-      description: "A MSS STUDIO CAR está localizada em",
+      description: "A MSS_STUDIO CAR está localizada em",
     },
     whatsapp: {
       title: "WhatsApp",

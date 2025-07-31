@@ -55,7 +55,7 @@ export const MapSection = () => {
       <div ref={mapContainer} className="w-full h-full absolute inset-0" />
 
       <div className="absolute bottom-4 left-4 right-4 p-4 rounded-lg bg-white/90 backdrop-blur-sm shadow-lg z-10 max-w-sm">
-        <h4 className="text-lg font-bold text-gray-900 mb-2">MSS Studio Car</h4>
+        <h4 className="text-lg font-bold text-gray-900 mb-2">MSS_Studio Car</h4>
         <p className="text-gray-700 text-sm mb-3 leading-relaxed">
           {CONTACT_INFO.address}, {CONTACT_INFO.cityState}, {CONTACT_INFO.cep}
         </p>

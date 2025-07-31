@@ -6,10 +6,10 @@ export default function PoliticaDePrivacidade() {
   return (
     <div className="min-h-screen bg-zinc-300 flex flex-col items-center py-10 px-4 sm:px-6 lg:px-8">
       <Head>
-        <title>Política de Privacidade - MSS Studio Car</title>
+        <title>Política de Privacidade - MSS_Studio Car</title>
         <meta
           name="description"
-          content="Política de Privacidade do site da MSS Studio Car."
+          content="Política de Privacidade do site da MSS_Studio Car."
         />
       </Head>
 
