@@ -1,10 +1,10 @@
 "use client";
 
-import { Ref, forwardRef, useState, useEffect } from "react";
+import { Ref, forwardRef, useState, useEffect, MouseEvent } from "react";
 
 import Image, { ImageProps } from "next/image";
 
-import { motion, useMotionValue } from "framer-motion";
+import { motion, useMotionValue, Variants } from "framer-motion";
 
 import { cn } from "@/lib/utils";
 import { ABOUT_CONTENT } from "@/lib/constants/about";
@@ -45,14 +45,14 @@ export const PhotoGallery = ({
     },
   };
 
-  const photoVariants = {
+  const photoVariants: Variants = {
     hidden: () => ({
       x: 0,
       y: 0,
       rotate: 0,
       scale: 1,
     }),
-    visible: (custom: { x: any; y: any; order: number }) => ({
+    visible: (custom: { x: string; y: string; order: number }) => ({
       x: custom.x,
       y: custom.y,
       rotate: 0,
@@ -279,7 +279,8 @@ const MotionImage = motion(
     props: ImageProps,
     ref: Ref<HTMLImageElement>
   ) {
-    return <Image ref={ref} {...props} />;
+    const { alt, ...rest } = props;
+    return <Image ref={ref} alt={alt} {...rest} />;
   })
 );
 
@@ -313,11 +314,7 @@ export const Photo = ({
     setRotation(randomRotation);
   }, [direction]);
 
-  function handleMouse(event: {
-    currentTarget: { getBoundingClientRect: () => any };
-    clientX: number;
-    clientY: number;
-  }) {
+  function handleMouse(event: MouseEvent<HTMLDivElement>) {
     const rect = event.currentTarget.getBoundingClientRect();
     x.set(event.clientX - rect.left);
     y.set(event.clientY - rect.top);
