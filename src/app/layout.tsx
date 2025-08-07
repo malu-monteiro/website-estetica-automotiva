@@ -24,6 +24,8 @@ const syne = Syne({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.mssstudiocar.com.br"),
+
   title: "MSS_STUDIO CAR | Estética Automotiva em Pinhais",
   description:
     "Especialista em estética automotiva em Pinhais. Polimento, revitalização de farol, vitrificação de pintura, higienização interna premium e curso de polimento de faróis.",
