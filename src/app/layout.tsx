@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     "Especialista em estética automotiva em Pinhais. Polimento, revitalização de farol, vitrificação de pintura, higienização interna premium e curso de polimento de faróis.",
   robots: "index, follow",
   alternates: {
-    canonical: "https://website-estetica-automotiva-rk4k.vercel.app/",
+    canonical: "https://www.mssstudiocar.com.br/",
   },
 };
 
