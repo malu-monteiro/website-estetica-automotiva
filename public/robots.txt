@@ -1,4 +1,4 @@
 User-agent: *
-Disallow:
+Allow: /
 
-Sitemap: https://www.mssstudiocar.com.br/
+Sitemap: https://www.mssstudiocar.com.br/sitemap.xml

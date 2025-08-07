@@ -31,6 +31,32 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://www.mssstudiocar.com.br/",
   },
+
+  openGraph: {
+    title: "MSS Studio Car | Estética Automotiva Premium em Pinhais",
+    description:
+      "Transformamos a aparência do seu veículo com polimento, vitrificação e revitalização de faróis. Também oferecemos curso de polimento de faróis para iniciantes e profissionais.",
+    url: "https://www.mssstudiocar.com.br/",
+    siteName: "MSS Studio Car",
+    images: [
+      {
+        url: "/card.png",
+        width: 1200,
+        height: 630,
+        alt: "MSS Studio Car - Estética Automotiva Premium em Pinhais",
+      },
+    ],
+    locale: "pt_BR",
+    type: "website",
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "MSS Studio Car | Estética Automotiva Premium",
+    description:
+      "Polimento, vitrificação e revitalização de faróis em Pinhais. Curso de polimento de faróis para iniciantes e profissionais.",
+    images: ["/card.png"],
+  },
 };
 
 export default function RootLayout({
