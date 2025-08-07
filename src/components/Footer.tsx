@@ -79,10 +79,10 @@ const DEFAULT_CONFIG = {
     { name: "Política de Privacidade", href: "/politica" },
   ],
   description:
-    "Especialistas em estética automotiva. Cuidamos de cada detalhe para entregar qualidade, brilho e proteção ao seu veículo.",
-  subDescription: "Atendimento com horário agendado — Seg a Sáb, 08h às 18h",
+    "Especialista em estética automotiva. Cuidamos de cada detalhe para entregar qualidade, brilho e proteção ao seu veículo.",
+  subDescription: "Atendimento com horário agendado — Seg a Sex, 08h às 18h",
   copyright: "© 2025 MSS_STUDIO CAR. Todos os direitos reservados.",
-  developerCredit: "Desenvolvido por Maria Luiza",
+  developerCredit: "Desenvolvido por malu-monteiro",
   developerCreditLink: "https://github.com/malu-monteiro",
 };
 
@@ -112,7 +112,9 @@ export function Footer({
                 height={80}
                 priority
               />
-              <h2 className="text-xl font-semibold">{logo.title}</h2>
+              <h2 className="text-xl font-semibold tracking-tight">
+                {logo.title}
+              </h2>
             </Link>
           </div>
 

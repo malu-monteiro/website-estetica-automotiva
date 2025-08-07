@@ -29,7 +29,7 @@ export default function Services() {
     <section id="servicos" className="relative py-20 overflow-hidden">
       {/* Background Image */}
       <Image
-        src="/services-background.png"
+        src="/services/services-background.webp"
         alt="Services Background"
         fill
         className="object-contain object-center -z-10"

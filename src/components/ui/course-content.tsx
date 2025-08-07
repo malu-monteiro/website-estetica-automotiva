@@ -102,8 +102,8 @@ export const CourseContent = () => {
         </div>
 
         <p className="text-gray-400 font-light leading-relaxed text-sm">
-          Certificado reconhecido que valida suas competências técnicas em
-          estética automotiva de alto padrão.
+          Certificado que valida suas técnicas em polimento, revitalização e
+          restauração de farol.
         </p>
       </div>
     </>

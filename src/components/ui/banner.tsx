@@ -10,7 +10,7 @@ export default function Banner() {
   return (
     <section className="relative w-full overflow-hidden py-16 md:py-24">
       <Image
-        src="/banner.webp"
+        src="/course/course-banner.webp"
         alt="Banner de Oferta de Curso de Polimento"
         layout="fill"
         objectFit="cover"

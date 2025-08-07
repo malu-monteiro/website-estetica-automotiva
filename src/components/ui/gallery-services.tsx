@@ -192,8 +192,8 @@ export const PhotoGallery = ({
       <div className="relative mb-8 md:mb-12 h-[250px] md:h-[350px] w-full flex items-center justify-center">
         {/* Background Image */}
         <Image
-          src="/services-background.png"
-          alt="Services Background"
+          src="/services/services-background.webp"
+          alt="Imagem de Background"
           fill
           className="object-center -z-10"
         />

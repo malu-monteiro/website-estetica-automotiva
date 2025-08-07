@@ -9,10 +9,10 @@ import { Sparkles, Star, UserCheck, Zap, LucideIcon } from "lucide-react";
 import { ABOUT_CONTENT } from "@/lib/constants/about";
 import { ANIMATION_MAIN_VARIANTS } from "@/lib/animations";
 
+import Banner from "@/components/ui/banner";
 import { PhotoGallery } from "@/components/ui/gallery-services";
 import { AnimatedButton } from "@/components/ui/animated-button";
 import { RatingSection } from "@/components/sections/about/rating-section";
-import Banner from "@/components/ui/banner";
 
 const iconMap: { [key: string]: LucideIcon } = {
   Sparkles,
@@ -55,7 +55,7 @@ export default function AboutPage() {
         <section className="py-12 md:py-16">
           <div className="flex flex-col md:flex-row items-center gap-12 md:gap-16 lg:gap-20">
             <motion.div
-              className="w-full md:w-1/2 text-center md:text-left z-10"
+              className="w-full md:w-1/2 text-center md:text-left"
               {...motionProps}
             >
               <h2 className="section-title">

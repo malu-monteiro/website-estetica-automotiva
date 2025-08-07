@@ -1,3 +1,5 @@
+import { FaFacebook, FaInstagram } from "react-icons/fa";
+
 interface OurHistoryContent {
   title: string;
   subtitle: string;
@@ -56,17 +58,27 @@ export const HOME_ABOUT_CONTENT = {
     "Alunos Satisfeitos",
   ],
   testimonial: {
-    text: "Muito boa didática, conhecimento e domínio do assunto.\nEu comprovo e indico.",
-    author: "Gustavo",
-    company: "GP Car Centro de Treinamento Automotiva",
+    text: "Serviço de extrema qualidade e com preço justo. \n Recomendo a todos.",
+    author: "Gilson",
     source: "Google Reviews",
-    avatar: "/gustavo.jpg",
   },
   instructor: {
     name: "Márcio",
     role: "Especialista em Estética Automotiva e Instrutor do curso de Polimento de Faróis",
     image: "/about/marcio.webp",
   },
+  socialLinks: [
+    {
+      icon: <FaInstagram className="size-5" />,
+      href: "https://www.instagram.com/mss_studiocar/",
+      label: "Instagram",
+    },
+    {
+      icon: <FaFacebook className="size-5" />,
+      href: "https://www.facebook.com/profile.php?id=61563094166325",
+      label: "Facebook",
+    },
+  ],
   ctas: {
     readMore: {
       text: "Continuar lendo",

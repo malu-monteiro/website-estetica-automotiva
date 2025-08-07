@@ -43,7 +43,7 @@ export function HeroContent() {
 
       {/* Subtitle */}
       <motion.h2
-        className="font-syne mt-2 bg-gradient-to-r from-neutral-100 to-neutral-800 bg-clip-text text-5xl font-bold tracking-tight text-transparent"
+        className="font-syne mt-2 bg-gradient-to-r from-neutral-100 to-neutral-800 bg-clip-text text-4xl font-bold tracking-tight text-transparent sm:text-5xl"
         variants={DEFAULT_ITEM_VARIANTS}
       >
         {HERO_CONTENT.subtitle}

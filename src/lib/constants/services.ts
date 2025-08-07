@@ -13,7 +13,7 @@ export const SERVICES_CONTENT = {
       headerImage: "/services/polimento.webp",
       mainTitle: "Polimento de Alta Performance",
       longDescription:
-        "O polimento técnico é um processo artesanal que visa a remoção de imperfeições da pintura, como riscos superficiais, hologramas e oxidação. Nosso objetivo é restaurar o brilho de fábrica e a profundidade da cor, deixando seu carro com um aspecto impecável e valorizado.",
+        "O polimento é um processo artesanal que visa a remoção de imperfeições da pintura, como riscos superficiais, hologramas e oxidação. Nosso objetivo é restaurar o brilho de fábrica e a profundidade da cor, deixando seu carro com um aspecto impecável e valorizado.",
       processSteps: [
         {
           title: "Preparação da Superfície",
@@ -21,14 +21,14 @@ export const SERVICES_CONTENT = {
             "Iniciamos com a lavagem detalhada do veículo e a descontaminação química da pintura, removendo impurezas e resíduos invisíveis. Em seguida, realizamos a descontaminação mecânica para garantir que a superfície esteja completamente limpa antes do polimento.",
         },
         {
-          title: "Polimento Técnico",
+          title: "Polimento",
           description:
             "Utilizamos abrasivos de alta nanotecnologia para remover arranhões leves, marcas de oxidação e outras imperfeições da pintura. É aqui que o carro começa a recuperar sua uniformidade e o brilho original da cor.",
         },
         {
           title: "Restauração do Brilho",
           description:
-            "Refinamos a superfície com compostos específicos para eliminar micro-riscos e marcas de lavagem. Esse processo intensifica o brilho, melhora a reflexão e revela a verdadeira qualidade da pintura.",
+            "Refinamos a superfície com compostos específicos para eliminar micro-riscos e marcas de lavagem. Esse processo intensifica o brilho, melhorando o reflexo e revelando a verdadeira qualidade da pintura.",
         },
         {
           title: "Etapa Final de Proteção",
@@ -45,6 +45,8 @@ export const SERVICES_CONTENT = {
         "/services/page/polimento/polimento6.webp",
         "/services/page/polimento/polimento7.webp",
         "/services/page/polimento/polimento8.webp",
+        "/services/page/polimento/polimento9.webp",
+        "/services/page/polimento/polimento10.webp",
       ],
     },
     {
@@ -56,7 +58,7 @@ export const SERVICES_CONTENT = {
       image: "/services/farol.webp",
       objectPosition: "50% 30%",
       headerImage: "/services/farol.webp",
-      mainTitle: "Restauração e Proteção Profissional de Faróis",
+      mainTitle: "Revitalização e Proteção Profissional de Faróis",
       longDescription:
         "Faróis amarelados e opacos não só comprometem a aparência do seu carro, mas também reduzem perigosamente a visibilidade noturna. Nosso serviço de revitalização remove a camada danificada, restaura a clareza original e aplica uma proteção duradoura contra os raios UV, garantindo segurança e um visual renovado.",
       processSteps: [
@@ -78,7 +80,7 @@ export const SERVICES_CONTENT = {
         {
           title: "Aplicação de Proteção UV",
           description:
-            "Finalizamos com a aplicação de um selante ou vitrificador específico para policarbonato, que cria uma barreira contra o sol e evita o desgaste precoce.",
+            "Finalizamos com aplicação de polímero, que cria uma barreira contra o sol e evita o desgaste precoce.",
         },
       ],
       galleryImages: [
@@ -118,7 +120,7 @@ export const SERVICES_CONTENT = {
       headerImage: "/services/vitrificacao.webp",
       mainTitle: "Proteção Cerâmica de Longa Duração",
       longDescription:
-        "A vitrificação, ou coating cerâmico, é a mais avançada tecnologia de proteção de pintura. Criamos uma camada de vidro líquido que se funde ao verniz, oferecendo uma barreira ultrarresistente contra micro-riscos, raios UV, seiva de árvores e sujeira. O resultado é um brilho espelhado, profundo e um efeito hidrofóbico que repele água e facilita a limpeza como nunca antes.",
+        "A Vitrificação, ou coating cerâmico, é a mais avançada tecnologia de proteção de pintura. Aplicamos uma camada de sacrifício que se âncora ao verniz, oferecendo resistência contra micro-riscos de lavagens, resistência química, seiva de árvores, fezes de pássaros e raios UV. O resultado é um brilho espelhado e profundo, toque liso, efeito hidrofóbico que repele a água facilitando na limpeza.",
       processSteps: [
         {
           title: "Lavagem e Descontaminação Detalhada",
@@ -128,7 +130,7 @@ export const SERVICES_CONTENT = {
         {
           title: "Correção da Pintura (Obrigatório)",
           description:
-            "Executamos o polimento técnico para remover todas as imperfeições existentes. A vitrificação sela o estado atual da pintura.",
+            "Executamos o polimento técnico para remover todas as imperfeições existentes.",
         },
         {
           title: "Preparação da Superfície (IPA)",
@@ -138,12 +140,12 @@ export const SERVICES_CONTENT = {
         {
           title: "Aplicação do Coating Cerâmico",
           description:
-            "Aplicamos o produto em um ambiente controlado, painel por painel, seguindo rigorosamente as especificações técnicas para um acabamento uniforme.",
+            "Aplicamos o coating por partes, seguindo rigorosamente as recomendações técnicas do fabricante, conseguindo  assim extrair a qualidade máxima do coating, durante sua aplicação.",
         },
         {
           title: "Cura e Inspeção Final",
           description:
-            "O veículo permanece em processo de cura para a cristalização completa do coating. Realizamos uma inspeção final com iluminação técnica para garantir a perfeição.",
+            "O veículo permanece em processo de cura especificado pelo fabricante, para ancoragem completa do coating. Realizamos inspeção final em cada detalhe para garantir um resultado perfeito.",
         },
       ],
       galleryImages: [

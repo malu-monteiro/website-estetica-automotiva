@@ -1,5 +1,3 @@
-import Image from "next/image";
-
 import { motion } from "framer-motion";
 
 import { HOME_ABOUT_CONTENT } from "@/lib/constants/about";
@@ -12,12 +10,9 @@ export const TestimonialSection = () => (
   >
     {/* Avatar with badge */}
     <div className="relative w-12 h-12 rounded-full overflow-hidden flex-shrink-0">
-      <Image
-        src={HOME_ABOUT_CONTENT.testimonial.avatar}
-        alt={`Foto de ${HOME_ABOUT_CONTENT.testimonial.author}`}
-        fill
-        className="object-cover"
-      />
+      <div className="w-full h-full bg-gray-400 rounded-full flex items-center justify-center">
+        <span className="text-white font-semibold text-lg">G</span>
+      </div>
     </div>
 
     {/* Content of testimonial */}
@@ -28,10 +23,6 @@ export const TestimonialSection = () => (
 
       <span className="text-gray-200 font-semibold text-sm">
         {HOME_ABOUT_CONTENT.testimonial.author}
-      </span>
-
-      <span className="text-gray-400 text-xs">
-        {HOME_ABOUT_CONTENT.testimonial.company}
       </span>
 
       <span className="text-gray-500 text-xs mt-1">

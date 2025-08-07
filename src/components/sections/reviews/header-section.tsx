@@ -19,7 +19,7 @@ export const HeaderSection = ({ isInView }: { isInView: boolean }) => (
     animate={isInView ? "show" : "hidden"}
   >
     <Image
-      src="/CTA.png"
+      src="/reviews/CTA.webp"
       alt="CTA Background"
       fill
       className="object-cover -z-10"

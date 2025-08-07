@@ -14,7 +14,6 @@ const navLinks = [
   { href: "/sobre", label: "Sobre Nós" },
   { href: "/servicos", label: "Serviços" },
   { href: "/curso", label: "Curso" },
-  { href: "/#avaliacoes", label: "Avaliações" },
   { href: "/#contato", label: "Contato" },
 ];
 
@@ -57,21 +56,19 @@ export function Navbar() {
       }`}
     >
       <div className="container-layout">
-        <nav className="flex items-center justify-between py-4">
+        <nav className="flex items-center justify-between py-4 md:py-3">
           {/* Logo */}
-          <Link
-            href="/"
-            className="flex items-center"
-            aria-label="Página inicial"
-          >
+          <Link href="/" className="flex items-center gap-2">
             <Image
               src="/logo.webp"
               alt="Logo MSS Studio Car"
-              width={140}
+              width={40}
               height={40}
-              className="h-16 w-auto object-contain"
-              priority
+              className="h-10 w-auto object-contain"
             />
+            <span className="text-white ml-2 font-syne text-lg font-semibold tracking-tight">
+              MSS_STUDIO CAR
+            </span>
           </Link>
 
           {/* Desktop Navigation */}

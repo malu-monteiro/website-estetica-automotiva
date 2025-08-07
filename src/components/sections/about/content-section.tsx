@@ -42,10 +42,10 @@ export const ContentSection = ({ isInView }: ContentSectionProps) => (
       {HOME_ABOUT_CONTENT.subtitle}
     </motion.p>
 
-    {/* Button */}
+    {/* Button with Social Icons */}
     <motion.div
       variants={ANIMATION_MAIN_VARIANTS.item}
-      className="flex flex-col sm:flex-row gap-4 mb-6"
+      className="flex flex-col sm:flex-row gap-4 mb-6 items-start sm:items-center"
     >
       <a
         href={HOME_ABOUT_CONTENT.ctas.readMore.link}
@@ -54,6 +54,22 @@ export const ContentSection = ({ isInView }: ContentSectionProps) => (
       >
         <AnimatedButton>{HOME_ABOUT_CONTENT.ctas.readMore.text}</AnimatedButton>
       </a>
+
+      {/* Social Icons */}
+      <div className="flex gap-3">
+        {HOME_ABOUT_CONTENT.socialLinks.map((social, index) => (
+          <a
+            key={index}
+            href={social.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="p-2 hover:text-red-800 transition-colors duration-200"
+            aria-label={social.label}
+          >
+            {social.icon}
+          </a>
+        ))}
+      </div>
     </motion.div>
 
     {/* Sections */}

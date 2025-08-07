@@ -83,10 +83,13 @@ export const COURSE_CONTENT = {
     },
   },
   galleryImages: [
-    "/course/page/gustavo-aluno.webp",
-    "/course/page/jadson-aluno.webp",
-    "/course/page/geraldo-aluno.webp",
-    "/course/page/luiz-aluno.webp",
-    "/course/page/victor-aluno.webp",
+    "/course/page/alunos/gustavo-aluno.webp",
+    "/course/page/alunos/jadson-aluno.webp",
+    "/course/page/alunos/geraldo-aluno.webp",
+    "/course/page/alunos/luiz-aluno.webp",
+    "/course/page/alunos/victor-aluno.webp",
+    "/course/page/alunos/marcilio-aluno.webp",
+    "/course/page/alunos/luiz-bolela-aluno.webp",
+    "/course/page/alunos/eduardo-aluno.webp",
   ],
 } as const;
