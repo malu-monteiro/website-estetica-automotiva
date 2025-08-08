@@ -9,6 +9,8 @@ import { Footer } from "@/components/Footer";
 
 import { FloatingWhatsapp } from "@/components/ui/floating-whatsapp";
 
+import { Analytics } from "@vercel/analytics/next";
+
 const sairaSans = Saira({
   variable: "--font-saira-sans",
   subsets: ["latin"],
@@ -75,6 +77,7 @@ export default function RootLayout({
 
         <main>{children}</main>
 
+        <Analytics />
         <FloatingWhatsapp />
         <Footer />
       </body>
